@@ -1,15 +1,18 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls.defaults import patterns, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView
+from django.contrib.auth.views import login, logout
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
+    (r'^accounts/login/$',  login),
+    (r'^accounts/logout/$', logout),
     (r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^meeting_center/$', 'meeting_center.views.index'),
+    
     # url(r'^codenamek/', include('codenamek.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
