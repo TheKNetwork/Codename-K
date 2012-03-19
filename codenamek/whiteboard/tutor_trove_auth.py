@@ -3,7 +3,7 @@ import time
 import os
 import base64
 
-def get_whiteboard_url(url, script_name, whiteboard_title, whiteboard_hash, user_type, user_name, user_id):
+def get_whiteboard_url(whiteboard_title, whiteboard_hash, user_type, user_name, user_id):
     url = 'https://knetwork.tutortrove.com/api_v1/SSO/whiteboard'
     method='GET'
     params = {                                            
