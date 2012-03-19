@@ -1,4 +1,6 @@
 # Django settings for codenamek project.
+import os, sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.path.pardir))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
