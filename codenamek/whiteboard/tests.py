@@ -21,13 +21,12 @@ class SimpleTest(TestCase):
         Tests that the Tutor Trove authorization url generation does not fail.
         Whether the url is valid or not is another task.
         """
-        ttAuth = tutor_trove_auth()
         
         whiteboard_title = "My Title"
         whiteboard_hash = "abcdef"
         user_type = "tutor"
         user_name = "bob"
         user_id = "asdkjlnrtgkjv"
-        url = ttAuth.get_whiteboard_url(whiteboard_title, whiteboard_hash, user_type, user_name, user_id)
+        url = tutor_trove_auth.get_whiteboard_url(whiteboard_title, whiteboard_hash, user_type, user_name, user_id)
         self.assertIsNotNone(url, "the url was nothing!")
         print url
