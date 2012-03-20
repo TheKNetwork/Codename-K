@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     (r'^accounts/login/$',  login),
     (r'^accounts/logout/$', logout),
     (r'^$', TemplateView.as_view(template_name="index.html")),
-    url(r'^meeting_center/$', 'meeting_center.views.index'),
+    url(r'^classroom/$', 'classroom.views.index'),
     
     # url(r'^codenamek/', include('codenamek.foo.urls')),
 
