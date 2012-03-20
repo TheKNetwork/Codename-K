@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls.defaults import patterns, url, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView
 from django.contrib.auth.views import login, logout
@@ -8,11 +8,11 @@ from django.contrib.auth.views import login, logout
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^accounts/login/$',  login),
-    (r'^accounts/logout/$', logout),
-    (r'^$', TemplateView.as_view(template_name="index.html")),
+    url(r'^accounts/login/$',  login),
+    url(r'^accounts/logout/$', logout),
+    url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^classroom/$', 'classroom.views.index'),
-    
+    url(r'^accounts/', include('registration.urls')),
     # url(r'^codenamek/', include('codenamek.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

@@ -2,6 +2,21 @@
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.path.pardir))
 
+DATABASE_USER = ''
+DATABASE_PASSWORD = ''
+DATABASE_HOST = ''
+DATABASE_PORT = ''
+DATABASE_ENGINE = 'django.db.backends.sqlite3'
+DATABASE_NAME = '/srv/www/codenamek/sqlite.db'
+
+if os.getenv("DJANGO_ENV") == 'RACKSPACE':
+    DATABASE_USER = 'knet'
+    DATABASE_PASSWORD = 'lsmTO2012'
+    DATABASE_HOST = 'localhost'
+    DATABASE_PORT = ''
+    DATABASE_ENGINE = 'django.db.backends.postgresql_psycopg2'
+    DATABASE_NAME = 'codenamek_dev'
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -13,12 +28,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/srv/www/codenamek/sqlite.db',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': DATABASE_ENGINE,
+        'NAME': DATABASE_NAME, 
+        'USER': DATABASE_USER,                      # Not used with sqlite3.
+        'PASSWORD': DATABASE_PASSWORD,                  # Not used with sqlite3.
+        'HOST': DATABASE_HOST,                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': DATABASE_PORT,                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -121,11 +136,17 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'codenamek.classroom',
     'codenamek.whiteboard',
+    'registration',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+ACCOUNT_ACTIVATION_DAYS = 7
+EMAIL_HOST = 'theknetwork.org'
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = '/srv/app-messages' # change this to a proper location
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
