@@ -1,0 +1,20 @@
+<html>
+	<head></head>
+	<body>Hi this is the user home
+	<p/>
+	<b>Groups</b>
+	<ul>
+	{% for group in groups %}
+	    <li>{{ group.name }}</li>
+	{% endfor %}
+	</ul>
+	<p/>
+	<b>Users</b>
+	<ul>
+	{% for user in users %}
+	    <li>{{ user.email }}</li>
+	{% endfor %}
+	</ul>
+	
+	</body>
+</html>
