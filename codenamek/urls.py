@@ -8,9 +8,9 @@ from django.contrib.auth.views import login, logout
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^accounts/login/$',  login),
     url(r'^accounts/logout/$', logout),
-    url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^classroom/$', 'classroom.views.index'),
     url(r'^accounts/', include('registration.urls')),
     # url(r'^codenamek/', include('codenamek.foo.urls')),
