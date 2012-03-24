@@ -148,9 +148,12 @@ INSTALLED_APPS = (
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
-EMAIL_HOST = 'theknetwork.org'
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = '/srv/app-messages' # change this to a proper location
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'jackbauer12655@gmail.com'
+EMAIL_HOST_PASSWORD = 'Childeroland6'
+EMAIL_PORT = 587
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

@@ -1,38 +1,97 @@
-{% extends "admin/base_site.html" %}
 {% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>K Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-{% block extrastyle %}{% load adminmedia %}{{ block.super }}
-    <link rel="stylesheet" type="text/css" href="{% admin_media_prefix %}css/login.css" />
-{% endblock %}
+    <!-- Le styles -->
+    <link href="/static/css/bootstrap-spacelab.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
 
-{% block bodyclass %}login{% endblock %}
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-{% block content_title %}{% endblock %}
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/static/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+  <body>
+  	
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">K Network</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            {% if not user.is_authenticated %}
+            <p class="navbar-text pull-right">
+            	<a href="/accounts/login/?next=/">Login</a> | 
+            	<a href="/accounts/register/">Register</a>
+			</p>	    
+			{% endif %}
+            
+            {% if user.is_authenticated %}
+            <p class="navbar-text pull-right">Logged in as {{ user }} | <a href="/accounts/logout/?next=/">Logout</a></p>
+            {% endif %}
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>  	
+  	
+  	<div class="span9">
 
-{% block breadcrumbs %}{% endblock %}
+		{% if error_message %}
+		<p class="errornote">{{ error_message }}</p>
+		{% endif %}
+		<div id="content-main">
+		    <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
+		  <div class="form-row">
+		    <label for="id_username">{% trans 'Username:' %}</label>
+		        <input type="text" name="username" id="id_username" />
+		  </div>
+		  <div class="form-row">
+		    <label for="id_password">{% trans 'Password:' %}</label>
+		        <input type="password" name="password" id="id_password" />
+		    <input type="hidden" name="this_is_the_login_form" value="1" />
+		  </div>
+		  <div class="submit-row">
+		    <label>&nbsp;</label><input type="submit" value="{% trans 'Log in' %}" />
+		  </div>
+		</form>
+		
+		<script type="text/javascript">
+		document.getElementById('id_username').focus()
+		</script>
+		</div>
 
-{% block content %}
-{% if error_message %}
-<p class="errornote">{{ error_message }}</p>
-{% endif %}
-<div id="content-main">
-    <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
-  <div class="form-row">
-    <label for="id_username">{% trans 'Username:' %}</label>
-        <input type="text" name="username" id="id_username" />
-  </div>
-  <div class="form-row">
-    <label for="id_password">{% trans 'Password:' %}</label>
-        <input type="password" name="password" id="id_password" />
-    <input type="hidden" name="this_is_the_login_form" value="1" />
-  </div>
-  <div class="submit-row">
-    <label>&nbsp;</label><input type="submit" value="{% trans 'Log in' %}" />
-  </div>
-</form>
-
-<script type="text/javascript">
-document.getElementById('id_username').focus()
-</script>
-</div>
-{% endblock %}
+ </div>
+  	
+  </body>
+</html>
