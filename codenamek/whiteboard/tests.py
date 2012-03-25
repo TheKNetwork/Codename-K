@@ -10,11 +10,6 @@ import tutor_trove_auth
 
 
 class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
 
     def test_whiteboard_url_is_generated(self):
         """
