@@ -1,19 +1,41 @@
 {% extends "base_site.html" %}
-{% load i18n %}
 
 {% block content %}
-	<b>Groups</b>
-	<ul>
-	{% for group in groups %}
-	    <li>{{ group.name }}</li>
-	{% endfor %}
-	</ul>
-	<p/>
-	<b>Users</b>
-	<ul>
-	{% for user in users %}
-	    <li>{{ user.email }}</li>
-	{% endfor %}
-	</ul>
+
+<h3>Schools <small>and their members</small></h3>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>School name</th>
+			<th>Members</th>
+		</tr>
+		{% for group in groups %}
+		<tr>
+			<td>{{ group.name }}</td>
+			<td>
+				{% for userO in group.user_set.all %}{{ userO }},{% endfor %}
+			</td>
+		</tr>
+		{% endfor %}
+	</thead>
+</table>
+
+<h3>Users <small>Students and Teachers</small></h3>	
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Full name</th>
+			<th>Username</th>
+			<th>Email Address</th>
+		</tr>
+		{% for userObject in users %}
+		<tr>
+			<td>{{ userObject.get_full_name }}</td>
+			<td>{{ userObject }}</td>
+			<td>{{ userObject.email }}</td>
+		</tr>
+		{% endfor %}
+	</thead>
+</table>
 
 {% endblock %}
