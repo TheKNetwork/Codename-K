@@ -15,7 +15,7 @@ DATABASE_NAME = '/srv/www/codenamek/sqlite.db'
 if os.getenv("DJANGO_ENV") == 'RACKSPACE':
     DATABASE_USER = 'knet'
     DATABASE_PASSWORD = 'lsmTO2012'
-    DATABASE_HOST = '108.166.64.169'
+    DATABASE_HOST = 'localhost'
     DATABASE_PORT = ''
     DATABASE_ENGINE = 'django.db.backends.postgresql_psycopg2'
     DATABASE_NAME = 'codenamek_dev'
