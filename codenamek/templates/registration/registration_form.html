@@ -3,6 +3,7 @@
 
 {% block content %}
 
+	<div id="registration-form">
         <h2>Register</h2>
         <form action="/accounts/register/" method="POST">{% csrf_token %}
             <table>
@@ -12,5 +13,6 @@
             <input type="submit" value="Submit" />
         </p>
         </form>
+	</div>
         
 {% endblock %}

@@ -3,7 +3,7 @@
 
 {% block content %}
 
-
+	<div id="login-form">
 		{% if error_message %}
 		<p class="errornote">{{ error_message }}</p>
 		{% endif %}
@@ -27,5 +27,5 @@
 		document.getElementById('id_username').focus()
 		</script>
 		</div>
-        
+	</div>
 {% endblock %}
