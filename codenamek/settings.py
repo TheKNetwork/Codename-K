@@ -161,7 +161,7 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'chris@theknetwork.org'
+EMAIL_HOST_USER = 'knetserverinfo@gmail.com'
 EMAIL_HOST_PASSWORD = 'lsmto2012'
 EMAIL_PORT = 587
 
