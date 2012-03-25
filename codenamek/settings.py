@@ -2,6 +2,7 @@
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.path.pardir))
 
+# THESE ARE THE DEFAULT DB SETTINGS.
 DATABASE_USER = ''
 DATABASE_PASSWORD = ''
 DATABASE_HOST = ''
@@ -9,6 +10,8 @@ DATABASE_PORT = ''
 DATABASE_ENGINE = 'django.db.backends.sqlite3'
 DATABASE_NAME = '/srv/www/codenamek/sqlite.db'
 
+# THIS ENVIRONMENT VARIABLE IS LOADED BY THE DJANGO.WSGI FILE
+# AT RUNTIME BY THE RACKSPACE SERVER. 
 if os.getenv("DJANGO_ENV") == 'RACKSPACE':
     DATABASE_USER = 'knet'
     DATABASE_PASSWORD = 'lsmTO2012'
@@ -16,6 +19,19 @@ if os.getenv("DJANGO_ENV") == 'RACKSPACE':
     DATABASE_PORT = ''
     DATABASE_ENGINE = 'django.db.backends.postgresql_psycopg2'
     DATABASE_NAME = 'codenamek_dev'
+
+# IF YOU WANT TO RUN YOUR OWN DB SETTINGS, YOU CAN OPTIONALLY
+# CREATE YOUR OWN ENVIRONMENT VARIABLE AND DETECT THAT VARIABLE
+# HERE. COPY AND PASTE THIS SECTION, UNCOMMENT IT AND THEN
+# SET YOUR APPROPRIATE DATABASE SETTINGS. DON'T FORGET TO RUN
+# SYNCDB!!
+# if os.getenv("DJANGO_ENV") == 'YOUR VARIABLE':
+#    DATABASE_USER = 'YOUR USER'
+#    DATABASE_PASSWORD = 'YOUR PASSWORD'
+#    DATABASE_HOST = 'localhost'
+#    DATABASE_PORT = ''
+#    DATABASE_ENGINE = 'django.db.backends.YOUR_BACKEND_DRIVER'
+#    DATABASE_NAME = 'YOUR_DB_NAME'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -30,10 +46,10 @@ DATABASES = {
     'default': {
         'ENGINE': DATABASE_ENGINE,
         'NAME': DATABASE_NAME, 
-        'USER': DATABASE_USER,                      # Not used with sqlite3.
-        'PASSWORD': DATABASE_PASSWORD,                  # Not used with sqlite3.
-        'HOST': DATABASE_HOST,                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': DATABASE_PORT,                      # Set to empty string for default. Not used with sqlite3.
+        'USER': DATABASE_USER,                      
+        'PASSWORD': DATABASE_PASSWORD,              
+        'HOST': DATABASE_HOST,                      
+        'PORT': DATABASE_PORT,
     }
 }
 
@@ -44,7 +60,7 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/New York'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -62,12 +78,12 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = '/srv/www/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -86,9 +102,6 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
     '/srv/www/codenamek/static',
 )
 
@@ -121,9 +134,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'codenamek.urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
     "/srv/www/codenamek/templates",
 )
 
