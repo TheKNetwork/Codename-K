@@ -16,20 +16,11 @@ EMAIL_HOST_USER = 'knetserverinfo@gmail.com'
 EMAIL_HOST_PASSWORD = 'lsmto2012'
 EMAIL_PORT = 587
 
-# THIS ENVIRONMENT VARIABLE IS LOADED BY THE DJANGO.WSGI FILE
-# AT RUNTIME BY THE RACKSPACE SERVER. 
-if os.getenv("DJANGO_ENV") == 'RACKSPACE':
-    DATABASE_USER = 'knet'
-    DATABASE_PASSWORD = 'lsmTO2012'
-    DATABASE_HOST = 'localhost'
-    DATABASE_PORT = ''
-    DATABASE_ENGINE = 'django.db.backends.postgresql_psycopg2'
-    DATABASE_NAME = 'codenamek_dev'
-    EMAIL_USE_TLS = True
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_HOST_USER = 'knetserverinfo@gmail.com'
-    EMAIL_HOST_PASSWORD = 'lsmto2012'
-    EMAIL_PORT = 587
+
+try:
+   from local_settings import *
+except ImportError, e:
+   pass
 
 # IF YOU WANT TO RUN YOUR OWN DB SETTINGS, YOU CAN OPTIONALLY
 # CREATE YOUR OWN ENVIRONMENT VARIABLE AND DETECT THAT VARIABLE
@@ -206,3 +197,4 @@ LOGGING = {
         },
     }
 }
+
