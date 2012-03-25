@@ -1,4 +1,4 @@
-
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,14 +50,14 @@
               <li><a href="#contact">Contact</a></li>
             </ul>
             
-            {% if not user.is_authenticated %}
+            {% if not user.is_active %}
             <p class="navbar-text pull-right">
             	<a href="/accounts/login/?next=/classroom">Login</a> | 
             	<a href="/accounts/register/">Register</a>
 			</p>	    
 			{% endif %}
             
-            {% if user.is_authenticated %}
+            {% if user.is_active %}
             <p class="navbar-text pull-right">Logged in as {{ user }} | <a href="/accounts/logout/?next=/">Logout</a></p>
             {% endif %}
           </div><!--/.nav-collapse -->
