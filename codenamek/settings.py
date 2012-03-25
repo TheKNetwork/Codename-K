@@ -12,10 +12,10 @@ DATABASE_NAME = '/srv/www/codenamek/sqlite.db'
 
 # THIS ENVIRONMENT VARIABLE IS LOADED BY THE DJANGO.WSGI FILE
 # AT RUNTIME BY THE RACKSPACE SERVER. 
-if os.getenv("DJANGO_ENV") == 'RACKSPACE':
+if os.getenv("DJANGO_ENV") == 'RACKSPACE_POSTGRESQL':
     DATABASE_USER = 'knet'
     DATABASE_PASSWORD = 'lsmTO2012'
-    DATABASE_HOST = 'localhost'
+    DATABASE_HOST = '108.166.64.169'
     DATABASE_PORT = ''
     DATABASE_ENGINE = 'django.db.backends.postgresql_psycopg2'
     DATABASE_NAME = 'codenamek_dev'
