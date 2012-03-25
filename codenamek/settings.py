@@ -139,7 +139,7 @@ INSTALLED_APPS = (
     'registration',
     'profiles',
     'django.contrib.admin',
-    'codenamek.classroom',
+    'codenamek.homeroom',
     'codenamek.whiteboard',
     'codenamek.usermanagement',
 )

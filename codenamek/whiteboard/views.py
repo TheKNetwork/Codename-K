@@ -30,8 +30,8 @@ def index(request):
     whiteboard_title = "A Title"
     whiteboard_hash = "wealluseonewhiteboardfornow"
     user_type = "tutor"
-    user_name = user.get_full_name
-    user_id = user.id
+    user_name = user
+    user_id = user
     
     # generate the whiteboard url for the iframe
     whiteboard_url = tutor_trove_auth.get_whiteboard_url(whiteboard_title, whiteboard_hash, user_type, user_name, user_id)
