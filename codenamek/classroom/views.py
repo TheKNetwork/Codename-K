@@ -1,7 +1,4 @@
-# Create your views here.
-# from django.shortcuts import redirect
 from django.shortcuts import render_to_response
-# from django.template import RequestContext
 from django.contrib.auth.models import Group, User
 
 import logging
@@ -14,4 +11,4 @@ def index(request):
     userList  = User.objects.all()
     logger.debug('Count of users: ' + str(userList.count()))
     
-    return render_to_response("user_home.html", {'groups': groupList, 'users': userList} )
+    return render_to_response("homeroom/user_home.html", {'groups': groupList, 'users': userList} )
