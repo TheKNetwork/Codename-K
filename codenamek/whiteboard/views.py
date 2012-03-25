@@ -1,12 +1,9 @@
 from django.shortcuts import render_to_response
-from django.contrib.auth.models import Group, User
-from django.contrib.auth.decorators import login_required
 from codenamek.whiteboard import tutor_trove_auth
 
 import logging
 logger = logging.getLogger('dev')
 
-@login_required
 def index(request):
     """
     Grab some information out of the the request, namely:
@@ -25,6 +22,9 @@ def index(request):
     to show as having the same names.
     """
     user = request.user # get the user from the request
+    
+    if user is None:
+        user = "anonymous"
     
     # get the whiteboard information from the request.
     whiteboard_title = "A Title"
