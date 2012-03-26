@@ -11,6 +11,10 @@ import tutor_trove_auth
 
 class SimpleTest(TestCase):
 
+    def test_whiteboard_session_storage(self):
+        
+        pass
+
     def test_whiteboard_url_is_generated(self):
         """
         Tests that the Tutor Trove authorization url generation does not fail.
