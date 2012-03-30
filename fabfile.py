@@ -19,7 +19,7 @@ def prod():
     env.host_string = prod_server
 
 def deploy():
-    """Deploy the latest version of the site to the server and restart lighttpd"""
+    """Deploy the latest version of the site to the server and restart apache"""
     checkout_latest()
     symlink_current_release()
     install_requirements()
@@ -43,7 +43,7 @@ def install_requirements():
 
 def migrate():
     """Run our migrations"""
-    run('export DJANGO_ENV=%(release_type)s; cd %(path)s/releases/current/codenamek;  %(path)s/python/bin/python manage.py syncdb --noinput --migrate' % env)
+    run('export DJANGO_ENV=%(release_type)s; cd %(path)s/releases/current/codenamek;  %(path)s/python/bin/python manage.py syncdb --noinput' % env)
 
 def restart_apache():
     "Reboot Apache2 server."

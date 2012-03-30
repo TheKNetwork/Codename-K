@@ -1,12 +1,8 @@
 # Django settings for codenamek project.
 import os, sys
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.path.pardir))
+from ConfigParser import RawConfigParser
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'knetserverinfo@gmail.com'
-EMAIL_HOST_PASSWORD = 'lsmto2012'
-EMAIL_PORT = 587
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.path.pardir))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -17,44 +13,33 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-RUN_ENV = 'DJANGO_ENV'
-
-DEBUG = True
-if os.getenv(RUN_ENV, '') == 'production':
-    # We don't want debug in production
-    DEBUG = False
-
-DB_CONF_PATH = '/environments/db'
-
 if os.getenv(RUN_ENV, '') == 'prod':
     DEBUG = False
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'OPTIONS': {
-                'read_default_file': os.path.join(DB_CONF_PATH, 'postgresql_prod.cnf')
-            }
-        }
-    }
+    
+    config = RawConfigParser()
+    config.read('/environments/db/postgresql_prod.ini')
 elif os.getenv(RUN_ENV, '') == 'staging':
-    DEBUG = False
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'OPTIONS': {
-                'read_default_file': os.path.join(DB_CONF_PATH, 'postgresql_staging.cnf')
-            }
-        }
-    }
+    DEBUG = True
+    
+    config = RawConfigParser()
+    config.read('/environments/db/postgresql_staging.ini')
 else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'sqlite.db',
-        }
-    }
+    DEBUG = True
+    
+    config = RawConfigParser()
+    config.read('developer.ini')
+    
+DATABASE_USER = config.get('database', 'DATABASE_USER')
+DATABASE_PASSWORD = config.get('database', 'DATABASE_PASSWORD')
+DATABASE_HOST = config.get('database', 'DATABASE_HOST')
+DATABASE_PORT = config.get('database', 'DATABASE_PORT')
+DATABASE_NAME = config.get('database', 'DATABASE_NAME')
 
-
+EMAIL_USE_TLS = config.get('email', 'EMAIL_USE_TLS')
+EMAIL_HOST = config.get('email', 'EMAIL_HOST')
+EMAIL_HOST_USER = config.get('email', 'EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config.get('email', 'EMAIL_HOST_PASSWORD')
+EMAIL_PORT = config.get('email', 'EMAIL_PORT')
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
