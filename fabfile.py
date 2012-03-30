@@ -24,7 +24,7 @@ def deploy():
     symlink_current_release()
     install_requirements()
     migrate()
-    #restart_apache()
+    restart_apache()
 
 def checkout_latest():
     """Pull the latest code into the git repo and copy to a timestamped release directory"""
