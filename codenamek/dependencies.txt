@@ -3,5 +3,5 @@ psycopg2
 simplejson
 python-memcached
 oauth2
-oauth_client
+oauth2client
 httplib2
