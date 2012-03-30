@@ -30,7 +30,7 @@ if os.getenv(RUN_ENV, '') == 'prod':
     DEBUG = False
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'OPTIONS': {
                 'read_default_file': os.path.join(DB_CONF_PATH, 'postgresql_prod.cnf')
             }
@@ -40,7 +40,7 @@ elif os.getenv(RUN_ENV, '') == 'staging':
     DEBUG = False
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'OPTIONS': {
                 'read_default_file': os.path.join(DB_CONF_PATH, 'postgresql_staging.cnf')
             }
