@@ -2,24 +2,11 @@
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.path.pardir))
 
-# THESE ARE THE DEFAULT DB SETTINGS.
-DATABASE_USER = ''
-DATABASE_PASSWORD = ''
-DATABASE_HOST = ''
-DATABASE_PORT = ''
-DATABASE_ENGINE = 'django.db.backends.sqlite3'
-DATABASE_NAME = '/srv/www/codenamek/sqlite.db'
-
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'knetserverinfo@gmail.com'
 EMAIL_HOST_PASSWORD = 'lsmto2012'
 EMAIL_PORT = 587
-
-try:
-   from local_settings import *
-except ImportError, e:
-   pass
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -30,16 +17,44 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': DATABASE_ENGINE,
-        'NAME': DATABASE_NAME, 
-        'USER': DATABASE_USER,                      
-        'PASSWORD': DATABASE_PASSWORD,              
-        'HOST': DATABASE_HOST,                      
-        'PORT': DATABASE_PORT,
+RUN_ENV = 'DJANGO_ENV'
+
+DEBUG = True
+if os.getenv(RUN_ENV, '') == 'production':
+    # We don't want debug in production
+    DEBUG = False
+
+DB_CONF_PATH = '/environments/db'
+
+if os.getenv(RUN_ENV, '') == 'prod':
+    DEBUG = False
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg',
+            'OPTIONS': {
+                'read_default_file': os.path.join(DB_CONF_PATH, 'postgresql_prod.cnf')
+            }
+        }
     }
-}
+elif os.getenv(RUN_ENV, '') == 'staging':
+    DEBUG = False
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg',
+            'OPTIONS': {
+                'read_default_file': os.path.join(DB_CONF_PATH, 'postgresql_staging.cnf')
+            }
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'sqlite.db',
+        }
+    }
+
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
