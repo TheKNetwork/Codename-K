@@ -29,7 +29,8 @@ else:
     
     config = RawConfigParser()
     config.read(os.path.join(os.path.dirname(__file__), 'developer.ini'))
-    
+
+DATABASE_ENGINE = config.get('database', 'DATABASE_ENGINE')
 DATABASE_USER = config.get('database', 'DATABASE_USER')
 DATABASE_PASSWORD = config.get('database', 'DATABASE_PASSWORD')
 DATABASE_HOST = config.get('database', 'DATABASE_HOST')
