@@ -12,6 +12,7 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+RUN_ENV = 'DJANGO_ENV'
 
 if os.getenv(RUN_ENV, '') == 'prod':
     DEBUG = False
@@ -27,7 +28,7 @@ else:
     DEBUG = True
     
     config = RawConfigParser()
-    config.read('developer.ini')
+    config.read(os.path.join(os.path.dirname(__file__), 'developer.ini'))
     
 DATABASE_USER = config.get('database', 'DATABASE_USER')
 DATABASE_PASSWORD = config.get('database', 'DATABASE_PASSWORD')
