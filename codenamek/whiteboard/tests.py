@@ -7,12 +7,13 @@ Replace this with more appropriate tests for your application.
 
 from django.test import TestCase
 import tutor_trove_auth
-
+from codenamek.whiteboard import models
 
 class SimpleTest(TestCase):
 
     def test_whiteboard_session_storage(self):
-        
+        whiteboard_session = models.WhiteboardSession.objects.create(whiteboard_title="The Title", whiteboard_hash="abcdefg", slug="abcsw")
+        print "slug is " + whiteboard_session.slug + " and url " + whiteboard_session.get_absolute_url()
         pass
 
     def test_whiteboard_url_is_generated(self):
