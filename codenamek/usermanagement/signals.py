@@ -5,5 +5,11 @@ def create_profile(sender, instance, signal, created, **kwargs):
  
     if created:
         UserProfile(user = instance).save()
-        # Do additional stuff here if needed, e.g.
-        # create other required related records
+        
+def create_class(sender, instance, signal, created, **kwargs):
+    """When a group is created, immediately make that group a class"""
+    
+    from codenamek.usermanagement.models import Class
+    
+    if created:
+        Class(group = instance).save()        
