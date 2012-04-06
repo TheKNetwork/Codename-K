@@ -1,8 +1,10 @@
+=== IMPORTANT: RE-RUN STEP 1, WE UPGRADED TO DJANGO 1.4 ===
+
 ### Developer Instructions ###
 
-1. After cloning, cd to Codename-K and run pip install -r dependencies.txt
+1. After cloning, cd to Codename-K and run pip install -r requirements.txt
 2. cd to ./codenamek
-3. run ./manage.py syncdb
+3. run ./manage.py syncdb (NOTE: if you're upgrading to django 1.4, run flush instead of syncdb)
 4. run ./manage.py runserver
 
 When running manage.py, you'll see some notes about what users you can test with. As usual, open http://localhost:8000 in a browser.
