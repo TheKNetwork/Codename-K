@@ -4,9 +4,7 @@ from models import UserProfile, Class, School
 
 
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('__unicode__', 'is_teacher', 'is_student')
-    list_filter=('is_teacher', 'is_student')
-
+    pass
 
 class ClassAdmin(admin.ModelAdmin):
     list_display = ('__unicode__',)

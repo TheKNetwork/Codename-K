@@ -7,7 +7,6 @@ from codenamek.usermanagement.signals import *
  
 # When model instance is saved, trigger creation of corresponding profile
 signals.post_save.connect(create_profile, sender=User)
-signals.post_save.connect(create_class, sender=Group)
 
 SCHOOL_GENDER_FLAG_CHOICES = (
     ('B','Boys Only'),
@@ -17,10 +16,8 @@ SCHOOL_GENDER_FLAG_CHOICES = (
 
 
 class UserProfile(models.Model):
-    personal_url = models.URLField()
-    home_address = models.TextField()
-    is_teacher = models.BooleanField()
-    is_student = models.BooleanField()
+    personal_url = models.URLField(blank=True)
+    home_address = models.TextField(blank=True)
     user = models.ForeignKey(User, unique=True)
 
     class Meta:
@@ -29,30 +26,21 @@ class UserProfile(models.Model):
 
     def __unicode__(self):
         return self.user.username
-
-
-class Class(models.Model):
-    class_name = models.CharField(max_length=100)
-    group = models.ForeignKey(Group, unique=True)
-
-    class Meta:
-        verbose_name = _('Class')
-        verbose_name_plural = _('Classes')
-
-    def __unicode__(self):
-        return u"{0} - {1}".format(self.class_name, self.group)
-
+    
+class UserHistory(models.Model):
+    user = models.ForeignKey(User, unique=True)
+    event = models.CharField(max_length=255)
+    event_time = models.DateTimeField()
 
 class School(models.Model):
     school_name = models.CharField(max_length=100)
-    address_line_one = models.CharField(max_length=100)
-    address_line_two = models.CharField(max_length=100)
-    address_city = models.CharField(max_length=100)
-    address_state = models.CharField(max_length=2)
-    address_country = models.CharField(max_length=50)
-    school_url = models.URLField()
+    address_line_one = models.CharField(max_length=100, blank=True)
+    address_line_two = models.CharField(max_length=100, blank=True)
+    address_city = models.CharField(max_length=100, blank=True)
+    address_state = models.CharField(max_length=2, blank=True)
+    address_country = models.CharField(max_length=50, blank=True)
+    school_url = models.URLField(blank=True)
     gender_flag = models.CharField(max_length=1, choices=SCHOOL_GENDER_FLAG_CHOICES)
-    classes = models.ManyToManyField(Class)
 
     class Meta:
         verbose_name = _('School')
@@ -60,4 +48,17 @@ class School(models.Model):
 
     def __unicode__(self):
         return self.school_name
+
+class Class(models.Model):
+    group = models.ForeignKey(Group, unique=True)
+    class_name = models.CharField(max_length=50)
+    class_description = models.TextField(blank=True)
+    school = models.ManyToManyField(School)
+
+    class Meta:
+        verbose_name = _('Class')
+        verbose_name_plural = _('Classes')
+
+    def __unicode__(self):
+        return u"{0}".format(self.group)
     
