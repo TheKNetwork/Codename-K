@@ -33,12 +33,23 @@ else:
     config = RawConfigParser()
     config.read(os.path.join(os.path.dirname(__file__), 'developer.ini'))
 
-DATABASE_ENGINE = config.get('database', 'DATABASE_ENGINE')
-DATABASE_USER = config.get('database', 'DATABASE_USER')
-DATABASE_PASSWORD = config.get('database', 'DATABASE_PASSWORD')
-DATABASE_HOST = config.get('database', 'DATABASE_HOST')
-DATABASE_PORT = config.get('database', 'DATABASE_PORT')
-DATABASE_NAME = config.get('database', 'DATABASE_NAME')
+ENGINE = config.get('database', 'ENGINE')
+USER = config.get('database', 'USER')
+PASSWORD = config.get('database', 'PASSWORD')
+HOST = config.get('database', 'HOST')
+PORT = config.get('database', 'PORT')
+NAME = config.get('database', 'NAME')
+
+DATABASES = {
+    'default': {
+        'ENGINE': ENGINE,
+        'NAME': NAME,
+        'USER': USER,
+        'PASSWORD': PASSWORD,
+        'HOST': HOST,
+        'PORT': PORT,
+    }
+}
 
 EMAIL_USE_TLS = config.get('email', 'EMAIL_USE_TLS')
 EMAIL_HOST = config.get('email', 'EMAIL_HOST')

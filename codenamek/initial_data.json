@@ -1,16 +1,15 @@
-[
-	{
+[   {
 		"pk": 1,
 		"model": "auth.group",
 		"fields": {
-			"name": "Craig Elementary",
+			"name": "Glenwood - Basic Math 101",
 			"permissions": []
 		}
 	}, {
 		"pk": 2,
 		"model": "auth.group",
 		"fields": {
-			"name": "IT Technical Institute",
+			"name": "ITT Tech - AutoCAD",
 			"permissions": []
 		}
 	}, {
@@ -23,12 +22,12 @@
 			"is_active": true,
 			"is_superuser": true,
 			"is_staff": true,
-			"last_login": "2012-03-25 02:38:22",
+			"last_login": "2012-04-06T17:32:57.641",
 			"groups": [],
 			"user_permissions": [],
-			"password": "sha1$0c965$8decee6e971759acbd8196073efbdbc3873664ad",
+			"password": "pbkdf2_sha256$10000$4ZC2IR2ZQOO1$6tG2cXyYq9ShoeS7rgki4wU0y7UK/XqLpV/Sj0lLY44=",
 			"email": "admin@theknetwork.org",
-			"date_joined": "2012-03-25 01:35:49"
+			"date_joined": "2012-03-25T01:35:49"
 		}
 	}, {
 		"pk": 2,
@@ -40,12 +39,12 @@
 			"is_active": true,
 			"is_superuser": false,
 			"is_staff": false,
-			"last_login": "2012-03-25 14:20:57",
-			"groups": [1],
+			"last_login": "2012-03-25T14:20:57",
+			"groups": [],
 			"user_permissions": [],
 			"password": "sha1$0c965$8decee6e971759acbd8196073efbdbc3873664ad",
 			"email": "noemail@noemail.com",
-			"date_joined": "2012-03-25 14:20:57"
+			"date_joined": "2012-03-25T14:20:57"
 		}
 	}, {
 		"pk": 3,
@@ -57,12 +56,12 @@
 			"is_active": true,
 			"is_superuser": false,
 			"is_staff": true,
-			"last_login": "2012-03-25 14:20:57",
+			"last_login": "2012-03-25T14:20:57",
 			"groups": [],
 			"user_permissions": [],
 			"password": "sha1$0c965$8decee6e971759acbd8196073efbdbc3873664ad",
 			"email": "pkuperman@theknetwork.org",
-			"date_joined": "2012-03-25 14:20:57"
+			"date_joined": "2012-03-25T14:20:57"
 		}
 	}, {
 		"pk": 4,
@@ -74,12 +73,12 @@
 			"is_active": true,
 			"is_superuser": false,
 			"is_staff": true,
-			"last_login": "2012-03-25 14:20:57",
+			"last_login": "2012-03-25T14:20:57",
 			"groups": [],
 			"user_permissions": [],
 			"password": "sha1$0c965$8decee6e971759acbd8196073efbdbc3873664ad",
 			"email": "mustefa@theknetwork.org",
-			"date_joined": "2012-03-25 14:20:57"
+			"date_joined": "2012-03-25T14:20:57"
 		}
 	}, {
 		"pk": 5,
@@ -91,12 +90,12 @@
 			"is_active": true,
 			"is_superuser": false,
 			"is_staff": true,
-			"last_login": "2012-03-25 14:20:57",
+			"last_login": "2012-03-25T14:20:57",
 			"groups": [],
 			"user_permissions": [],
 			"password": "sha1$0c965$8decee6e971759acbd8196073efbdbc3873664ad",
 			"email": "chris@theknetwork.org",
-			"date_joined": "2012-03-25 14:20:57"
+			"date_joined": "2012-03-25T14:20:57"
 		}
 	}, {
 		"pk": 6,
@@ -108,12 +107,12 @@
 			"is_active": true,
 			"is_superuser": false,
 			"is_staff": false,
-			"last_login": "2012-03-25 14:20:57",
+			"last_login": "2012-03-25T14:20:57",
 			"groups": [1],
 			"user_permissions": [],
 			"password": "sha1$0c965$8decee6e971759acbd8196073efbdbc3873664ad",
 			"email": "admin@theknetwork.org",
-			"date_joined": "2012-03-25 14:20:57"
+			"date_joined": "2012-03-25T14:20:57"
 		}
 	}, {
 		"pk": 7,
@@ -125,12 +124,12 @@
 			"is_active": true,
 			"is_superuser": false,
 			"is_staff": false,
-			"last_login": "2012-03-25 14:20:57",
-			"groups": [2],
+			"last_login": "2012-03-25T14:20:57",
+			"groups": [],
 			"user_permissions": [],
 			"password": "sha1$0c965$8decee6e971759acbd8196073efbdbc3873664ad",
 			"email": "admin@theknetwork.org",
-			"date_joined": "2012-03-25 14:20:57"
+			"date_joined": "2012-03-25T14:20:57"
 		}
 	}, {
 		"pk": 8,
@@ -142,12 +141,166 @@
 			"is_active": true,
 			"is_superuser": false,
 			"is_staff": false,
-			"last_login": "2012-03-25 14:20:57",
+			"last_login": "2012-03-25T14:20:57",
 			"groups": [2],
 			"user_permissions": [],
 			"password": "sha1$0c965$8decee6e971759acbd8196073efbdbc3873664ad",
 			"email": "noemail@noemail.com",
-			"date_joined": "2012-03-25 14:20:57"
+			"date_joined": "2012-03-25T14:20:57"
+		}
+	}, {
+		"pk": 6,
+		"model": "admin.logentry",
+		"fields": {
+			"action_flag": 1,
+			"action_time": "2012-04-06T17:34:21.826",
+			"object_repr": "ITT Tech - AutoCAD",
+			"object_id": "2",
+			"change_message": "",
+			"user": 1,
+			"content_type": 13
+		}
+	}, {
+		"pk": 5,
+		"model": "admin.logentry",
+		"fields": {
+			"action_flag": 1,
+			"action_time": "2012-04-06T17:34:03.567",
+			"object_repr": "Glenwood - Basic Math 101",
+			"object_id": "1",
+			"change_message": "",
+			"user": 1,
+			"content_type": 13
+		}
+	}, {
+		"pk": 4,
+		"model": "admin.logentry",
+		"fields": {
+			"action_flag": 1,
+			"action_time": "2012-04-06T17:33:40.656",
+			"object_repr": "ITT Tech - AutoCAD",
+			"object_id": "2",
+			"change_message": "",
+			"user": 1,
+			"content_type": 2
+		}
+	}, {
+		"pk": 3,
+		"model": "admin.logentry",
+		"fields": {
+			"action_flag": 1,
+			"action_time": "2012-04-06T17:33:36.534",
+			"object_repr": "Glenwood - Basic Math 101",
+			"object_id": "1",
+			"change_message": "",
+			"user": 1,
+			"content_type": 2
+		}
+	}, {
+		"pk": 2,
+		"model": "admin.logentry",
+		"fields": {
+			"action_flag": 1,
+			"action_time": "2012-04-06T17:33:22.127",
+			"object_repr": "ITT Tech",
+			"object_id": "2",
+			"change_message": "",
+			"user": 1,
+			"content_type": 12
+		}
+	}, {
+		"pk": 1,
+		"model": "admin.logentry",
+		"fields": {
+			"action_flag": 1,
+			"action_time": "2012-04-06T17:33:12.055",
+			"object_repr": "Glenwood",
+			"object_id": "1",
+			"change_message": "",
+			"user": 1,
+			"content_type": 12
+		}
+	}, {
+		"pk": 1,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"user": 1,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 2,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"user": 2,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 3,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"user": 3,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 4,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"user": 4,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 5,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"user": 5,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 6,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"user": 6,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 7,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"user": 7,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 8,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"user": 8,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 1,
+		"model": "usermanagement.class",
+		"fields": {
+			"class_name": "Basic Math 101",
+			"class_description": "Addition and subtraction",
+			"group": 1,
+			"school": [1]
+		}
+	}, {
+		"pk": 2,
+		"model": "usermanagement.class",
+		"fields": {
+			"class_name": "AutoCAD",
+			"class_description": "AutoCAD, pretty much what you'd expect",
+			"group": 2,
+			"school": [2]
 		}
 	}
 ]
