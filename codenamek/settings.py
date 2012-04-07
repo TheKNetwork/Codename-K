@@ -2,6 +2,8 @@
 import os, sys
 from ConfigParser import RawConfigParser
 
+LOCAL_TEMPLATE_CONTEXT_PROCESSORS_PREFIX = LOCAL_TEMPLATE_CONTEXT_PROCESSORS = LOCAL_MIDDLEWARE_CLASSES_PREFIX = LOCAL_MIDDLEWARE_CLASSES = LOCAL_INSTALLED_APPS_PREFIX = LOCAL_INSTALLED_APPS = ()
+
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.path.pardir))
 
 STATIC_FILE_PATH = os.path.join(os.path.dirname(__file__), 'static')
@@ -143,6 +145,16 @@ TEMPLATE_DIRS = (
     TEMPLATE_FILE_PATH,
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages"
+    )
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -200,3 +212,21 @@ LOGGING = {
         },
     }
 }
+
+try:
+    from settings_local import *
+except ImportError:
+    pass
+
+TEMPLATE_CONTEXT_PROCESSORS = \
+    LOCAL_TEMPLATE_CONTEXT_PROCESSORS_PREFIX + \
+    TEMPLATE_CONTEXT_PROCESSORS + \
+    LOCAL_TEMPLATE_CONTEXT_PROCESSORS
+MIDDLEWARE_CLASSES = \
+    LOCAL_MIDDLEWARE_CLASSES_PREFIX + \
+    MIDDLEWARE_CLASSES + \
+    LOCAL_MIDDLEWARE_CLASSES
+INSTALLED_APPS = \
+    LOCAL_INSTALLED_APPS_PREFIX + \
+    INSTALLED_APPS + \
+    LOCAL_INSTALLED_APPS
