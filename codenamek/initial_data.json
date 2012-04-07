@@ -1,4 +1,5 @@
-[   {
+[
+	{
 		"pk": 1,
 		"model": "auth.group",
 		"fields": {
@@ -22,7 +23,7 @@
 			"is_active": true,
 			"is_superuser": true,
 			"is_staff": true,
-			"last_login": "2012-04-06T17:32:57.641",
+			"last_login": "2012-04-06T22:20:40.876",
 			"groups": [],
 			"user_permissions": [],
 			"password": "pbkdf2_sha256$10000$4ZC2IR2ZQOO1$6tG2cXyYq9ShoeS7rgki4wU0y7UK/XqLpV/Sj0lLY44=",
@@ -150,6 +151,52 @@
 		}
 	}, {
 		"pk": 1,
+		"model": "usermanagement.class",
+		"fields": {
+			"class_name": "Basic Math 101",
+			"class_description": "Addition and subtraction",
+			"group": 1
+		}
+	}, {
+		"pk": 2,
+		"model": "usermanagement.class",
+		"fields": {
+			"class_name": "AutoCAD",
+			"class_description": "AutoCAD...",
+			"group": 2
+		}
+	}, {
+		"pk": 1,
+		"model": "usermanagement.school",
+		"fields": {
+			"address_city": "",
+			"school_url": "",
+			"users": [2],
+			"address_line_one": "",
+			"school_name": "Glenwood",
+			"gender_flag": "",
+			"address_state": "",
+			"classes": [1],
+			"address_country": "",
+			"address_line_two": ""
+		}
+	}, {
+		"pk": 2,
+		"model": "usermanagement.school",
+		"fields": {
+			"address_city": "",
+			"school_url": "",
+			"users": [8],
+			"address_line_one": "",
+			"school_name": "ITT Tech",
+			"gender_flag": "",
+			"address_state": "",
+			"classes": [2],
+			"address_country": "",
+			"address_line_two": ""
+		}
+	}, {
+		"pk": 1,
 		"model": "usermanagement.userprofile",
 		"fields": {
 			"home_address": "",
@@ -211,24 +258,6 @@
 			"home_address": "",
 			"user": 8,
 			"personal_url": ""
-		}
-	}, {
-		"pk": 1,
-		"model": "usermanagement.class",
-		"fields": {
-			"class_name": "Basic Math 101",
-			"class_description": "Addition and subtraction",
-			"group": 1,
-			"school": [1]
-		}
-	}, {
-		"pk": 2,
-		"model": "usermanagement.class",
-		"fields": {
-			"class_name": "AutoCAD",
-			"class_description": "AutoCAD, pretty much what you'd expect",
-			"group": 2,
-			"school": [2]
 		}
 	}
 ]
