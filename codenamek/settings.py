@@ -168,6 +168,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'registration',
     'profiles',
+    'south',
     'django.contrib.admin',
     'codenamek.whiteboard',
     'codenamek.usermanagement',
@@ -213,6 +214,12 @@ LOGGING = {
     }
 }
 
+KHAN_URL = ""
+CONSUMER_KEY = ""
+CONSUMER_SECRET = ""
+
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 try:
     from settings_local import *
 except ImportError:

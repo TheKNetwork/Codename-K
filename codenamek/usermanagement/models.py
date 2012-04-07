@@ -63,6 +63,7 @@ class UserProfile(models.Model):
     personal_url = models.URLField(blank=True)
     home_address = models.TextField(blank=True)
     user = models.ForeignKey(User, unique=True)
+    access_token = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         verbose_name = _('User profile')
