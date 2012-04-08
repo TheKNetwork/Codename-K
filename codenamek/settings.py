@@ -168,7 +168,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'registration',
     'profiles',
-    'south',
+    # 'south',
     'django.contrib.admin',
     'codenamek.whiteboard',
     'codenamek.usermanagement',
