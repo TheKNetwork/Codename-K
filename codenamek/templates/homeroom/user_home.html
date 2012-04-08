@@ -4,6 +4,14 @@
 
 <a class="btn btn-small btn-primary" href="/class/session">Join a Live Classroom Session!</a><p/><p/>
 
+{% if messages %}
+    <div class="alert alert-success">
+        {% for msg in messages %}
+            {{ msg }}
+        {% endfor %}
+    </div>
+{% endif %}
+
 <div id="school-list">
 <h3>Schools <small>and their members</small></h3>
 <table class="table table-bordered">
