@@ -1,13 +1,7 @@
-
 /.pydevproject
 /.project
-/.idea/.name
-/.idea/encodings.xml
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/scopes/scope_settings.xml
-/.idea/vcs.xml
-/.idea/workspace.xml
-/.idea/www.iml
+/.idea/
 *.pyc
+*.db
+*.mo
+settings_local.py
