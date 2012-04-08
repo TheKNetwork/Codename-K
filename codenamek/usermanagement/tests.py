@@ -33,4 +33,16 @@ class SimpleTest(TestCase):
         print "Count of users for school is %s" % count_of
         pass
         
+    def test_count_users_for_class(self):
+        school_class = Class.objects.get(
+                                         school=(School.objects.get(school_name="ITT Tech"))
+                                )
+        
+        users = school_class.user_set.all()
+        count_of = users.count()
+        
+        self.assertGreater(count_of, 0, "No users found for %s. Is it still in the initialdata.json file?" % school_class.name)
+        
+        print "Count of users for class is %s" % count_of
+        pass        
     
