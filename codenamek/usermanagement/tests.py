@@ -50,11 +50,10 @@ class SimpleTest(TestCase):
         schools = get_schools_for_user(username="bsmith")
         
         self.assertGreater(schools.count(), 0, "No schools were found but should have been")
-        print "%s school(s) were found for %s" % (schools.count(), "bsmith")
-
-    def test_get_classes_for_school_and_user(self):
-        school=(School.objects.get(school_name="ITT Tech"))
-        user = User.objects.get(username="bsmith")
+        print "%s school(s) were found for %s" % (schools.count(), "ccoy")
+        print schools
         
-        classes = get_classes_for_school_and_user(school.id, user.id)
-        pass
+        for school in schools:
+            print school.class_set.all()
+        
+        
