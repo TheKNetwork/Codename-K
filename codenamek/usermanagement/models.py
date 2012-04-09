@@ -25,9 +25,6 @@ def add_class(school_id, **kwargs):
 def get_schools_for_user(**kwargs):
     user = User.objects.get(**kwargs)
     schools = School.objects.filter(group_ptr=user.groups.filter(name__startswith="school."))
-    for school in schools:
-        school.class_set.all()
-        
     return schools
 
 SCHOOL_GENDER_FLAG_CHOICES = (
