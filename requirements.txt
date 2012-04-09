@@ -7,3 +7,5 @@ httplib2
 django-registration
 django-profiles
 south
+requests
+oauth
