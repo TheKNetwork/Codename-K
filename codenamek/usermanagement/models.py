@@ -22,6 +22,11 @@ def add_class(school_id, **kwargs):
     school_class.save()
     return school_class
 
+def get_schools_for_user(**kwargs):
+    user = User.objects.get(**kwargs)
+    schools = user.groups.filter(name__startswith="school.")
+    return schools
+
 SCHOOL_GENDER_FLAG_CHOICES = (
     ('B','Boys Only'),
     ('G','Girls Only'),

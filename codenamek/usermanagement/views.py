@@ -21,7 +21,6 @@ consumer_key = getattr(settings, 'CONSUMER_KEY', None)
 consumer_secret = getattr(settings, 'CONSUMER_SECRET', None)
 callback = "http://%s%s" % (Site.objects.get_current(), '/khan-academy/auth/callback/')
 
-
 @login_required
 def index(request):
     groupList = Group.objects.all()
