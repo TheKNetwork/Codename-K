@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User, Group
 from codenamek.usermanagement.models import *
+from codenamek.usermanagement.usermanagement_api import *
 
 from django.test import TestCase
 
@@ -53,7 +54,7 @@ class SimpleTest(TestCase):
         mustefa = User.objects.get(username="mjoshen")
         school = School.objects.get(school_name="ITT Tech")
         school_class = school.class_set.filter(class_name="Math 101")[0]
-        invite_user_to_class(ccoy.id, mustefa.id, school_class.id)
+        invitation = invite_user_to_class(ccoy.id, mustefa.id, school_class.id)
         
         count_of_invitations_received = mustefa.invitations_received.count()
         self.assertGreater(count_of_invitations_received, 0, "No invitations were received by mustefa!")
@@ -94,4 +95,14 @@ class SimpleTest(TestCase):
         
         print "Found %s rejected invitation(s)" % count_of_rejected
         self.assertGreater(count_of_rejected, 0, "No invitations were rejected by mustefa")   
+        
+    def test_count_invitations_to_class(self):
+        ccoy = User.objects.get(username="ccoy")
+        mustefa = User.objects.get(username="mjoshen")
+        school = School.objects.get(school_name="ITT Tech")
+        school_class = school.class_set.filter(class_name="Math 101")[0]
+        invitation = invite_user_to_class(ccoy.id, mustefa.id, school_class.id)
+        
+        count_of_class_invitations = school_class.invitations.count()
+        self.assertGreater(count_of_class_invitations, 0, "No invitations were created for this class")   
         

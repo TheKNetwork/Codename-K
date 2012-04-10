@@ -83,7 +83,7 @@ class ClassInvitation(models.Model):
     to the inviting user and the user that is invited, along with the class they
     have been invited to.
     """
-    school_class = models.ForeignKey(Class)
+    school_class = models.ForeignKey(Class, related_name="invitations")
     invited_user = models.ForeignKey(User, related_name="invitations_received")
     invited_by = models.ForeignKey(User, related_name="invitations_sent")
     invited_on_date = models.DateTimeField(auto_now_add=True)
