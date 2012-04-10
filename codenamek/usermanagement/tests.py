@@ -9,7 +9,6 @@ class SimpleTest(TestCase):
         school = add_school(school_name="Test School")
         associated_group_name = school.name
         self.assertIsNotNone(associated_group_name, "Saving the school didn't create the correct group entry")
-        print "Auto-created (school) group name is %s" % associated_group_name
         pass
     
     def test_add_class_to_school(self):
@@ -18,19 +17,15 @@ class SimpleTest(TestCase):
         school_class = add_class(school_id=school.id, class_name="Math 101")
         associated_group_name = school_class.name
         self.assertIsNotNone(associated_group_name, "Saving the class didn't create the correct group entry")
-        print "Auto-created (class) group name is %s" % associated_group_name
         pass
     
     def test_count_users_for_school(self):
         school = School.objects.get(school_name="ITT Tech")
-        print "School retrieved is %s" % school.name
         
         users = school.user_set.all()
         count_of = users.count()
         
         self.assertGreater(count_of, 0, "No users found for ITT Tech. Is it still in the initialdata.json file?")
-        
-        print "Count of users for school is %s" % count_of
         pass
         
     def test_count_users_for_class(self):
@@ -42,20 +37,28 @@ class SimpleTest(TestCase):
         count_of = users.count()
         
         self.assertGreater(count_of, 0, "No users found for %s. Is it still in the initialdata.json file?" % school_class.name)
-        
-        print "Count of users for class is %s" % count_of
         pass    
     
     def test_get_schools_for_user(self):
         schools = get_schools_for_user(username="bsmith")
         
         self.assertGreater(schools.count(), 0, "No schools were found but should have been")
-        print "%s school(s) were found for %s" % (schools.count(), "ccoy")
-        print schools
-        
-        for school in schools:
-            print school.class_set.all()
         
     def test_get_main_school_for_user(self):
         main_school = get_main_school_for_user(username="bsmith")
-        print "Main school is %s" % main_school
+        self.assertIsNotNone(main_school, "There should have been a main school set for the user bsmith, but we can't find one")
+        
+    def test_invite_a_user_to_math_101(self):
+        ccoy = User.objects.get(username="ccoy")
+        mustefa = User.objects.get(username="mjoshen")
+        school = School.objects.get(school_name="ITT Tech")
+        school_class = school.class_set.filter(class_name="Math 101")[0]
+        #invitation_message = "Yo. We want you in the class, bro."
+        invite_user_to_class(inviting_id=ccoy.id, invited_id=mustefa.id, school_class_id=school_class.id)
+        
+        count_of_invitations_received = mustefa.invitations_received.count()
+        self.assertGreater(count_of_invitations_received, 0, "No invitations were received by mustefa!")
+        
+        count_of_invitations_sent = ccoy.invitations_sent.count()
+        self.assertGreater(count_of_invitations_sent, 0, "No invitations were sent by ccoy!")
+        

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User, Group
 from django.utils.translation import ugettext as _
 from django.db.models import signals
 from django.core.exceptions import ObjectDoesNotExist
+import os
 
 from codenamek.usermanagement.signals import *
 
@@ -31,6 +32,17 @@ def get_main_school_for_user(**kwargs):
     user = User.objects.get(**kwargs)
     user_profile = UserProfile.objects.get(user__id=user.id)
     return user_profile.main_school
+
+def invite_user_to_class(inviting_id, invited_id, school_class_id):
+    invited_by = User.objects.get(id=inviting_id)
+    invited_user = User.objects.get(id=invited_id)
+    school_class = Class.objects.get(id=school_class_id)
+    class_invitation = ClassInvitation.objects.create(
+                            school_class=school_class,
+                            invited_user=invited_user,
+                            invited_by=invited_by
+                        )
+    
 
 SCHOOL_GENDER_FLAG_CHOICES = (
     ('B','Boys Only'),
@@ -76,6 +88,21 @@ class Class(Group):
 
     def __unicode__(self):
         return u"{0}".format(self.class_name)    
+    
+class ClassInvitation(models.Model):
+    school_class = models.ForeignKey(Class)
+    invited_user = models.ForeignKey(User, related_name="invitations_received")
+    invited_by = models.ForeignKey(User, related_name="invitations_sent")
+    invited_on_date = models.DateTimeField(auto_now_add=True)
+    rejected_on_date = models.DateTimeField(null=True, blank=True)
+    accepted_on_date = models.DateTimeField(null=True, blank=True)
+    
+    class Meta:
+        verbose_name = _('Class invitation')
+        verbose_name_plural = _('Class invitations')
+
+    def __unicode__(self):
+        return "Invitation to class:(%s) sent to %s from %s" % (self.school_class, self.invited_user, self.invited_by)
     
 class UserProfile(models.Model):
     personal_url = models.URLField(blank=True)
