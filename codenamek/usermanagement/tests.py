@@ -56,4 +56,6 @@ class SimpleTest(TestCase):
         for school in schools:
             print school.class_set.all()
         
-        
+    def test_get_main_school_for_user(self):
+        main_school = get_main_school_for_user(username="bsmith")
+        print "Main school is %s" % main_school

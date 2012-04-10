@@ -23,7 +23,7 @@
 
 <section id="school">
 	
-	<h3>My School: <small>SchoolName</small></h3> 
+	<h3>My School: <small>{{ main_school }}</small></h3> 
 	
 	<div class="school-actions">
 
@@ -71,13 +71,15 @@
 					</thead>
 			
 					<tbody>
+						{% for school_class in main_school.class_set.all %}
 						<tr>
-							<td><a href=#Class><i class="icon-book"></i> Math 103</a></td>
+							<td><a href=#Class><i class="icon-book"></i> {{school_class}}</a></td>
 							<td><a href=#Users><i class="icon-user"></i> 2 Users</a></td>
 							<td><a href=#Join-Class><i class="icon-plus-sign"></i> Invite Users</a></td>
 							<td><a href=#Pending-Invites>5 Pending Invites</a></td>
 						</tr>
 				
+						<!-- Save this inline for reference for now
 						<tr>
 							<td><href=#Class><i class="icon-book"></i> Math 101</a></td>
 							<td><a href=#Users><i class="icon-user"></i> 2 Users</a></td>
@@ -89,7 +91,9 @@
 							<td><a href=#Users><i class="icon-user"></i> 2 Users</a></td>
 							<td><a href=#Join-Class><i class="icon-envelope"></i> Request Invitation</a></td>
 							<td></td>
-						</tr>	
+						</tr>
+						-->	
+						{% endfor %}
 					</table>
 		</div>
 	</div>	
