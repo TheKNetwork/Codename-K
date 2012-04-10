@@ -27,6 +27,11 @@ def get_schools_for_user(**kwargs):
     schools = School.objects.filter(group_ptr=user.groups.filter(name__startswith="school."))
     return schools
 
+def get_main_school_for_user(**kwargs):
+    user = User.objects.get(**kwargs)
+    user_profile = UserProfile.objects.get(user__id=user.id)
+    return user_profile.main_school
+
 SCHOOL_GENDER_FLAG_CHOICES = (
     ('B','Boys Only'),
     ('G','Girls Only'),
@@ -77,6 +82,7 @@ class UserProfile(models.Model):
     home_address = models.TextField(blank=True)
     user = models.ForeignKey(User, unique=True)
     access_token = models.CharField(max_length=255, blank=True, null=True)
+    main_school = models.ForeignKey(School, null=True, blank=True)
 
     class Meta:
         verbose_name = _('User profile')
