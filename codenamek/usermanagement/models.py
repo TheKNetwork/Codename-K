@@ -23,11 +23,20 @@ SCHOOL_GENDER_FLAG_CHOICES = (
 )
     
 class UserHistory(models.Model):
+    """
+    When a user does stuff, we want to track some of it. As yet
+    mostly undefined.
+    """
     user = models.ForeignKey(User, unique=True)
     event = models.CharField(max_length=255)
     event_time = models.DateTimeField()
 
 class School(Group):
+    """
+    The school object represents, as you could probably guess, a school. A school
+    IS a django group, which makes it easy to manage authorization and membership
+    without getting too complex.
+    """
     school_name = models.CharField(max_length=100, unique=True)
     address_line_one = models.CharField(max_length=100, blank=True)
     address_line_two = models.CharField(max_length=100, blank=True)
@@ -48,6 +57,13 @@ class School(Group):
     
 
 class Class(Group):
+    """
+    A class is an organization within a school. It might physically be many things,
+    but it amounts to a grouping of people that attend a class, usually. A class might
+    even end up being a study group. As is the case with a school object, the Class
+    that belongs to a school is also a django auth group for the same reasons as the
+    school object.
+    """
     class_name = models.CharField(max_length=50)
     class_description = models.TextField(blank=True)
     school = models.ForeignKey(School)
@@ -62,6 +78,11 @@ class Class(Group):
         return u"{0}".format(self.class_name)    
     
 class ClassInvitation(models.Model):
+    """
+    A class invitation is a record that is marked as accepted or rejected, bound
+    to the inviting user and the user that is invited, along with the class they
+    have been invited to.
+    """
     school_class = models.ForeignKey(Class)
     invited_user = models.ForeignKey(User, related_name="invitations_received")
     invited_by = models.ForeignKey(User, related_name="invitations_sent")
@@ -77,6 +98,10 @@ class ClassInvitation(models.Model):
         return "Invitation to class:(%s) sent to %s from %s" % (self.school_class, self.invited_user, self.invited_by)
     
 class UserProfile(models.Model):
+    """
+    A user profile contains extra information about a user beyond that of the
+    existing django auth User object.
+    """
     personal_url = models.URLField(blank=True)
     home_address = models.TextField(blank=True)
     user = models.ForeignKey(User, unique=True)
