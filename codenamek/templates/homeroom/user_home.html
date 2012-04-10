@@ -76,7 +76,7 @@
 							<td><a href=#Class><i class="icon-book"></i> {{school_class}}</a></td>
 							<td><a href=#Users><i class="icon-user"></i> {{school_class.user_set.all.count}} Users</a></td>
 							<td><a href=#Join-Class><i class="icon-plus-sign"></i> Invite Users</a></td>
-							<td><a href=#Pending-Invites>5 Pending Invites</a></td>
+							<td><a href=#Pending-Invites>{{ school_class.invitations.count }} Pending Invites</a></td>
 						</tr>
 						{% endfor %}
 						

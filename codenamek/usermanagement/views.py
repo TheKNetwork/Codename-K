@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from django.contrib import messages
 from django.contrib.sites.models import Site
 from codenamek.usermanagement.models import *
+from codenamek.usermanagement.usermanagement_api import *
 
 from oauth.oauth import OAuthConsumer, OAuthToken
 import requests
