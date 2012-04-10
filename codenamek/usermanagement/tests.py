@@ -53,12 +53,45 @@ class SimpleTest(TestCase):
         mustefa = User.objects.get(username="mjoshen")
         school = School.objects.get(school_name="ITT Tech")
         school_class = school.class_set.filter(class_name="Math 101")[0]
-        #invitation_message = "Yo. We want you in the class, bro."
-        invite_user_to_class(inviting_id=ccoy.id, invited_id=mustefa.id, school_class_id=school_class.id)
+        invite_user_to_class(ccoy.id, mustefa.id, school_class.id)
         
         count_of_invitations_received = mustefa.invitations_received.count()
         self.assertGreater(count_of_invitations_received, 0, "No invitations were received by mustefa!")
         
         count_of_invitations_sent = ccoy.invitations_sent.count()
         self.assertGreater(count_of_invitations_sent, 0, "No invitations were sent by ccoy!")
+        
+    def test_accept_class_invitation(self):
+        class_invitation = invite_user_to_class_by_lookup_names("ccoy","mjoshen","ITT Tech","Math 101")
+        mustefa = User.objects.get(username="mjoshen")
+        count_of_invitations_received = mustefa.invitations_received.count()
+        self.assertGreater(count_of_invitations_received, 0, "No invitations were received by mustefa")
+        
+        accept_invitation_to_class(mustefa, class_invitation.id)
+        invitations_accepted = mustefa.invitations_received.all()
+        count_of_accepted = 0
+        for invitation in invitations_accepted:
+            if invitation.accepted_on_date != None:
+                count_of_accepted = count_of_accepted + 1
+        
+        
+        print "Found %s accepted invitation(s)" % count_of_accepted
+        self.assertGreater(count_of_accepted, 0, "No invitations were accepted by mustefa")
+        
+    def test_reject_class_invitation(self):
+        class_invitation = invite_user_to_class_by_lookup_names("ccoy","mjoshen","ITT Tech","Math 101")
+        mustefa = User.objects.get(username="mjoshen")
+        count_of_invitations_received = mustefa.invitations_received.count()
+        self.assertGreater(count_of_invitations_received, 0, "No invitations were received by mustefa")
+        
+        reject_invitation_to_class(mustefa, class_invitation.id)
+        invitations_rejected = mustefa.invitations_received.all()
+        count_of_rejected = 0
+        for invitation in invitations_rejected:
+            if invitation.rejected_on_date != None:
+                count_of_rejected = count_of_rejected + 1
+        
+        
+        print "Found %s rejected invitation(s)" % count_of_rejected
+        self.assertGreater(count_of_rejected, 0, "No invitations were rejected by mustefa")   
         
