@@ -2,8 +2,6 @@
 
 {% block content %}
 
-<a class="btn btn-small btn-primary" href="/class/session">Join a Live Classroom Session!</a><p/><p/>
-
 {% if messages %}
     <div class="alert alert-success">
         {% for msg in messages %}
@@ -12,44 +10,94 @@
     </div>
 {% endif %}
 
-<div id="school-list">
-<h3>Schools <small>and their members</small></h3>
-<table class="table table-bordered">
-	<thead>
-		<tr>
-			<th>School name</th>
-			<th>Members</th>
-		</tr>
-		{% for group in groups %}
-		<tr>
-			<td>{{ group.name }}</td>
-			<td>
-				{% for userO in group.user_set.all %}{{ userO }},{% endfor %}
-			</td>
-		</tr>
-		{% endfor %}
-	</thead>
-</table>
-</div>
+<!-- Bread Crumb Navigation -->
+<section id="breadcrumbs">
+	<div id="breadcrumbs">
+		<ul class="breadcrumb">
+			<li>
+				<a href="#"><i class="icon-home"></i> Homeroom</a>
+			</li>
+		</ul>
+	</div>
+</section>
 
-<div id="user-list">
-<h3>Users <small>Students and Teachers</small></h3>	
-<table class="table table-bordered">
-	<thead>
-		<tr>
-			<th>Full name</th>
-			<th>Username</th>
-			<th>Email Address</th>
-		</tr>
-		{% for userObject in users %}
-		<tr>
-			<td>{{ userObject.get_full_name }}</td>
-			<td>{{ userObject }}</td>
-			<td>{{ userObject.email }}</td>
-		</tr>
-		{% endfor %}
-	</thead>
-</table>
-</div>
+<section id="school">
+	
+	<h3>My School: <small>{{ main_school }}</small></h3> 
+	
+	<div class="school-actions">
+
+		<div id="new-user-prompt" class="alert alert-info">
+			<div class="row">
+				<div class="span12">
+					<a href="#CreateClass">Create a Class</a> and invite users {% if classes %}, or request to join a class listed below {% endif %} to get started
+				</div>
+			</div>
+		</div>
+		
+		<div id="create-class-button" class="btn btn-primary pull-left">
+			Create Class
+		</div>
+
+		<div class="span2">
+			<div id="class-filter">
+				<form class="form-vertical pull-left">
+					<fieldset>
+						<div class="control-group"> 
+							<div class="controls">
+								<select id="class-filter" class="span2">	
+									<option>Show All Classes</option>
+									<option>Show My Classes</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="class-list">
+		<div class="row">
+			<div class="span12">
+				<table class="table table-striped table-condensed">
+					<thead>
+						<tr>
+							<th>Class Name</th>
+							<th>Info</th>
+							<th>Actions</th>	
+							<th></th>
+						</tr>
+					</thead>
+			
+					<tbody>
+						{% for school_class in main_school.class_set.all %}
+						<tr>
+							<td><a href=#Class><i class="icon-book"></i> {{school_class}}</a></td>
+							<td><a href=#Users><i class="icon-user"></i> {{school_class.user_set.all.count}} Users</a></td>
+							<td><a href=#Join-Class><i class="icon-plus-sign"></i> Invite Users</a></td>
+							<td><a href=#Pending-Invites>{{ school_class.invitations.count }} Pending Invites</a></td>
+						</tr>
+						{% endfor %}
+						
+						<!-- Save this inline for reference for now
+						<tr>
+							<td><href=#Class><i class="icon-book"></i> Math 101</a></td>
+							<td><a href=#Users><i class="icon-user"></i> 2 Users</a></td>
+							<td><a href=#Join-Class><i class="icon-envelope"></i> Request Invitation</a></td>
+							<td></td>
+						</tr>	
+						<tr>
+							<td><href=#Class><i class="icon-book"></i> Math 102</a></td>
+							<td><a href=#Users><i class="icon-user"></i> 2 Users</a></td>
+							<td><a href=#Join-Class><i class="icon-envelope"></i> Request Invitation</a></td>
+							<td></td>
+						</tr>
+						-->	
+					</table>
+		</div>
+	</div>	
+	
+</section>
 
 {% endblock %}
