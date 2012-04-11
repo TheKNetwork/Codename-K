@@ -9,3 +9,4 @@ django-profiles
 south
 requests
 oauth
+django-extentions
