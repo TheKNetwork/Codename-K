@@ -1,4 +1,0 @@
--r requirements.txt
--r requirements-test.txt
-django_extensions
-django-debug-toolbar
