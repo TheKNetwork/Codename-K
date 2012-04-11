@@ -7,6 +7,7 @@ from django.conf import settings
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.contrib import messages
 from django.contrib.sites.models import Site
+
 from codenamek.usermanagement.models import *
 from codenamek.usermanagement.usermanagement_api import *
 
