@@ -8,6 +8,9 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from django.contrib import messages
 from django.contrib.sites.models import Site
 
+from codenamek.usermanagement.models import *
+from codenamek.usermanagement.usermanagement_api import *
+
 from oauth.oauth import OAuthConsumer, OAuthToken
 import requests
 import logging
@@ -23,13 +26,10 @@ callback = "http://%s%s" % (Site.objects.get_current(), '/khan-academy/auth/call
 
 @login_required
 def index(request):
-    groupList = Group.objects.all()
-    logger.debug('Count of groups: ' + str(groupList.count()))
+    main_school = get_main_school_for_user(id=request.user.id)
+    # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
+    data = {'user': request.user, 'main_school': main_school}
     
-    userList  = User.objects.all()
-    logger.debug('Count of users: ' + str(userList.count()))
-    
-    data = {'user': request.user, 'groups': groupList, 'users': userList}
     return render(request, "homeroom/user_home.html", data)
 
 
