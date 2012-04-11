@@ -75,11 +75,11 @@ def invite_user_to_class_by_lookup_names(inviting_user_name, invited_user_name, 
     method is mostly for easy test writing. It is recommended to use the original 
     'invite_user_to_class' method.
     """
-    ccoy = User.objects.get(username=inviting_user_name)
-    mustefa = User.objects.get(username=invited_user_name)
+    inviter = User.objects.get(username=inviting_user_name)
+    invited = User.objects.get(username=invited_user_name)
     school = School.objects.get(school_name=school_name)
     school_class = school.class_set.filter(class_name=school_class_name)[0]
-    return invite_user_to_class(ccoy.id, mustefa.id, school_class.id)
+    return invite_user_to_class(inviter.id, invited.id, school_class.id)
     
 def accept_invitation_to_class(current_user, invitation_id):
     """
