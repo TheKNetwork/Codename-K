@@ -39,7 +39,7 @@ def symlink_current_release():
 
 def install_requirements():
     """Install the required packages using pip"""
-    run('cd %(path)s/releases/current; %(path)s/python/bin/pip install -r %(path)s/releases/current/codenamek/dependencies.txt' % env)
+    run('cd %(path)s/releases/current; %(path)s/python/bin/pip install -r %(path)s/releases/current/dependencies.txt' % env)
 
 def migrate():
     """Run our migrations"""
