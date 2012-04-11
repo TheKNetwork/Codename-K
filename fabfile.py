@@ -47,5 +47,9 @@ def migrate():
 
 def restart_apache():
     "Reboot Apache2 server."
+<<<<<<< HEAD
     sudo("service apache2 reload",pty=True)
 
+=======
+    sudo("service apache2 reload",pty=True)
+>>>>>>> develop
