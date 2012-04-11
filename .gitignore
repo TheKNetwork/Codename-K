@@ -4,4 +4,5 @@
 *.pyc
 *.db
 *.mo
+/.settings
 settings_local.py
