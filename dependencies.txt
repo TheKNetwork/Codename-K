@@ -9,6 +9,7 @@ django-profiles
 south
 requests
 oauth
+django_extensions
 
 # requirements-dev.txt
 # -r requirements.txt
