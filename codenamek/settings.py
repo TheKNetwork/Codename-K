@@ -166,12 +166,14 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_socketio',
     'registration',
     'profiles',
     # 'south',
     'django.contrib.admin',
     'codenamek.whiteboard',
     'codenamek.usermanagement',
+    'codenamek.chat',
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7

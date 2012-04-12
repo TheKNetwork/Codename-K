@@ -16,6 +16,9 @@ urlpatterns = patterns('',
     url(r'^accounts/', include('registration.urls')),
     url(r'^admin/', include(admin.site.urls)),
     
+    # added for chat, socketio
+    url("", include("django_socketio.urls")),
+    
     # added for registration backend
     url(r'^accounts/register/$', 'usermanagement.views.register',
         {'backend': 'usermanagement.registration_backend.RegistrationBackend'},
