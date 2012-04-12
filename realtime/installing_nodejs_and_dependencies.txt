@@ -1,0 +1,14 @@
+# NOT NECESSARY IF YOU DON'T NEED TO RUN A SERVER LOCALLY
+
+cd /pick_a_folder
+git clone git://github.com/joyent/node.git
+
+cd node
+git checkout v0.4.12  #or latest stable version
+
+./configure
+make
+make install #finish nodejs install
+
+curl http://npmjs.org/install.sh | sh #install npm
+
