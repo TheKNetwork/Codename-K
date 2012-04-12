@@ -10,5 +10,20 @@ git checkout v0.4.12  #or latest stable version
 make
 make install #finish nodejs install
 
-curl http://npmjs.org/install.sh | sh #install npm
+# curl http://npmjs.org/install.sh | sh #install npm
+# The above is no longer needed because node comes with npm.
+# I would imagine that this is one of the reasons the
+# make/make install takes as long as it does
+# -- Chris Coy
+
+After all that, you have to be specific when installing the 
+modules:
+
+1. npm install connect@0.5.10
+2. npm install express@1.0.7
+3. npm install socket.io
+4. find . -name '.git' -prun-o -regex '.*\.\(c\|cpp\|h\|hccp\)$' -prune -o -print   | xargs grep "'sys'" -l   | xargs sed -i "s/\bsys\b/util/g"
+
+The last line fixes incompatibility issues in node modules that haven't been
+updated to the correct calls in node yet. Cool, eh?
 
