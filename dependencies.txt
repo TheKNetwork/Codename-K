@@ -10,6 +10,7 @@ south
 requests
 oauth
 django_extensions
+django-socketio
 
 # requirements-dev.txt
 # -r requirements.txt
