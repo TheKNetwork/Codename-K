@@ -13,7 +13,7 @@ var io = require('socket.io').listen(app);
 app.listen(8080);
 
 app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/client_example.html');
+  res.sendfile(__dirname + '/index.html');
 });
 
 // usernames which are currently connected to the chat
