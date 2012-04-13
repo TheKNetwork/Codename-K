@@ -22,20 +22,18 @@ def index(request):
     return render(request, "schools/schools.html", data)
 
 @login_required
-def create_a_class(request, school_id):
+def create_a_class(request, _school_id):
     if request.method == 'POST': # If the form has been submitted...
-        form = ClassroomForm(request.POST) # A form bound to the POST data
-        if form.is_valid(): # All validation rules pass
-            # Process the data in form.cleaned_data
-            # ...
-            print "We did some stuff here."
-            return HttpResponseRedirect('/homeroom/') # Redirect after POST
+        form = ClassroomForm(request.POST)
+        if form.is_valid(): 
+            add_class(school_id=_school_id, class_name=form['class_name'], class_description=form['class_description'] )
+            return HttpResponseRedirect('/homeroom/') 
     else:
         form = ClassroomForm() # An unbound form
 
     return render_to_response('schools/add_class.html', {
-        'form': form,
-    })
+        'form': form, 'school_id': _school_id,
+    }, context_instance=RequestContext(request, {}))
 
 @login_required
 def classes_for_school(request, school_id):
