@@ -6,19 +6,6 @@ from codenamek.usermanagement.usermanagement_api import *
 from django.test import TestCase
 
 class SimpleTest(TestCase):
-    def test_add_school(self):
-        school = add_school(school_name="Test School")
-        associated_group_name = school.name
-        self.assertIsNotNone(associated_group_name, "Saving the school didn't create the correct group entry")
-        pass
-    
-    def test_add_class_to_school(self):
-        school = add_school(school_name="Test School")
-        
-        school_class = add_class(school_id=school.id, class_name="Math 101")
-        associated_group_name = school_class.name
-        self.assertIsNotNone(associated_group_name, "Saving the class didn't create the correct group entry")
-        pass
     
     def test_count_users_for_school(self):
         school = School.objects.get(school_name="ITT Tech")
@@ -30,7 +17,7 @@ class SimpleTest(TestCase):
         pass
         
     def test_count_users_for_class(self):
-        school_class = Class.objects.get(
+        school_class = Classroom.objects.get(
             school=(School.objects.get(school_name="ITT Tech"))
             )
         
@@ -45,15 +32,11 @@ class SimpleTest(TestCase):
         
         self.assertGreater(schools.count(), 0, "No schools were found but should have been")
         
-    def test_get_main_school_for_user(self):
-        main_school = get_main_school_for_user(username="bsmith")
-        self.assertIsNotNone(main_school, "There should have been a main school set for the user bsmith, but we can't find one")
-        
     def test_invite_a_user_to_math_101(self):
         ccoy = User.objects.get(username="ccoy")
         mustefa = User.objects.get(username="mjoshen")
         school = School.objects.get(school_name="ITT Tech")
-        school_class = school.class_set.filter(class_name="Math 101")[0]
+        school_class = school.classrooms.filter(class_name="Math 101")[0]
         invitation = invite_user_to_class(ccoy.id, mustefa.id, school_class.id)
         
         count_of_invitations_received = mustefa.invitations_received.count()
@@ -100,7 +83,7 @@ class SimpleTest(TestCase):
         ccoy = User.objects.get(username="ccoy")
         mustefa = User.objects.get(username="mjoshen")
         school = School.objects.get(school_name="ITT Tech")
-        school_class = school.class_set.filter(class_name="Math 101")[0]
+        school_class = school.classrooms.filter(class_name="Math 101")[0]
         invitation = invite_user_to_class(ccoy.id, mustefa.id, school_class.id)
         
         count_of_class_invitations = school_class.invitations.count()
