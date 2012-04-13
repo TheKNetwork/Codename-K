@@ -171,8 +171,9 @@ INSTALLED_APPS = (
     'profiles',
     # 'south',
     'django.contrib.admin',
-    'codenamek.whiteboard',
     'codenamek.usermanagement',
+    'codenamek.schools',
+    'codenamek.whiteboard',
     'codenamek.chat',
 )
 

@@ -172,7 +172,7 @@
 		}
 	}, {
 		"pk": 1,
-		"model": "usermanagement.school",
+		"model": "schools.school",
 		"fields": {
 			"address_city": "",
 			"school_url": "",
@@ -186,7 +186,7 @@
 		}
 	}, {
 		"pk": 2,
-		"model": "usermanagement.school",
+		"model": "schools.school",
 		"fields": {
 			"address_city": "",
 			"school_url": "",
@@ -200,7 +200,7 @@
 		}
 	}, {
 		"pk": 3,
-		"model": "usermanagement.class",
+		"model": "schools.classroom",
 		"fields": {
 			"class_name": "Earth Science",
 			"class_description": "",
@@ -209,7 +209,7 @@
 		}
 	}, {
 		"pk": 4,
-		"model": "usermanagement.class",
+		"model": "schools.classroom",
 		"fields": {
 			"class_name": "Math 101",
 			"class_description": "",
@@ -218,7 +218,7 @@
 		}
 	}, {
 		"pk": 5,
-		"model": "usermanagement.class",
+		"model": "schools.classroom",
 		"fields": {
 			"class_name": "Math 101",
 			"class_description": "",
@@ -231,8 +231,7 @@
 		"fields": {
 			"home_address": "",
 			"user": 1,
-			"personal_url": "",
-			"main_school": 2
+			"personal_url": ""
 		}
 	}, {
 		"pk": 2,
@@ -240,8 +239,7 @@
 		"fields": {
 			"home_address": "",
 			"user": 2,
-			"personal_url": "",
-			"main_school": 1
+			"personal_url": ""
 		}
 	}, {
 		"pk": 3,
@@ -249,8 +247,7 @@
 		"fields": {
 			"home_address": "",
 			"user": 3,
-			"personal_url": "",
-			"main_school": 2
+			"personal_url": ""
 		}
 	}, {
 		"pk": 4,
@@ -258,8 +255,7 @@
 		"fields": {
 			"home_address": "",
 			"user": 4,
-			"personal_url": "",
-			"main_school": 1
+			"personal_url": ""
 		}
 	}, {
 		"pk": 5,
@@ -267,8 +263,7 @@
 		"fields": {
 			"home_address": "",
 			"user": 5,
-			"personal_url": "",
-			"main_school": 2
+			"personal_url": ""
 		}
 	}, {
 		"pk": 6,
@@ -276,8 +271,7 @@
 		"fields": {
 			"home_address": "",
 			"user": 6,
-			"personal_url": "",
-			"main_school": 1
+			"personal_url": ""
 		}
 	}, {
 		"pk": 7,
@@ -285,8 +279,7 @@
 		"fields": {
 			"home_address": "",
 			"user": 7,
-			"personal_url": "",
-			"main_school": 2
+			"personal_url": ""
 		}
 	}, {
 		"pk": 8,
@@ -294,8 +287,7 @@
 		"fields": {
 			"home_address": "",
 			"user": 8,
-			"personal_url": "",
-			"main_school": 1
+			"personal_url": ""
 		}
 	}
 ]
