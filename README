@@ -7,4 +7,8 @@
 3. run ./manage.py syncdb (NOTE: if you're upgrading to django 1.4, run flush instead of syncdb)
 4. run ./manage.py runserver
 
+CHAT -
+
+1. To use the chat features, you must run ./manage.py runserver_socketio  in a separate process.
+
 When running manage.py, you'll see some notes about what users you can test with. As usual, open http://localhost:8000 in a browser
