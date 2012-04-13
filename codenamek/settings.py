@@ -173,6 +173,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'codenamek.whiteboard',
     'codenamek.usermanagement',
+    'codenamek.chat',
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
