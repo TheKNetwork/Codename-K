@@ -12,7 +12,7 @@
 
 	<div id="classroom-form">
         <h2>Create a new Class</h2>
-        <form action="/schools/create_a_class/" method="POST">
+        <form action="/schools/{{ school_id }}/create_a_class/" method="POST">{% csrf_token %}
             <table>
             {{ form }}
             </table>
