@@ -29,5 +29,6 @@ def classes_for_school(request, school_id):
 def class_congregation(request, school_id, class_id):
     school_class = Class.objects.get(id=class_id)
     school = School.objects.get(id=school_id)
-    data = {'user': request.user, 'school_class': school_class, 'school':school}
+    chat_url = '/chat'
+    data = {'user': request.user, 'school_class': school_class, 'school':school, 'chat_url': chat_url}
     return render(request, "schools/class_congregation.html", data)
