@@ -3,10 +3,10 @@ from django.forms import ModelForm
 from django.contrib.auth.models import Group
 from django import forms
 
-from codenamek.usermanagement.models import Class
+from codenamek.usermanagement.models import *
  
  
 class SchoolClassForm(ModelForm):
   class Meta:
-      model = Class
+      model = Classroom
       exclude = ('group',)

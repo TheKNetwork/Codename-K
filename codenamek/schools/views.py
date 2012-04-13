@@ -11,6 +11,7 @@ from django.template import RequestContext
 
 from codenamek.usermanagement.models import *
 from codenamek.usermanagement.usermanagement_api import *
+from codenamek.schools import *
 
 @login_required
 def index(request):
@@ -19,9 +20,25 @@ def index(request):
     return render(request, "schools/schools.html", data)
 
 @login_required
+def add_class(request):
+    if request.method == 'POST': # If the form has been submitted...
+        form = SchoolClassForm(request.POST) # A form bound to the POST data
+        if form.is_valid(): # All validation rules pass
+            # Process the data in form.cleaned_data
+            # ...
+            print "We did some stuff here."
+            return HttpResponseRedirect('/homeroom/') # Redirect after POST
+    else:
+        form = SchoolClassForm() # An unbound form
+
+    return render_to_response('add_class.html', {
+        'form': form,
+    })
+
+@login_required
 def classes_for_school(request, school_id):
     school = School.objects.get(id=school_id)
-    classes = school.class_set.all()
+    classes = school.classrooms.all()
     data = {'user': request.user, 'school':school, 'classes': classes}
     return render(request, "schools/classes.html", data)
 

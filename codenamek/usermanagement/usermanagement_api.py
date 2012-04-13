@@ -13,27 +13,6 @@ import os, datetime
 from codenamek.usermanagement.signals import *
 from codenamek.usermanagement.models import *
 
-def add_school(**kwargs):
-    """
-    Adds a school using the expected arguments for a school object.
-    """
-    school = School.objects.create(**kwargs)
-    school.name = 'school.%s' % school.school_name
-    school.save()
-    return school
-
-def add_class(school_id, **kwargs):
-    """
-    Finds a school with the given school id, then creates a class and adds
-    the class to that school using the expected arguments for the class
-    object type.
-    """
-    existing_school = School.objects.get(id=school_id)
-    school_class = Class.objects.create(school=existing_school, **kwargs)
-    school_class.name = 'class.%s.%s' % (existing_school.school_name, school_class.class_name)
-    school_class.save()
-    return school_class
-
 def get_schools_for_user(**kwargs):
     """
     Retrieves a list of schools for a certain user. A school *is* a group,
@@ -43,16 +22,6 @@ def get_schools_for_user(**kwargs):
     schools = School.objects.filter(group_ptr=user.groups.filter(name__startswith="school."))
     return schools
 
-def get_main_school_for_user(**kwargs):
-    """
-    The user profile object has a pointer to a school that is marked as their
-    main or default school. This method returns the main school for the user
-    found by the passed in expected user object arguments.
-    """
-    user = User.objects.get(**kwargs)
-    user_profile = UserProfile.objects.get(user__id=user.id)
-    return user_profile.main_school
-
 def invite_user_to_class(inviting_user_id, invited_user_id, school_class_id):
     """
     Creates a ClassInvitation object and relates the proper references to the
@@ -60,7 +29,7 @@ def invite_user_to_class(inviting_user_id, invited_user_id, school_class_id):
     """
     invited_by = User.objects.get(id=inviting_user_id)
     invited_user = User.objects.get(id=invited_user_id)
-    school_class = Class.objects.get(id=school_class_id)
+    school_class = Classroom.objects.get(id=school_class_id)
     class_invitation = ClassInvitation.objects.create(
                             school_class=school_class,
                             invited_user=invited_user,
@@ -78,7 +47,7 @@ def invite_user_to_class_by_lookup_names(inviting_user_name, invited_user_name, 
     inviter = User.objects.get(username=inviting_user_name)
     invited = User.objects.get(username=invited_user_name)
     school = School.objects.get(school_name=school_name)
-    school_class = school.class_set.filter(class_name=school_class_name)[0]
+    school_class = school.classrooms.filter(class_name=school_class_name)[0]
     return invite_user_to_class(inviter.id, invited.id, school_class.id)
     
 def accept_invitation_to_class(current_user, invitation_id):
