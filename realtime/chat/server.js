@@ -15,6 +15,8 @@ app.listen(8080);
 // routing
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
 });
 
 app.all('/*', function(req, res, next) {
