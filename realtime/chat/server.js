@@ -12,13 +12,8 @@ var io = require('socket.io').listen(app);
 
 app.listen(8080);
 
-// routing
 app.get('/', function (req, res) {
-  res.header('Access-Control-Allow-Origin', config.allowedDomains);
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
   res.sendfile(__dirname + '/client_example.html');
-  next();
 });
 
 // usernames which are currently connected to the chat
