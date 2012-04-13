@@ -2,7 +2,8 @@ from django.conf.urls.defaults import patterns, url, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView
 from django.contrib.auth.views import login, logout
-from codenamek.usermanagement.forms import ProfileForm
+from codenamek.usermanagement.forms import *
+from codenamek.schools.forms import *
 
 from django.contrib import admin
 admin.autodiscover()
@@ -13,8 +14,10 @@ urlpatterns = patterns('',
     url(r'^accounts/logout/$', logout, name='logout'),
     url(r'^homeroom/$', 'codenamek.usermanagement.views.index', name='homeroom'),
     
-    url(r'^schools/(?P<school_id>\d+)/(?P<class_id>\d+)','codenamek.schools.views.class_congregation', name='class-congregation'),
-    url(r'^schools/(?P<school_id>\d+)','codenamek.schools.views.classes_for_school', name='schools-class'),
+    url(r'^schools/(?P<school_id>\d+)/create_a_class','codenamek.schools.views.create_a_class'),
+    
+    url(r'^schools/(?P<school_id>\d+)/(?P<class_id>\d+)','codenamek.schools.views.class_congregation', name='class_congregation'),
+    url(r'^schools/(?P<school_id>\d+)','codenamek.schools.views.classes_for_school', name='schools_class'),
     url(r'^schools/$', 'codenamek.schools.views.index', name='schools'),
     
     url(r'^class/session/$', 'codenamek.whiteboard.views.index'),
