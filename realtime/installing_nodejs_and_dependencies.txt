@@ -22,7 +22,7 @@ modules:
 1. npm install connect@0.5.10
 2. npm install express@1.0.7
 3. npm install socket.io
-4. find . -name '.git' -prun-o -regex '.*\.\(c\|cpp\|h\|hccp\)$' -prune -o -print   | xargs grep "'sys'" -l   | xargs sed -i "s/\bsys\b/util/g"
+4. find . -name '.git' -prun-o -regex '.*\.\(c\|cpp\|h\|hccp\)$' -prune -o -print   | xargs grep "'util'" -l   | xargs sed -i "s/\bsys\b/util/g"
 
 The last line fixes incompatibility issues in node modules that haven't been
 updated to the correct calls in node yet. Cool, eh?
