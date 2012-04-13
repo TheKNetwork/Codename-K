@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from models import UserProfile, Class, School
+from models import UserProfile, Classroom, School
 
 
 class UserProfileAdmin(admin.ModelAdmin):
@@ -15,5 +15,5 @@ class SchoolAdmin(admin.ModelAdmin):
 
 
 admin.site.register(UserProfile, UserProfileAdmin)
-admin.site.register(Class, ClassAdmin)
+admin.site.register(Classroom, ClassAdmin)
 admin.site.register(School, SchoolAdmin)
