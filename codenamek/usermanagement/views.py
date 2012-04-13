@@ -34,7 +34,6 @@ def index(request):
     
     return render(request, "homeroom/user_home.html", data)
 
-
 CLIENT = APIExplorerOAuthClient(server_url,
         consumer_key,
         consumer_secret
