@@ -13,6 +13,8 @@ var io = require('socket.io').listen(app);
 app.listen(8080);
 
 app.get('/', function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
   res.sendfile(__dirname + '/index.html');
 });
 
