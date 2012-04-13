@@ -12,6 +12,11 @@ urlpatterns = patterns('',
     url(r'^accounts/login/$', login, name='login'),
     url(r'^accounts/logout/$', logout, name='logout'),
     url(r'^homeroom/$', 'codenamek.usermanagement.views.index', name='homeroom'),
+    
+    url(r'^schools/(?P<school_id>\d+)/(?P<class_id>\d+)','codenamek.schools.views.class_congregation', name='class-congregation'),
+    url(r'^schools/(?P<school_id>\d+)','codenamek.schools.views.classes_for_school', name='schools-class'),
+    url(r'^schools/$', 'codenamek.schools.views.index', name='schools'),
+    
     url(r'^class/session/$', 'codenamek.whiteboard.views.index'),
     url(r'^accounts/', include('registration.urls')),
     url(r'^admin/', include(admin.site.urls)),
