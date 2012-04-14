@@ -1,5 +1,9 @@
 {% extends "default_layout.html" %}
 
+{% block js %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/homeroom.js"></script>
+{% endblock %}
+
 {% block content %}
 
 {% if messages %}
@@ -9,6 +13,36 @@
         {% endfor %}
     </div>
 {% endif %}
+
+<!-- Invite Users Modal -->
+<div class="modal hide" id="inviteUsers">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">×</a>
+		<h3>Invite Users to Math101</h3>
+	</div>
+
+	<div class="modal-body">
+		<h6>Share this URL to invite users to your Class:</h6>
+		<p>			 
+			<span id="#invite-url">http://knetwork.org/invite#2342</span>
+			(<a href=#copy-to-clipboard> Copy URL </a>)
+		</p>
+	
+		<!-- TO-DO: notify K Network Users internally and via E-Mail
+		<div class="well">
+			<h4>Invite K Network Users</h4>
+		</div>
+	
+		<div class="well">
+			<h4>Let us e-mail invites for you!</h4>
+		</div>
+		-->
+	</div>
+
+	<div class="modal-footer">
+		<a href="#" data-dismiss="modal" class="btn">Close</a>
+	</div>
+</div>
 
 <!-- Bread Crumb Navigation -->
 <section id="breadcrumbs">
@@ -55,6 +89,7 @@
 		</div>
 	</div>
 
+
 	<div id="class-list">
 		<div class="row">
 			<div class="span12">
@@ -69,27 +104,48 @@
 					</thead>
 			
 					<tbody>
+				
 						{% for classroom in main_school.classrooms.all %}
 						<tr>
 							<td><a href=#Class><i class="icon-book"></i> {{classroom}}</a></td>
 							<td><a href=#Users><i class="icon-user"></i> {{classroom.user_set.all.count}} Users</a></td>
-							<td><a href=#Join-Class><i class="icon-plus-sign"></i> Invite Users</a></td>
+							<td><a 
+									href="#inviteUsers" data-toggle="modal"><i class="icon-plus-sign"></i> Invite Users</a></td>
 							<td><a href=#Pending-Invites>{{ classroom.invitations.count }} Pending Invites</a></td>
 						</tr>
 						{% endfor %}
 						<!-- Save this inline for reference for now -->
 						<tr>
 							<td><href=#Class><i class="icon-book"></i> Math 102</a></td>
-							<td><a href=#Users><i class="icon-user"></i> 2 Users</a></td>
-							<td><a href=#Join-Class><i class="icon-envelope"></i> Request Invitation</a></td>
+							<td><a href="#users" 
+									rel="users"
+									data-original-title="Users in this Class" 
+									data-content="hello"
+									data-placement="left">
+									<i class="icon-user"></i> 2 Users</a>
+							</td>
+
+							<td><a href="#inviteUsers" 
+									data-toggle="modal">
+									<i class="icon-plus-sign"></i> Invite Users
+								</a>
+							</td>
 							<td></td>
 						</tr>
+						
 						<form>	
-						<tr>
-							<td><i class="icon-book"></i> <input type="text" placeholder="Class Name"> <div class="btn btn-danger">Cancel</div> <div class="btn btn-success">Confirm</div><href=#Class></input></td>
-							<td></td>
-							<td></td>
-						</tr>	
+							<tr>
+								<td>
+									<i class="icon-book"></i>
+									<input type="text" placeholder="Class Name">
+										<div class="btn btn-danger">Cancel</div>
+										<div class="btn btn-success">Confirm</div>
+										<href=#Class>
+									</input></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>	
 						</form>	
 					</table>
 		</div>
