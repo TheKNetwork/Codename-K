@@ -44,7 +44,7 @@ def classes_for_school(request, school_id):
 
 @login_required
 def class_congregation(request, school_id, class_id):
-    school_class = Class.objects.get(id=class_id)
+    school_class = Classroom.objects.get(id=class_id)
     school = School.objects.get(id=school_id)
     chat_url = '/chat'
     data = {'user': request.user, 'school_class': school_class, 'school':school, 'chat_url': chat_url}
