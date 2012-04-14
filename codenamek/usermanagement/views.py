@@ -29,8 +29,9 @@ callback = "http://%s%s" % (Site.objects.get_current(), '/khan-academy/auth/call
 
 @login_required
 def index(request):
-    schools = get_schools_for_user(username=request.user.username)
-    data = {'user': request.user, 'schools': main_school}
+    main_school = get_main_school_for_user(id=request.user.id)
+    # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
+    data = {'user': request.user, 'main_school': main_school}
     
     return render(request, "homeroom/user_home.html", data)
 
