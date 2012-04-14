@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     url(r'^accounts/logout/$', logout, name='logout'),
     url(r'^homeroom/$', 'codenamek.usermanagement.views.index', name='homeroom'),
     
-    url(r'^schools/(?P<school_id>\d+)/create_a_class','codenamek.schools.views.create_a_class'),
+    url(r'^schools/(?P<_school_id>\d+)/create_a_class','codenamek.schools.views.create_a_class'),
     
     url(r'^schools/(?P<school_id>\d+)/(?P<class_id>\d+)','codenamek.schools.views.class_congregation', name='class_congregation'),
     url(r'^schools/(?P<school_id>\d+)','codenamek.schools.views.classes_for_school', name='schools_class'),
