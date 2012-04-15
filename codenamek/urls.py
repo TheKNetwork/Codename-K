@@ -46,7 +46,7 @@ urlpatterns = patterns('',
     
     # django socket io
     url("", include("django_socketio.urls")),
-    url("^chat", include("codenamek.chat.urls")),
+    url("^chat", include("chat.urls")),
 )
 
 urlpatterns += staticfiles_urlpatterns()
