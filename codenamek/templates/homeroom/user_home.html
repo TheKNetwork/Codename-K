@@ -61,7 +61,7 @@
 	
 	<div class="school-actions">
 		{% if main_school %}	
-		<div class="create-class" class="btn btn-primary pull-left">Create Class</div>
+		<div id="create-class" class="span2 btn btn-primary pull-left">Create Class</div>
 		{% endif %}
 		<div class="span2">
 			<div id="class-filter">
@@ -101,7 +101,7 @@
 						{% if main_school == none %}
 							<td>
 								<div id="new-user-prompt" class="alert alert-info span4">
-									<a class="create-class" href="/schools/{{ main_school.id }}/create_a_class">Create a Class</a> 
+									<a id="create-class" href="/schools/{{ main_school.id }}/create_a_class">Create a Class</a> 
 									and invite users {% if classes %}, or request to join a class listed below {% endif %} to get started
 						
 								</div>
@@ -117,10 +117,10 @@
 							<form id="addClassroomForm" action="/schools/{{main_school.id}}/create_a_class" method="post">{% csrf_token %}
 								<td>
 									<i class="icon-book"></i>
-										<input id="id_class_name" name="class_name" type="text" placeholder="Class Name"></input>
-										<button id="" name="cancel-class-creation" type="" class="btn btn-danger">Cancel</button>
-										<button id="submit" name="submit" type="submit" class="btn btn-success">Confirm</button>
-									</td>
+									<input id="id_class_name" name="class_name" type="text" placeholder="Class Name"></input>
+									<a id="cancel-class-creation" name="cancel-class-creation" type="" class="btn btn-danger">Cancel</a>
+									<button id="submit" name="submit" type="submit" class="btn btn-success">Confirm</button>
+								</td>
 								<td></td>
 								<td></td>
 								<td></td>
