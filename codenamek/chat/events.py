@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.utils.html import strip_tags
 from django_socketio import events
 
-from chat.models import ChatRoom
+from codenamek.chat.models import ChatRoom
 
 
 @events.on_message(channel="^room-")
