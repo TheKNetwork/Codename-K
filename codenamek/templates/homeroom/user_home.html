@@ -64,15 +64,15 @@
 		<div id="new-user-prompt" class="alert alert-info">
 			<div class="row">
 				<div class="span12">
-					<a href="/schools/{{ main_school.id }}/create_a_class">Create a Class</a> 
+					<a class="create-class" href="/schools/{{ main_school.id }}/create_a_class">Create a Class</a> 
 					and invite users {% if classes %}, or request to join a class listed below {% endif %} to get started
 				</div>
 			</div>
 		</div>
 		{% endif %}
-		
-		<div id="create-class-button" class="btn btn-primary pull-left">Create Class</div>
-
+		{% if main_school %}	
+		<div class="create-class" class="btn btn-primary pull-left">Create Class</div>
+		{% endif %}
 		<div class="span2">
 			<div id="class-filter">
 				<form class="form-vertical pull-left">
@@ -106,7 +106,20 @@
 					</thead>
 			
 					<tbody>
-				
+						<tr id="create-class-row" class="hide">
+							<form id="addClassroomForm" action="/schools/{{main_school.id}}/create_a_class" method="post">{% csrf_token %}
+								<td>
+									<i class="icon-book"></i>
+										<input id="id_class_name" name="class_name" type="text" placeholder="Class Name"></input>
+										<button id="" name="cancel-class-creation" type="" class="btn btn-danger">Cancel</button>
+										<button id="submit" name="submit" type="submit" class="btn btn-success">Confirm</button>
+									</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</form>
+						</tr>
+	
 						{% for classroom in main_school.classrooms.all %}
 						<tr>
 							<td><a href='/schools/{{main_school.id}}/{{ classroom.id }}'><i class="icon-book"></i> {{classroom}}</a></td>
@@ -120,20 +133,7 @@
 							<td><a href=#pending-invites>{{ classroom.invitations.count }} Pending Invites</a></td>
 						</tr>
 						{% endfor %}
-						<form id="addClassroomForm" class="hide" action="/schools/{{main_school.id}}/create_a_class" method="post">{% csrf_token %}
-							<tr>
-								<td>
-									<i class="icon-book"></i>
-                                           <input id="id_class_name" name="class_name" type="text" placeholder="Class Name"></input>
-                                           <button id="submit" name="submit" type="submit" class="btn btn-success">Confirm</button>
-                                        
-									</td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-						</form>
-					</table>
+											</table>
 		</div>
 	</div>
 </section>
