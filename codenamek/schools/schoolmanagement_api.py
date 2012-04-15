@@ -35,6 +35,12 @@ def add_class(school_id, **kwargs):
     school_class.save()
     return school_class
 
+def add_user_to_class(user, classroom):
+    group = Group.objects.get(id=classroom.id)
+    group.user_set.add(user)
+    group.save()
+    return
+
 def get_main_school_for_user(**kwargs):
     """
     Gets the user's default school
