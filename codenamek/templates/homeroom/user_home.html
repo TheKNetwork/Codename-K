@@ -60,16 +60,6 @@
 	<h3>My School: <small>{{ main_school }}</small></h3> 
 	
 	<div class="school-actions">
-		{% if main_school == none %}
-		<div id="new-user-prompt" class="alert alert-info">
-			<div class="row">
-				<div class="span12">
-					<a class="create-class" href="/schools/{{ main_school.id }}/create_a_class">Create a Class</a> 
-					and invite users {% if classes %}, or request to join a class listed below {% endif %} to get started
-				</div>
-			</div>
-		</div>
-		{% endif %}
 		{% if main_school %}	
 		<div class="create-class" class="btn btn-primary pull-left">Create Class</div>
 		{% endif %}
@@ -106,6 +96,23 @@
 					</thead>
 			
 					<tbody>
+						<tr>
+						{# Show Create Class Alert if there are no classes #}	
+						{% if main_school == none %}
+							<td>
+								<div id="new-user-prompt" class="alert alert-info span4">
+									<a class="create-class" href="/schools/{{ main_school.id }}/create_a_class">Create a Class</a> 
+									and invite users {% if classes %}, or request to join a class listed below {% endif %} to get started
+						
+								</div>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						{% endif %}
+
+						{# Inline form to create a class #}
 						<tr id="create-class-row" class="hide">
 							<form id="addClassroomForm" action="/schools/{{main_school.id}}/create_a_class" method="post">{% csrf_token %}
 								<td>
@@ -119,7 +126,7 @@
 								<td></td>
 							</form>
 						</tr>
-	
+						{# loop through current classes #}	
 						{% for classroom in main_school.classrooms.all %}
 						<tr>
 							<td><a href='/schools/{{main_school.id}}/{{ classroom.id }}'><i class="icon-book"></i> {{classroom}}</a></td>
@@ -133,8 +140,10 @@
 							<td><a href=#pending-invites>{{ classroom.invitations.count }} Pending Invites</a></td>
 						</tr>
 						{% endfor %}
-											</table>
-		</div>
+					</tbody>	
+				</table>
+			</div>
+		<div>
 	</div>
 </section>
 
