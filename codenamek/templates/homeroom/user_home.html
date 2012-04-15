@@ -18,7 +18,7 @@
 <div class="modal hide" id="invite-users">
 	<div class="modal-header">
 		<a class="close" data-dismiss="modal">×</a>
-		<h3>Invite Users to Math101</h3>
+		<h3>Invite Users</h3>
 	</div>
 
 	<div class="modal-body">
@@ -60,14 +60,16 @@
 	<h3>My School: <small>{{ main_school }}</small></h3> 
 	
 	<div class="school-actions">
-
+		{% if main_school == none %}
 		<div id="new-user-prompt" class="alert alert-info">
 			<div class="row">
 				<div class="span12">
-					<a href="/schools/{{ main_school.id }}/create_a_class">Create a Class</a> and invite users {% if classes %}, or request to join a class listed below {% endif %} to get started
+					<a href="/schools/{{ main_school.id }}/create_a_class">Create a Class</a> 
+					and invite users {% if classes %}, or request to join a class listed below {% endif %} to get started
 				</div>
 			</div>
 		</div>
+		{% endif %}
 		
 		<div id="create-class-button" class="btn btn-primary pull-left">Create Class</div>
 
@@ -118,7 +120,7 @@
 							<td><a href=#pending-invites>{{ classroom.invitations.count }} Pending Invites</a></td>
 						</tr>
 						{% endfor %}
-						<form id="addClassroomForm" action="/schools/{{main_school.id}}/create_a_class" method="post">{% csrf_token %}
+						<form id="addClassroomForm" class="hide" action="/schools/{{main_school.id}}/create_a_class" method="post">{% csrf_token %}
 							<tr>
 								<td>
 									<i class="icon-book"></i>
