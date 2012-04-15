@@ -51,7 +51,9 @@
           <a class="brand" href="/">K Network</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="/homeroom">Home</a></li>
+              {% if user.is_active %}
+              <li class="active"><a href="{{ user }}/homeroom">Home</a></li>
+              {% endif %}
               <li><a href="#about">About</a></li>
               <li><a href="mailto:info@theknetwork.org">Contact</a></li>
             </ul>

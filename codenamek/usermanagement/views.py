@@ -28,7 +28,7 @@ consumer_secret = getattr(settings, 'CONSUMER_SECRET', None)
 callback = "http://%s%s" % (Site.objects.get_current(), '/khan-academy/auth/callback/')
 
 @login_required
-def index(request):
+def index(request, user_name):
     main_school = get_main_school_for_user(id=request.user.id)
     # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
     data = {'user': request.user, 'main_school': main_school}

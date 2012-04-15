@@ -12,15 +12,23 @@ urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^accounts/login/$', login, name='login'),
     url(r'^accounts/logout/$', logout, name='logout'),
-    url(r'^homeroom/$', 'codenamek.usermanagement.views.index', name='homeroom'),
     
-    url(r'^schools/(?P<_school_id>\d+)/create_a_class','codenamek.schools.views.create_a_class'),
+    # All urls in this section are from the perspective of the user,
+    # and therefore should be of the pattern /username/something/something_else
+    #     This one comes from the user management app
+    # TODO: Put these in the usermanagement's urls.py
+    url(r'^(?P<user_name>\w+)/homeroom/$', 'codenamek.usermanagement.views.index', name='homeroom'),
     
-    url(r'^schools/(?P<school_id>\d+)/(?P<class_id>\d+)','codenamek.schools.views.class_congregation', name='class_congregation'),
-    url(r'^schools/(?P<school_id>\d+)','codenamek.schools.views.classes_for_school', name='schools_class'),
-    url(r'^schools/$', 'codenamek.schools.views.index', name='schools'),
+    #     These urls come from the schools app
+    # TODO: Put these in the schools urls.py
+    url(r'^(?P<user_name>\w+)/schools/(?P<_school_id>\d+)/create_a_class','codenamek.schools.views.create_a_class'),
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)','codenamek.schools.views.class_congregation', name='class_congregation'),
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)','codenamek.schools.views.classes_for_school', name='schools_class'),
+    url(r'^(?P<user_name>\w+)/schools/$', 'codenamek.schools.views.index', name='schools'),
     
     url(r'^class/session/$', 'codenamek.whiteboard.views.index'),
+    
+    # admin type stuff.
     url(r'^accounts/', include('registration.urls')),
     url(r'^admin/', include(admin.site.urls)),
     

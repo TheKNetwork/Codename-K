@@ -99,7 +99,7 @@
 						{% if main_school == none %}
 							<td>
 								<div id="new-user-prompt" class="alert alert-info span4">
-									<a id="create-class" href="/schools/{{ main_school.id }}/create_a_class">Create a Class</a> 
+									<a id="create-class" href="{{ user }}/schools/{{ main_school.id }}/create_a_class">Create a Class</a> 
 									and invite users {% if classes %}, or request to join a class listed below {% endif %} to get started
 						
 								</div>
@@ -112,7 +112,7 @@
 
 						{# Inline form to create a class #}
 						<tr id="create-class-row" class="hide">
-							<form id="addClassroomForm" action="/schools/{{main_school.id}}/create_a_class" method="post">{% csrf_token %}
+							<form id="addClassroomForm" action="{{ user }}/schools/{{main_school.id}}/create_a_class" method="post">{% csrf_token %}
 								<td class="classname">
 									<i class="icon-book"></i>
 									<input id="id_class_name" 
@@ -133,7 +133,7 @@
 						{# loop through current classes #}	
 						{% for classroom in main_school.classrooms.all %}
 						<tr>
-							<td class="classname" ><a href='/schools/{{main_school.id}}/{{ classroom.id }}'><i class="icon-book"></i> {{classroom}}</a></td>
+							<td class="classname" ><a href='/{{ user }}/schools/{{main_school.id}}/{{ classroom.id }}'><i class="icon-book"></i> {{classroom}}</a></td>
 							<td><a href='#{{ classroom.name }}-users'
 									rel="users"
 									data-original-title="{{ classroom }} Users" 
