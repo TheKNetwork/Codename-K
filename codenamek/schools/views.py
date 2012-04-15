@@ -16,13 +16,13 @@ from codenamek.schools.schoolmanagement_api import *
 from codenamek.schools.forms import *
 
 @login_required
-def index(request):
+def index(request, user_name):
     schools = get_schools_for_user(id=request.user.id)
     data = {'user': request.user, 'schools': schools}
     return render(request, "schools/schools.html", data)
 
 @login_required
-def create_a_class(request, _school_id):
+def create_a_class(request, _school_id, user_name):
     if request.method == 'POST': # If the form has been submitted...
         form = ClassroomForm(request.POST)
         if form.is_valid(): 
@@ -32,7 +32,7 @@ def create_a_class(request, _school_id):
             
             add_user_to_class(request.user, classroom)
             print "Added %s" % (form.cleaned_data['class_name'])
-            return HttpResponseRedirect('/homeroom/') 
+            return HttpResponseRedirect('%s/homeroom/' % user_name) 
     else:
         form = ClassroomForm() # An unbound form
 
@@ -41,14 +41,14 @@ def create_a_class(request, _school_id):
     }, context_instance=RequestContext(request, {}))
 
 @login_required
-def classes_for_school(request, school_id):
+def classes_for_school(request, school_id, user_name):
     school = School.objects.get(id=school_id)
     classes = school.classrooms.all()
     data = {'user': request.user, 'school':school, 'classes': classes}
     return render(request, "schools/classes.html", data)
 
 @login_required
-def class_congregation(request, school_id, class_id):
+def class_congregation(request, school_id, class_id, user_name):
     school_class = Classroom.objects.get(id=class_id)
     school = School.objects.get(id=school_id)
     chat_url = '/chat'
