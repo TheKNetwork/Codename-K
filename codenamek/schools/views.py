@@ -26,7 +26,12 @@ def create_a_class(request, _school_id):
     if request.method == 'POST': # If the form has been submitted...
         form = ClassroomForm(request.POST)
         if form.is_valid(): 
-            add_class(school_id=_school_id, class_name=form.cleaned_data['class_name'], class_description=form.cleaned_data['class_description'] )
+            classroom = add_class(school_id=_school_id, 
+                      class_name=form.cleaned_data['class_name'], 
+                      class_description=form.cleaned_data['class_name'] )
+            
+            add_user_to_class(request.user, classroom)
+            print "Added %s" % (form.cleaned_data['class_name'])
             return HttpResponseRedirect('/homeroom/') 
     else:
         form = ClassroomForm() # An unbound form
