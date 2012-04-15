@@ -16,7 +16,7 @@ class ChatRoom(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ("room", (self.slug,))
+        return ""
 
     def save(self, *args, **kwargs):
         if not self.slug:
