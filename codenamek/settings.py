@@ -160,7 +160,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.admin',    
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
@@ -176,6 +176,9 @@ INSTALLED_APPS = (
     'codenamek.whiteboard',
     'codenamek.chat',
 )
+
+# django needs to know what port to talk to for chat
+SOCKETIO_PORT = 9000
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
