@@ -1,0 +1,1 @@
+$("a[rel=users]").popover();
