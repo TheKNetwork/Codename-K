@@ -5,7 +5,7 @@ from django.template.defaultfilters import slugify
 
 class ChatRoom(models.Model):
 
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=150)
     slug = models.SlugField(blank=True)
 
     class Meta:
@@ -25,8 +25,8 @@ class ChatRoom(models.Model):
 
 class ChatUser(models.Model):
 
-    name = models.CharField(max_length=20)
-    session = models.CharField(max_length=20)
+    name = models.CharField(max_length=150)
+    session = models.CharField(max_length=150)
     room = models.ForeignKey("chat.ChatRoom", related_name="users")
 
     class Meta:
