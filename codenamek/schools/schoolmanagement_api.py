@@ -33,6 +33,11 @@ def add_class(school_id, **kwargs):
     school_class = Classroom.objects.create(school=existing_school, **kwargs)
     school_class.name = 'class.%s.%s' % (existing_school.school_name, school_class.class_name)
     school_class.save()
+    
+    chatroom_name = "%s: %s" % (existing_school.school_name, school_class.class_name)
+    chatroom, created  = ChatRoom.objects.get_or_create(name=chatroom_name)
+    print "Url for chatroom (slug) is %s" % chatroom.slug
+    
     return school_class
 
 def add_user_to_class(user, classroom):
