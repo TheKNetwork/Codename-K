@@ -160,19 +160,26 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.admin',    
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_socketio',
     'registration',
     'profiles',
     # 'south',
     'django.contrib.admin',
-    'codenamek.whiteboard',
     'codenamek.usermanagement',
+    'codenamek.schools',
+    'codenamek.whiteboard',
+    'codenamek.chat',
 )
+
+# django needs to know what port to talk to for chat
+SOCKETIO_HOST = 'staging.theknetwork.org'
+SOCKETIO_PORT = 9000
 
 ACCOUNT_ACTIVATION_DAYS = 7
 

@@ -11,6 +11,7 @@ from django.template import RequestContext
 
 from codenamek.usermanagement.models import *
 from codenamek.usermanagement.usermanagement_api import *
+from codenamek.schools.schoolmanagement_api import *
 
 from oauth.oauth import OAuthConsumer, OAuthToken
 import requests
@@ -33,7 +34,6 @@ def index(request):
     data = {'user': request.user, 'main_school': main_school}
     
     return render(request, "homeroom/user_home.html", data)
-
 
 CLIENT = APIExplorerOAuthClient(server_url,
         consumer_key,

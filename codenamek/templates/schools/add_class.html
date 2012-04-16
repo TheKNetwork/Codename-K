@@ -1,0 +1,25 @@
+{% extends "default_layout.html" %}
+
+{% block content %}
+
+{% if messages %}
+    <div class="alert alert-success">
+        {% for msg in messages %}
+            {{ msg }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+	<div id="classroom-form">
+        <h2>Create a new Class</h2>
+        <form action="/schools/{{ school_id }}/create_a_class/" method="POST">{% csrf_token %}
+            <table>
+            {{ form }}
+            </table>
+        <p>
+            <input type="submit" value="Create!" />
+        </p>
+        </form>
+	</div>
+
+{% endblock %}
