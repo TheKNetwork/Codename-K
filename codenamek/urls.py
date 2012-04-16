@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     #     This one comes from the user management app
     # TODO: Put these in the usermanagement's urls.py
     url(r'^(?P<user_name>\w+)/homeroom/$', 'codenamek.usermanagement.views.index', name='homeroom'),
+    url(r'^homeroom/$', 'codenamek.usermanagement.views.homeroom_failsafe', name='homeroom_safe'),
     
     #     These urls come from the schools app
     # TODO: Put these in the schools urls.py
@@ -31,7 +32,8 @@ urlpatterns = patterns('',
     url("^chat/$", "chat.views.rooms", name="rooms"),
     url("^chat/create/$", "chat.views.create", name="create"),
     url("^chat/system_message/$", "chat.views.system_message", name="system_message"),
-    url("^chat/(?P<slug>.*)$", "chat.views.room", name="room"),
+    # url("^chat/(?P<slug>.*)$", "chat.views.room", name="room"),
+    url("^chat/(?P<school_id>\d+)/(?P<class_id>\d+)", "chat.views.room", name="room"),
     
     # admin type stuff.
     url(r'^accounts/', include('registration.urls')),

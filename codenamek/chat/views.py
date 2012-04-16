@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django_socketio import broadcast, broadcast_channel, NoSocket
 
 from codenamek.chat.models import ChatRoom
+from codenamek.schools.models import *
 
 
 def rooms(request, template="rooms.html"):
@@ -14,13 +15,24 @@ def rooms(request, template="rooms.html"):
     return render(request, template, context)
 
 
-def room(request, slug, template="room.html"):
+def room(request, school_id, class_id, template="room.html"):
     """
     Show a room.
     """
-    context = {"room": get_object_or_404(ChatRoom, slug=slug)}
+    existing_school = School.objects.get(id=school_id)
+    print "(Looking up chat room) Got existing school for id %s named %s" % (school_id, existing_school)
+    
+    school_class = Classroom.objects.get(id=class_id)
+    print "(Looking up chat room) Got existing class %s" % school_class
+    
+    chatroom_name = "%s: %s" % (existing_school.school_name, school_class.class_name)
+    chatroom, created  = ChatRoom.objects.get_or_create(name=chatroom_name)
+    print "(Looking up chat room) Created new chat room? %s" % created
+    print "(Looking up chat room) Chat room found: %s" % chatroom
+    
+    context = { "school": existing_school, "school_class":  school_class, "room": chatroom }
+    # context = {"room": get_object_or_404(ChatRoom, slug=slug)}
     return render(request, template, context)
-
 
 def create(request):
     """
