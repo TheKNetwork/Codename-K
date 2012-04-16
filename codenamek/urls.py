@@ -28,6 +28,11 @@ urlpatterns = patterns('',
     
     url(r'^class/session/$', 'codenamek.whiteboard.views.index'),
     
+    url("^chat/$", "chat.views.rooms", name="rooms"),
+    url("^chat/create/$", "chat.views.create", name="create"),
+    url("^chat/system_message/$", "chat.views.system_message", name="system_message"),
+    url("^chat/(?P<slug>.*)$", "chat.views.room", name="room"),
+    
     # admin type stuff.
     url(r'^accounts/', include('registration.urls')),
     url(r'^admin/', include(admin.site.urls)),
@@ -54,7 +59,6 @@ urlpatterns = patterns('',
     
     # django socket io
     url("", include("django_socketio.urls")),
-    url("^chat", include("chat.urls")),
 )
 
 urlpatterns += staticfiles_urlpatterns()
