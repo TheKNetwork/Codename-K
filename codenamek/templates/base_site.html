@@ -24,7 +24,6 @@
    
 	<!-- TODO: Move js includes to the bottom of the page --> 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-form.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.js"></script>
 	
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -52,7 +51,7 @@
           <div class="nav-collapse">
             <ul class="nav">
               {% if user.is_active %}
-              <li class="active"><a href="{{ user }}/homeroom">Home</a></li>
+              <li class="active"><a href="/{{ user }}/homeroom">Home</a></li>
               {% endif %}
               <li><a href="#about">About</a></li>
               <li><a href="mailto:info@theknetwork.org">Contact</a></li>
