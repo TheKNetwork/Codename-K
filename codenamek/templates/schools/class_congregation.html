@@ -1,0 +1,21 @@
+{% extends "default_layout.html" %}
+
+{% block content %}
+
+{% if messages %}
+    <div class="alert alert-success">
+        {% for msg in messages %}
+            {{ msg }}
+        {% endfor %}
+    </div>
+{% endif %}
+Welcome to
+<h3>{{school}}: <small>{{ school_class }}</small></h3> 
+
+	<div id="chat-iframe-div">
+    <iframe name="inlineframe" src="{{ chat_url }}" frameborder="0"
+		scrolling="auto" width="700px" height="500px" marginwidth="0"
+		marginheight="0"></iframe>
+	</div>
+
+{% endblock %}

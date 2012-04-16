@@ -1,0 +1,90 @@
+"""
+This file is responsible for the db set up and relationships of school and class management.
+The actual methods used to manipulate these objects should be placed in
+schoolmanagement_api.py.
+"""
+
+from django.db import models
+from django.contrib.auth.models import User, Group
+from django.utils.translation import ugettext as _
+from django.db.models import signals
+from django.core.exceptions import ObjectDoesNotExist
+
+from codenamek.usermanagement.models import *
+
+import os, datetime
+
+SCHOOL_GENDER_FLAG_CHOICES = (
+    ('B','Boys Only'),
+    ('G','Girls Only'),
+    ('C','Co-ed'),                           
+)
+
+class School(Group):
+    """
+    The school object represents, as you could probably guess, a school. A school
+    IS a django group, which makes it easy to manage authorization and membership
+    without getting too complex.
+    """
+    school_name = models.CharField(max_length=100, unique=True)
+    address_line_one = models.CharField(max_length=100, blank=True)
+    address_line_two = models.CharField(max_length=100, blank=True)
+    address_city = models.CharField(max_length=100, blank=True)
+    address_state = models.CharField(max_length=2, blank=True)
+    address_country = models.CharField(max_length=50, blank=True)
+    school_url = models.URLField(blank=True)
+    gender_flag = models.CharField(max_length=1, choices=SCHOOL_GENDER_FLAG_CHOICES, blank=True)
+    
+    objects = models.Manager()
+    
+    class Meta:
+        verbose_name = _('School')
+        verbose_name_plural = _('Schools')
+
+    def __unicode__(self):
+        return self.school_name   
+
+class UserDefaultSchool(models.Model):
+    user = models.OneToOneField(User)
+    main_school = models.OneToOneField(School, null=True, blank=True)
+
+class Classroom(Group):
+    """
+    A classroom is an organization within a school. It might physically be many things,
+    but it amounts to a grouping of people that attend a class, usually. A classroom might
+    even end up being a study group. As is the case with a school object, the Classroom
+    that belongs to a school is also a django auth group for the same reasons as the
+    school object.
+    """
+    class_name = models.CharField(max_length=50)
+    class_description = models.TextField(blank=True)
+    school = models.ForeignKey(School, related_name="classrooms")
+
+    objects = models.Manager()
+
+    class Meta:
+        verbose_name = _('Classroom')
+        verbose_name_plural = _('Classrooms')
+
+    def __unicode__(self):
+        return u"{0}".format(self.class_name)    
+    
+class ClassInvitation(models.Model):
+    """
+    A class invitation is a record that is marked as accepted or rejected, bound
+    to the inviting user and the user that is invited, along with the class they
+    have been invited to.
+    """
+    school_class = models.ForeignKey(Classroom, related_name="invitations")
+    invited_user = models.ForeignKey(User, related_name="invitations_received")
+    invited_by = models.ForeignKey(User, related_name="invitations_sent")
+    invited_on_date = models.DateTimeField(auto_now_add=True)
+    rejected_on_date = models.DateTimeField(null=True, blank=True)
+    accepted_on_date = models.DateTimeField(null=True, blank=True)
+    
+    class Meta:
+        verbose_name = _('Classroom invitation')
+        verbose_name_plural = _('Classroom invitations')
+
+    def __unicode__(self):
+        return "Invitation to classroom:(%s) sent to %s from %s" % (self.school_class, self.invited_user, self.invited_by)

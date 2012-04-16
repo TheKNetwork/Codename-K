@@ -6,6 +6,7 @@ env['release_type'] = 'staging'
 staging_server = 'root@staging.theknetwork.org'
 prod_server =  'root@prod.theknetwork.org'
 env['repository'] = 'Codename-K'
+env['branch'] = 'develop'
 
 def staging():
     """Staging server settings"""
@@ -16,6 +17,7 @@ def staging():
 def prod():
     """Production server settings"""
     env['path'] = '/environments/prod'
+    env['branch'] = 'master'
     env.host_string = prod_server
 
 def deploy():
@@ -30,8 +32,8 @@ def checkout_latest():
     """Pull the latest code into the git repo and copy to a timestamped release directory"""
     import time
     env['release'] = time.strftime('%Y%m%d%H%M%S')
-    run('cd %(path)s/%(repository)s; git pull origin master' % env, pty=True)
-    run('cp -R %(path)s/%(repository)s %(path)s/releases/%(release)s; rm -rf %(path)s/releases/%(release)s/.git*' % env, pty=True)
+    run('cd %(path)s/%(repository)s; git pull origin %(branch)s' % env, pty=True)
+    run('cp -R %(path)s/%(repository)s %(path)s/releases/%(release)s; rm -rf %(path)s/releases/%(release)s/.git*' % env, pty=True)  
 
 def symlink_current_release():
     """Symlink our current release"""
