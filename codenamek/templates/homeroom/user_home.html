@@ -49,8 +49,7 @@
 	<div id="breadcrumbs span12">
 		<ul class="breadcrumb">
 			<li>
-				<a href="#"><i class="icon-user"></i> {{ user }}</a><span class="divider">/</span>
-				<a href="#"><i class="icon-home"></i> Homeroom</a>
+				<i class="icon-home"></i> Homeroom
 			</li>
 		</ul>
 	</div>
@@ -137,7 +136,15 @@
 							<td><a href='#{{ classroom.name }}-users'
 									rel="users"
 									data-original-title="{{ classroom }} Users" 
-									data-content="{{ classroom.id }}"
+									data-content="<table>
+													{% for user in classroom.user_set.all %}
+													<tr>
+														<td>{{ user }}</td>
+														<td>{{ user.last_name }}, {{ user.first_name }}</td>
+													</tr>
+													{% endfor %}
+													</table>"
+																				
 									data-placement="left">	
 								<i class="icon-user"></i> {{classroom.user_set.all.count}} Users</a></td>
 							<td><a href="#invite-users" data-toggle="modal"><i class="icon-plus-sign"></i> Invite Users</a></td>
