@@ -178,7 +178,7 @@ INSTALLED_APPS = (
 )
 
 # django needs to know what port to talk to for chat
-SOCKETIO_HOST = 'staging.theknetwork.org'
+SOCKETIO_HOST = 'localhost'
 SOCKETIO_PORT = 9000
 
 ACCOUNT_ACTIVATION_DAYS = 7
