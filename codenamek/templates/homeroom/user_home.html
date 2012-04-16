@@ -111,7 +111,7 @@
 
 						{# Inline form to create a class #}
 						<tr id="create-class-row" class="hide">
-							<form id="addClassroomForm" action="{{ user }}/schools/{{main_school.id}}/create_a_class" method="post">{% csrf_token %}
+							<form id="addClassroomForm" action="/{{ user }}/schools/{{main_school.id}}/create_a_class" method="post">{% csrf_token %}
 								<td class="classname">
 									<i class="icon-book"></i>
 									<input id="id_class_name" 
