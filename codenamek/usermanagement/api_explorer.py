@@ -13,6 +13,7 @@ class APIExplorerOAuthClient(object):
         
     def url_for_request_token(self, callback=None, parameters=None):
         http_url = "%s/api/auth/request_token" % self.server_url
+        print "URL 1: %s" % http_url
         oauth_request = OAuthRequest.from_consumer_and_token(
             self.consumer,
             http_url   = http_url,
@@ -23,10 +24,12 @@ class APIExplorerOAuthClient(object):
             OAuthSignatureMethod_HMAC_SHA1(), self.consumer, None
             )
         
+        print "oAuth url: %s" % oauth_request.to_url()
         return oauth_request.to_url()
     
     def url_for_access_token(self, request_token, callback=None, parameters=None, verifier=None):
         http_url = "%s/api/auth/access_token" % self.server_url
+        print "URL 2: %s" % http_url
         if not verifier and request_token.verifier:
             verifier = request_token.verifier
             
@@ -46,11 +49,13 @@ class APIExplorerOAuthClient(object):
         
     def fetch_access_token(self, request_token):
         url = self.url_for_access_token(request_token)
+        print "URL 3: %s" % url
         return OAuthToken.from_string(get_response(url))
     
     # Make an OAuth-wrapped API request to an arbitrary URL.
     def access_api_resource(self, relative_url, access_token, method="GET"):
         full_url = self.server_url + urllib2.quote(relative_url)
+        print "URL 4: %s" % full_url
 
         # Escape each parameter value.
         url = urlparse.urlparse(full_url)

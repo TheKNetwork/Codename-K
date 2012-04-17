@@ -1,6 +1,7 @@
 # Django settings for codenamek project.
 import os, sys
 from ConfigParser import RawConfigParser
+from khanapi.api_explorer_oauth_client import APIExplorerOAuthClient
 
 LOCAL_TEMPLATE_CONTEXT_PROCESSORS_PREFIX = LOCAL_TEMPLATE_CONTEXT_PROCESSORS = LOCAL_MIDDLEWARE_CLASSES_PREFIX = LOCAL_MIDDLEWARE_CLASSES = LOCAL_INSTALLED_APPS_PREFIX = LOCAL_INSTALLED_APPS = ()
 
@@ -11,6 +12,13 @@ TEMPLATE_FILE_PATH = os.path.join(os.path.dirname(__file__), 'templates')
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+# Keep around an instance of the client. It's reusable because all the
+# stateful stuff is passed around as parameters.
+CLIENT = APIExplorerOAuthClient("http://www.khanacademy.org",
+                                os.getenv('KHAN_KEY', ''),
+                                os.getenv('KHAN_SECRET', '')
+        )
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -175,6 +183,7 @@ INSTALLED_APPS = (
     'codenamek.schools',
     'codenamek.whiteboard',
     'codenamek.chat',
+    'codenamek.khanapi',
 )
 
 # django needs to know what port to talk to for chat
@@ -221,11 +230,6 @@ LOGGING = {
     }
 }
 
-KHAN_URL = ""
-CONSUMER_KEY = ""
-CONSUMER_SECRET = ""
-
-
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 try:
     from settings_local import *
@@ -244,3 +248,4 @@ INSTALLED_APPS = \
     LOCAL_INSTALLED_APPS_PREFIX + \
     INSTALLED_APPS + \
     LOCAL_INSTALLED_APPS
+
