@@ -58,6 +58,11 @@ urlpatterns = patterns('',
     url(r'^khan-academy/auth/$', 'usermanagement.views.request_token', name='request-token'),
     url(r'^khan-academy/auth/callback/$', 'usermanagement.views.access_token', name='access-token'),
     url(r'^khan-academy/api/test/$', 'usermanagement.views.khan_api_test', name='api-test'),
+
+    url(r'^khanapi/$', 'khanapi.views.index'),
+    url(r'^proxy/$', 'khanapi.views.proxy'),
+    url(r'^oauth_get_request_token/$', 'khanapi.views.oauth_get_request_token'),
+    url(r'^oauth_callback/$', 'khanapi.views.oauth_callback'),
     
     # django socket io
     url("", include("django_socketio.urls")),

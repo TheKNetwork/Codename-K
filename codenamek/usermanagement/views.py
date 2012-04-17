@@ -125,6 +125,7 @@ def request_token(request):
     request_token_url = CLIENT.url_for_request_token(
                 callback = callback
                 )
+    print "Request token url: %s" % request_token_url
     return HttpResponseRedirect(request_token_url)
 
 
@@ -147,7 +148,9 @@ def access_token(request):
     profile.access_token = access_token.to_string()
     profile.save()
 
-    messages.info(request, "Your account have beed associated with Khan Academy usernamer %s" % access_token.to_string())
+    print "Your account has been associated with Khan Academy usernamer %s" % access_token.to_string()
+
+    messages.info(request, "Your account has been associated with Khan Academy usernamer %s" % access_token.to_string())
     return HttpResponseRedirect(reverse('homeroom'))
 
 
@@ -159,6 +162,7 @@ def khan_api_test(request):
     #TODO, extend it using requests lib
     #TODO, add decorator for api calls to ensure that we have access_token for user
     #TODO, check 401 status codes in case of any failure
+    print "Running test"
     if not request.user.get_profile().access_token:
         return HttpResponseRedirect(reverse('request-token'))
     access_token = OAuthToken.from_string(request.user.get_profile().access_token.encode('ascii'))
