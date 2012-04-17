@@ -11,6 +11,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 from codenamek.usermanagement.models import *
 from codenamek.schools.models import *
+from codenamek.chat.models import *
 
 import os, datetime
 
@@ -56,8 +57,6 @@ def get_main_school_for_user(**kwargs):
     try:
         count_of = UserDefaultSchool.objects.filter(user__id=_user.id).count()
     except UserProfile.DoesNotExist:
-        # user_default_school = UserDefaultSchool(user=_user, main_school=)
-        # do nothing
         print "Not found"
     
     if count_of == 1:
