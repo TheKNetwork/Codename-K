@@ -158,4 +158,16 @@
 	</div>
 </section>
 
+<div id="authenticate_alert" class="alert alert-info">
+    {% if active_khan_user %}
+    Joined Khan Academy on: {{khan_user_info.joined}}<br/>
+    Email address: {{ khan_user_info.email }}<br/>
+    {% endif %}
+    
+    {% if not active_khan_user %}
+    <p>You haven't connected with the Khan Academy site. API methods that require authentication will return <strong>401 Unauthorized</strong>.</p>
+    <a class="btn btn-primary" href="/oauth_get_request_token">Connect via OAuth</a>
+    {% endif %}
+</div>
+      
 {% endblock %}

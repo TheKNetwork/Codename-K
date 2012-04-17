@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.template import RequestContext
 from codenamek.settings import *
+from khan_api import *
 
 from api_explorer_oauth_client import APIExplorerOAuthClient
 from oauth import OAuthToken
@@ -24,14 +25,15 @@ def index(request):
     data = { 'has_access_token':has_access_token(request.session) }
     return render(request, "khanapi/index.html", data)
 
+
 # Given a URL, makes a proxied request for an API resource and returns the
 # response.
 def proxy(request):
     print 'In proxy'
     url = request.GET['url']
-    if not url:
-        abort(400)
-
+    # Get the json data from the api call
+    api_data = get_data_for_khan_api_call(request, url)
+    
     # Returns a dictionary with keys: 'headers', 'body', and 'status'.
     resource = CLIENT.access_api_resource(
         url,
@@ -39,25 +41,21 @@ def proxy(request):
         method = request.method
         )
     
-    text = resource['body']
-
-    # Error messages can contain HTML. Escape them so they're not rendered.
-    is_html = has_text_html_header(resource['headers'])
-    if is_html:
-        text = cgi.escape(text)
-    
-    response = HttpResponse(text)
+    # put the data into a response for the api explorer,
+    # or other clients that want to see the text in the HTML
+    response = HttpResponse(api_data)
     # Include the original headers and status as custom response headers. The
     # client side will know what to do with these.
     response.__setitem__('X-Original-Headers', urllib.quote("".join(resource['headers'])))
     response.__setitem__('X-Original-Status',resource['status'])
     
+    is_html = has_text_html_header(resource['headers'])
     if is_html:
         response.__setitem__('Content-Type','text/html')
     else:
         response.__setitem__('Content-Type','application/json')
     
-    return response
+    return response   
         
 # Begin the process of getting a request token from Khan.
 # @app.route('/oauth_get_request_token')
@@ -100,47 +98,3 @@ def oauth_callback(request):
     # session. We can redirect back home.
     return HttpResponseRedirect('/khanapi')
 
-
-def has_request_token(session):
-    return 'request_token' in session
-
-def has_access_token(session):
-    return 'oauth_token_string' in session
-
-def is_connected(session):
-    return has_request_token(session) and has_access_token(session)
-    
-def access_token(session):
-    try:
-        token_string = session['oauth_token_string']
-    except KeyError:
-        print 'Got key error'
-        token_string = None
-
-    # Sanity check.
-    if not token_string:
-        print 'Not token string'
-        clear_session(session)
-        return None
-        
-    oauth_token = OAuthToken.from_string(token_string)
-    print 'Oauth token %s' % oauth_token
-    return oauth_token
-    
-def clear_session(session):
-    session.pop('request_token', None)
-    session.pop('oauth_token_string', None)
-
-# Expects an array of headers. Figures out if the `Content-Type` is
-# `text/html`.
-def has_text_html_header(headers):
-    for header in headers:
-        if (string.find(header, 'Content-Type') > -1 and 
-            string.find(header, 'text/html') > -1):
-            return True
-    return False
-
-def current_site_url():
-    from django.contrib.sites.models import Site
-    url = 'http://%s' % SITE_ROOT
-    return url

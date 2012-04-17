@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.template import RequestContext
+import simplejson as json
 
 from codenamek.usermanagement.models import *
 from codenamek.usermanagement.usermanagement_api import *
@@ -19,6 +20,7 @@ import logging
 import uuid
 
 from api_explorer import APIExplorerOAuthClient
+from codenamek.khanapi.khan_api import *
 
 logger = logging.getLogger('dev')
 
@@ -29,23 +31,33 @@ callback = "http://%s%s" % (Site.objects.get_current(), '/khan-academy/auth/call
 
 @login_required
 def index(request, user_name):
+    return homeroom_failsafe(request)
+
+@login_required
+def homeroom_failsafe(request):
+    json_objects = ''
+    active_khan_user = False
     if request.user.get_profile() is not None:
         if request.user.get_profile().access_token is not None:
             print "Found Khan API access token for user %s" % request.user
             request.session['oauth_token_string'] = request.user.get_profile().access_token
+                        
+            # let us put some khan api data in the home room, shall we?
+            khan_user_info = get_data_for_khan_api_call(request, '/api/v1/user')
+            print khan_user_info
+            
+            active_khan_user = True
+            # Parse the JSON
+            json_objects = json.loads(khan_user_info)
+            # Iterate through the stuff in the list
+            for o in json_objects:
+                print "object: %s has value %s" % (o, json_objects[o]) 
             
         
     main_school = get_main_school_for_user(id=request.user.id)
     # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
-    data = {'user': request.user, 'main_school': main_school}
     
-    return render(request, "homeroom/user_home.html", data)
-
-@login_required
-def homeroom_failsafe(request):
-    main_school = get_main_school_for_user(id=request.user.id)
-    # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
-    data = {'user': request.user, 'main_school': main_school}
+    data = {'user': request.user, 'main_school': main_school, 'khan_user_info': json_objects, 'active_khan_user':active_khan_user }
     
     return render(request, "homeroom/user_home.html", data)
 
