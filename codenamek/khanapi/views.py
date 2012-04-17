@@ -89,10 +89,16 @@ def oauth_callback(request):
     access_token = CLIENT.fetch_access_token(request_token)
     request.session['oauth_token_string'] = access_token.to_string()
     print "Access token is %s" % access_token.to_string()
+    
+    profile = request.user.get_profile()
+    profile.access_token = access_token.to_string()
+    profile.save()
+
+    print "Your account has been associated with Khan Academy username %s" % access_token.to_string()
 
     # We're done authenticating, and the credentials are now stored in the
     # session. We can redirect back home.
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/khanapi')
 
 
 def has_request_token(session):
@@ -136,5 +142,5 @@ def has_text_html_header(headers):
 
 def current_site_url():
     from django.contrib.sites.models import Site
-    url = 'http://%s' % Site.objects.get_current().domain
+    url = 'http://%s' % SITE_ROOT
     return url
