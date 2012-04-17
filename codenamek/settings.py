@@ -19,7 +19,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 RUN_ENV = 'DJANGO_ENV'
-SITE_ROOT = 'http://www.theknetwork.org'
+SITE_ROOT = 'www.theknetwork.org'
 
 # Keep around an instance of the client. It's reusable because all the
 # stateful stuff is passed around as parameters.
