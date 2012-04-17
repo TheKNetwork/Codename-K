@@ -13,6 +13,14 @@ TEMPLATE_FILE_PATH = os.path.join(os.path.dirname(__file__), 'templates')
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+ADMINS = (
+    # ('Your Name', 'your_email@example.com'),
+)
+
+MANAGERS = ADMINS
+RUN_ENV = 'DJANGO_ENV'
+SITE_ROOT = 'http://www.theknetwork.org'
+
 # Keep around an instance of the client. It's reusable because all the
 # stateful stuff is passed around as parameters.
 CLIENT = APIExplorerOAuthClient("http://www.khanacademy.org",
@@ -20,26 +28,20 @@ CLIENT = APIExplorerOAuthClient("http://www.khanacademy.org",
                                 os.getenv('KHAN_SECRET', '')
         )
 
-ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
-)
-
-MANAGERS = ADMINS
-RUN_ENV = 'DJANGO_ENV'
-
 if os.getenv(RUN_ENV, '') == 'prod':
     DEBUG = False
-    
+    SITE_ROOT = 'prod.theknetwork.org'
     config = RawConfigParser()
     config.read('/environments/db/postgresql_prod.ini')
 elif os.getenv(RUN_ENV, '') == 'staging':
     DEBUG = True
-    
+    SITE_ROOT = 'staging.theknetwork.org'
     config = RawConfigParser()
     config.read('/environments/db/postgresql_staging.ini')
 else:
     DEBUG = True
-    
+    SITE_ROOT = 'localhost'
+    # SITE_ROOT = 'knetdev'
     config = RawConfigParser()
     config.read(os.path.join(os.path.dirname(__file__), 'developer.ini'))
 

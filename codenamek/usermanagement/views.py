@@ -29,6 +29,12 @@ callback = "http://%s%s" % (Site.objects.get_current(), '/khan-academy/auth/call
 
 @login_required
 def index(request, user_name):
+    if request.user.get_profile() is not None:
+        if request.user.get_profile().access_token is not None:
+            print "Found Khan API access token for user %s" % request.user
+            request.session['oauth_token_string'] = request.user.get_profile().access_token
+            
+        
     main_school = get_main_school_for_user(id=request.user.id)
     # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
     data = {'user': request.user, 'main_school': main_school}
@@ -42,11 +48,6 @@ def homeroom_failsafe(request):
     data = {'user': request.user, 'main_school': main_school}
     
     return render(request, "homeroom/user_home.html", data)
-
-CLIENT = APIExplorerOAuthClient(server_url,
-        consumer_key,
-        consumer_secret
-        )
 
 def activate(request, backend,
      template_name='registration/activate.html',
