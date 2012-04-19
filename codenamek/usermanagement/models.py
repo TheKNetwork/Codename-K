@@ -26,6 +26,7 @@ class UserProfile(models.Model):
     home_address = models.TextField(blank=True)
     user = models.ForeignKey(User, unique=True)
     access_token = models.CharField(max_length=255, blank=True, null=True)
+    default_school = models.ForeignKey(School, blank=True, null=True, unique=True, related_name="users_with_this_default")
 
     class Meta:
         verbose_name = _('User profile')

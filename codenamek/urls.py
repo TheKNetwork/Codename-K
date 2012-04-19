@@ -29,11 +29,12 @@ urlpatterns = patterns('',
     
     url(r'^class/session/$', 'codenamek.whiteboard.views.index'),
     
-    url("^chat/$", "chat.views.rooms", name="rooms"),
+    url("^chat/rooms/$", "chat.views.rooms", name="rooms"),
     url("^chat/create/$", "chat.views.create", name="create"),
     url("^chat/system_message/$", "chat.views.system_message", name="system_message"),
     # url("^chat/(?P<slug>.*)$", "chat.views.room", name="room"),
     url("^chat/(?P<school_id>\d+)/(?P<class_id>\d+)", "chat.views.room", name="room"),
+    url("^chat/(?P<room_id>\d+)", "chat.views.room_by_id", name="room_by_id"),
     
     # admin type stuff.
     url(r'^accounts/', include('registration.urls')),
