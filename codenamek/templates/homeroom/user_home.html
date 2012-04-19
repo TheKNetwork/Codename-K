@@ -55,23 +55,18 @@
 	</div>
 </section>
 
+{% load khan_tags %}
 
-<div id="authenticate_alert" class="alert alert-error">
+<div id="authenticate_alert" class="alert alert-warning">
     {% if active_khan_user %}
-    Joined Khan Academy on: {{khan_user_info.joined}}<br/>
-    Email address: {{ khan_user_info.email }}<br/>
+        {% khan_user_data %}
+        <!-- See /codenamek/templates/khanapi/khan_user_data.html -->
     {% endif %}
     
     {% if not active_khan_user %}
     <p>You haven't connected with the Khan Academy site. API methods that require authentication will return <strong>401 Unauthorized</strong>.</p>
     <a class="btn btn-success" href="/oauth_get_request_token">Connect With the Khan Academy</a>
     {% endif %}
-    
-    <script>
-        var socket = new io.Socket();
-        socket.connect();
-        // etc
-    </script>
 </div>
 
 <section id="school">
