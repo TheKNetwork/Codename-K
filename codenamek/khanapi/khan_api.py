@@ -20,6 +20,7 @@ import urllib2
 import string
 import time
 import cgi, os, sys
+import simplejson
 
 def get_data_for_khan_api_call(request, url):
     
@@ -44,6 +45,10 @@ def get_data_for_khan_api_call(request, url):
     
     return text
 
+def get_json_for_khan_api_call(request, url):
+    text = get_data_for_khan_api_call(request, url)
+    jsondata = simplejson.loads(text)
+    return jsondata
 
 def has_request_token(session):
     return 'request_token' in session
