@@ -3,8 +3,8 @@ from datetime import datetime
 
 class WhiteboardSession(models.Model):
     whiteboard_title = models.CharField(max_length=50)
-    whiteboard_hash = models.CharField(max_length=255)
-    whiteboard_url = models.CharField(max_length=255)
+    whiteboard_hash = models.CharField(max_length=4000)
+    whiteboard_url = models.CharField(max_length=4000)
     
     date_created = models.DateTimeField()
     date_modified = models.DateTimeField()
