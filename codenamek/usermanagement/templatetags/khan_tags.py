@@ -9,14 +9,17 @@ from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.template import RequestContext
 
+from codenamek.khanapi.khan_api import *
+
 from django import template
 register = template.Library()
 
-def get_user_data(context):
+def khan_user_data(context):
+    request = context['request']
     print "INCLUDING TAG LIBRARY"
-    return { 'khan_api_user_data':get_data_for_khan_api_call(context, '/api/v1/user') }
+    return { 'khan_user': get_json_for_khan_api_call(request, '/api/v1/user')}
 
-register.inclusion_tag('khanapi/khan_user_data.html')(get_user_data)
+register.inclusion_tag('khanapi/khan_user_data.html', takes_context = True)(khan_user_data)
 
 @register.inclusion_tag('khan_exercise.html')
 def get_exercise(request):
