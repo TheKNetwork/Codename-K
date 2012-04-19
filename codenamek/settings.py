@@ -186,6 +186,7 @@ INSTALLED_APPS = (
     'codenamek.whiteboard',
     'codenamek.chat',
     'codenamek.khanapi',
+    'codenamek.khanapi.templatetags',
 )
 
 # django needs to know what port to talk to for chat
