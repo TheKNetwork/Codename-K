@@ -2,11 +2,9 @@ from django.db import models
 from datetime import datetime
 
 class WhiteboardSession(models.Model):
-    prepopulated_fields = { 'slug': ['whiteboard_hash'] }
-
     whiteboard_title = models.CharField(max_length=50)
-    whiteboard_hash = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True)
+    whiteboard_hash = models.CharField(max_length=4000)
+    whiteboard_url = models.CharField(max_length=4000)
     
     date_created = models.DateTimeField()
     date_modified = models.DateTimeField()
@@ -18,7 +16,7 @@ class WhiteboardSession(models.Model):
             super(WhiteboardSession, self).save()
 
     def get_absolute_url(self):
-    	return "/classroom/%s/" % self.slug
+    	return "/classroom/%s" % self.url
 
     def __unicode__(self):
     	return self.title

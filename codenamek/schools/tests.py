@@ -22,5 +22,5 @@ class SimpleTest(TestCase):
         pass
     
     def test_get_main_school_for_user(self):
-        main_school = get_main_school_for_user(username="bsmith")
+        main_school = get_main_school_for_user(username="pkuperman")
         self.assertIsNotNone(main_school, "There should have been a main school set for the user bsmith, but we can't find one")

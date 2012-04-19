@@ -28,7 +28,7 @@ class SimpleTest(TestCase):
         pass    
     
     def test_get_schools_for_user(self):
-        schools = get_schools_for_user(username="bsmith")
+        schools = get_schools_for_user(username="pkuperman")
         
         self.assertGreater(schools.count(), 0, "No schools were found but should have been")
         

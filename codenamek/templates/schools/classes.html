@@ -25,7 +25,7 @@
 					<tbody>
 						{% for school_class in classes %}
 						<tr>
-							<td><a href='/schools/{{school.id}}/{{school_class.id}}'><i class="icon-book"></i> {{school_class.class_name}}</a></td>
+							<td><a href='{{ user }}/schools/{{school.id}}/{{school_class.id}}'><i class="icon-book"></i> {{school_class.class_name}}</a></td>
 							<td><a href=#Users><i class="icon-user"></i> {{school_class.user_set.all.count}} Users</a></td>
 						</tr>
 						{% endfor %}

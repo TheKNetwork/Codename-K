@@ -44,10 +44,6 @@ class School(Group):
     def __unicode__(self):
         return self.school_name   
 
-class UserDefaultSchool(models.Model):
-    user = models.OneToOneField(User)
-    main_school = models.OneToOneField(School, null=True, blank=True)
-
 class Classroom(Group):
     """
     A classroom is an organization within a school. It might physically be many things,

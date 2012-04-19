@@ -8,10 +8,12 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.template import RequestContext
+import simplejson as json
 
 from codenamek.usermanagement.models import *
 from codenamek.usermanagement.usermanagement_api import *
 from codenamek.schools.schoolmanagement_api import *
+from codenamek.whiteboard.models import *
 
 from oauth.oauth import OAuthConsumer, OAuthToken
 import requests
@@ -19,6 +21,7 @@ import logging
 import uuid
 
 from api_explorer import APIExplorerOAuthClient
+from codenamek.khanapi.khan_api import *
 
 logger = logging.getLogger('dev')
 
@@ -28,17 +31,36 @@ consumer_secret = getattr(settings, 'CONSUMER_SECRET', None)
 callback = "http://%s%s" % (Site.objects.get_current(), '/khan-academy/auth/callback/')
 
 @login_required
-def index(request):
+def index(request, user_name):
+    return homeroom_failsafe(request)
+
+@login_required
+def homeroom_failsafe(request):
+    json_objects = ''
+    active_khan_user = False
+    if request.user.get_profile() is not None:
+        if request.user.get_profile().access_token is not None:
+            print "Found Khan API access token for user %s" % request.user
+            request.session['oauth_token_string'] = request.user.get_profile().access_token
+                        
+            # let us put some khan api data in the home room, shall we?
+            khan_user_info = get_data_for_khan_api_call(request, '/api/v1/user')
+            print khan_user_info
+            
+            active_khan_user = True
+            # Parse the JSON
+            json_objects = json.loads(khan_user_info)
+            # Iterate through the stuff in the list
+            for o in json_objects:
+                print "object: %s has value %s" % (o, json_objects[o]) 
+            
+    whiteboard_sessions = WhiteboardSession.objects.all()
     main_school = get_main_school_for_user(id=request.user.id)
     # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
-    data = {'user': request.user, 'main_school': main_school}
+    
+    data = {'user': request.user, 'main_school': main_school, 'khan_user_info': json_objects, 'active_khan_user':active_khan_user, 'whiteboard_sessions':whiteboard_sessions }
     
     return render(request, "homeroom/user_home.html", data)
-
-CLIENT = APIExplorerOAuthClient(server_url,
-        consumer_key,
-        consumer_secret
-        )
 
 def activate(request, backend,
      template_name='registration/activate.html',
@@ -117,6 +139,7 @@ def request_token(request):
     request_token_url = CLIENT.url_for_request_token(
                 callback = callback
                 )
+    print "Request token url: %s" % request_token_url
     return HttpResponseRedirect(request_token_url)
 
 
@@ -139,7 +162,9 @@ def access_token(request):
     profile.access_token = access_token.to_string()
     profile.save()
 
-    messages.info(request, "Your account have beed associated with Khan Academy usernamer %s" % access_token.to_string())
+    print "Your account has been associated with Khan Academy usernamer %s" % access_token.to_string()
+
+    messages.info(request, "Your account has been associated with Khan Academy usernamer %s" % access_token.to_string())
     return HttpResponseRedirect(reverse('homeroom'))
 
 
@@ -151,6 +176,7 @@ def khan_api_test(request):
     #TODO, extend it using requests lib
     #TODO, add decorator for api calls to ensure that we have access_token for user
     #TODO, check 401 status codes in case of any failure
+    print "Running test"
     if not request.user.get_profile().access_token:
         return HttpResponseRedirect(reverse('request-token'))
     access_token = OAuthToken.from_string(request.user.get_profile().access_token.encode('ascii'))

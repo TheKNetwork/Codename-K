@@ -1,6 +1,7 @@
 $(function() {
 
-    var name, started = false;
+    var name;
+    var started = false;
 
     var addItem = function(selector, item) {
         var template = $(selector).find('script[type="text/x-jquery-tmpl"]');
@@ -15,7 +16,7 @@ $(function() {
         }
     };
 
-    var removeUser = function(data) {
+    var  removeUser = function(data) {
         $('#user-' + data.id).remove();
         data.message = 'leaves';
         addMessage(data);
@@ -52,7 +53,7 @@ $(function() {
     });
 
     $('#leave').click(function() {
-        location = '/';
+        location = '/chat/rooms/';
     });
 
     var socket;
@@ -63,11 +64,13 @@ $(function() {
             socket.send({room: window.room, action: 'start', name: name});
         } else {
             showForm();
+            data = {room: window.room, action: 'start', name: current_user_name};
+            socket.send(data);
         }
     };
 
     var disconnected = function() {
-        setTimeout(start, 1000);
+        setTimeout(start, 500);
     };
 
     var messaged = function(data) {
@@ -105,8 +108,8 @@ $(function() {
         socket.on('connect', connected);
         socket.on('disconnect', disconnected);
         socket.on('message', messaged);
+        current_socket = socket;
     };
 
     start();
-
 });
