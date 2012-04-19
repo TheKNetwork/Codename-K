@@ -50,23 +50,14 @@ def homeroom_failsafe(request):
         if request.user.get_profile().access_token is not None:
             print "Found Khan API access token for user %s" % request.user
             request.session['oauth_token_string'] = request.user.get_profile().access_token
-                        
-            # let us put some khan api data in the home room, shall we?
             khan_user_info = get_data_for_khan_api_call(request, '/api/v1/user')
-            print khan_user_info
-            
             active_khan_user = True
-            # Parse the JSON
-            json_objects = json.loads(khan_user_info)
-            # Iterate through the stuff in the list
-            for o in json_objects:
-                print "object: %s has value %s" % (o, json_objects[o]) 
             
     whiteboard_sessions = WhiteboardSession.objects.all()
     main_school = get_main_school_for_user(id=request.user.id)
     # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
     
-    data = {'user': request.user, 'main_school': main_school, 'khan_user_info': json_objects, 'active_khan_user':active_khan_user, 'whiteboard_sessions':whiteboard_sessions }
+    data = {'user': request.user, 'main_school': main_school, 'khan_user_active':active_khan_user, 'whiteboard_sessions':whiteboard_sessions }
     
     return render(request, "homeroom/user_home.html", data, context_instance = RequestContext(request))
 
