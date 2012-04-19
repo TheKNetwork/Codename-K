@@ -11,6 +11,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 from codenamek.usermanagement.models import *
 from codenamek.schools.models import *
+from codenamek.chat.models import *
 
 import os, datetime
 
@@ -33,27 +34,33 @@ def add_class(school_id, **kwargs):
     school_class = Classroom.objects.create(school=existing_school, **kwargs)
     school_class.name = 'class.%s.%s' % (existing_school.school_name, school_class.class_name)
     school_class.save()
+    
+    chatroom_name = "%s: %s" % (existing_school.school_name, school_class.class_name)
+    chatroom, created  = ChatRoom.objects.get_or_create(name=chatroom_name)
+    print "Url for chatroom (slug) is %s" % chatroom.slug
+    
     return school_class
+
+def add_user_to_class(user, classroom):
+    group = Group.objects.get(id=classroom.id)
+    group.user_set.add(user)
+    group.save()
+    return
 
 def get_main_school_for_user(**kwargs):
     """
     Gets the user's default school
     """
     _user = User.objects.get(**kwargs)
-    schools = School.objects.filter(group_ptr=_user.groups.filter(name__startswith="school."))
-    count_of = 0
-    try:
-        count_of = UserDefaultSchool.objects.filter(user__id=_user.id).count()
-    except UserProfile.DoesNotExist:
-        # user_default_school = UserDefaultSchool(user=_user, main_school=)
-        # do nothing
-        print "Not found"
-    
-    if count_of == 1:
-        user_school = UserDefaultSchool.objects.get(user__id=_user.id)
-        return user_school
-    elif count_of == 0:
+    if _user.get_profile().default_school is None:
+        schools = School.objects.filter(group_ptr=_user.groups.filter(name__startswith="school."))
+        print "count of schools found %s" % schools.count()
         for school in schools:
-            print "No default school was set, setting default to first school in user's list: %s" % school
-            UserDefaultSchool(user=_user, main_school=school)
+            _user.get_profile().default_school = school
+            _user.get_profile().save()
             return school
+    
+    elif _user.get_profile().default_school is not None :
+        return _user.get_profile().default_school
+    
+    

@@ -10,6 +10,7 @@
 
     <!-- Le styles -->
     <link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/knet.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -22,12 +23,9 @@
     <link href="{{ STATIC_URL }}/css/bootstrap-responsive.css" rel="stylesheet">
    
 	<!-- TODO: Move js includes to the bottom of the page --> 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}/js/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}/js/bootstrap.js"></script>
 	
-	{% block js %}
-	{% endblock %}
-
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -52,7 +50,9 @@
           <a class="brand" href="/">K Network</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="/homeroom">Home</a></li>
+              {% if user.is_active %}
+              <li class="active"><a href="/{{ user }}/homeroom">Home</a></li>
+              {% endif %}
               <li><a href="#about">About</a></li>
               <li><a href="mailto:info@theknetwork.org">Contact</a></li>
             </ul>
@@ -74,5 +74,8 @@
   	
   	{% block main-container %}{% endblock %}
   	
+	{% block js %}
+	{% endblock %}
+
   </body>
 </html>

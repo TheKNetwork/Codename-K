@@ -1,6 +1,7 @@
 # Django settings for codenamek project.
 import os, sys
 from ConfigParser import RawConfigParser
+from khanapi.api_explorer_oauth_client import APIExplorerOAuthClient
 
 LOCAL_TEMPLATE_CONTEXT_PROCESSORS_PREFIX = LOCAL_TEMPLATE_CONTEXT_PROCESSORS = LOCAL_MIDDLEWARE_CLASSES_PREFIX = LOCAL_MIDDLEWARE_CLASSES = LOCAL_INSTALLED_APPS_PREFIX = LOCAL_INSTALLED_APPS = ()
 
@@ -18,20 +19,29 @@ ADMINS = (
 
 MANAGERS = ADMINS
 RUN_ENV = 'DJANGO_ENV'
+SITE_ROOT = 'www.theknetwork.org'
+
+# Keep around an instance of the client. It's reusable because all the
+# stateful stuff is passed around as parameters.
+CLIENT = APIExplorerOAuthClient("http://www.khanacademy.org",
+                                os.getenv('KHAN_KEY', ''),
+                                os.getenv('KHAN_SECRET', '')
+        )
 
 if os.getenv(RUN_ENV, '') == 'prod':
     DEBUG = False
-    
+    SITE_ROOT = 'prod.theknetwork.org'
     config = RawConfigParser()
     config.read('/environments/db/postgresql_prod.ini')
 elif os.getenv(RUN_ENV, '') == 'staging':
     DEBUG = True
-    
+    SITE_ROOT = 'staging.theknetwork.org'
     config = RawConfigParser()
     config.read('/environments/db/postgresql_staging.ini')
 else:
     DEBUG = True
-    
+    SITE_ROOT = 'localhost'
+    # SITE_ROOT = 'knetdev'
     config = RawConfigParser()
     config.read(os.path.join(os.path.dirname(__file__), 'developer.ini'))
 
@@ -175,10 +185,12 @@ INSTALLED_APPS = (
     'codenamek.schools',
     'codenamek.whiteboard',
     'codenamek.chat',
+    'codenamek.khanapi',
+    'codenamek.khanapi.templatetags',
 )
 
 # django needs to know what port to talk to for chat
-SOCKETIO_HOST = 'staging.theknetwork.org'
+SOCKETIO_HOST = 'localhost'
 SOCKETIO_PORT = 9000
 
 ACCOUNT_ACTIVATION_DAYS = 7
@@ -221,11 +233,6 @@ LOGGING = {
     }
 }
 
-KHAN_URL = ""
-CONSUMER_KEY = ""
-CONSUMER_SECRET = ""
-
-
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 try:
     from settings_local import *
@@ -244,3 +251,4 @@ INSTALLED_APPS = \
     LOCAL_INSTALLED_APPS_PREFIX + \
     INSTALLED_APPS + \
     LOCAL_INSTALLED_APPS
+

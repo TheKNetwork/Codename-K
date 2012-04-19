@@ -9,11 +9,21 @@
         {% endfor %}
     </div>
 {% endif %}
-Welcome to
-<h3>{{school}}: <small>{{ school_class }}</small></h3> 
+
+<section>
+	<div id="breadcrumbs span12">
+		<ul class="breadcrumb">
+			<li>
+				<a href="/{{ user }}/homeroom"><i class="icon-home"></i> Homeroom</a><span class="divider">/</span>
+				<i class="icon-book"></i> {{ school_class }}
+			</li>
+		</ul>
+	</div>
+</section>
+
 
 	<div id="chat-iframe-div">
-    <iframe name="inlineframe" src="{{ chat_url }}" frameborder="0"
+    <iframe name="inlineframe" src="/chat/{{ school.id }}/{{ school_class.id }}" frameborder="0"
 		scrolling="auto" width="700px" height="500px" marginwidth="0"
 		marginheight="0"></iframe>
 	</div>

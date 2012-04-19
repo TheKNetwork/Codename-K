@@ -12,15 +12,32 @@ urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^accounts/login/$', login, name='login'),
     url(r'^accounts/logout/$', logout, name='logout'),
-    url(r'^homeroom/$', 'codenamek.usermanagement.views.index', name='homeroom'),
     
-    url(r'^schools/(?P<_school_id>\d+)/create_a_class','codenamek.schools.views.create_a_class'),
+    # All urls in this section are from the perspective of the user,
+    # and therefore should be of the pattern /username/something/something_else
+    #     This one comes from the user management app
+    # TODO: Put these in the usermanagement's urls.py
+    url(r'^(?P<user_name>\w+)/homeroom/$', 'codenamek.usermanagement.views.index', name='homeroom'),
+    url(r'^homeroom/$', 'codenamek.usermanagement.views.homeroom_failsafe', name='homeroom_safe'),
     
-    url(r'^schools/(?P<school_id>\d+)/(?P<class_id>\d+)','codenamek.schools.views.class_congregation', name='class_congregation'),
-    url(r'^schools/(?P<school_id>\d+)','codenamek.schools.views.classes_for_school', name='schools_class'),
-    url(r'^schools/$', 'codenamek.schools.views.index', name='schools'),
+    #     These urls come from the schools app
+    # TODO: Put these in the schools urls.py
+    url(r'^(?P<user_name>\w+)/schools/(?P<_school_id>\d+)/create_a_class','codenamek.schools.views.create_a_class'),
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)','codenamek.schools.views.class_congregation', name='class_congregation'),
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)','codenamek.schools.views.classes_for_school', name='schools_class'),
+    url(r'^(?P<user_name>\w+)/schools/$', 'codenamek.schools.views.index', name='schools'),
     
-    url(r'^class/session/$', 'codenamek.whiteboard.views.index'),
+    url(r'^classroom/(?P<whiteboard_id>\d+)/$', 'codenamek.whiteboard.views.show_whiteboard'),
+    url(r'^classroom/create_whiteboard', 'codenamek.whiteboard.views.create_whiteboard'),
+    
+    url("^chat/rooms/$", "chat.views.rooms", name="rooms"),
+    url("^chat/create/$", "chat.views.create", name="create"),
+    url("^chat/system_message/$", "chat.views.system_message", name="system_message"),
+    # url("^chat/(?P<slug>.*)$", "chat.views.room", name="room"),
+    url("^chat/(?P<school_id>\d+)/(?P<class_id>\d+)", "chat.views.room", name="room"),
+    url("^chat/(?P<room_id>\d+)", "chat.views.room_by_id", name="room_by_id"),
+    
+    # admin type stuff.
     url(r'^accounts/', include('registration.urls')),
     url(r'^admin/', include(admin.site.urls)),
     
@@ -43,10 +60,14 @@ urlpatterns = patterns('',
     url(r'^khan-academy/auth/$', 'usermanagement.views.request_token', name='request-token'),
     url(r'^khan-academy/auth/callback/$', 'usermanagement.views.access_token', name='access-token'),
     url(r'^khan-academy/api/test/$', 'usermanagement.views.khan_api_test', name='api-test'),
+
+    url(r'^khanapi/$', 'khanapi.views.index'),
+    url(r'^proxy/$', 'khanapi.views.proxy'),
+    url(r'^oauth_get_request_token/$', 'khanapi.views.oauth_get_request_token'),
+    url(r'^oauth_callback/$', 'khanapi.views.oauth_callback'),
     
     # django socket io
     url("", include("django_socketio.urls")),
-    url("^chat", include("chat.urls")),
 )
 
 urlpatterns += staticfiles_urlpatterns()
