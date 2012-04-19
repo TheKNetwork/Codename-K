@@ -168,6 +168,12 @@
     <p>You haven't connected with the Khan Academy site. API methods that require authentication will return <strong>401 Unauthorized</strong>.</p>
     <a class="btn btn-primary" href="/oauth_get_request_token">Connect via OAuth</a>
     {% endif %}
+    
+    <script>
+        var socket = new io.Socket();
+        socket.connect();
+        // etc
+    </script>
 </div>
       
 {% endblock %}

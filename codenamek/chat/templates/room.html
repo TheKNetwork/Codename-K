@@ -8,6 +8,16 @@
     <script type="text/javascript" src="{{ STATIC_URL }}/js/jquery.tmpl.min.js"></script>
     {% load socketio_tags %}
     {% socketio %}
+    
+    <script>
+    var current_user_name = '';
+    {% if user.is_active %}
+    current_user_name = '{{user}}';
+    {% endif %}
+    
+    var current_socket; 
+    </script>
+    
     <script src="{{ STATIC_URL }}js/chat.js"></script>  
 
 <script>window.room = {{ room.id }};</script>
@@ -28,4 +38,9 @@
     <input type="submit" id="submit" value="Join" class="btn btn-info btn-mini">
     <input type="button" id="leave" value="Leave" class="btn btn-inverse btn-mini">
 </form>
+
+<script>
+    $(document).onunload(function() { current_socket.disconnect(); });
+    
+</script>
 {% endblock %}

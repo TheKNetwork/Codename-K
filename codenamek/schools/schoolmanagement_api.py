@@ -52,18 +52,15 @@ def get_main_school_for_user(**kwargs):
     Gets the user's default school
     """
     _user = User.objects.get(**kwargs)
-    schools = School.objects.filter(group_ptr=_user.groups.filter(name__startswith="school."))
-    count_of = 0
-    try:
-        count_of = UserDefaultSchool.objects.filter(user__id=_user.id).count()
-    except UserProfile.DoesNotExist:
-        print "Not found"
-    
-    if count_of == 1:
-        user_school = UserDefaultSchool.objects.get(user__id=_user.id)
-        return user_school
-    elif count_of == 0:
+    if _user.get_profile().default_school is None:
+        schools = School.objects.filter(group_ptr=_user.groups.filter(name__startswith="school."))
+        print "count of schools found %s" % schools.count()
         for school in schools:
-            print "No default school was set, setting default to first school in user's list: %s" % school
-            UserDefaultSchool(user=_user, main_school=school)
+            _user.get_profile().default_school = school
+            _user.get_profile().save()
             return school
+    
+    elif _user.get_profile().default_school is not None :
+        return _user.get_profile().default_school
+    
+    

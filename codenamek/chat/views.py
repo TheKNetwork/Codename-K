@@ -34,6 +34,15 @@ def room(request, school_id, class_id, template="room.html"):
     # context = {"room": get_object_or_404(ChatRoom, slug=slug)}
     return render(request, template, context)
 
+def room_by_id(request, room_id, template="room.html"):
+    
+    chatroom  = ChatRoom.objects.get(id=room_id)
+    print "(Looking up chat room) Chat room found: %s" % chatroom
+    
+    context = { "room": chatroom }
+    # context = {"room": get_object_or_404(ChatRoom, slug=slug)}
+    return render(request, template, context)
+
 def create(request):
     """
     Handles post from the "Add room" form on the homepage, and
@@ -42,7 +51,7 @@ def create(request):
     name = request.POST.get("name")
     if name:
         room, created = ChatRoom.objects.get_or_create(name=name)
-        return redirect(room)
+        return redirect('/chat/%s' % room.id)
     return redirect(rooms)
 
 
