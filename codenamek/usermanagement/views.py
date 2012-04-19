@@ -30,6 +30,14 @@ consumer_key = getattr(settings, 'CONSUMER_KEY', None)
 consumer_secret = getattr(settings, 'CONSUMER_SECRET', None)
 callback = "http://%s%s" % (Site.objects.get_current(), '/khan-academy/auth/callback/')
 
+from django import template
+register = template.Library()
+
+@register.inclusion_tag('khanapi/khan_user_data.html')
+def get_user_data(request):
+    print "INCLUDING TAG LIBRARY"
+    return { 'khan_api_user_data':'' }
+
 @login_required
 def index(request, user_name):
     return homeroom_failsafe(request)
@@ -60,7 +68,7 @@ def homeroom_failsafe(request):
     
     data = {'user': request.user, 'main_school': main_school, 'khan_user_info': json_objects, 'active_khan_user':active_khan_user, 'whiteboard_sessions':whiteboard_sessions }
     
-    return render(request, "homeroom/user_home.html", data)
+    return render(request, "homeroom/user_home.html", data, context_instance = RequestContext(request))
 
 def activate(request, backend,
      template_name='registration/activate.html',

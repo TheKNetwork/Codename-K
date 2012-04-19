@@ -162,7 +162,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
-    "django.contrib.messages.context_processors.messages"
+    "django.contrib.messages.context_processors.messages",
+    "django.core.context_processors.request",
     )
 
 INSTALLED_APPS = (
@@ -186,7 +187,6 @@ INSTALLED_APPS = (
     'codenamek.whiteboard',
     'codenamek.chat',
     'codenamek.khanapi',
-    'codenamek.khanapi.templatetags',
 )
 
 # django needs to know what port to talk to for chat
