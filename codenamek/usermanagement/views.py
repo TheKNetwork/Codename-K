@@ -13,6 +13,7 @@ import simplejson as json
 from codenamek.usermanagement.models import *
 from codenamek.usermanagement.usermanagement_api import *
 from codenamek.schools.schoolmanagement_api import *
+from codenamek.whiteboard.models import *
 
 from oauth.oauth import OAuthConsumer, OAuthToken
 import requests
@@ -53,11 +54,11 @@ def homeroom_failsafe(request):
             for o in json_objects:
                 print "object: %s has value %s" % (o, json_objects[o]) 
             
-        
+    whiteboard_sessions = WhiteboardSession.objects.all()
     main_school = get_main_school_for_user(id=request.user.id)
     # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
     
-    data = {'user': request.user, 'main_school': main_school, 'khan_user_info': json_objects, 'active_khan_user':active_khan_user }
+    data = {'user': request.user, 'main_school': main_school, 'khan_user_info': json_objects, 'active_khan_user':active_khan_user, 'whiteboard_sessions':whiteboard_sessions }
     
     return render(request, "homeroom/user_home.html", data)
 
