@@ -27,7 +27,8 @@ urlpatterns = patterns('',
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)','codenamek.schools.views.classes_for_school', name='schools_class'),
     url(r'^(?P<user_name>\w+)/schools/$', 'codenamek.schools.views.index', name='schools'),
     
-    url(r'^class/session/$', 'codenamek.whiteboard.views.index'),
+    url(r'^classroom/(?P<whiteboard_id>\d+)/$', 'codenamek.whiteboard.views.show_whiteboard'),
+    url(r'^classroom/create_whiteboard', 'codenamek.whiteboard.views.create_whiteboard'),
     
     url("^chat/rooms/$", "chat.views.rooms", name="rooms"),
     url("^chat/create/$", "chat.views.create", name="create"),
