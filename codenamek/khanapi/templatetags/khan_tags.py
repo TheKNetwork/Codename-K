@@ -24,12 +24,14 @@ def is_khan_user_active(request):
     return active_khan_user;
 
 def get_khan_user(request):
+    if not is_khan_user_active(request):
+        return ''
     return get_json_for_khan_api_call(request, '/api/v1/user')    
 
 @register.inclusion_tag('khanapi/khan_user_login.html', takes_context = True)
 def khan_user_login(context):
     request = context['request']
-    
+        
     return { 'khan_user_active': is_khan_user_active(request) }
 
 @register.inclusion_tag('khanapi/khan_user_data.html', takes_context = True)
@@ -40,14 +42,20 @@ def khan_user_data(context):
 @register.inclusion_tag('khanapi/khan_exercise.html', takes_context = True)
 def khan_exercises(context):
     request = context['request']
+    if not is_khan_user_active(request):
+        return { 'khan_user_active': is_khan_user_active(request), 'khan_api_exercises':'', 'khan_user': '' }
     return { 'khan_user_active': is_khan_user_active(request), 'khan_api_exercises':get_json_for_khan_api_call(request, '/api/v1/exercises'), 'khan_user': get_khan_user(request) }
 
 @register.inclusion_tag('khanapi/khan_badges.html', takes_context = True)
 def khan_badges(context):
     request = context['request']
+    if not is_khan_user_active(request):
+        return { 'khan_user_active': is_khan_user_active(request), 'khan_badges':'', 'khan_user': '' }
     return { 'khan_user_active': is_khan_user_active(request), 'khan_badges':get_json_for_khan_api_call(request, '/api/v1/badges'), 'khan_user': get_khan_user(request) }
 
 @register.inclusion_tag('khanapi/khan_exercise_history.html', takes_context = True)
 def khan_exercise_history(context):
     request = context['request']
+    if not is_khan_user_active(request):
+        return { 'khan_user_active': is_khan_user_active(request), 'khan_api_exercise_history':'', 'khan_user': ''}
     return { 'khan_user_active': is_khan_user_active(request), 'khan_api_exercise_history':get_json_for_khan_api_call(request, '/api/v1/users/exercises'), 'khan_user': get_khan_user(request)}
