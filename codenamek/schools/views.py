@@ -14,14 +14,17 @@ from codenamek.usermanagement.usermanagement_api import *
 from codenamek.schools.models import *
 from codenamek.schools.schoolmanagement_api import *
 from codenamek.schools.forms import *
+from django.views.decorators.cache import *
 
 @login_required
+@never_cache
 def index(request, user_name):
     schools = get_schools_for_user(id=request.user.id)
     data = {'user': request.user, 'schools': schools}
     return render(request, "schools/schools.html", data)
 
 @login_required
+@never_cache
 def create_a_class(request, _school_id, user_name):
     if request.method == 'POST': # If the form has been submitted...
         form = ClassroomForm(request.POST)
@@ -41,6 +44,7 @@ def create_a_class(request, _school_id, user_name):
     }, context_instance=RequestContext(request, {}))
 
 @login_required
+@never_cache
 def classes_for_school(request, school_id, user_name):
     school = School.objects.get(id=school_id)
     classes = school.classrooms.all()
@@ -48,6 +52,7 @@ def classes_for_school(request, school_id, user_name):
     return render(request, "schools/classes.html", data)
 
 @login_required
+@never_cache
 def class_congregation(request, school_id, class_id, user_name):
     school_class = Classroom.objects.get(id=class_id)
     school = School.objects.get(id=school_id)

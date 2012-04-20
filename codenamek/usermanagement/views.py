@@ -30,19 +30,13 @@ consumer_key = getattr(settings, 'CONSUMER_KEY', None)
 consumer_secret = getattr(settings, 'CONSUMER_SECRET', None)
 callback = "http://%s%s" % (Site.objects.get_current(), '/khan-academy/auth/callback/')
 
-from django import template
-register = template.Library()
-
-@register.inclusion_tag('khanapi/khan_user_data.html')
-def get_user_data(request):
-    print "INCLUDING TAG LIBRARY"
-    return { 'khan_api_user_data':'' }
-
 @login_required
+@never_cache
 def index(request, user_name):
     return homeroom_failsafe(request)
 
 @login_required
+@never_cache
 def homeroom_failsafe(request):
     json_objects = ''
     active_khan_user = False
@@ -131,6 +125,7 @@ def register(
 
 
 @login_required
+@never_cache
 def request_token(request):
     '''
         Getting request token
@@ -143,6 +138,7 @@ def request_token(request):
 
 
 @login_required
+@never_cache
 def access_token(request):
     '''
         Getting an access token
