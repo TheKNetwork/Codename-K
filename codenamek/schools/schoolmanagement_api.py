@@ -24,15 +24,19 @@ def add_school(**kwargs):
     school.save()
     return school
 
-def add_class(school_id, **kwargs):
+def add_class(school_id, _class_name, _class_description=''):
     """
     Finds a school with the given school id, then creates a class and adds
     the class to that school using the expected arguments for the class
     object type.
     """
     existing_school = School.objects.get(id=school_id)
-    school_class = Classroom.objects.create(school=existing_school, **kwargs)
-    school_class.name = 'class.%s.%s' % (existing_school.school_name, school_class.class_name)
+    school_class = Classroom.objects.create(school=existing_school, 
+                                            class_name=_class_name, 
+                                            class_description=_class_description, 
+                                            name='class.%s.%s' % (existing_school.school_name, _class_name))
+    
+    print "************ %s" % school_class.name
     school_class.save()
     
     chatroom_name = "%s: %s" % (existing_school.school_name, school_class.class_name)
