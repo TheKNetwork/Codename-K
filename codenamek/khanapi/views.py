@@ -13,6 +13,7 @@ from khan_api import *
 from django.views.decorators.cache import *
 from api_explorer_oauth_client import APIExplorerOAuthClient
 from oauth import OAuthToken
+from codenamek.khanapi.khan_api import *
 
 import urllib
 from urllib import urlencode
@@ -26,6 +27,9 @@ def index(request):
     data = { 'has_access_token':has_access_token(request.session) }
     return render(request, "khanapi/index.html", data)
 
+def khan_user_info(request):
+    data = { 'khan_user_active': is_khan_user_active(request), 'khan_user': get_khan_user(request) }
+    return render(request, "khanapi/khan_user_data.html", data)
 
 # Given a URL, makes a proxied request for an API resource and returns the
 # response.
