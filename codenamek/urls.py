@@ -60,6 +60,7 @@ urlpatterns = patterns('',
     url(r'^proxy/$', 'khanapi.views.proxy'),
     url(r'^oauth_get_request_token/$', 'khanapi.views.oauth_get_request_token'),
     url(r'^oauth_callback/$', 'khanapi.views.oauth_callback'),
+    url(r'^khan/khan_user_info', 'khanapi.views.khan_user_info'),
     
     # django socket io
     url("", include("django_socketio.urls")),

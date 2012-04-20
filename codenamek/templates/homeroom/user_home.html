@@ -65,8 +65,9 @@
 
 -->
 {% load khan_tags %}
-
+<div id="khan_login">
 {% khan_user_login %}
+</div>
 
 <section id="school">
 	
@@ -174,8 +175,7 @@
 
 
 <section>
-    <div class="span6 well">
-        {% khan_user_data %}
+    <div id="khan-user-data" class="span6 well">
     </div>
     
     <div class="span4 well">
@@ -222,5 +222,9 @@
 </section>
 {% load socketio_tags %}
 {% socketio %}
+      
+<script type="text/javascript">
+    $("#khan-user-data").load('/khan/khan_user_info');
+</script>
       
 {% endblock %}
