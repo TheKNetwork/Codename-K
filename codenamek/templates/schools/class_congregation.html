@@ -21,11 +21,66 @@
 	</div>
 </section>
 
+<section class="alerts">
 
-	<div id="chat-iframe-div">
-    <iframe name="inlineframe" src="/chat/{{ school.id }}/{{ school_class.id }}" frameborder="0"
-		scrolling="auto" width="700px" height="500px" marginwidth="0"
-		marginheight="0"></iframe>
+
+
+</section>
+
+<section>
+	<div id="chat-iframe-div" class="pull-left">
+    		<iframe name="inlineframe"
+			src="{{ chat_url }}"
+			frameborder="0"
+			scrolling="auto"
+			width="700px"
+			height="500px"
+			marginwidth="0"
+			marginheight="0">
+		</iframe>
 	</div>
+
+<div id="session-list" class="pull-right well"> 
+
+	<h3>Available Live Sessions</h3> 
+    <div id="whiteboard-list">
+            <div class="row-fluid">
+                <div class="span6">
+                    <table class="table table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Whiteboard</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for whiteboard in whiteboard_sessions %}
+                            <tr>
+                                <td><a href="/classroom/{{ whiteboard.id }}">{{ whiteboard.whiteboard_title }}</a></td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <td>
+                                    <br/><br/>
+                                    <form id="createWhiteboardForm" action="/classroom/create_whiteboard" method="post">{% csrf_token %}
+                                        <input id="id_whiteboard_title" 
+                                                name="whiteboard_title"
+                                                type="text"
+                                                placeholder="Whiteboard Title"/>
+                                        <input type="submit" name="submit" value="Create Session" class="btn btn-primary"/>
+                                    </form>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>        
+
+	</div>
+
+</section>
+
+
 
 {% endblock %}
