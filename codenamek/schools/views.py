@@ -14,6 +14,8 @@ from codenamek.usermanagement.usermanagement_api import *
 from codenamek.schools.models import *
 from codenamek.schools.schoolmanagement_api import *
 from codenamek.schools.forms import *
+from codenamek.whiteboard.models import *
+
 
 @login_required
 def index(request, user_name):
@@ -51,6 +53,8 @@ def classes_for_school(request, school_id, user_name):
 def class_congregation(request, school_id, class_id, user_name):
     school_class = Classroom.objects.get(id=class_id)
     school = School.objects.get(id=school_id)
+    whiteboard_sessions = WhiteboardSession.objects.all()
     chat_url = '/chat'
-    data = {'user': request.user, 'school_class': school_class, 'school':school, 'chat_url': chat_url}
+    data = {'user': request.user, 'school_class': school_class, 'school':school, 'chat_url': chat_url, 'whiteboard_sessions': whiteboard_sessions}
+
     return render(request, "schools/class_congregation.html", data)

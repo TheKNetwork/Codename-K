@@ -57,7 +57,7 @@ def homeroom_failsafe(request):
     main_school = get_main_school_for_user(id=request.user.id)
     # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
     
-    data = {'user': request.user, 'main_school': main_school, 'khan_user_active':active_khan_user, 'whiteboard_sessions':whiteboard_sessions }
+    data = {'user': request.user, 'main_school': main_school, 'khan_user_active':active_khan_user, 'whiteboard_sessions': whiteboard_sessions}
     
     return render(request, "homeroom/user_home.html", data, context_instance = RequestContext(request))
 
