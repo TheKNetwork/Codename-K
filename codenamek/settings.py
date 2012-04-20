@@ -40,8 +40,8 @@ elif os.getenv(RUN_ENV, '') == 'staging':
     config.read('/environments/db/postgresql_staging.ini')
 else:
     DEBUG = True
-    # SITE_ROOT = 'localhost'
-    SITE_ROOT = 'knetdev'
+    SITE_ROOT = 'localhost'
+    # SITE_ROOT = 'knetdev'
     config = RawConfigParser()
     config.read(os.path.join(os.path.dirname(__file__), 'developer.ini'))
 
@@ -203,6 +203,7 @@ CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': 'localhost:11211',
+        'TIMEOUT': 10
     }
 }
 
