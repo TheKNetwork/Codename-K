@@ -55,11 +55,6 @@ urlpatterns = patterns('',
     # CAUTION - These next two lines MUST be in the correct order
     ('^profiles/edit', 'profiles.views.edit_profile', {'form_class': ProfileForm, }), # 1
     (r'^profiles/', include('profiles.urls')), # 2
-    
-    # khan-academy api urls
-    url(r'^khan-academy/auth/$', 'usermanagement.views.request_token', name='request-token'),
-    url(r'^khan-academy/auth/callback/$', 'usermanagement.views.access_token', name='access-token'),
-    url(r'^khan-academy/api/test/$', 'usermanagement.views.khan_api_test', name='api-test'),
 
     url(r'^khanapi/$', 'khanapi.views.index'),
     url(r'^proxy/$', 'khanapi.views.proxy'),
