@@ -36,7 +36,6 @@ def add_class(school_id, _class_name, _class_description=''):
                                             class_description=_class_description, 
                                             name='class.%s.%s' % (existing_school.school_name, _class_name))
     
-    print "************ %s" % school_class.name
     school_class.save()
     
     chatroom_name = "%s: %s" % (existing_school.school_name, school_class.class_name)

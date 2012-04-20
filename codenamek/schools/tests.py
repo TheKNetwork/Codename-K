@@ -16,7 +16,7 @@ class SimpleTest(TestCase):
     def test_add_class_to_school(self):
         school = add_school(school_name="Test School")
         
-        school_class = add_class(school_id=school.id, class_name="Math 101")
+        school_class = add_class(school_id=school.id, _class_name="Math 101")
         associated_group_name = school_class.name
         self.assertIsNotNone(associated_group_name, "Saving the class didn't create the correct group entry")
         pass
