@@ -22,6 +22,8 @@ import time
 import cgi, os, sys
 import simplejson
 
+from django.core.cache import cache
+
 # PUBLIC FACING METHODS HERE
 def is_khan_user_active(request):
     active_khan_user = False
@@ -52,11 +54,7 @@ def get_khan_exercise_history(request):
         return ''
     return get_json_for_khan_api_call(request, '/api/v1/exercise_history') 
 
-
-# UTILITY METHODS, USED BY THE PUBLIC FACING METHODS ABOVE
 def get_data_for_khan_api_call(request, url):
-    
-    print "Got request for url: %s" % url
     
     if not url:
         abort(400)
@@ -78,12 +76,20 @@ def get_data_for_khan_api_call(request, url):
     return text
 
 def get_json_for_khan_api_call(request, url):
-    text = get_data_for_khan_api_call(request, url)
-    try:
-        jsondata = simplejson.loads(text)
-    except:
-        jsondata = ''
+    cache_key = "%s:%s" % (request.user.username, url)
+    print "Cache key for KHAN API Call is %s" % cache_key
+    jsondata = cache.get(cache_key)
+    if jsondata is None or jsondata == '':
+        text = get_data_for_khan_api_call(request, url)
+        try:
+            jsondata = simplejson.loads(text)
+        except:
+            jsondata = ''
+        cache.set(cache_key, jsondata, 30)
         
+    else:
+        print "Got json data from cache!"
+         
     return jsondata
 
 def has_request_token(session):

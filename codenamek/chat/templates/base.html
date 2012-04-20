@@ -1,3 +1,5 @@
+{% load cache %}
+{% cache 360 chat request.user.username %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -37,3 +39,4 @@
     <div id="main">{% block main %}{% endblock %}</div>
     {% block form %}{% endblock %}
 </body>
+{% endcache %}

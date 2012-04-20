@@ -1,7 +1,7 @@
 {% extends "default_layout.html" %}
 
 {% block js %}
-<script type="text/javascript" src="{{ STATIC_URL }}js/homeroom.js"></script>
+<script type="text/javascript" src="/static/js/homeroom.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -64,7 +64,6 @@
     khan_user_exercise_history (shows the user exercise history)
 
 -->
-
 {% load khan_tags %}
 
 {% khan_user_login %}
@@ -76,6 +75,7 @@
 		{% if main_school %}	
 		<div id="create-class" class="btn btn-primary pull-left">Create Class</div>
 		{% endif %}
+		
 		<div id="class-filter">
 			<form>
 				<fieldset>
@@ -105,7 +105,7 @@
 							<th></th>
 						</tr>
 					</thead>
-			
+		
 					<tbody>
 						<tr>
 						{# Show Create Class Alert if there are no classes #}	
