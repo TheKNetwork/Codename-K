@@ -40,15 +40,61 @@ def add_class(school_id, _class_name, _class_description=''):
     
     chatroom_name = "%s: %s" % (existing_school.school_name, school_class.class_name)
     chatroom, created  = ChatRoom.objects.get_or_create(name=chatroom_name)
-    print "Url for chatroom (slug) is %s" % chatroom.slug
     
     return school_class
+
+def add_team_to_class(_class_id, _team_name):
+    """
+    Creates a new and empty team
+    """
+    existing_class = Classroom.objects.get(id=_class_id)
+    team = ClassroomTeam(classroom=existing_class, team_name=_team_name, name='team.class.%s.%s.%s' % (existing_class.name, _team_name, existing_class.school.name))
+    team.save()
+    return team
 
 def add_user_to_class(user, classroom):
     group = Group.objects.get(id=classroom.id)
     group.user_set.add(user)
     group.save()
     return
+
+def add_user_to_team(user, team):
+    group = Group.objects.get(id=team.id)
+    group.user_set.add(user)
+    group.save()
+    return
+
+def create_exercise_for_team(team, _exercise_name):
+    exercise = Exercise(exercise_name=_exercise_name)
+    exercise.save()
+    
+    exercise_group = GroupExercise(group=team, exercise=exercise)
+    exercise_group.save()
+    return exercise
+
+def create_exercise_for_classroom(classroom, _exercise_name):
+    exercise = Exercise(exercise_name=_exercise_name)
+    exercise.save()
+    
+    exercise_group = GroupExercise(group=classroom, exercise=exercise)
+    exercise_group.save()
+    return exercise
+
+def create_exercise_for_school(school, _exercise_name):
+    exercise = Exercise(exercise_name=_exercise_name)
+    exercise.save()
+    
+    exercise_group = GroupExercise(group=school, exercise=exercise)
+    exercise_group.save()
+    return exercise
+
+def create_exercise_for_user(_user, _exercise_name):
+    exercise = Exercise(exercise_name=_exercise_name)
+    exercise.save()
+    
+    exercise_user = UserExercise(user=_user, exercise=exercise)
+    exercise_user.save()
+    return exercise
 
 def get_main_school_for_user(**kwargs):
     """
@@ -57,7 +103,6 @@ def get_main_school_for_user(**kwargs):
     _user = User.objects.get(**kwargs)
     if _user.get_profile().default_school is None:
         schools = School.objects.filter(group_ptr=_user.groups.filter(name__startswith="school."))
-        print "count of schools found %s" % schools.count()
         for school in schools:
             _user.get_profile().default_school = school
             _user.get_profile().save()
@@ -66,4 +111,9 @@ def get_main_school_for_user(**kwargs):
     elif _user.get_profile().default_school is not None :
         return _user.get_profile().default_school
     
-    
+
+def create_team_for_tests():
+    school = add_school(school_name="Rock School")
+    school_class = add_class(school_id=school.id, _class_name="Geology 101")
+    team = add_team_to_class(school_class.id, "The Rockettes")
+    return team      
