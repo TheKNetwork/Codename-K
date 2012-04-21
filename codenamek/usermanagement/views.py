@@ -38,7 +38,7 @@ def homeroom_failsafe(request):
         if request.user.get_profile().access_token is not None:
             print "Found Khan API access token for user %s" % request.user
             request.session['oauth_token_string'] = request.user.get_profile().access_token
-            khan_user_info = get_data_for_khan_api_call(request, '/api/v1/user')
+            khan_user_info = get_khan_user(request.user)
             active_khan_user = True
             
     whiteboard_sessions = WhiteboardSession.objects.all()
