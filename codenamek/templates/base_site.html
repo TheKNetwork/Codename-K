@@ -1,4 +1,6 @@
 {% load i18n %}
+{% load cache %}
+{% cache 60000 head %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,6 +40,7 @@
     <link rel="apple-touch-icon-precomposed" href="/static/ico/apple-touch-icon-57-precomposed.png">
     
   </head>
+{% endcache %}
   <body>
  	
     <div class="navbar navbar-fixed-top">
