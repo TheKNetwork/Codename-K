@@ -72,12 +72,15 @@ def get_challenges_for_group(group):
     
     return challenges
 
-def create_challenge_for_team(team, _challenge_name):
+def create_challenge_for_teams(teams, _challenge_name):
     challenge = Challenge(challenge_name=_challenge_name)
     challenge.save()
     
-    challenge_group = GroupChallenge(classroom_team=team, challenge=challenge)
-    challenge_group.save()
+    for team in teams:
+        challenge_group = GroupChallenge(classroom_team=team, challenge=challenge)
+        challenge_group.save()
+        print "Team '%s' given challenge of: %s" % (team, challenge)
+    
     return challenge
 
 def get_main_school_for_user(**kwargs):
@@ -95,6 +98,14 @@ def get_main_school_for_user(**kwargs):
     elif _user.get_profile().default_school is not None :
         return _user.get_profile().default_school
     
+def add_user_to_school(user, school):
+    if user.get_profile().default_school is None:
+        user.get_profile().default_school = school
+        user.get_profile().save()
+    
+    if user.groups.filter(id=school.id).count() == 0:
+        user.groups.add(school)
+        user.save()
 
 def create_team_for_tests():
     school = add_school(school_name="Rock School")
