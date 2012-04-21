@@ -34,9 +34,13 @@ def khan_exercises(context):
 @register.inclusion_tag('khanapi/khan_badges.html', takes_context = True)
 def khan_badges(context):
     request = context['request']
-    return { 'khan_user_active': is_khan_user_active(request), 
-            'khan_badges': get_khan_badges(request.user), 
-            'khan_user': get_khan_user(request.user) }
+    khan_user_active = is_khan_user_active(request)
+    badges = get_khan_badges(request.user)
+    khan_user = get_khan_user(request.user)
+    
+    return { 'khan_user_active': khan_user_active, 
+            'khan_badges': badges, 
+            'khan_user': khan_user }
 
 @register.inclusion_tag('khanapi/khan_exercise_history.html', takes_context = True)
 def khan_exercise_history(context):

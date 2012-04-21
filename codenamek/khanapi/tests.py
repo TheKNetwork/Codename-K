@@ -16,7 +16,12 @@ class SimpleTest(TestCase):
     def test_get_khan_user_data(self):
         jsondata = get_khan_user(self.user)
         self.assertIsNotNone(jsondata)
-        
+       
+    def test_get_khan_badges(self):
+        jsondata = get_khan_badges(self.user)
+        print jsondata
+        self.assertIsNotNone(jsondata)
+         
     def test_get_exercises(self):
         jsondata = get_khan_exercises(self.user)
         self.assertIsNotNone(jsondata)

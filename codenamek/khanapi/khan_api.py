@@ -34,22 +34,45 @@ def is_khan_user_active(request):
     return active_khan_user;
 
 def get_khan_user(user):
-    return execute_khan_api_method(user.get_profile().access_token, '/api/v1/user')   
+    try:
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/user')
+    except:
+        return ''   
 
 def get_khan_exercises(user):
-    return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercises')  
+    try:
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercises')
+    except:
+        return ''  
 
 def get_khan_badges(user):
-    return execute_khan_api_method(user.get_profile().access_token, '/api/v1/badges') 
+    try:
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/badges')
+    except:
+        return '' 
 
 def get_khan_exercise_history(user):
     return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercise_history')
 
+from datetime import datetime
+# example 2011-08-29T00:00:00Z
+def convert_khan_string_to_date(str_date):
+    date_object = datetime.strptime(str_date)
+    print date_object
+    return date_object
+    
 # Returns a dict of exercise_states{ }
 def get_proficiency_for_exercise(user, exercise_name):
+    if user.get_profile().access_token is None or user.get_profile().access_token == '':
+        print "WARNING: There is no khan user associated with %s" % user
+        return { 'proficient':False, 'struggling':False}
+    
     jsondata = execute_khan_api_method(user.get_profile().access_token, '/api/v1/user/exercises/%s' % exercise_name)  
-    print jsondata 
     return jsondata['exercise_states']
+
+def get_proficiency_date_for_exercise(user, exercise_name):
+    exercise_data = get_exercise_for_user(user, exercise_name)
+    return exercise_data['proficient_date']
 
 def get_exercise_for_user(user, exercise_name):
     return execute_khan_api_method(user.get_profile().access_token, '/api/v1/user/exercises/%s' % exercise_name)   

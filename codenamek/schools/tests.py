@@ -3,10 +3,16 @@ from django.contrib.auth.models import User, Group
 from codenamek.usermanagement.models import *
 from codenamek.schools.models import *
 from codenamek.schools.schoolmanagement_api import *
+from codenamek.khanapi.khan_api import *
 
 from django.test import TestCase
 
 class SimpleTest(TestCase):  
+    def setUp(self): 
+        ccoy = User.objects.get(username='ccoy')
+        ccoy.get_profile().access_token = 'oauth_token_secret=5zGh7Et8NsWgTsQf&oauth_token=AYGs9kJG394x6X5c'
+        ccoy.save()
+        self.user = ccoy    
     
     # GROUP PROFILE MEGA TEST (FOR MENTAL CLARITY)
     def test_group_profile_stuff(self):
@@ -27,7 +33,8 @@ class SimpleTest(TestCase):
         user4.save()
         
         # Now that we have profile objects, associate a khan user with each
-        # user id.
+        # user id. We haven't set these yet, so we'll see warnings and no
+        # proficiency will exist.
         user1.get_profile().access_token = ""
         user2.get_profile().access_token = ""
         user3.get_profile().access_token = ""
@@ -67,22 +74,52 @@ class SimpleTest(TestCase):
         challenge_of_decimals = create_challenge_for_teams([team1, team2], "Understanding Decimal Stuff")
         
         # Pick from a list of Khan exercises
+        # Create an empty array to hold some random exercises first
+        selected_exercises = []
         
+        khan_exercises_json = get_khan_exercises(self.user) # the user here is for auth only
+        i = 0
+        print "Adding the following 4 random exercises to challenge..."
+        print 
+        for exercise in khan_exercises_json:
+            # print "%s\n---------------------------------\n%s\r\n" % (exercise['name'], exercise['ka_url'])
+            if i < 4:
+                print "%s\n---------------------------------\n%s\r\n" % (exercise['name'], exercise['ka_url'])
+                challenge_exercise = ChallengeExercise(
+                                                       exercise_name=exercise['name'], 
+                                                       exercise_url=exercise['ka_url'], 
+                                                       exercise_description=exercise['description'], 
+                                                       challenge=challenge_of_decimals)
+                challenge_exercise.save()
+                                    
+            i = i+1
         
-        # put a reference to those (2) exercises in
-        #   a child ChallengeExercise record (each)
+        print "Count of related exercises for our challenge is now %s" % challenge_of_decimals.exercises.count()
         
-        # Set the knetwork db proficiency to zero
-        
-        # grab the Khan API proficiency for the exercise, store in record
-        
-        # Fake-set the proficiency in one team's exercises (each student's proficiency)
-        #     to greater than zero, let's just say 1 for now
-        
-        # check the completed flag and completed time on the challenge
-        #     the flag should be set to True, and the time should be not None
-        
+        team1_pro_date = None
+        team2_pro_date = None
+        for challenge_ex in challenge_of_decimals.exercises.all():
+            is_pro = get_exercise_proficiency_for_team(team1, challenge_ex.exercise_name)
+            # Are they proficient?
+            print "Is %s pro at %s? %s" % (team1, challenge_ex.exercise_name, is_pro)
+            
+            # If they ARE proficient, when? (returns the latest date of all dates in collection of user pro dates)
+            if is_pro:
+                pro_date = get_team_proficiency_date_for_exercise(team, challenge_ex.exercise_name)
+            else:
+                print "Team 1 is not pro yet!"
+                
         # Complete the exercises for the second team, the same way. Check the flags and time
+        for challenge_ex in challenge_of_decimals.exercises.all():
+            is_pro = get_exercise_proficiency_for_team(team2, challenge_ex.exercise_name)
+            # Are they proficient?
+            print "Is %s pro at %s? %s" % (team2, challenge_ex.exercise_name, is_pro)
+            
+            # If they ARE proficient, when? (returns the latest date of all dates in collection of user pro dates)
+            if is_pro:
+                pro_date = get_team_proficiency_date_for_exercise(team2, challenge_ex.exercise_name)
+            else:
+                print "Team 2 is not pro yet!"
         
         
         pass
