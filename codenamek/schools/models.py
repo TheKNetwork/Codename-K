@@ -65,6 +65,19 @@ class Classroom(Group):
     def __unicode__(self):
         return u"{0}".format(self.class_name)    
     
+class Challenge(models.Model):
+    challenge_name = models.CharField(max_length=50)
+    challenge_description = models.CharField(max_length=2000)
+    
+    objects = models.Manager()
+
+    class Meta:
+            verbose_name = _('Challenge')
+            verbose_name_plural = _('Challenges')
+
+    def __unicode__(self):
+        return u"{0}".format(self.challenge_name) 
+       
 class ClassroomTeam(Group):
     """
     A team is a 'temporary' grouping of people who compete within a class
@@ -72,6 +85,8 @@ class ClassroomTeam(Group):
     """
     classroom = models.ForeignKey(Classroom, related_name="teams")
     team_name = models.CharField(max_length=50)
+
+    challenges = models.ManyToManyField(Challenge, through='GroupChallenge')
     
     objects = models.Manager()
 
@@ -82,32 +97,15 @@ class ClassroomTeam(Group):
     def __unicode__(self):
         return u"{0}".format(self.team_name) 
     
-EXERCISE_SCOPE_CHOICES = (
+challenge_SCOPE_CHOICES = (
     ('S','School'),
     ('C','Class'),
     ('T','Team'),                           
-)    
-class Exercise(models.Model):
-    exercise_name = models.CharField(max_length=50)
-    exercise_description = models.CharField(max_length=2000)
+)
     
-    objects = models.Manager()
-
-    class Meta:
-            verbose_name = _('Exercise')
-            verbose_name_plural = _('Exercises')
-
-    def __unicode__(self):
-        return u"{0}".format(self.exercise_name) 
-    
-class GroupExercise(models.Model):
-    group = models.ForeignKey(Group, related_name="group_exercises")
-    exercise = models.ForeignKey(Exercise, related_name="exercise_groups")
-    score = models.IntegerField(null=True)
-
-class UserExercise(models.Model):
-    user = models.ForeignKey(User, related_name="user_exercises")
-    exercise = models.ForeignKey(Exercise, related_name="exercise_users")
+class GroupChallenge(models.Model):
+    classroom_team = models.ForeignKey(ClassroomTeam)
+    challenge = models.ForeignKey(Challenge)
     score = models.IntegerField(null=True)
     
 class ClassInvitation(models.Model):

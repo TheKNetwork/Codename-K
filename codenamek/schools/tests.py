@@ -35,29 +35,16 @@ class SimpleTest(TestCase):
         self.assertGreater(team.user_set.count(), 0, "No users found for the team!")
         pass
     
-    def test_add_exercises_to_team(self):
+    def test_add_challenges_to_team(self):
         team = create_team_for_tests()
-        exercise = create_exercise_for_team(team, 'Understanding Decimal Place Values')
+        challenge1 = create_challenge_for_team(team, 'Understanding Decimal Place Values')
+        challenge2 = create_challenge_for_team(team, 'Understanding Fractions')
         
-        # see if we can get the group back
-        groups = exercise.exercise_groups
-        self.assertGreater(groups.count(),0,"")
-        self.assertGreater(team.group_exercises.count(),0,"")
-        pass
-    
-    def test_add_exercises_to_classroom(self):
-        school = add_school(school_name="Test School")
-        school_class = add_class(school_id=school.id, _class_name="Math 101")
-        exercise = create_exercise_for_classroom(school_class, 'Understanding Decimal Place Values')
-        
-        # see if we can get the group back
-        groups = exercise.exercise_groups
-        self.assertGreater(groups.count(),0,"")
-        pass
-    
-    def test_add_exercises_to_user(self):
-        bsmith = User.objects.get(username='bsmith')
-        exercise = create_exercise_for_user(bsmith, 'Understanding Decimal Place Values')
+        print "Team has %s challenges" % team.challenges.count()
+        for challenge in team.challenges.all():
+            print "Challenge: %s" % challenge
+        # self.assertGreater(groups.count(),0,"")
+        # self.assertGreater(team.group_challenges.count(),0,"")
         pass
     
     def test_add_team_to_class(self):
