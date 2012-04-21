@@ -38,7 +38,7 @@ def proxy(request):
     print 'In proxy'
     url = request.GET['url']
     # Get the json data from the api call
-    api_data = execute_khan_api_method(profile_access_token=request.user.get_profile().access_token, api_method=url, return_raw_text=True)
+    api_data = execute_khan_api_method(profile_access_token=request.user.get_profile().access_token, api_method=url)
     
     # Returns a dictionary with keys: 'headers', 'body', and 'status'.
     resource = CLIENT.access_api_resource(
