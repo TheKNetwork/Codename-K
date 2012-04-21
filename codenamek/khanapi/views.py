@@ -10,9 +10,10 @@ from django.contrib.sites.models import Site
 from django.template import RequestContext
 from codenamek.settings import *
 from khan_api import *
-
+from django.views.decorators.cache import *
 from api_explorer_oauth_client import APIExplorerOAuthClient
 from oauth import OAuthToken
+from codenamek.khanapi.khan_api import *
 
 import urllib
 from urllib import urlencode
@@ -21,13 +22,18 @@ import string
 import time
 import cgi, os, sys
 
+@never_cache
 def index(request):
     data = { 'has_access_token':has_access_token(request.session) }
     return render(request, "khanapi/index.html", data)
 
+def khan_user_info(request):
+    data = { 'khan_user_active': is_khan_user_active(request), 'khan_user': get_khan_user(request) }
+    return render(request, "khanapi/khan_user_data.html", data)
 
 # Given a URL, makes a proxied request for an API resource and returns the
 # response.
+@never_cache
 def proxy(request):
     print 'In proxy'
     url = request.GET['url']
@@ -59,6 +65,7 @@ def proxy(request):
         
 # Begin the process of getting a request token from Khan.
 # @app.route('/oauth_get_request_token')
+@never_cache
 def oauth_get_request_token(request):
     print "getting request token"
     callback_url = '%s/oauth_callback' % current_site_url()
@@ -71,6 +78,7 @@ def oauth_get_request_token(request):
 
 # The OAuth approval flow finishes here.
 # @app.route('/oauth_callback')
+@never_cache
 def oauth_callback(request):
     print 'In oauth_callback'
     oauth_token    = request.GET['oauth_token']
