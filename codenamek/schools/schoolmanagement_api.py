@@ -12,6 +12,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from codenamek.usermanagement.models import *
 from codenamek.schools.models import *
 from codenamek.chat.models import *
+from codenamek.khanapi.khan_api import *
 
 import os, datetime
 
@@ -82,6 +83,54 @@ def create_challenge_for_teams(teams, _challenge_name):
         print "Team '%s' given challenge of: %s" % (team, challenge)
     
     return challenge
+
+# Returns True or False by looking at all users in team
+def get_exercise_proficiency_for_team(team, exercise_name):
+    if team.user_set.all().count() == 0:
+        return False
+    
+    all_members_proficient = False
+    i_number_of_proficient_users = 0
+    for user in team.user_set.all():
+        user_exercise_state = get_proficiency_for_exercise(user, exercise_name)
+        if user_exercise_state['proficient'] == 'True' or user_exercise_state['proficient'] == True:
+            i_number_of_proficient_users = i_number_of_proficient_users + 1
+    
+    print "Number of members in team: %s vs proficient members: %s" % (team.user_set.all().count(), i_number_of_proficient_users)
+    return team.user_set.all().count() == i_number_of_proficient_users;
+
+from datetime import datetime
+def get_team_proficiency_date_for_exercise(team, exercise_name):
+    if team.user_set.all().count() == 0:
+        return None
+    
+    most_recent_proficiency_date = None
+    all_members_proficient = False
+    i_number_of_proficient_users = 0
+    for user in team.user_set.all():
+        user_exercise_state = get_proficiency_for_exercise(user, exercise_name)
+        if user_exercise_state['proficient'] == 'True' or user_exercise_state['proficient'] == True:
+            i_number_of_proficient_users = i_number_of_proficient_users + 1
+            # Do not worry, this hits the cache 100% of the time
+            pro_date = get_proficiency_date_for_exercise(user, exercise_name)
+            converted_date = None
+            if pro_date is not None and pro_date != '':
+                converted_date = convert_khan_string_to_date(pro_date)
+                
+            if most_recent_proficiency_date is None:
+                most_recent_proficiency_date = converted_date
+            else:
+                # compare the dates, keep the most recent one
+                print "Converted date is %s" % converted_date
+                print "Most recent date is %s" % most_recent_proficiency_date
+              
+    if most_recent_proficiency_date is None:
+        print "WARNING: No proficiency dates were found for any members of the team."
+    else:
+        if team.user_set.all().count() > i_number_of_proficient_users:
+            print "WARNING: Most recent date for proficiency in team was %s, but some users didn't have any proficiency, so no team date is valid yet." % most_recent_proficiency_date
+    
+    return most_recent_proficiency_date
 
 def get_main_school_for_user(**kwargs):
     """

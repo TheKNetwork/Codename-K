@@ -28,7 +28,7 @@ def index(request):
     return render(request, "khanapi/index.html", data)
 
 def khan_user_info(request):
-    data = { 'khan_user_active': is_khan_user_active(request), 'khan_user': get_khan_user(request) }
+    data = { 'khan_user_active': is_khan_user_active(request), 'khan_user': get_khan_user(request.user) }
     return render(request, "khanapi/khan_user_data.html", data)
 
 # Given a URL, makes a proxied request for an API resource and returns the
@@ -38,7 +38,7 @@ def proxy(request):
     print 'In proxy'
     url = request.GET['url']
     # Get the json data from the api call
-    api_data = get_data_for_khan_api_call(request, url)
+    api_data = execute_khan_api_method(profile_access_token=request.user.get_profile().access_token, api_method=url)
     
     # Returns a dictionary with keys: 'headers', 'body', and 'status'.
     resource = CLIENT.access_api_resource(

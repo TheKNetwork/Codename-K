@@ -29,68 +29,97 @@ def is_khan_user_active(request):
     active_khan_user = False
     if request.user.get_profile() is not None:
         if request.user.get_profile().access_token is not None:
-            print "Found Khan API access token for user %s" % request.user
             request.session['oauth_token_string'] = request.user.get_profile().access_token
             active_khan_user = True
     return active_khan_user;
 
-def get_khan_user(request):
-    if not is_khan_user_active(request):
-        return ''
-    return get_json_for_khan_api_call(request, '/api/v1/user')   
+def get_khan_user(user):
+    try:
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/user')
+    except:
+        return ''   
 
-def get_khan_exercises(request):
-    if not is_khan_user_active(request):
-        return ''
-    return get_json_for_khan_api_call(request, '/api/v1/exercises')  
+def get_khan_exercises(user):
+    try:
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercises')
+    except:
+        return ''  
 
-def get_khan_badges(request):
-    if not is_khan_user_active(request):
-        return ''
-    return get_json_for_khan_api_call(request, '/api/v1/badges') 
+def get_khan_badges(user):
+    try:
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/badges')
+    except:
+        return '' 
 
-def get_khan_exercise_history(request):
-    if not is_khan_user_active(request):
-        return ''
-    return get_json_for_khan_api_call(request, '/api/v1/exercise_history') 
+def get_khan_exercise_history(user):
+    return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercise_history')
 
-def get_data_for_khan_api_call(request, url):
+from datetime import datetime
+# example 2011-08-29T00:00:00Z
+def convert_khan_string_to_date(str_date):
+    date_object = datetime.strptime(str_date)
+    print date_object
+    return date_object
     
-    if not url:
-        abort(400)
-
-    # Returns a dictionary with keys: 'headers', 'body', and 'status'.
-    resource = CLIENT.access_api_resource(
-        url,
-        access_token(request.session),
-        method = request.method
-        )
+# Returns a dict of exercise_states{ }
+def get_proficiency_for_exercise(user, exercise_name):
+    if user.get_profile().access_token is None or user.get_profile().access_token == '':
+        print "WARNING: There is no khan user associated with %s" % user
+        return { 'proficient':False, 'struggling':False}
     
-    text = resource['body']
+    jsondata = execute_khan_api_method(user.get_profile().access_token, '/api/v1/user/exercises/%s' % exercise_name)  
+    return jsondata['exercise_states']
 
-    # Error messages can contain HTML. Escape them so they're not rendered.
-    is_html = has_text_html_header(resource['headers'])
-    if is_html:
-        text = cgi.escape(text)
+def get_proficiency_date_for_exercise(user, exercise_name):
+    exercise_data = get_exercise_for_user(user, exercise_name)
+    return exercise_data['proficient_date']
+
+def get_exercise_for_user(user, exercise_name):
+    return execute_khan_api_method(user.get_profile().access_token, '/api/v1/user/exercises/%s' % exercise_name)   
+
+# This method is the funnel point for all khan api calls. It caches data based on
+# the user's access token and method passed in.
+# The default cache timeout is one hour, 60 seconds * 60 minutes
+# Regardless of the cache, a refresh can be forced by passing in force_refresh=True
+def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600, force_refresh=False, return_raw_text=False):
+    cache_key = "%s:%s:%s" % (profile_access_token, api_method, return_raw_text)
+    cache_hit = False
+    # print "Cache key for KHAN API Call is %s" % cache_key
+    result_data = cache.get(cache_key)
     
-    return text
-
-def get_json_for_khan_api_call(request, url):
-    cache_key = "%s:%s" % (request.user.username, url)
-    print "Cache key for KHAN API Call is %s" % cache_key
-    jsondata = cache.get(cache_key)
-    if jsondata is None or jsondata == '':
-        text = get_data_for_khan_api_call(request, url)
+    if result_data is None or result_data == '' or force_refresh:
+        resource = CLIENT.access_api_resource(
+            api_method,
+            access_token = OAuthToken.from_string(profile_access_token),
+            method = "GET"
+            )
+        
+        text = resource['body']
+        
+        # Error messages can contain HTML. Escape them so they're not rendered.
+        is_html = has_text_html_header(resource['headers'])
+        if is_html:
+            text = cgi.escape(text)
+        
         try:
-            jsondata = simplejson.loads(text)
+            if return_raw_text:
+                result_data = text
+            else:
+                print "converting to json"
+                result_data = simplejson.loads(text)
         except:
-            jsondata = ''
-        cache.set(cache_key, jsondata, 30)
+            result_data = ''
+        cache.set(cache_key, result_data, cache_timeout)
         
     else:
-        print "Got json data from cache!"
-         
-    return jsondata
+        #print "Got json data from cache!"
+        cache_hit = True
+    
+    if not cache_hit:
+        # update local tables with fresh data
+        print "(cache not hit or is empty: Update local tables with data)"
+    
+    return result_data
 
 def has_request_token(session):
     return 'request_token' in session

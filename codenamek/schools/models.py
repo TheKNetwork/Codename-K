@@ -106,7 +106,12 @@ challenge_SCOPE_CHOICES = (
 class GroupChallenge(models.Model):
     classroom_team = models.ForeignKey(ClassroomTeam)
     challenge = models.ForeignKey(Challenge)
-    score = models.IntegerField(null=True)
+    
+class ChallengeExercise(models.Model):
+    challenge = models.ForeignKey(Challenge, related_name="exercises")
+    exercise_name = models.CharField(max_length=150)
+    exercise_url = models.URLField(blank=True)
+    exercise_description = models.CharField(max_length=2000, null=True, blank=True)
     
 class ClassInvitation(models.Model):
     """
