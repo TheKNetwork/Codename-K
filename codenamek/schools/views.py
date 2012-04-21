@@ -58,7 +58,6 @@ def class_congregation(request, school_id, class_id, user_name):
     school_class = Classroom.objects.get(id=class_id)
     school = School.objects.get(id=school_id)
     whiteboard_sessions = WhiteboardSession.objects.all()
-    chat_url = '/chat'
-    data = {'user': request.user, 'school_class': school_class, 'school':school, 'chat_url': chat_url, 'whiteboard_sessions': whiteboard_sessions}
+    data = {'user': request.user, 'school_class': school_class, 'school':school, 'whiteboard_sessions': whiteboard_sessions}
 
     return render(request, "schools/class_congregation.html", data)
