@@ -64,37 +64,21 @@ def add_user_to_team(user, team):
     group.save()
     return
 
-def create_exercise_for_team(team, _exercise_name):
-    exercise = Exercise(exercise_name=_exercise_name)
-    exercise.save()
+def get_challenges_for_group(group):
+    group_challenges = group.group_challenges
+    challenges = []
+    for ge in group_challenges:
+        challenges.add(ge.challenge)
     
-    exercise_group = GroupExercise(group=team, exercise=exercise)
-    exercise_group.save()
-    return exercise
+    return challenges
 
-def create_exercise_for_classroom(classroom, _exercise_name):
-    exercise = Exercise(exercise_name=_exercise_name)
-    exercise.save()
+def create_challenge_for_team(team, _challenge_name):
+    challenge = Challenge(challenge_name=_challenge_name)
+    challenge.save()
     
-    exercise_group = GroupExercise(group=classroom, exercise=exercise)
-    exercise_group.save()
-    return exercise
-
-def create_exercise_for_school(school, _exercise_name):
-    exercise = Exercise(exercise_name=_exercise_name)
-    exercise.save()
-    
-    exercise_group = GroupExercise(group=school, exercise=exercise)
-    exercise_group.save()
-    return exercise
-
-def create_exercise_for_user(_user, _exercise_name):
-    exercise = Exercise(exercise_name=_exercise_name)
-    exercise.save()
-    
-    exercise_user = UserExercise(user=_user, exercise=exercise)
-    exercise_user.save()
-    return exercise
+    challenge_group = GroupChallenge(classroom_team=team, challenge=challenge)
+    challenge_group.save()
+    return challenge
 
 def get_main_school_for_user(**kwargs):
     """
