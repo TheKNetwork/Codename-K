@@ -65,6 +65,51 @@ class Classroom(Group):
     def __unicode__(self):
         return u"{0}".format(self.class_name)    
     
+class ClassroomTeam(Group):
+    """
+    A team is a 'temporary' grouping of people who compete within a class
+    or just want to track progress together.
+    """
+    classroom = models.ForeignKey(Classroom, related_name="teams")
+    team_name = models.CharField(max_length=50)
+    
+    objects = models.Manager()
+
+    class Meta:
+            verbose_name = _('Classroom Team')
+            verbose_name_plural = _('Classroom Teams')
+
+    def __unicode__(self):
+        return u"{0}".format(self.team_name) 
+    
+EXERCISE_SCOPE_CHOICES = (
+    ('S','School'),
+    ('C','Class'),
+    ('T','Team'),                           
+)    
+class Exercise(models.Model):
+    exercise_name = models.CharField(max_length=50)
+    exercise_description = models.CharField(max_length=2000)
+    
+    objects = models.Manager()
+
+    class Meta:
+            verbose_name = _('Exercise')
+            verbose_name_plural = _('Exercises')
+
+    def __unicode__(self):
+        return u"{0}".format(self.exercise_name) 
+    
+class GroupExercise(models.Model):
+    group = models.ForeignKey(Group, related_name="group_exercises")
+    exercise = models.ForeignKey(Exercise, related_name="exercise_groups")
+    score = models.IntegerField(null=True)
+
+class UserExercise(models.Model):
+    user = models.ForeignKey(User, related_name="user_exercises")
+    exercise = models.ForeignKey(Exercise, related_name="exercise_users")
+    score = models.IntegerField(null=True)
+    
 class ClassInvitation(models.Model):
     """
     A class invitation is a record that is marked as accepted or rejected, bound
