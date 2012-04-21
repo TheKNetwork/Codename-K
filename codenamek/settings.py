@@ -203,6 +203,7 @@ CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': 'localhost:11211',
+        'TIMEOUT': 10
     }
 }
 

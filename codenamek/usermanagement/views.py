@@ -25,24 +25,13 @@ from codenamek.khanapi.khan_api import *
 
 logger = logging.getLogger('dev')
 
-server_url = getattr(settings, 'KHAN_URL', "http://www.khanacademy.org")
-consumer_key = getattr(settings, 'CONSUMER_KEY', None)
-consumer_secret = getattr(settings, 'CONSUMER_SECRET', None)
-callback = "http://%s%s" % (Site.objects.get_current(), '/khan-academy/auth/callback/')
-
-from django import template
-register = template.Library()
-
-@register.inclusion_tag('khanapi/khan_user_data.html')
-def get_user_data(request):
-    print "INCLUDING TAG LIBRARY"
-    return { 'khan_api_user_data':'' }
-
 @login_required
+@never_cache
 def index(request, user_name):
     return homeroom_failsafe(request)
 
 @login_required
+@never_cache
 def homeroom_failsafe(request):
     json_objects = ''
     active_khan_user = False
@@ -129,59 +118,3 @@ def register(
     context.update(extra_context or {})
     return render(request, template_name, context)
 
-
-@login_required
-def request_token(request):
-    '''
-        Getting request token
-    '''
-    request_token_url = CLIENT.url_for_request_token(
-                callback = callback
-                )
-    print "Request token url: %s" % request_token_url
-    return HttpResponseRedirect(request_token_url)
-
-
-@login_required
-def access_token(request):
-    '''
-        Getting an access token
-    '''
-    try:
-        oauth_token = request.GET['oauth_token'].encode('ascii')
-        oauth_token_secret = request.GET['oauth_token_secret'].encode('ascii')
-        oauth_verifier = request.GET['oauth_verifier'].encode('ascii')
-    except:
-        return HttpResponseBadRequest('Bad request')
-    else:
-        request_token = OAuthToken(oauth_token, oauth_token_secret)
-    request_token.set_verifier(oauth_verifier)
-    access_token = CLIENT.fetch_access_token(request_token)
-    profile = request.user.get_profile()
-    profile.access_token = access_token.to_string()
-    profile.save()
-
-    print "Your account has been associated with Khan Academy usernamer %s" % access_token.to_string()
-
-    messages.info(request, "Your account has been associated with Khan Academy usernamer %s" % access_token.to_string())
-    return HttpResponseRedirect(reverse('homeroom'))
-
-
-@login_required
-def khan_api_test(request):
-    '''
-        Simple example of using Khan Academy API
-    '''
-    #TODO, extend it using requests lib
-    #TODO, add decorator for api calls to ensure that we have access_token for user
-    #TODO, check 401 status codes in case of any failure
-    print "Running test"
-    if not request.user.get_profile().access_token:
-        return HttpResponseRedirect(reverse('request-token'))
-    access_token = OAuthToken.from_string(request.user.get_profile().access_token.encode('ascii'))
-    resource = CLIENT.access_api_resource(
-        "/api/v1/user",
-        access_token,
-        method = "GET"
-        )
-    return HttpResponse(resource['body'])

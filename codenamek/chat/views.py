@@ -2,11 +2,11 @@
 from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import get_object_or_404, render, redirect
 from django_socketio import broadcast, broadcast_channel, NoSocket
-
+from django.views.decorators.cache import *
 from codenamek.chat.models import ChatRoom
 from codenamek.schools.models import *
 
-
+@never_cache
 def rooms(request, template="rooms.html"):
     """
     Homepage - lists all rooms.
@@ -14,7 +14,7 @@ def rooms(request, template="rooms.html"):
     context = {"rooms": ChatRoom.objects.all()}
     return render(request, template, context)
 
-
+@never_cache
 def room(request, school_id, class_id, template="room.html"):
     """
     Show a room.
@@ -34,6 +34,7 @@ def room(request, school_id, class_id, template="room.html"):
     # context = {"room": get_object_or_404(ChatRoom, slug=slug)}
     return render(request, template, context)
 
+@never_cache
 def room_by_id(request, room_id, template="room.html"):
     
     chatroom  = ChatRoom.objects.get(id=room_id)
@@ -43,6 +44,7 @@ def room_by_id(request, room_id, template="room.html"):
     # context = {"room": get_object_or_404(ChatRoom, slug=slug)}
     return render(request, template, context)
 
+@never_cache
 def create(request):
     """
     Handles post from the "Add room" form on the homepage, and
@@ -56,6 +58,7 @@ def create(request):
 
 
 @user_passes_test(lambda user: user.is_staff)
+@never_cache
 def system_message(request, template="system_message.html"):
     context = {"rooms": ChatRoom.objects.all()}
     if request.method == "POST":
