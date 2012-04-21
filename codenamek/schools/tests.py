@@ -38,12 +38,21 @@ class SimpleTest(TestCase):
     def test_add_exercises_to_team(self):
         team = create_team_for_tests()
         exercise = create_exercise_for_team(team, 'Understanding Decimal Place Values')
+        
+        # see if we can get the group back
+        groups = exercise.exercise_groups
+        self.assertGreater(groups.count(),0,"")
+        self.assertGreater(team.group_exercises.count(),0,"")
         pass
     
     def test_add_exercises_to_classroom(self):
         school = add_school(school_name="Test School")
         school_class = add_class(school_id=school.id, _class_name="Math 101")
         exercise = create_exercise_for_classroom(school_class, 'Understanding Decimal Place Values')
+        
+        # see if we can get the group back
+        groups = exercise.exercise_groups
+        self.assertGreater(groups.count(),0,"")
         pass
     
     def test_add_exercises_to_user(self):
@@ -53,7 +62,7 @@ class SimpleTest(TestCase):
     
     def test_add_team_to_class(self):
         team = create_team_for_tests()
-        self.assertIsNotNone(team, "Team is nothing, was there a problem creating it?")
+        self.assertIsNotNone(team, "Team is nothing, was there a problem creating it?") 
         pass
     
     def test_get_main_school_for_user(self):
