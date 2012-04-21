@@ -13,8 +13,13 @@
 <section id="breadcrumps">
 			<ul class="breadcrumb">
 				<li>
-					<a href="/{{ user }}/homeroom"><i class="icon-home"></i> Homeroom</a><span class="divider">/</span>
-					<i class="icon-book"></i> {{ school_class }}
+					<a href="/{{ user }}/homeroom">
+						<i class="icon-home"></i> 
+						Homeroom
+					</a>
+					<span class="divider">/</span>
+					<i class="icon-book"></i>
+					{{ school_class }}
 				</li>
 			</ul>
 </section>
@@ -161,63 +166,69 @@
 		</section>
 	</div>
 </div>
+
 <!-- /.row-fluid for Session List and Classroom Chat 
    	 =============================================== -->
-
-<div class="modal hide span12" id="new-challenge">
-	<div class="modal-header">
-		<a class="close" data-dismiss="modal">×</a>
-		<h3>Create a Challenge</h3>
-	</div>
-	<div class="modal-body">
-		<div class="row-fluid">
-			<div class="span12">
-				<div class="alert alert-info">
-					<div class="header">
-						<h3>Step 1: Set Challenge Name</h3>
-					</div>	
+<div class="span12">
+	<div class="modal hide" id="new-challenge">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal">×</a>
+			<h3>Create a Challenge</h3>
+		</div>
+		<div class="modal-body">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="alert alert-info">
+						<div class="header">
+							<h3>Step 1: Set Challenge Name</h3>
+						</div>	
 	
-					<form id="createWhiteboardForm" 
-						action="/classroom/create_whiteboard" 
-						method="post">
-						{% csrf_token %}
-						<br>
-            			<input class="span3" id="id_whiteboard_title" 
-            				name="whiteboard_title"
-            		 		type="text"
-            		 		placeholder="Challenge Name"/>
-        		   	</form>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span12">
-				<div class="alert alert-info">
-					<div class="header">
-						<h3>Step 2: Choose Topics</h3>
-					</div>	
-					<div>
-						<p>Fun, we get to put the topic menu in here!</p>	
+						<form id="createWhiteboardForm" 
+							action="/classroom/create_whiteboard" 
+							method="post">
+							{% csrf_token %}
+							<br>
+	            			<input class="span3" id="id_whiteboard_title" 
+	            				name="whiteboard_title"
+	            		 		type="text"
+	            		 		placeholder="Challenge Name"/>
+	        		   	</form>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span12">
-				<div class="alert alert-info">
-					<div class="header">
-						<h3>Step 3: Invite Users</h3>
-					</div>	
-					<div>
-						<p>Fun, we get to list users here to flag for invites</p>	
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="alert alert-info">
+						<div class="header">
+							<h3>Step 2: Choose Topics</h3>
+						</div>	
+						<div>
+							<p>Fun, we get to put the topic menu in here!</p>	
+						</div>
 					</div>
 				</div>
 			</div>
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="alert alert-info">
+						<div class="header">
+							<h3>Step 3: Invite Users</h3>
+						</div>	
+						<div>
+							<p>Fun, we get to list users here to flag for invites</p>
+							<select data-placeholder="Select Something" class="chzn-select" id="212" multiple style="width:350px;" tabindex="4">
+								<option value=""></option>
+								<option value="two"></option>						
+								<option value="one"></option>						
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="modal-footer">
+			<a href="#" class="btn data-dismiss="modal"">Close</a>
+			<a href="#" class="btn btn-primary">Save changes</a>
 		</div>
-	<div class="modal-footer">
-		<a href="#" class="btn" data-dismiss="modal"">Close</a>
-		<a href="#" class="btn btn-primary">Save changes</a>
 	</div>
 </div>
-
 {% endblock %}
