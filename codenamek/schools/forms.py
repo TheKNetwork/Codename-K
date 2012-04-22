@@ -9,9 +9,14 @@ from codenamek.schools.models import *
 class ClassroomForm(ModelForm):
   class Meta:
       model = Classroom
-      exclude = ('name','permissions','class_description','school')
+      exclude = ('name', 'permissions', 'class_description', 'school')
       
 class ClassroomTeamForm(ModelForm):
     class Meta:
         model = ClassroomTeam
-        exclude = ('classroom','challenges','name','permissions')      
+        exclude = ('classroom', 'challenges', 'name', 'permissions')
+        
+class ChallengeForm(ModelForm):
+    class Meta:
+        model = ClassroomTeam
+        exclude = ('classroom')  

@@ -44,33 +44,7 @@
 					<div class="header">
 						<h3>Challenges</h3>
 					</div>
-				<table class="table table-striped table-condensed">
-					<thead>
-						<th>Challenge Name</th>
-						<th>Teams Participating</th>
-						<th>Actions</th>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<span class="btn btn-primary" 
-									data-toggle="modal"
-									data-target="#new-challenge">
-									Create Challenge
-								</span>
-							</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Calc Challenge</td>
-							<td>4 Groups</td>
-							<td><a href="">Enlist in this Challenge</a></td>
-							<td><a href="">Invite Groups to this challenge</a></td>
-						</tr>
-					</tbody>
-				</table>	
+				<div id="class-challenges"></div>	
 			</div>			
 		</div>
 	</div>
@@ -78,6 +52,7 @@
 
 <script type="text/javascript">
     $("#class-congregation-groups").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/groups')
+    $("#class-challenges").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenges');
 </script>
 
 <!-- Session list and Classroom Chat (encompassed in this row-fluid div)

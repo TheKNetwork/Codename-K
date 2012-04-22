@@ -54,21 +54,9 @@
                         var token = $('input[name=csrfmiddlewaretoken]').val();
                         var data = { team_name: group_name, csrfmiddlewaretoken: token };
                         return data;
-                    }
-                
-                    function sendAjaxDataAndRefresh(jsonData, processorUrl, divToRefresh, divUrlSource) {
-                        $.ajax({
-                           type: "POST",
-                           data: jsonData,
-                           url: processorUrl,
-                           complete: function(data){
-                               $("#"+divToRefresh).load(divUrlSource);
-                           }
-                        });
-                    }     
+                    }  
                                
-                    $("#add-group-form").submit( 
-                        function() { 
+                    $("#add-group-form").submit( function() { 
                             sendAjaxDataAndRefresh(
                                     getNewTeamData(),     // YOUR METHOD TO RETURN JSON FORMATTED DATA TO SUBMIT
                                     '/{{user}}/schools/{{school.id}}/{{school_class.id}}/group_add', // URL TO PROCESS THE DATA
@@ -77,6 +65,5 @@
                             );
                                     
                             return false; // This keeps the form from causing the whole page to refresh
-                        }
-                    );
+                        });
                 </script>

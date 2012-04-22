@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     
     #     These urls come from the schools app
     # TODO: Put these in the schools urls.py
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/challenges','codenamek.schools.views.challenges', name='challenges'), 
     url(r'^(?P<user_name>\w+)/schools/(?P<_school_id>\d+)/create_a_class','codenamek.schools.views.create_a_class'),
 
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/group_add','codenamek.schools.views.group_add', name='group_add'),    

@@ -59,7 +59,10 @@ class SimpleTest(TestCase):
         add_user_to_team(user2, team2)
         
         # Create a challenge, name it Challenge Set One or something
-        challenge_of_decimals = create_challenge_for_teams([team1, team2], "Understanding Decimal Stuff")
+        challenge_of_decimals = create_challenge_for_class(school_class, "Understanding Decimal Stuff")
+        
+        add_team_to_challenge(team1, challenge_of_decimals);
+        add_team_to_challenge(team2, challenge_of_decimals);
         
         # Pick from a list of Khan exercises
         # Create an empty array to hold some random exercises first

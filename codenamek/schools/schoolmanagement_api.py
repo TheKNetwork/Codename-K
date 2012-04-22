@@ -73,17 +73,15 @@ def get_challenges_for_group(group):
     
     return challenges
 
-def create_challenge_for_teams(teams, _challenge_name):
-    challenge = Challenge(challenge_name=_challenge_name)
-    challenge.save()
-    
-    for team in teams:
-        challenge_group = GroupChallenge(classroom_team=team, challenge=challenge)
-        challenge_group.save()
-        print "Team '%s' given challenge of: %s" % (team, challenge)
-    
+def create_challenge_for_class(classroom, _challenge_name):
+    challenge = Challenge(challenge_name=_challenge_name, classroom=classroom)
     return challenge
 
+def add_team_to_challenge(team, challenge):
+    challenge_group = GroupChallenge(classroom_team=team, challenge=challenge)
+    challenge_group.save()
+    print "Team '%s' given challenge of: %s" % (team, challenge)
+    
 # Returns True or False by looking at all users in team
 def get_exercise_proficiency_for_team(team, exercise_name):
     if team.user_set.all().count() == 0:
