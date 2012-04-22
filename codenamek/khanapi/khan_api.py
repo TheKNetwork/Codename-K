@@ -68,7 +68,10 @@ def get_proficiency_for_exercise(user, exercise_name):
         return { 'proficient':False, 'struggling':False}
     
     jsondata = execute_khan_api_method(user.get_profile().access_token, '/api/v1/user/exercises/%s' % exercise_name)  
-    return jsondata['exercise_states']
+    if jsondata is not None:
+        return jsondata['exercise_states']
+    else:
+        return { 'proficient':False, 'struggling':False}
 
 def get_proficiency_date_for_exercise(user, exercise_name):
     exercise_data = get_exercise_for_user(user, exercise_name)

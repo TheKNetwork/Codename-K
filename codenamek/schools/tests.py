@@ -9,10 +9,13 @@ from django.test import TestCase
 
 class SimpleTest(TestCase):  
     def setUp(self): 
-        ccoy = User.objects.get(username='ccoy')
-        ccoy.get_profile().access_token = 'oauth_token_secret=5zGh7Et8NsWgTsQf&oauth_token=AYGs9kJG394x6X5c'
-        ccoy.save()
-        self.user = ccoy    
+        ccoy_gmail = User.objects.get(username='ccoy')
+        ccoy_gmail.get_profile().access_token = 'oauth_token_secret=5zGh7Et8NsWgTsQf&oauth_token=AYGs9kJG394x6X5c'
+        ccoy_gmail.save()
+        
+        self.facebook_token = 'oauth_token_secret=MzMtp5nqUsd5uZaE&oauth_token=T43hUPaKW2nhjYYS'
+        self.gmail_token = 'oauth_token_secret=5zGh7Et8NsWgTsQf&oauth_token=AYGs9kJG394x6X5c'
+        self.user = ccoy_gmail  
     
     # GROUP PROFILE MEGA TEST (FOR MENTAL CLARITY)
     def test_group_profile_stuff(self):
@@ -24,39 +27,27 @@ class SimpleTest(TestCase):
         # TODO: Do we need a flag for that?
         user1 = User(username="user1")
         user2 = User(username="user2")
-        user3 = User(username="user3")
-        user4 = User(username="user4")
         
         user1.save()
         user2.save()
-        user3.save()
-        user4.save()
         
         # Now that we have profile objects, associate a khan user with each
         # user id. We haven't set these yet, so we'll see warnings and no
         # proficiency will exist.
-        user1.get_profile().access_token = ""
-        user2.get_profile().access_token = ""
-        user3.get_profile().access_token = ""
-        user4.get_profile().access_token = ""
+        user1.get_profile().access_token = self.gmail_token
+        user2.get_profile().access_token = self.facebook_token
         
         # Save the updated stuff
         user1.save()
         user2.save()
-        user3.save()
-        user4.save()
         
         # Add the users to the groups they should belong to.
         # (technically we could skip to the teams, but let's be accurate here.
         add_user_to_school(user1, school)
         add_user_to_school(user2, school)
-        add_user_to_school(user3, school)
-        add_user_to_school(user4, school)
         
         add_user_to_class(user1, school_class)
         add_user_to_class(user2, school_class)
-        add_user_to_class(user3, school_class)
-        add_user_to_class(user4, school_class)
         
         #
         #
@@ -65,10 +56,7 @@ class SimpleTest(TestCase):
         team2 = add_team_to_class(school_class.id, "The Slugs")
         
         add_user_to_team(user1, team1)
-        add_user_to_team(user2, team1)
-        
-        add_user_to_team(user3, team2)
-        add_user_to_team(user4, team2)
+        add_user_to_team(user2, team2)
         
         # Create a challenge, name it Challenge Set One or something
         challenge_of_decimals = create_challenge_for_teams([team1, team2], "Understanding Decimal Stuff")
@@ -120,6 +108,7 @@ class SimpleTest(TestCase):
                 pro_date = get_team_proficiency_date_for_exercise(team2, challenge_ex.exercise_name)
             else:
                 print "Team 2 is not pro yet!"
+        
         
         
         pass
