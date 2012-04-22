@@ -1,19 +1,4 @@
-                
-                <script type="text/javascript">
-                    function addGroupAndRefreshGroups(form_button) {
-                        group_name = $("#group-name").val();
-                        token = $('input[name=csrfmiddlewaretoken]').val()
-                        $.ajax({
-                           type: "POST",
-                           data: { team_name: group_name, csrfmiddlewaretoken: token },
-                           url: "/{{user}}/schools/{{school.id}}/{{school_class.id}}/group_add",
-                           complete: function(data){
-                               $("#class-congregation-groups").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/groups');
-                           }
-                        });
-                    }
-                </script>
-                
+                               
                 <table class="table table-striped table-condensed">
                     <thead>
                         <tr>
@@ -35,9 +20,7 @@
                     </tr>
                     {% endfor %}
                     <tr id="create-group-row">
-                            <form id="add-group-form" 
-                                    action="/{{ user }}/schools/{{main_school.id}}/create_a_group"
-                                    method="get">
+                            <form id="add-group-form" >
                                 <td class="groupname">
                                     <i class="icon-book"></i>
                                     
@@ -53,9 +36,8 @@
                                         </a>
                                         <button id="submit"
                                                 name="submit"
-                                                type="button"
-                                                class="btn btn-success"
-                                                onclick="addGroupAndRefreshGroups(this)">
+                                                type="submit"
+                                                class="btn btn-success">
                                                 Confirm
                                         </button>
                                     </span>
@@ -67,5 +49,34 @@
                 </table>
                 
                 <script type="text/javascript">
-                    $("#add-group-form").submit( function() { return false; });
+                    function getNewTeamData() {
+                        var group_name = $("#group-name").val();
+                        var token = $('input[name=csrfmiddlewaretoken]').val();
+                        var data = { team_name: group_name, csrfmiddlewaretoken: token };
+                        return data;
+                    }
+                
+                    function sendAjaxDataAndRefresh(jsonData, processorUrl, divToRefresh, divUrlSource) {
+                        $.ajax({
+                           type: "POST",
+                           data: jsonData,
+                           url: processorUrl,
+                           complete: function(data){
+                               $("#"+divToRefresh).load(divUrlSource);
+                           }
+                        });
+                    }     
+                               
+                    $("#add-group-form").submit( 
+                        function() { 
+                            sendAjaxDataAndRefresh(
+                                    getNewTeamData(),     // YOUR METHOD TO RETURN JSON FORMATTED DATA TO SUBMIT
+                                    '/{{user}}/schools/{{school.id}}/{{school_class.id}}/group_add', // URL TO PROCESS THE DATA
+                                    'class-congregation-groups', // DIV ID TO REFRESH ON COMPLETION
+                                    '/{{user}}/schools/{{school.id}}/{{school_class.id}}/groups'  // URL TO USE TO REFRESH DIV ON COMPLETION 
+                            );
+                                    
+                            return false; // This keeps the form from causing the whole page to refresh
+                        }
+                    );
                 </script>
