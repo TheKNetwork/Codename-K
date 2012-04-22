@@ -26,6 +26,39 @@ def index(request, user_name):
 
 @login_required
 @never_cache
+def group_section(request, user_name, school_id, class_id):
+    school = School.objects.get(id=school_id)
+    classroom = Classroom.objects.get(id=class_id)
+    teams = classroom.teams
+    form = ClassroomTeamForm()
+    data = {'school':school, 
+            'school_class': classroom, 
+            'teams':teams, 
+            'form': form}
+    return render(request, "schools/class_congregation_groups.html", data, 
+                  context_instance=RequestContext(request, {}))
+
+@login_required
+@never_cache
+def group_add(request, user_name, school_id, class_id):
+    school = School.objects.get(id=school_id)
+    classroom = Classroom.objects.get(id=class_id)
+    team = None
+    form = ClassroomTeamForm(request.POST)
+
+    if form.is_valid(): 
+        team = add_team_to_class(classroom.id, form.cleaned_data['team_name'] )
+        print "Added %s" % (form.cleaned_data['team_name'])
+    else:
+        print "Form not valid"
+        
+    new_form = ClassroomTeamForm()
+    data = {'school':school, 'school_class': classroom, 'added_team':team, 'form':new_form}
+    return render(request, "schools/class_congregation_groups.html", data, 
+                  context_instance=RequestContext(request, {}))
+
+@login_required
+@never_cache
 def create_a_class(request, _school_id, user_name):
     if request.method == 'POST': # If the form has been submitted...
         form = ClassroomForm(request.POST)

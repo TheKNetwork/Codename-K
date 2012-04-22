@@ -26,7 +26,6 @@
 
 <!-- Group elements / User info / Class Alerts go here
 	===================================================== --> 
-
 <section id="command-center">
 	<div  class="alert alert-success">
 		<div class="row-fluid">
@@ -34,54 +33,9 @@
 				<div class="header">
 					<h3>Command Center</h3>
 				</div>
-				<table class="table table-striped table-condensed">
-					<thead>
-						<tr>
-							<th>Groups</th>
-							<th>Challenge</th>
-							<th>Actions</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tr>
-						<td>
-							<i class="icon-book"></i>
-							group 1
-						</td>
-						<td>2/4 Completed</td>
-						<td>Invite Users</td>
-						<td>Join Group</td>
-					</tr>
-					<tr id="create-group-row">
-							<form id="add-group-form" 
-									action="/{{ user }}/schools/{{main_school.id}}/create_a_group"
-									method="post">
-									{% csrf_token %}
-								<td class="groupname">
-									<i class="icon-book"></i>
-									<input id="group-name"
-											name="group_name"
-											type="text"
-											placeholder="Group Name">
-									</input>
-									<span id="create-group-row-buttons" class="span4">
-										<a id="cancel-group-creation" 
-											name="cancel-group-creation"
-											type="" class="btn btn-danger">Cancel
-										</a>
-										<button id="submit"
-												name="submit"
-												type="submit"
-												class="btn btn-success">
-												Confirm
-										</button>
-									</span>
-								</td>
-								<td></td>
-								<td></td>
-							</form>
-						</tr>
-				</table>
+                <div id="class-congregation-groups">
+                    
+                </div>
 			</div>
 		</div>
 		<!-- /.row-fluid -->
@@ -97,6 +51,10 @@
 		</div>
 	</div>
 </section>
+
+<script type="text/javascript">
+    $("#class-congregation-groups").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/groups')
+</script>
 
 <!-- Session list and Classroom Chat (encompassed in this row-fluid div)
 	============================================================================ --> 
@@ -152,6 +110,7 @@
 		<section id="classroom-chat">
 			<div class="well">
 			<div id="chat-iframe-div">
+			    <!--
     			<iframe name="inlineframe"
 						src="/chat/{{school.id}}/{{school_class.id}}"
 						frameborder="0"
@@ -161,6 +120,7 @@
 						marginwidth="0"
 						marginheight="0">
 				</iframe>
+				-->
 			</div>
 			</div>
 		</section>

@@ -10,3 +10,8 @@ class ClassroomForm(ModelForm):
   class Meta:
       model = Classroom
       exclude = ('name','permissions','class_description','school')
+      
+class ClassroomTeamForm(ModelForm):
+    class Meta:
+        model = ClassroomTeam
+        exclude = ('classroom','challenges','name','permissions')      

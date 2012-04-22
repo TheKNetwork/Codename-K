@@ -121,6 +121,8 @@ def get_team_proficiency_date_for_exercise(team, exercise_name):
                 most_recent_proficiency_date = converted_date
             else:
                 # compare the dates, keep the most recent one
+                if coverted_date > most_recent_proficiency_date:
+                    most_recent_proficiency_date = converted_date
                 print "Converted date is %s" % converted_date
                 print "Most recent date is %s" % most_recent_proficiency_date
               
