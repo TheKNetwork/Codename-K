@@ -20,7 +20,6 @@ import requests
 import logging
 import uuid
 
-from api_explorer import APIExplorerOAuthClient
 from codenamek.khanapi.khan_api import *
 
 logger = logging.getLogger('dev')
