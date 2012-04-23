@@ -50,7 +50,29 @@ def challenges(request, user_name, school_id, class_id):
     data = {'school':school, 
             'school_class': classroom, 
             'challenges': challenges,
+            'teams':teams,
             'challenges_form': challenge_form}
+    return render(request, "schools/class_challenges.html", data, 
+                  context_instance=RequestContext(request, {}))
+
+@login_required
+@never_cache
+def challenge_add(request, user_name, school_id, class_id):
+    school = School.objects.get(id=school_id)
+    _classroom = Classroom.objects.get(id=class_id)
+    form = ChallengeForm(request.POST)
+    teams = _classroom.teams
+    challenge = None
+    
+    if form.is_valid(): 
+        challenge = create_challenge_for_class(_classroom, form.cleaned_data['challenge_name'] )
+    else:
+        print "Form not valid"
+        
+    new_form = ChallengeForm()
+    challenges = _classroom.challenges
+    
+    data = {'school':school, 'school_class': _classroom, 'added_challenge':challenge, 'challenge_form':new_form, 'challenges':challenges, 'teams':teams}
     return render(request, "schools/class_challenges.html", data, 
                   context_instance=RequestContext(request, {}))
 

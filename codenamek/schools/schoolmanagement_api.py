@@ -73,8 +73,13 @@ def get_challenges_for_group(group):
     
     return challenges
 
-def create_challenge_for_class(classroom, _challenge_name):
-    challenge = Challenge(challenge_name=_challenge_name, classroom=classroom)
+def create_challenge_for_class(_classroom, _challenge_name):
+    challenge = Challenge(challenge_name=_challenge_name, classroom=_classroom)
+    try:
+        challenge.save()
+    except e:
+        print e
+        
     return challenge
 
 def add_team_to_challenge(team, challenge):

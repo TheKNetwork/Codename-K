@@ -18,5 +18,5 @@ class ClassroomTeamForm(ModelForm):
         
 class ChallengeForm(ModelForm):
     class Meta:
-        model = ClassroomTeam
+        model = Challenge
         exclude = ('classroom')  

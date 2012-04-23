@@ -124,12 +124,16 @@ class SimpleTest(TestCase):
         self.assertIsNotNone(associated_group_name, "Saving the school didn't create the correct group entry")
         pass
     
-    def test_add_class_to_school(self):
+    def test_add_challenge(self):
         school = add_school(school_name="Test School")
         
         school_class = add_class(school_id=school.id, _class_name="Math 101")
         associated_group_name = school_class.name
         self.assertIsNotNone(associated_group_name, "Saving the class didn't create the correct group entry")
+        
+        challenge = create_challenge_for_class(school_class, "Understanding decimals")
+        self.assertIsNotNone(challenge, "Could not save challenge")
+        print challenge
         pass
     
     def test_add_users_to_team(self):

@@ -67,7 +67,6 @@ class Classroom(Group):
     
 class Challenge(models.Model):
     challenge_name = models.CharField(max_length=50)
-    challenge_description = models.CharField(max_length=2000)
     classroom = models.ForeignKey(Classroom, null=True, blank=True, related_name="challenges")
     
     objects = models.Manager()
