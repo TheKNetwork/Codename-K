@@ -60,6 +60,10 @@ def challenges(request, user_name, school_id, class_id):
 def challenge_add(request, user_name, school_id, class_id):
     school = School.objects.get(id=school_id)
     _classroom = Classroom.objects.get(id=class_id)
+    
+    teams_to_add = request.POST['team_ids']
+    print "Teams to add %s" % teams_to_add
+    
     form = ChallengeForm(request.POST)
     teams = _classroom.teams
     challenge = None

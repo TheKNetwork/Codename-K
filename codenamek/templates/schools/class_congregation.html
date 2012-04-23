@@ -50,17 +50,6 @@
 	</div>
 </section>
 
-<!-- We ajax load the challenges and teams... this is a mix of DRY and
-    Eating our own Dog Food. Odds are good that if these two lines of 
-    javascript work, so will the refresh actions that happen after
-    adding data.
-    ===================================================== --> 
-
-<script type="text/javascript">
-    $("#class-congregation-groups").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/groups')
-    $("#class-challenges").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenges');
-</script>
-
 <!-- Session list and Classroom Chat (encompassed in this row-fluid div)
 	============================================================================ --> 
 <div class="row-fluid">
@@ -132,37 +121,43 @@
 
 <!-- /.row-fluid for Session List and Classroom Chat 
    	 =============================================== -->
+
+
 <div class="span12">
 	<div class="modal hide" id="new-challenge">
 		<div class="modal-header">
 			<a class="close" data-dismiss="modal">×</a>
 			<h3>Create a Challenge</h3>
 		</div>
+		
+		<form id="create-challenge">
 		<div class="modal-body">
 			<div class="row-fluid">
 				<div class="span12">
 					<div class="alert alert-info">
 						<div class="header">
 							<h3>Step 1: Set Challenge Name</h3>
-						</div>	
-	
-						<form id="create-challenge">
+						</div>
 							{% csrf_token %}
 							<br>
 	            			<input class="span3" id="challenge_name" 
 	            				name="challenge_name"
 	            		 		type="text"
 	            		 		placeholder="Challenge Name"/>
-	        		   	</form>
 	        		   	
                         <script type="text/javascript">
                             function getNewChallengeData() {
                                 var challenge = $("#challenge_name").val();
                                 var token = $('input[name=csrfmiddlewaretoken]').val();
-                                var data = { challenge_name: challenge, csrfmiddlewaretoken: token };
+                                var teams = "";
+                                
+                                $("#selected-teams option:selected").each(function(){
+                                    teams += $(this).val() + ",";    
+                                });
+                                var data = { challenge_name: challenge, csrfmiddlewaretoken: token, team_ids: teams };
                                 return data;
-                            }  
-                                       
+                            }
+                            
                             function addChallenge() { 
                                     sendAjaxDataAndRefresh(
                                             getNewChallengeData(),     // YOUR METHOD TO RETURN JSON FORMATTED DATA TO SUBMIT
@@ -170,6 +165,8 @@
                                             'class-challenges', // DIV ID TO REFRESH ON COMPLETION
                                             '/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenges'  // URL TO USE TO REFRESH DIV ON COMPLETION 
                                     );
+                                    
+                                    $("#challenge_name").val('');
                             }
                         </script>	        		   	
 					</div>
@@ -195,19 +192,34 @@
 						</div>	
 						<div>
 							<p>Fun, we get to list groups here to flag for invites to this Challenge</p>
-							<select data-placeholder="Select Something" multiple class="chosen" style="width:350px;" tabindex="4">
-								{% for user in school_class.user_set.all %}
-								<option value="{{ user }}">{{ user }}</option>
-								{% endfor %}	
+							
+							<select id="selected-teams" data-placeholder="Select Something" multiple class="chosen" style="width:350px;" tabindex="4">
+									
 							</select>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+		</form>
 		<div class="modal-footer">
 			<a class="btn" data-dismiss="modal">Close</a>
 			<a href="#" onclick="addChallenge()" class="btn btn-primary">Save changes</a>
 		</div>
 	</div>
+
 </div>
+
+
+<!-- We ajax load the challenges and teams... this is a mix of DRY and
+    Eating our own Dog Food. Odds are good that if these two lines of 
+    javascript work, so will the refresh actions that happen after
+    adding data.
+    ===================================================== --> 
+
+<script type="text/javascript">
+    $("#class-congregation-groups").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/groups')
+    $("#class-challenges").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenges');
+</script>
+
 {% endblock %}

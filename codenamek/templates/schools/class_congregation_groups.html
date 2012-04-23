@@ -65,5 +65,15 @@
                             );
                                     
                             return false; // This keeps the form from causing the whole page to refresh
-                        });
+                     });
+                     
+                     // when this partial page loads, also reload the 
+                     // selected-teams data
+                     $("#selected-teams option").remove();
+                     {% for team in school_class.teams.all %}
+                        $('#selected-teams').append('<option value="{{ team.id }}">{{ team }}</option>');
+                     $
+                     {% endfor %}
+                     
+                     $("#selected-teams").trigger("liszt:updated")
                 </script>

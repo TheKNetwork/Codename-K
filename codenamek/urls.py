@@ -20,8 +20,9 @@ urlpatterns = patterns('',
     url(r'^(?P<user_name>\w+)/homeroom/$', 'codenamek.usermanagement.views.index', name='homeroom'),
     url(r'^homeroom/$', 'codenamek.usermanagement.views.homeroom_failsafe', name='homeroom_safe'),
     
-    #     These urls come from the schools app
+    # These urls come from the schools app
     # TODO: Put these in the schools urls.py
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/add_team_to_challenge/(?P<team_id>\d+)/(?P<challenge_id>\d+)','codenamek.schools.views.add_team_to_challenge', name='add_team_to_challenge'),
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/challenges','codenamek.schools.views.challenges', name='challenges'), 
     url(r'^(?P<user_name>\w+)/schools/(?P<_school_id>\d+)/create_a_class','codenamek.schools.views.create_a_class'),
 
