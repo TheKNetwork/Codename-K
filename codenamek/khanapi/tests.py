@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User, Group
 from codenamek.usermanagement.models import *
 from codenamek.khanapi.khan_api import *
+import simplejson
 
 from django.test import TestCase
 
@@ -16,27 +17,40 @@ class SimpleTest(TestCase):
                  
     def test_get_playlist_library(self):
         jsondata = get_khan_playlist_library(self.user)
-        # print jsondata
+        for topic in jsondata:
+            print "Topic name: %s" % topic['name']
+            if topic.has_key('items'):
+                for subtopic in topic['items']:
+                    if subtopic.has_key('name'):
+                        print "    Subtopic name: %s" % subtopic['name']
+                        if subtopic.has_key('items'):
+                            for subtopic_item in subtopic['items']:
+                                print "         Subtopic item: %s" % subtopic_item['name']
+                                if subtopic_item.has_key('items'):
+                                    for subtopic_item_key in subtopic_item['items']:
+                                        print "             SubSubTopic key:%s" % subtopic_item_key
+                                        print "             SubSubTopic item:%s" % subtopic_item['items']
+                    
         self.assertIsNotNone(jsondata)
         
-    def xtest_get_khan_user_data(self):
+    def ctest_get_khan_user_data(self):
         jsondata = get_khan_user(self.user)
         self.assertIsNotNone(jsondata)
        
-    def xtest_get_khan_badges(self):
+    def ctest_get_khan_badges(self):
         jsondata = get_khan_badges(self.user)
         self.assertIsNotNone(jsondata)
          
-    def xtest_get_exercises(self):
+    def ctest_get_exercises(self):
         jsondata = get_khan_exercises(self.user)
         self.assertIsNotNone(jsondata)
             
-    def xtest_get_exercise_history(self):
+    def ctest_get_exercise_history(self):
         jsondata = get_khan_exercise_history(self.user)
         self.assertIsNotNone(jsondata)
 
           
-    def xtest_get_profiency_for_exercise(self):
+    def ctest_get_profiency_for_exercise(self):
         exercise_states = get_proficiency_for_exercise(self.user, 'scientific_notation')
         print "Proficient? %s" % exercise_states['proficient']
         print "Struggling? %s" % exercise_states['struggling']

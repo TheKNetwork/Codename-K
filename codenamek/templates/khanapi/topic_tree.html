@@ -7,8 +7,6 @@
 <!-- Add code to initialize the tree when the document is loaded: -->
 <script type="text/javascript">
     $(function() {
-        // Attach the dynatree widget to an existing <div id="tree"> element
-        // and pass the tree options as an argument to the dynatree() function:
         $("#topic-tree").dynatree({
             onActivate : function(node) {
                 // A DynaTreeNode object is passed to the activation handler
@@ -17,19 +15,24 @@
             },
             // persist : true,
             children : [// Pass an array of nodes.
+                {% for topic in topic_tree_json %}
                 {
-                    title : "Item 1"
-                }, {
-                    title : "Folder 2",
+                    title : "{{topic.name}}",
                     isFolder : true,
-                    children : [{
-                        title : "Sub-item 2.1"
-                    }, {
-                        title : "Sub-item 2.2"
-                    }]
-                }, {
-                    title : "Item 3"
-                }
+                    {% if topic.items %}
+                    children : [
+                    {% for subtopic in topic.items %} 
+                    {
+                        title : '{{subtopic.name}}'
+                    },
+                    {% endfor %}
+                    ]
+                    {% endif %}
+                },
+                {% endfor %}   
+                {
+                    title : ""
+                }  
             ]
         });
     });

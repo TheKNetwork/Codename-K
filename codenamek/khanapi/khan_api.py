@@ -97,18 +97,15 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600
     _chosen_cache = get_cache('default')
     if disk_cache:
         _chosen_cache = get_cache('disk')
+        cache_timeout=(60 * 60 * 24)
     
     if user_id is not None:
-        print "user id is not none!"
         cache_key = "%s:%s:%s" % (user_id, api_method, return_raw_text)
     else:
         cache_key = "%s:%s:%s" % (profile_access_token, api_method, return_raw_text)
-    print "key: %s" % cache_key
     
     cache_hit = False
-    print "Cache key for KHAN API Call is %s" % cache_key
     result_data = _chosen_cache.get(cache_key)
-    print "result from cache is %s" % result_data
     
     if result_data is None or result_data == '' or force_refresh:
         resource = CLIENT.access_api_resource(
@@ -132,13 +129,10 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600
         except:
             result_data = ''
         
-        # print "Setting cache key:%s to result:%s" % (cache_key, result_data)
+        print "Setting cache key:%s to result:%s" % (cache_key, result_data)
         _chosen_cache.set(cache_key, result_data, cache_timeout)
-        rd = _chosen_cache.get(cache_key)
-        
-        print "Result is cache is %s" % rd
     else:
-        #print "Got json data from cache!"
+        print "Got json data from cache!"
         cache_hit = True
     
     if not cache_hit:

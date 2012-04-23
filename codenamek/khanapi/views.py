@@ -33,7 +33,8 @@ def khan_user_info(request):
     return render(request, "khanapi/khan_user_data.html", data)
 
 def topic_tree(request):
-    return render(request, "khanapi/topic_tree.html", {})
+    jsonresult = get_khan_playlist_library(request.user)
+    return render(request, "khanapi/topic_tree.html", { 'topic_tree_json':jsonresult })
 
 # Given a URL, makes a proxied request for an API resource and returns the
 # response.
