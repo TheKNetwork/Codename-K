@@ -17,6 +17,7 @@ class SimpleTest(TestCase):
                  
     def test_get_playlist_library(self):
         jsondata = get_khan_playlist_library(self.user)
+        # print jsondata
         for topic in jsondata:
             print "Topic name: %s" % topic['name']
             if topic.has_key('items'):

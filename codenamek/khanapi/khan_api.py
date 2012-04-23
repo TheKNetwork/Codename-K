@@ -41,22 +41,33 @@ def get_khan_user(user):
 
 def get_khan_exercises(user):
     try:
-        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercises', user_id=user.id)
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercises', user_id=user.id, cache_per_user=False)
     except:
         return ''  
 
 def get_khan_badges(user):
     try:
-        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/badges', user_id=user.id, disk_cache=True)
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/badges', user_id=user.id, disk_cache=True, cache_per_user=False)
     except:
         return '' 
     
 def get_khan_playlist_library(user):
-    print "Calling library playlist with user id %s" % user.id
     try:
-        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/playlists/library', user_id=user.id, disk_cache=True)
+        jsondata = execute_khan_api_method(user.get_profile().access_token, 
+                                           '/api/v1/playlists/library', 
+                                           user_id=user.id, 
+                                           disk_cache=True, 
+                                           cache_per_user=False)
+        
+        return jsondata
     except:
         return ''     
+    
+def get_khan_playlist_exercises_for_title(user, playlist_title):
+    try:
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/playlists/%s/exercises' % playlist_title, user_id=user.id, disk_cache=True, cache_per_user=False)
+    except:
+        return ''    
 
 def get_khan_exercise_history(user):
     return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercise_history', user_id=user.id, disk_cache=True)
@@ -91,7 +102,7 @@ def get_exercise_for_user(user, exercise_name):
 # the user's access token and method passed in.
 # The default cache timeout is one hour, 60 seconds * 60 minutes
 # Regardless of the cache, a refresh can be forced by passing in force_refresh=True
-def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600, force_refresh=False, return_raw_text=False, user_id=None, disk_cache=False):
+def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600, force_refresh=False, return_raw_text=False, user_id=None, disk_cache=False, cache_per_user=True):
     cache_key = ""
     
     _chosen_cache = get_cache('default')
@@ -99,10 +110,18 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600
         _chosen_cache = get_cache('disk')
         cache_timeout=(60 * 60 * 24)
     
-    if user_id is not None:
-        cache_key = "%s:%s:%s" % (user_id, api_method, return_raw_text)
+    if cache_per_user:
+        if user_id is not None:
+            cache_key = "%s%s%s" % (user_id, api_method, return_raw_text)
+        else:
+            cache_key = "%s%s%s" % (profile_access_token, api_method, return_raw_text)
     else:
-        cache_key = "%s:%s:%s" % (profile_access_token, api_method, return_raw_text)
+        cache_key = "%s%s" % (api_method, return_raw_text)
+        
+    cache_key = cache_key.replace("/","")
+    cache_key = cache_key.replace(".","")
+    cache_key = cache_key.replace(":","")
+    cache_key = cache_key.replace(" ","")
     
     cache_hit = False
     result_data = _chosen_cache.get(cache_key)
@@ -129,10 +148,9 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600
         except:
             result_data = ''
         
-        print "Setting cache key:%s to result:%s" % (cache_key, result_data)
         _chosen_cache.set(cache_key, result_data, cache_timeout)
     else:
-        print "Got json data from cache!"
+        # print "Got json data from cache!"
         cache_hit = True
     
     if not cache_hit:

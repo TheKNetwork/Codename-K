@@ -33,8 +33,24 @@ def khan_user_info(request):
     return render(request, "khanapi/khan_user_data.html", data)
 
 def topic_tree(request):
-    jsonresult = get_khan_playlist_library(request.user)
-    return render(request, "khanapi/topic_tree.html", { 'topic_tree_json':jsonresult })
+    jsondata = get_khan_playlist_library(request.user)
+    print "Done getting json data"
+    _exercises = dict()
+    for listitem in jsondata:
+        add_topic_exercises(topic=listitem, user=request.user)
+        
+    return render(request, "khanapi/topic_tree.html", { 'topic_tree_json':jsondata })
+
+def add_topic_exercises(topic, user):
+    if topic.has_key('name'):
+        exercises = get_khan_playlist_exercises_for_title(user, topic['name'])
+        topic['exercises'] = exercises
+        
+    if topic.has_key('items'):
+            for subtopic in topic['items']:
+                if subtopic.has_key('name'):
+                    add_topic_exercises(subtopic, user)
+    
 
 # Given a URL, makes a proxied request for an API resource and returns the
 # response.
