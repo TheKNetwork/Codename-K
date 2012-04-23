@@ -105,7 +105,7 @@ challenge_SCOPE_CHOICES = (
     
 class GroupChallenge(models.Model):
     classroom_team = models.ForeignKey(ClassroomTeam)
-    challenge = models.ForeignKey(Challenge)
+    challenge = models.ForeignKey(Challenge, related_name="challenge_groups")
     
 class ChallengeExercise(models.Model):
     challenge = models.ForeignKey(Challenge, related_name="exercises")

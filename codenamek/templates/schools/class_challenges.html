@@ -20,7 +20,7 @@
                         {% for challenge in challenges.all %}
                         <tr>
                             <td>{{ challenge }}</td>
-                            <td>X Groups</td>
+                            <td>{{ challenge.challenge_groups.all.count }} Groups</td>
                             <td><a href="">Enlist in this Challenge</a></td>
                             <td><a href="">Invite Groups to this challenge</a></td>
                         </tr>

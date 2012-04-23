@@ -18,7 +18,7 @@ class SimpleTest(TestCase):
         self.user = ccoy_gmail  
     
     # GROUP PROFILE MEGA TEST (FOR MENTAL CLARITY)
-    def test_group_profile_stuff(self):
+    def norun_test_group_profile_stuff(self):
         # get reference to a school and a class
         school = add_school(school_name="Rock School")
         school_class = add_class(school_id=school.id, _class_name="Geology 101")
@@ -125,15 +125,52 @@ class SimpleTest(TestCase):
         pass
     
     def test_add_challenge(self):
-        school = add_school(school_name="Test School")
+        # get reference to a school and a class
+        school = add_school(school_name="Rock School")
+        school_class = add_class(school_id=school.id, _class_name="Geology 101")
         
-        school_class = add_class(school_id=school.id, _class_name="Math 101")
-        associated_group_name = school_class.name
-        self.assertIsNotNone(associated_group_name, "Saving the class didn't create the correct group entry")
+        # get or create a user, let's assume this user is an admin
+        # TODO: Do we need a flag for that?
+        user1 = User(username="user1")
+        user2 = User(username="user2")
         
-        challenge = create_challenge_for_class(school_class, "Understanding decimals")
-        self.assertIsNotNone(challenge, "Could not save challenge")
-        print challenge
+        user1.save()
+        user2.save()
+        
+        # Now that we have profile objects, associate a khan user with each
+        # user id. We haven't set these yet, so we'll see warnings and no
+        # proficiency will exist.
+        user1.get_profile().access_token = self.gmail_token
+        user2.get_profile().access_token = self.facebook_token
+        
+        # Save the updated stuff
+        user1.save()
+        user2.save()
+        
+        # Add the users to the groups they should belong to.
+        # (technically we could skip to the teams, but let's be accurate here.
+        add_user_to_school(user1, school)
+        add_user_to_school(user2, school)
+        
+        add_user_to_class(user1, school_class)
+        add_user_to_class(user2, school_class)
+        
+        #
+        #
+        # Let's group the class into Teams. Create two teams, put some users in each.
+        team1 = add_team_to_class(school_class.id, "The Rockettes")
+        team2 = add_team_to_class(school_class.id, "The Slugs")
+        
+        add_user_to_team(user1, team1)
+        add_user_to_team(user2, team2)
+        
+        # Create a challenge, name it Challenge Set One or something
+        challenge_of_decimals = create_challenge_for_class(school_class, "Understanding Decimal Stuff")
+        
+        add_team_to_challenge(team1, challenge_of_decimals);
+        add_team_to_challenge(team2, challenge_of_decimals);
+        
+        print "Challenge groups: %s" % challenge_of_decimals.challenge_groups.all().count()
         pass
     
     def test_add_users_to_team(self):
