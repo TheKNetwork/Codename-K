@@ -50,6 +50,12 @@
 	</div>
 </section>
 
+<!-- We ajax load the challenges and teams... this is a mix of DRY and
+    Eating our own Dog Food. Odds are good that if these two lines of 
+    javascript work, so will the refresh actions that happen after
+    adding data.
+    ===================================================== --> 
+
 <script type="text/javascript">
     $("#class-congregation-groups").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/groups')
     $("#class-challenges").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenges');
