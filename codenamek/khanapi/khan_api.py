@@ -22,7 +22,7 @@ import time
 import cgi, os, sys
 import simplejson
 
-from django.core.cache import cache
+from django.core.cache import *
 
 # PUBLIC FACING METHODS HERE
 def is_khan_user_active(request):
@@ -35,24 +35,31 @@ def is_khan_user_active(request):
 
 def get_khan_user(user):
     try:
-        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/user')
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/user', user_id=user.id)
     except:
         return ''   
 
 def get_khan_exercises(user):
     try:
-        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercises')
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercises', user_id=user.id)
     except:
         return ''  
 
 def get_khan_badges(user):
     try:
-        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/badges')
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/badges', user_id=user.id, disk_cache=True)
     except:
         return '' 
+    
+def get_khan_playlist_library(user):
+    print "Calling library playlist with user id %s" % user.id
+    try:
+        return execute_khan_api_method(user.get_profile().access_token, '/api/v1/playlists/library', user_id=user.id, disk_cache=True)
+    except:
+        return ''     
 
 def get_khan_exercise_history(user):
-    return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercise_history')
+    return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercise_history', user_id=user.id, disk_cache=True)
 
 from datetime import datetime
 # example 2011-08-29T00:00:00Z
@@ -67,7 +74,7 @@ def get_proficiency_for_exercise(user, exercise_name):
         print "WARNING: There is no khan user associated with %s" % user
         return { 'proficient':False, 'struggling':False}
     
-    jsondata = execute_khan_api_method(user.get_profile().access_token, '/api/v1/user/exercises/%s' % exercise_name)  
+    jsondata = execute_khan_api_method(user.get_profile().access_token, '/api/v1/user/exercises/%s' % exercise_name, user_id=user.id)  
     if jsondata is not None:
         return jsondata['exercise_states']
     else:
@@ -78,17 +85,30 @@ def get_proficiency_date_for_exercise(user, exercise_name):
     return exercise_data['proficient_date']
 
 def get_exercise_for_user(user, exercise_name):
-    return execute_khan_api_method(user.get_profile().access_token, '/api/v1/user/exercises/%s' % exercise_name)   
+    return execute_khan_api_method(user.get_profile().access_token, '/api/v1/user/exercises/%s' % exercise_name, user_id=user.id)   
 
 # This method is the funnel point for all khan api calls. It caches data based on
 # the user's access token and method passed in.
 # The default cache timeout is one hour, 60 seconds * 60 minutes
 # Regardless of the cache, a refresh can be forced by passing in force_refresh=True
-def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600, force_refresh=False, return_raw_text=False):
-    cache_key = "%s:%s:%s" % (profile_access_token, api_method, return_raw_text)
+def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600, force_refresh=False, return_raw_text=False, user_id=None, disk_cache=False):
+    cache_key = ""
+    
+    _chosen_cache = get_cache('default')
+    if disk_cache:
+        _chosen_cache = get_cache('disk')
+    
+    if user_id is not None:
+        print "user id is not none!"
+        cache_key = "%s:%s:%s" % (user_id, api_method, return_raw_text)
+    else:
+        cache_key = "%s:%s:%s" % (profile_access_token, api_method, return_raw_text)
+    print "key: %s" % cache_key
+    
     cache_hit = False
-    # print "Cache key for KHAN API Call is %s" % cache_key
-    result_data = cache.get(cache_key)
+    print "Cache key for KHAN API Call is %s" % cache_key
+    result_data = _chosen_cache.get(cache_key)
+    print "result from cache is %s" % result_data
     
     if result_data is None or result_data == '' or force_refresh:
         resource = CLIENT.access_api_resource(
@@ -108,12 +128,15 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600
             if return_raw_text:
                 result_data = text
             else:
-                print "converting to json"
                 result_data = simplejson.loads(text)
         except:
             result_data = ''
-        cache.set(cache_key, result_data, cache_timeout)
         
+        # print "Setting cache key:%s to result:%s" % (cache_key, result_data)
+        _chosen_cache.set(cache_key, result_data, cache_timeout)
+        rd = _chosen_cache.get(cache_key)
+        
+        print "Result is cache is %s" % rd
     else:
         #print "Got json data from cache!"
         cache_hit = True

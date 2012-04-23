@@ -178,8 +178,7 @@
 						<div class="header">
 							<h3>Step 2: Choose Topics</h3>
 						</div>	
-						<div>
-							<p>Fun, we get to put the topic menu in here!</p>	
+						<div id="topic-tree-container">
 						</div>
 					</div>
 				</div>
@@ -220,6 +219,7 @@
 <script type="text/javascript">
     $("#class-congregation-groups").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/groups')
     $("#class-challenges").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenges');
+    $("#topic-tree-container").load('/khanapi/topic_tree');
 </script>
 
 {% endblock %}

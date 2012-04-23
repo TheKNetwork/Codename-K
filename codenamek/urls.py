@@ -65,6 +65,7 @@ urlpatterns = patterns('',
     ('^profiles/edit', 'profiles.views.edit_profile', {'form_class': ProfileForm, }), # 1
     (r'^profiles/', include('profiles.urls')), # 2
 
+    url(r'^khanapi/topic_tree', 'khanapi.views.topic_tree'),
     url(r'^khanapi/$', 'khanapi.views.index'),
     url(r'^proxy/$', 'khanapi.views.proxy'),
     url(r'^oauth_get_request_token/$', 'khanapi.views.oauth_get_request_token'),

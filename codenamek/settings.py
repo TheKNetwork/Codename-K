@@ -142,6 +142,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.gzip.GZipMiddleware',
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -203,7 +204,18 @@ CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': 'localhost:11211',
-        'TIMEOUT': 10
+        'TIMEOUT': 300,
+        'OPTIONS': {
+            'MAX_ENTRIES': 20000
+        }
+    },
+    'disk': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/var/tmp',
+        'TIMEOUT': 600,
+        'OPTIONS': {
+            'MAX_ENTRIES': 20000
+        }
     }
 }
 

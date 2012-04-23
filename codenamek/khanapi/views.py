@@ -27,9 +27,13 @@ def index(request):
     data = { 'has_access_token':has_access_token(request.session) }
     return render(request, "khanapi/index.html", data)
 
+@never_cache
 def khan_user_info(request):
     data = { 'khan_user_active': is_khan_user_active(request), 'khan_user': get_khan_user(request.user) }
     return render(request, "khanapi/khan_user_data.html", data)
+
+def topic_tree(request):
+    return render(request, "khanapi/topic_tree.html", {})
 
 # Given a URL, makes a proxied request for an API resource and returns the
 # response.
