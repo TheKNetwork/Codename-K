@@ -152,7 +152,7 @@
                                 var teams = "";
                                 
                                 $("#selected-teams option:selected").each(function(){
-                                    teams += $(this).val() + ",";    
+                                    teams += $(this).val() + "^|^";    
                                 });
                                 var data = { challenge_name: challenge, csrfmiddlewaretoken: token, team_ids: teams };
                                 return data;

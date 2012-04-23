@@ -61,8 +61,8 @@ def challenge_add(request, user_name, school_id, class_id):
     school = School.objects.get(id=school_id)
     _classroom = Classroom.objects.get(id=class_id)
     
-    teams_to_add = request.POST['team_ids']
-    print "Teams to add %s" % teams_to_add
+    teams_to_add_string = request.POST['team_ids']
+    team_list = teams_to_add_string.split('^|^')
     
     form = ChallengeForm(request.POST)
     teams = _classroom.teams
@@ -70,6 +70,11 @@ def challenge_add(request, user_name, school_id, class_id):
     
     if form.is_valid(): 
         challenge = create_challenge_for_class(_classroom, form.cleaned_data['challenge_name'] )
+        for team_id in team_list:
+            team_to_add = ClassroomTeam.objects.get(id=team_id)
+            add_team_to_challenge(team_to_add, challenge)
+            print "Added team %s to challenge" % team_to_add
+            
     else:
         print "Form not valid"
         
