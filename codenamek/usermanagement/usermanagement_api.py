@@ -22,6 +22,15 @@ def get_schools_for_user(**kwargs):
     schools = School.objects.filter(group_ptr=user.groups.filter(name__startswith="school."))
     return schools
 
+def get_teams_for_user(**kwargs):
+    """
+    Retrieves a list of team for a certain user. A team *is* a group,
+    so this relies on the built in django auth module
+    """
+    user = User.objects.get(**kwargs)
+    teams = ClassroomTeam.objects.filter(group_ptr=user.groups.filter(name__startswith="team."))
+    return teams
+
 def invite_user_to_class(inviting_user_id, invited_user_id, school_class_id):
     """
     Creates a ClassInvitation object and relates the proper references to the

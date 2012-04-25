@@ -27,7 +27,7 @@ urlpatterns = patterns('',
     url(r'^(?P<user_name>\w+)/schools/(?P<_school_id>\d+)/create_a_class','codenamek.schools.views.create_a_class'),
 
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/challenge_add','codenamek.schools.views.challenge_add', name='challenge_add'),    
-    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/challenges','codenamek.schools.views.challenge_section', name='challenge_section'),
+    # url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/challenges','codenamek.schools.views.challenge_section', name='challenge_section'),
 
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/group_add','codenamek.schools.views.group_add', name='group_add'),    
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/groups','codenamek.schools.views.group_section', name='group_section'),

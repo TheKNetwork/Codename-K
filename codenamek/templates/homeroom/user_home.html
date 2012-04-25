@@ -173,6 +173,41 @@
 	</div>
 </section>
 
+<section>
+	<div id="teams">
+		<h3><small>You are a member of the following </small>Teams</h3>
+		<div class="row-fluid">
+			<div class="span12">
+				<table class="table table-striped table-condensed">
+					<thead>
+						<tr>
+							<th>Team Name</th>
+							<th>School</th>
+							<th>Class</th>	
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						
+						{% for team in teams %}
+						<tr>
+							<td>
+								{{team}}
+							</td>
+							<td>
+								{{team.classroom}}
+							</td>
+							<td>
+								{{team.classroom.school}}
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
 
 <section>
     <div id="khan-user-data" class="span6 well">
