@@ -5,3 +5,4 @@
 *.db
 *.mo
 settings_local.py
+knetenv.sh
