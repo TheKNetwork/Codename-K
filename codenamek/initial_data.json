@@ -3,7 +3,7 @@
 		"pk": 1,
 		"model": "chat.chatroom",
 		"fields": {
-			"name": "PFC Omar E. Torres Charter School: Patel 8th",
+			"name": "POCS: Patel 8th",
 			"slug": "pfc-omar-e-torres-charter-school-patel-8th"
 		}
 	}, {
@@ -45,7 +45,7 @@
 		"pk": 6,
 		"model": "auth.group",
 		"fields": {
-			"name": "school.PFC Omar E. Torres Charter School",
+			"name": "school.POCS",
 			"permissions": []
 		}
 	}, {
@@ -59,84 +59,84 @@
 		"pk": 8,
 		"model": "auth.group",
 		"fields": {
-			"name": "team.class.class.7.Patel 8th.Cookie Monster.school.PFC Omar E. Torres Charter School",
+			"name": "team.class.class.7.PCMOmar E. Torres Charter School",
 			"permissions": []
 		}
 	}, {
 		"pk": 9,
 		"model": "auth.group",
 		"fields": {
-			"name": "team.class.class.7.Patel 8th.SAMF.school.PFC Omar E. Torres Charter School",
+			"name": "team.class.class.7.Patel 8th.SAMF.school.POCS",
 			"permissions": []
 		}
 	}, {
 		"pk": 10,
 		"model": "auth.group",
 		"fields": {
-			"name": "team.class.class.7.Patel 8th.YOLO.school.PFC Omar E. Torres Charter School",
+			"name": "team.class.class.7.Patel 8th.YOLO.school.POCS",
 			"permissions": []
 		}
 	}, {
 		"pk": 11,
 		"model": "auth.group",
 		"fields": {
-			"name": "team.class.class.7.Patel 8th.UE.school.PFC Omar E. Torres Charter School",
+			"name": "team.class.class.7.Patel 8th.UE.school.POCS",
 			"permissions": []
 		}
 	}, {
 		"pk": 12,
 		"model": "auth.group",
 		"fields": {
-			"name": "team.class.class.7.Patel 8th.Bubbles.school.PFC Omar E. Torres Charter School",
+			"name": "team.class.class.7.Patel 8th.Bubbles.school.POCS",
 			"permissions": []
 		}
 	}, {
 		"pk": 13,
 		"model": "auth.group",
 		"fields": {
-			"name": "team.class.class.7.Patel 8th.Wolves.school.PFC Omar E. Torres Charter School",
+			"name": "team.class.class.7.Patel 8th.Wolves.school.POCS",
 			"permissions": []
 		}
 	}, {
 		"pk": 14,
 		"model": "auth.group",
 		"fields": {
-			"name": "team.class.class.7.Patel 8th.Bulls.school.PFC Omar E. Torres Charter School",
+			"name": "team.class.class.7.Patel 8th.Bulls.school.POCS",
 			"permissions": []
 		}
 	}, {
 		"pk": 15,
 		"model": "auth.group",
 		"fields": {
-			"name": "team.class.class.7.Patel 8th.C's in C.school.PFC Omar E. Torres Charter School",
+			"name": "team.class.class.7.Patel 8th.C's in C.school.POCS",
 			"permissions": []
 		}
 	}, {
 		"pk": 16,
 		"model": "auth.group",
 		"fields": {
-			"name": "team.class.class.7.Patel 8th.Fast 3.school.PFC Omar E. Torres Charter School",
+			"name": "team.class.class.7.Patel 8th.Fast 3.school.POCS",
 			"permissions": []
 		}
 	}, {
 		"pk": 17,
 		"model": "auth.group",
 		"fields": {
-			"name": "team.class.class.7.Patel 8th.Geek Squad.school.PFC Omar E. Torres Charter School",
+			"name": "team.class.class.7.Patel 8th.Geek Squad.school.POCS",
 			"permissions": []
 		}
 	}, {
 		"pk": 18,
 		"model": "auth.group",
 		"fields": {
-			"name": "team.class.class.7.Patel 8th.Leslies.school.PFC Omar E. Torres Charter School",
+			"name": "team.class.class.7.Patel 8th.Leslies.school.POCS",
 			"permissions": []
 		}
 	}, {
 		"pk": 19,
 		"model": "auth.group",
 		"fields": {
-			"name": "team.class.class.7.Patel 8th.Math Killa.school.PFC Omar E. Torres Charter School",
+			"name": "team.class.class.7.Patel 8th.Math Killa.school.POCS",
 			"permissions": []
 		}
 	}, {
@@ -837,7 +837,7 @@
 			"address_city": "",
 			"school_url": "",
 			"address_line_one": "",
-			"school_name": "PFC Omar E. Torres Charter School",
+			"school_name": "POCS",
 			"gender_flag": "C",
 			"address_state": "",
 			"address_country": "",
