@@ -125,5 +125,5 @@ def oauth_callback(request):
 
     # We're done authenticating, and the credentials are now stored in the
     # session. We can redirect back home.
-    return HttpResponseRedirect('/khanapi')
+    return HttpResponseRedirect('/homeroom')
 
