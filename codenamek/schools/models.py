@@ -26,7 +26,7 @@ class School(Group):
     IS a django group, which makes it easy to manage authorization and membership
     without getting too complex.
     """
-    school_name = models.CharField(max_length=100, unique=True)
+    school_name = models.CharField(max_length=255, unique=True)
     address_line_one = models.CharField(max_length=100, blank=True)
     address_line_two = models.CharField(max_length=100, blank=True)
     address_city = models.CharField(max_length=100, blank=True)
