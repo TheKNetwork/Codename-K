@@ -25,6 +25,13 @@ def index(request, user_name):
     data = {'user': request.user, 'schools': schools}
     return render(request, "schools/schools.html", data)
 
+def team_selection(request, user_name, school_id, class_id):
+    schools = get_schools_for_user(id=request.user.id)
+    classroom = Classroom.objects.get(id=class_id)
+    teams = classroom.teams
+    data = {'user': request.user, 'schools': schools, 'school_class':classroom, 'teams':teams }
+    return render(request, "schools/team_selection.html", data)
+
 @login_required
 @never_cache
 def group_section(request, user_name, school_id, class_id):
@@ -35,6 +42,7 @@ def group_section(request, user_name, school_id, class_id):
     
     for team in teams.all():
         challenge_pro = 0
+        exercises_completed = 0
         for challenge in team.challenges.all():
             exercise_total = 0
             exercise_pro = 0
@@ -42,10 +50,12 @@ def group_section(request, user_name, school_id, class_id):
                 is_pro = get_exercise_proficiency_for_team(team, exercise.exercise_name)
                 if is_pro:
                     exercise_pro = exercise_pro + 1
+                    exercises_completed = exercises_completed + 1
                 exercise_total = exercise_total + 1
             if exercise_total == exercise_pro and exercise_total > 0:
                 challenge_pro = challenge_pro + 1
         team.challenge_complete_count = challenge_pro
+        team.exercise_complete_count = exercises_completed
         team.save()
          
     form = ClassroomTeamForm()

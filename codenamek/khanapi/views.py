@@ -42,14 +42,23 @@ def topic_tree(request):
     return render(request, "khanapi/topic_tree.html", { 'topic_tree_json':jsondata })
 
 def add_topic_exercises(topic, user):
+    has_exercises = False
     if topic.has_key('name'):
         exercises = get_khan_playlist_exercises_for_title(user, topic['name'])
+        i = 0
+        for o in exercises:
+            has_exercises = True
         topic['exercises'] = exercises
         
     if topic.has_key('items'):
             for subtopic in topic['items']:
                 if subtopic.has_key('name'):
-                    add_topic_exercises(subtopic, user)
+                    _has = add_topic_exercises(subtopic, user)
+                    if _has == False and has_exercises == False:
+                        has_exercises = False
+                    else:
+                        has_exercises = True
+    topic['has_exercises'] = has_exercises
     
 
 # Given a URL, makes a proxied request for an API resource and returns the

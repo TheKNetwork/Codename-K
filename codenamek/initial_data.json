@@ -977,24 +977,79 @@
 			"permissions": []
 		}
 	}, {
-		"pk": 1,
+		"pk": 29,
 		"model": "usermanagement.userprofile",
 		"fields": {
 			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 1,
+			"access_token": "oauth_token_secret=YJfPMBqLNsMs5BrB&oauth_token=LNYWH5fkPgXELHB5",
+			"default_school": 6,
+			"user": 30,
 			"khan_user_id": null,
 			"personal_url": ""
 		}
 	}, {
-		"pk": 2,
+		"pk": 15,
 		"model": "usermanagement.userprofile",
 		"fields": {
 			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 2,
+			"access_token": "oauth_token_secret=8L2rQqfPp7vCEAVz&oauth_token=HUa88vHp5Lw5rxw9",
+			"default_school": 6,
+			"user": 16,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 19,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=rHsxMR7eZAKJdyED&oauth_token=aXWHF8yE3hEv9H2s",
+			"default_school": 6,
+			"user": 20,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 11,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=jYLBKTNhRBneSUE9&oauth_token=h4tU6HATh66Wnufn",
+			"default_school": 6,
+			"user": 12,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 38,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=nx8rQpm7mzuP8hrh&oauth_token=J6wB76X2SswAnBxj",
+			"default_school": 6,
+			"user": 39,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 26,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=ac55hC6hgpCd3wGe&oauth_token=crVqQtd7Q3am4rjR",
+			"default_school": 6,
+			"user": 27,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 32,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=NCjf54ffA7e2GXQ7&oauth_token=nb7DU3n2YNL7Qv6a",
+			"default_school": 6,
+			"user": 33,
 			"khan_user_id": null,
 			"personal_url": ""
 		}
@@ -1054,46 +1109,13 @@
 			"personal_url": ""
 		}
 	}, {
-		"pk": 8,
+		"pk": 35,
 		"model": "usermanagement.userprofile",
 		"fields": {
 			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 9,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 9,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 10,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 10,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 11,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 11,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 12,
+			"access_token": "oauth_token_secret=cVrVRW25Zh5y96zm&oauth_token=THKW4HmGNyYhnaTG",
+			"default_school": 6,
+			"user": 36,
 			"khan_user_id": null,
 			"personal_url": ""
 		}
@@ -1109,46 +1131,13 @@
 			"personal_url": ""
 		}
 	}, {
-		"pk": 13,
+		"pk": 24,
 		"model": "usermanagement.userprofile",
 		"fields": {
 			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 14,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 14,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 15,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 15,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 16,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 16,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 17,
+			"access_token": "oauth_token_secret=mHfbMaxg8ZVRQwHX&oauth_token=SadbPCm2wDmCeA9a",
+			"default_school": 6,
+			"user": 25,
 			"khan_user_id": null,
 			"personal_url": ""
 		}
@@ -1164,35 +1153,13 @@
 			"personal_url": ""
 		}
 	}, {
-		"pk": 18,
+		"pk": 33,
 		"model": "usermanagement.userprofile",
 		"fields": {
 			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 19,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 19,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 20,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 20,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 21,
+			"access_token": "oauth_token_secret=pwfe8jCAQuY5amDm&oauth_token=nc69exQxs8cVdx37",
+			"default_school": 6,
+			"user": 34,
 			"khan_user_id": null,
 			"personal_url": ""
 		}
@@ -1201,20 +1168,9 @@
 		"model": "usermanagement.userprofile",
 		"fields": {
 			"home_address": "",
-			"access_token": null,
-			"default_school": null,
+			"access_token": "oauth_token_secret=B7YKxTax6NnENpKs&oauth_token=3K2rLtAsJPVEp5ND",
+			"default_school": 6,
 			"user": 22,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 22,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 23,
 			"khan_user_id": null,
 			"personal_url": ""
 		}
@@ -1230,17 +1186,6 @@
 			"personal_url": ""
 		}
 	}, {
-		"pk": 24,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 25,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
 		"pk": 25,
 		"model": "usermanagement.userprofile",
 		"fields": {
@@ -1248,17 +1193,6 @@
 			"access_token": null,
 			"default_school": null,
 			"user": 26,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 26,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 27,
 			"khan_user_id": null,
 			"personal_url": ""
 		}
@@ -1285,17 +1219,6 @@
 			"personal_url": ""
 		}
 	}, {
-		"pk": 29,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 30,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
 		"pk": 30,
 		"model": "usermanagement.userprofile",
 		"fields": {
@@ -1318,50 +1241,6 @@
 			"personal_url": ""
 		}
 	}, {
-		"pk": 32,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 33,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 33,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 34,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 34,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 35,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 35,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 36,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
 		"pk": 36,
 		"model": "usermanagement.userprofile",
 		"fields": {
@@ -1369,28 +1248,6 @@
 			"access_token": null,
 			"default_school": null,
 			"user": 37,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 37,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 38,
-			"khan_user_id": null,
-			"personal_url": ""
-		}
-	}, {
-		"pk": 38,
-		"model": "usermanagement.userprofile",
-		"fields": {
-			"home_address": "",
-			"access_token": null,
-			"default_school": null,
-			"user": 39,
 			"khan_user_id": null,
 			"personal_url": ""
 		}
@@ -1404,6 +1261,166 @@
 			"user": 40,
 			"khan_user_id": null,
 			"personal_url": ""
+		}
+	}, {
+		"pk": 2,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=EHYksgtRvRE4T5KP&oauth_token=yLxWyWjwKq5rsEQ4",
+			"default_school": 1,
+			"user": 2,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 1,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": null,
+			"default_school": 6,
+			"user": 1,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 14,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": null,
+			"default_school": 6,
+			"user": 15,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 22,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": null,
+			"default_school": 6,
+			"user": 23,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 8,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=sZ45dKtCKEdBKXwJ&oauth_token=RG4eAQ59agXnMWPM",
+			"default_school": 6,
+			"user": 9,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 20,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=Ty3GYfDAqUHjrwAK&oauth_token=xZmmVHTDX9nrrM5K",
+			"default_school": 6,
+			"user": 21,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 37,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=Avh4RNH2gHn2aHXu&oauth_token=GLqQWGWxUvFdapH2",
+			"default_school": 6,
+			"user": 38,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 18,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=DzXqpCt2WeGKT8mw&oauth_token=cf43APN29jw4xEDb",
+			"default_school": 6,
+			"user": 19,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 9,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=BHEQKuMHRFzHZ5w2&oauth_token=EZDaS7CSg4d9RayH",
+			"default_school": 6,
+			"user": 10,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 10,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=UcKSdWgExEDBW8XY&oauth_token=Nvy4KnrzXEPWmxEv",
+			"default_school": 6,
+			"user": 11,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 13,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=zmMy8HZSYEV6NeUg&oauth_token=mFJHwR6sk6qGvjgb",
+			"default_school": 6,
+			"user": 14,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 16,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=6zz53bYcqfkkTcJA&oauth_token=HNWyXEZEtWdFXrJH",
+			"default_school": 6,
+			"user": 17,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 34,
+		"model": "usermanagement.userprofile",
+		"fields": {
+			"home_address": "",
+			"access_token": "oauth_token_secret=mYDRW4zKp6JLbyHu&oauth_token=tHxSumrjW4pkae86",
+			"default_school": 6,
+			"user": 35,
+			"khan_user_id": null,
+			"personal_url": ""
+		}
+	}, {
+		"pk": 41,
+		"model": "auth.user",
+		"fields": {
+			"username": "hpatel",
+			"first_name": "",
+			"last_name": "",
+			"is_active": true,
+			"is_superuser": false,
+			"is_staff": false,
+			"last_login": "2012-04-26T12:59:30",
+			"groups": [6, 7],
+			"user_permissions": [],
+			"password": "pbkdf2_sha256$10000$k7np1TW72AbL$ubibFHW8pu7PEcwBfDGcMtuonish6KAKe3aAYIwjb6E=",
+			"email": "",
+			"date_joined": "2012-04-26T12:59:30"
 		}
 	}
 ]

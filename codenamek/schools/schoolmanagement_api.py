@@ -110,7 +110,6 @@ def get_exercise_proficiency_for_team(team, exercise_name):
         if user_exercise_state['proficient'] == 'True' or user_exercise_state['proficient'] == True:
             i_number_of_proficient_users = i_number_of_proficient_users + 1
     
-    print "Number of members in team: %s vs proficient members: %s" % (team.user_set.all().count(), i_number_of_proficient_users)
     return team.user_set.all().count() == i_number_of_proficient_users;
 
 from datetime import datetime

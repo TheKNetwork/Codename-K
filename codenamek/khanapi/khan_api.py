@@ -81,15 +81,18 @@ def convert_khan_string_to_date(str_date):
     
 # Returns a dict of exercise_states{ }
 def get_proficiency_for_exercise(user, exercise_name):
+    default = { 'proficient':False, 'struggling':False}
     if user.get_profile().access_token is None or user.get_profile().access_token == '':
-        print "WARNING: There is no khan user associated with %s" % user
-        return { 'proficient':False, 'struggling':False}
+        return default
     
     jsondata = execute_khan_api_method(user.get_profile().access_token, '/api/v1/user/exercises/%s' % exercise_name, user_id=user.id)  
     if jsondata is not None:
-        return jsondata['exercise_states']
+        try:
+            return jsondata['exercise_states']
+        except:
+            return default
     else:
-        return { 'proficient':False, 'struggling':False}
+        return default
 
 def get_proficiency_date_for_exercise(user, exercise_name):
     exercise_data = get_exercise_for_user(user, exercise_name)
@@ -104,7 +107,8 @@ def get_exercise_for_user(user, exercise_name):
 # Regardless of the cache, a refresh can be forced by passing in force_refresh=True
 def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600, force_refresh=False, return_raw_text=False, user_id=None, disk_cache=False, cache_per_user=True):
     cache_key = ""
-    
+    print "API METHOD: %s" % api_method
+    print "user? %s" % user_id
     _chosen_cache = get_cache('default')
     if disk_cache:
         _chosen_cache = get_cache('disk')
@@ -118,6 +122,8 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600
     else:
         cache_key = "%s%s" % (api_method, return_raw_text)
         
+    print "CACHE KEY: %s" % cache_key    
+    
     cache_key = cache_key.replace("/","")
     cache_key = cache_key.replace(".","")
     cache_key = cache_key.replace(":","")
@@ -126,7 +132,7 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600
     cache_hit = False
     result_data = _chosen_cache.get(cache_key)
     
-    if result_data is None or result_data == '' or force_refresh:
+    if force_refresh or result_data is None:
         resource = CLIENT.access_api_resource(
             api_method,
             access_token = OAuthToken.from_string(profile_access_token),
@@ -140,15 +146,18 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600
         if is_html:
             text = cgi.escape(text)
         
+        print text
+        
         try:
             if return_raw_text:
                 result_data = text
             else:
                 result_data = simplejson.loads(text)
+                
+            _chosen_cache.set(cache_key, result_data, cache_timeout)
         except:
-            result_data = ''
+            print "exception storing in cache"
         
-        _chosen_cache.set(cache_key, result_data, cache_timeout)
     else:
         # print "Got json data from cache!"
         cache_hit = True

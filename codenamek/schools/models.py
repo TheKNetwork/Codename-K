@@ -88,6 +88,7 @@ class ClassroomTeam(Group):
 
     challenges = models.ManyToManyField(Challenge, through='GroupChallenge')
     challenge_complete_count = models.IntegerField(blank=True, null=True)
+    exercise_complete_count = models.IntegerField(blank=True, null=True)
     
     objects = models.Manager()
 

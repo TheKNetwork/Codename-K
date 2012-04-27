@@ -10,6 +10,13 @@
     </div>
 {% endif %}
 
+<script type="text/javascript">
+	function refreshTeamsAndChallenges() {
+		$("#class-challenges").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenges');
+    	$("#class-congregation-groups").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/groups');
+	}
+</script>
+
 <section id="breadcrumps">
 			<ul class="breadcrumb">
 				<li>
@@ -134,12 +141,13 @@
 		
 		<form id="create-challenge">
 		<div class="modal-body">
-			<div class="row-fluid">
+			<div id="accordion-root" class="row-fluid">
 				<div class="span12">
 					<div class="alert alert-info">
 						<div class="header">
 							<h3>Step 1: Set Challenge Name</h3>
 						</div>
+						<div id="step-one">
 							{% csrf_token %}
 							<br>
 	            			<input class="span3" id="challenge_name" 
@@ -147,43 +155,44 @@
 	            		 		type="text"
 	            		 		placeholder="Challenge Name"/>
 	        		   	
-                        <script type="text/javascript">
-                        	function getSelectedTopicTreeItems() {
-                        		var leafnodes = $("span.dynatree-selected a");
-                        		var delimitedList = new Array();
-                        		for(i=0; i < leafnodes.length; i++) {
-                        			leafItem = new Array();
-                        			leafItem[0] = leafnodes[i].title;
-                        			leafItem[1] = leafnodes[i].href;
-                        			delimitedList[delimitedList.length] = leafItem;
-                        		}
-                        		return JSON.stringify(delimitedList);
-                        	}
-                        
-                            function getNewChallengeData() {
-                            	var selectedExercises = getSelectedTopicTreeItems();
-                                var challenge = $("#challenge_name").val();
-                                var token = $('input[name=csrfmiddlewaretoken]').val();
-                                var teams = "";
-                                
-                                $("#selected-teams option:selected").each(function(){
-                                    teams += $(this).val() + "^|^";    
-                                });
-                                var data = { challenge_name: challenge, csrfmiddlewaretoken: token, team_ids: teams, selected_exercises: selectedExercises };
-                                return data;
-                            }
-                            
-                            function addChallenge() { 
-                                    sendAjaxDataAndRefresh(
-                                            getNewChallengeData(), 
-                                            '/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenge_add', 
-                                            'class-challenges', 
-                                            '/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenges'
-                                    );
-                                    
-                                    $("#challenge_name").val('');
-                            }
-                        </script>	        		   	
+	                        <script type="text/javascript">
+	                        	function getSelectedTopicTreeItems() {
+	                        		var leafnodes = $("span.dynatree-selected a");
+	                        		var delimitedList = new Array();
+	                        		for(i=0; i < leafnodes.length; i++) {
+	                        			leafItem = new Array();
+	                        			leafItem[0] = leafnodes[i].title;
+	                        			leafItem[1] = leafnodes[i].href;
+	                        			delimitedList[delimitedList.length] = leafItem;
+	                        		}
+	                        		return JSON.stringify(delimitedList);
+	                        	}
+	                        
+	                            function getNewChallengeData() {
+	                            	var selectedExercises = getSelectedTopicTreeItems();
+	                                var challenge = $("#challenge_name").val();
+	                                var token = $('input[name=csrfmiddlewaretoken]').val();
+	                                var teams = "";
+	                                
+	                                $("#selected-teams option:selected").each(function(){
+	                                    teams += $(this).val() + "^|^";    
+	                                });
+	                                var data = { challenge_name: challenge, csrfmiddlewaretoken: token, team_ids: teams, selected_exercises: selectedExercises };
+	                                return data;
+	                            }
+	                            
+	                            function addChallenge() { 
+	                                    sendAjaxDataAndRefresh(
+	                                            getNewChallengeData(), 
+	                                            '/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenge_add', 
+	                                            'class-challenges', 
+	                                            '/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenges'
+	                                    );
+	                                    
+	                                    $("#challenge_name").val('');
+	                            }
+	                        </script>
+	                	</div>	        		   	
 					</div>
 				</div>
 			</div>
@@ -193,7 +202,9 @@
 						<div class="header">
 							<h3>Step 2: Choose Topics</h3>
 						</div>	
-						<div id="topic-tree-container">
+						<div id="step-two">
+							<div id="topic-tree-container">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -203,13 +214,16 @@
 					<div class="alert alert-info">
 						<div class="header">
 							<h3>Step 3: Invite Group</h3>
-						</div>	
-						<div>
-							<p>Fun, we get to list groups here to flag for invites to this Challenge</p>
-							
-							<select id="selected-teams" data-placeholder="Select Something" multiple class="chosen" style="width:350px;" tabindex="4">
-									
-							</select>
+						</div>
+						<div id="step-three">
+							<div id="team-selection">
+								<select id="selected-teams" data-placeholder="Select Something" 
+									multiple class="chosen" style="width:350px;" tabindex="4">
+								{% for team in school_class.teams.all %}
+			                        <option value="{{ team.id }}">{{ team }}</option>
+			                    {% endfor %}
+								</select>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -232,10 +246,11 @@
     ===================================================== --> 
 
 <script type="text/javascript">
-
-    $("#class-challenges").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenges');
-    $("#class-congregation-groups").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/groups');
+$(document).ready(function() {
+    refreshTeamsAndChallenges();
     $("#topic-tree-container").load('/khanapi/topic_tree');
+});
+
 </script>
 
 {% endblock %}
