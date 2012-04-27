@@ -1,7 +1,9 @@
 {% load cache %}
 {% cache 86400 topictree %}
 <link rel='stylesheet' type='text/css' href='/static/css/khanapi/tree-skin/ui.dynatree.css'>
+
 <div id="topic-tree"></div>
+
 <script src='/static/js/jquery.min.js' type='text/javascript'></script>
 <script src='/static/js/jquery-ui.custom.min.js' type='text/javascript'></script>
 <script src='/static/js/jquery.cookie.js' type='text/javascript'></script>
@@ -9,9 +11,37 @@
 <!-- Add code to initialize the tree when the document is loaded: -->
 <script type="text/javascript">
     $("#topic-tree").dynatree({
+    	
+        checkbox: true,
+        selectMode: 2,
         onActivate : function(node) {
             // alert("You activated " + node.data.title);
-        }
+        },
+        
+		onSelect: function(select, node) {
+	        // Display list of selected nodes
+	        var selNodes = node.tree.getSelectedNodes();
+	        // convert to title/key array
+	        var selKeys = $.map(selNodes, function(node){
+	             return "[" + node.data.key + "]: '" + node.data.title + "'";
+	        });
+	        // $("#echoSelection2").text(selKeys.join(", "));
+	      },
+	      
+	      onClick: function(node, event) {
+	        // We should not toggle, if target was "checkbox", because this
+	        // would result in double-toggle (i.e. no toggle)
+	        if( node.getEventTargetType(event) == "title" )
+	          node.toggleSelect();
+	      },
+	      
+	      onKeydown: function(node, event) {
+	        if( event.which == 32 ) {
+	          node.toggleSelect();
+	          return false;
+	        }
+	      },        
+        
     });
 
     function addTopicNode(topicName, parentNode) {

@@ -16,6 +16,17 @@ from codenamek.khanapi.khan_api import *
 
 import os, datetime
 
+    
+def create_challenge_exercise(_exercise_name, _url, _challenge):
+    challenge_exercise = ChallengeExercise(
+                           exercise_name=_exercise_name, 
+                           exercise_url=_url, 
+                           exercise_description='', 
+                           challenge=_challenge)
+    
+    challenge_exercise.save()
+    return challenge_exercise
+
 def add_school(**kwargs):
     """
     Adds a school using the expected arguments for a school object.

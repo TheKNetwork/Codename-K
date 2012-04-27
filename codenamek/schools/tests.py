@@ -4,6 +4,8 @@ from codenamek.usermanagement.models import *
 from codenamek.schools.models import *
 from codenamek.schools.schoolmanagement_api import *
 from codenamek.khanapi.khan_api import *
+import simplejson
+
 
 from django.test import TestCase
 
@@ -16,6 +18,16 @@ class SimpleTest(TestCase):
         self.facebook_token = 'oauth_token_secret=MzMtp5nqUsd5uZaE&oauth_token=T43hUPaKW2nhjYYS'
         self.gmail_token = 'oauth_token_secret=5zGh7Et8NsWgTsQf&oauth_token=AYGs9kJG394x6X5c'
         self.user = ccoy_gmail  
+        self.json_string = '[["Number line 2","http://www.khanacademy.org/exercise/number_line_2"],["Adding and subtracting negative numbers","http://www.khanacademy.org/exercise/adding_and_subtracting_negative_numbers"],["Ordering negative numbers","http://www.khanacademy.org/exercise/ordering_negative_numbers"]]'
+    
+    def test_json_parse(self):
+        jsonobj = simplejson.loads(self.json_string)
+        for o in jsonobj:
+            print o[0]
+            print o[1]
+            
+        pass
+        
     
     # GROUP PROFILE MEGA TEST (FOR MENTAL CLARITY)
     def norun_test_group_profile_stuff(self):
@@ -118,13 +130,15 @@ class SimpleTest(TestCase):
     
     # END OF LINE
     
-    def test_add_school(self):
+    
+    
+    def norun_test_add_school(self):
         school = add_school(school_name="Test School")
         associated_group_name = school.name
         self.assertIsNotNone(associated_group_name, "Saving the school didn't create the correct group entry")
         pass
     
-    def test_add_challenge(self):
+    def norun_test_add_challenge(self):
         # get reference to a school and a class
         school = add_school(school_name="Rock School")
         school_class = add_class(school_id=school.id, _class_name="Geology 101")
@@ -173,7 +187,7 @@ class SimpleTest(TestCase):
         print "Challenge groups: %s" % challenge_of_decimals.challenge_groups.all().count()
         pass
     
-    def test_add_users_to_team(self):
+    def norun_test_add_users_to_team(self):
         bsmith = User.objects.get(username='bsmith')
         cjones = User.objects.get(username='cjones')
         team = create_team_for_tests()
@@ -187,12 +201,12 @@ class SimpleTest(TestCase):
         pass
 
     
-    def test_add_team_to_class(self):
+    def norun_test_add_team_to_class(self):
         team = create_team_for_tests()
         self.assertIsNotNone(team, "Team is nothing, was there a problem creating it?") 
         pass
     
-    def test_get_main_school_for_user(self):
+    def norun_test_get_main_school_for_user(self):
         main_school = get_main_school_for_user(username="pkuperman")
         self.assertIsNotNone(main_school, "There should have been a main school set for the user bsmith, but we can't find one")
 

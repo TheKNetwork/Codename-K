@@ -16,6 +16,7 @@ from codenamek.schools.schoolmanagement_api import *
 from codenamek.schools.forms import *
 from codenamek.whiteboard.models import *
 from django.views.decorators.cache import *
+import simplejson
 
 @login_required
 @never_cache
@@ -64,24 +65,45 @@ def challenge_add(request, user_name, school_id, class_id):
     teams_to_add_string = request.POST['team_ids']
     team_list = teams_to_add_string.split('^|^')
     
+    exercises = request.POST['selected_exercises'].encode('utf-8')
+    print "Exercise string from form = %s" % exercises
+    
+    exercise_json = simplejson.loads(exercises);
+    
     form = ChallengeForm(request.POST)
     teams = _classroom.teams
     challenge = None
     
     if form.is_valid(): 
+        print "Form is valid"
         challenge = create_challenge_for_class(_classroom, form.cleaned_data['challenge_name'] )
         for team_id in team_list:
-            team_to_add = ClassroomTeam.objects.get(id=team_id)
-            add_team_to_challenge(team_to_add, challenge)
-            print "Added team %s to challenge" % team_to_add
+            try:
+                team_to_add = ClassroomTeam.objects.get(id=team_id)
+                add_team_to_challenge(team_to_add, challenge)
+                print "Added team %s to challenge" % team_to_add
+            except:
+                pass
             
+        for obj in exercise_json:
+            title = obj[0]
+            url = obj[1]
+            print "Creating exercise challenge for %s" % title
+            chex = create_challenge_exercise(title, url, challenge)
+            print "Created excercise/challenge object successfully"
+               
     else:
         print "Form not valid"
         
     new_form = ChallengeForm()
+    print "Got new form"
+    
     challenges = _classroom.challenges
+    print "Challenges"
     
     data = {'school':school, 'school_class': _classroom, 'added_challenge':challenge, 'challenge_form':new_form, 'challenges':challenges, 'teams':teams}
+    print "Create data var"
+    
     return render(request, "schools/class_challenges.html", data, 
                   context_instance=RequestContext(request, {}))
 
