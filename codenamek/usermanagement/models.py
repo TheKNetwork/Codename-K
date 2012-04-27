@@ -15,7 +15,7 @@ from codenamek.usermanagement.signals import *
 from codenamek.schools.models import *
 
 # When model instance is saved, trigger creation of corresponding profile
-#signals.post_save.connect(create_profile, sender=User)
+signals.post_save.connect(create_profile, sender=User)
 
 class UserProfile(models.Model):
     """
