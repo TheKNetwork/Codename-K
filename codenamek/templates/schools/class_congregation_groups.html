@@ -14,7 +14,7 @@
                             <i class="icon-book"></i>
                             {{team}}
                         </td>
-                        <td>2/4 Completed</td>
+                        <td>{{ team.challenge_complete_count }}/{{ team.challenges.count }} Completed</td>
                         <td>Invite Users</td>
                         <td>Join Group</td>
                     </tr>
@@ -75,5 +75,5 @@
                      $
                      {% endfor %}
                      
-                     $("#selected-teams").trigger("liszt:updated")
+                     $("#selected-teams").trigger("liszt:updated");
                 </script>

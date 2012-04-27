@@ -31,10 +31,27 @@ def group_section(request, user_name, school_id, class_id):
     school = School.objects.get(id=school_id)
     classroom = Classroom.objects.get(id=class_id)
     teams = classroom.teams
+    team_pro_count = dict()
+    
+    for team in teams.all():
+        challenge_pro = 0
+        for challenge in team.challenges.all():
+            exercise_total = 0
+            exercise_pro = 0
+            for exercise in challenge.exercises.all():
+                is_pro = get_exercise_proficiency_for_team(team, exercise.exercise_name)
+                if is_pro:
+                    exercise_pro = exercise_pro + 1
+                exercise_total = exercise_total + 1
+            if exercise_total == exercise_pro and exercise_total > 0:
+                challenge_pro = challenge_pro + 1
+        team.challenge_complete_count = challenge_pro
+        team.save()
+         
     form = ClassroomTeamForm()
     data = {'school':school, 
             'school_class': classroom, 
-            'teams':teams, 
+            'teams':teams,
             'form': form}
     return render(request, "schools/class_congregation_groups.html", data, 
                   context_instance=RequestContext(request, {}))
@@ -90,20 +107,13 @@ def challenge_add(request, user_name, school_id, class_id):
             url = obj[1]
             print "Creating exercise challenge for %s" % title
             chex = create_challenge_exercise(title, url, challenge)
-            print "Created excercise/challenge object successfully"
                
     else:
         print "Form not valid"
         
     new_form = ChallengeForm()
-    print "Got new form"
-    
     challenges = _classroom.challenges
-    print "Challenges"
-    
-    data = {'school':school, 'school_class': _classroom, 'added_challenge':challenge, 'challenge_form':new_form, 'challenges':challenges, 'teams':teams}
-    print "Create data var"
-    
+    data = {'school':school, 'school_class': _classroom, 'added_challenge':challenge, 'challenge_form':new_form, 'challenges':challenges, 'teams':teams}    
     return render(request, "schools/class_challenges.html", data, 
                   context_instance=RequestContext(request, {}))
 

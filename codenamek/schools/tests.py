@@ -123,9 +123,7 @@ class SimpleTest(TestCase):
                 pro_date = get_team_proficiency_date_for_exercise(team2, challenge_ex.exercise_name)
             else:
                 print "Team 2 is not pro yet!"
-        
-        
-        
+
         pass
     
     # END OF LINE
