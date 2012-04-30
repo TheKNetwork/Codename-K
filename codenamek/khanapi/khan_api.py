@@ -39,9 +39,19 @@ def get_khan_user(user):
     except:
         return ''   
 
-def get_khan_exercises(user):
+def get_all_khan_exercises(user):
     try:
         return execute_khan_api_method(user.get_profile().access_token, '/api/v1/exercises', user_id=user.id, cache_per_user=False)
+    except:
+        return ''  
+
+def get_khan_exercises(user):
+    try:
+        return execute_khan_api_method(user.get_profile().access_token, 
+                                       '/api/v1/user/exercises', user_id=user.id, 
+                                       disk_cache=True, 
+                                       cache_timeout=(60 * 60 * 2),
+                                       cache_per_user=True)
     except:
         return ''  
 
@@ -81,53 +91,57 @@ def convert_khan_string_to_date(str_date):
     
 # Returns a dict of exercise_states{ }
 def get_proficiency_for_exercise(user, exercise_name):
-    default = { 'proficient':False, 'struggling':False}
+    default = False
     if user.get_profile().access_token is None or user.get_profile().access_token == '':
         return default
     
-    jsondata = execute_khan_api_method(user.get_profile().access_token, '/api/v1/user/exercises/%s' % exercise_name, user_id=user.id)  
-    if jsondata is not None:
-        try:
-            return jsondata['exercise_states']
-        except:
-            return default
-    else:
-        return default
+    jsondata = get_khan_user(user)
+    json_friendly_exercise_name = exercise_name.replace(" ","_")
+    json_friendly_exercise_name = json_friendly_exercise_name.lower()
+    
+    print "json friendly name: %s" % json_friendly_exercise_name
+    
+    for item in jsondata['all_proficient_exercises']:
+        if item == json_friendly_exercise_name:
+            print "Is a pro at %s" % item
+            return True
+    
+    return default
 
 def get_proficiency_date_for_exercise(user, exercise_name):
     exercise_data = get_exercise_for_user(user, exercise_name)
     return exercise_data['proficient_date']
 
 def get_exercise_for_user(user, exercise_name):
-    return execute_khan_api_method(user.get_profile().access_token, '/api/v1/user/exercises/%s' % exercise_name, user_id=user.id)   
+    return execute_khan_api_method(user.get_profile().access_token, 
+                                   '/api/v1/user/exercises/%s' % exercise_name, 
+                                   user_id=user.id)   
 
 # This method is the funnel point for all khan api calls. It caches data based on
 # the user's access token and method passed in.
 # The default cache timeout is one hour, 60 seconds * 60 minutes
 # Regardless of the cache, a refresh can be forced by passing in force_refresh=True
-def execute_khan_api_method(profile_access_token, api_method, cache_timeout=3600, force_refresh=False, return_raw_text=False, user_id=None, disk_cache=False, cache_per_user=True):
+def execute_khan_api_method(profile_access_token, api_method, cache_timeout=(60 * 60 * 2), 
+                            force_refresh=False, return_raw_text=False, user_id=None, 
+                            disk_cache=True, cache_per_user=True):
+    
     cache_key = ""
-    print "API METHOD: %s" % api_method
-    print "user? %s" % user_id
     _chosen_cache = get_cache('default')
     if disk_cache:
         _chosen_cache = get_cache('disk')
-        cache_timeout=(60 * 60 * 24)
     
     if cache_per_user:
         if user_id is not None:
-            cache_key = "%s%s%s" % (user_id, api_method, return_raw_text)
+            cache_key = "%s^%s^%s" % (user_id, api_method, return_raw_text)
         else:
-            cache_key = "%s%s%s" % (profile_access_token, api_method, return_raw_text)
+            cache_key = "%s^%s^%s" % (profile_access_token, api_method, return_raw_text)
     else:
-        cache_key = "%s%s" % (api_method, return_raw_text)
-        
-    print "CACHE KEY: %s" % cache_key    
+        cache_key = "%s^%s" % (api_method, return_raw_text)
     
-    cache_key = cache_key.replace("/","")
-    cache_key = cache_key.replace(".","")
-    cache_key = cache_key.replace(":","")
-    cache_key = cache_key.replace(" ","")
+    cache_key = cache_key.replace("/","^")
+    cache_key = cache_key.replace(".","^")
+    cache_key = cache_key.replace(":","^")
+    cache_key = cache_key.replace(" ","^")
     
     cache_hit = False
     result_data = _chosen_cache.get(cache_key)

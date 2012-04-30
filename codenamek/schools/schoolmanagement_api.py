@@ -106,8 +106,8 @@ def get_exercise_proficiency_for_team(team, exercise_name):
     all_members_proficient = False
     i_number_of_proficient_users = 0
     for user in team.user_set.all():
-        user_exercise_state = get_proficiency_for_exercise(user, exercise_name)
-        if user_exercise_state['proficient'] == 'True' or user_exercise_state['proficient'] == True:
+        is_proficient = get_proficiency_for_exercise(user, exercise_name)
+        if is_proficient == True:
             i_number_of_proficient_users = i_number_of_proficient_users + 1
     
     return team.user_set.all().count() == i_number_of_proficient_users;

@@ -11,22 +11,14 @@ requests
 oauth
 django_extensions
 django-socketio
+django-debug-toolbar
 
-# requirements-dev.txt
-# -r requirements.txt
-# -r requirements-test.txt
-# django_extensions
-# django-debug-toolbar
-
-# requirements-test.txt
-# coverage==3.5.1
-# nose==1.1.2
-# -e git+git://github.com/cmheisel/nose-xcover.git#egg=nosexcover
-# django-nose==0.1.3
-# pylint
-# django-coverage
-# selenium==2.12.1
-# pytest==2.1.3
-# pytest-xdist==1.6
-# unittestzero
-# nose-exclude
+# The following is used for 0MQ (Zero MQ)
+# (for later.)
+# gevent==0.13.6
+# gevent-socketio==0.2.1
+# gevent-websocket==0.2.3
+# gevent-zeromq
+# greenlet==0.3.1
+# pyzmq==2.2.0
+# wsgiref

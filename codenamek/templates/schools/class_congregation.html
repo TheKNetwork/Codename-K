@@ -160,10 +160,12 @@
 	                        		var leafnodes = $("span.dynatree-selected a");
 	                        		var delimitedList = new Array();
 	                        		for(i=0; i < leafnodes.length; i++) {
-	                        			leafItem = new Array();
-	                        			leafItem[0] = leafnodes[i].title;
-	                        			leafItem[1] = leafnodes[i].href;
-	                        			delimitedList[delimitedList.length] = leafItem;
+	                        		    if(leafnodes[i].href!="#") {
+    	                        			leafItem = new Array();
+    	                        			leafItem[0] = leafnodes[i].title;
+    	                        			leafItem[1] = leafnodes[i].href;
+    	                        			delimitedList[delimitedList.length] = leafItem;
+	                        			}
 	                        		}
 	                        		return JSON.stringify(delimitedList);
 	                        	}

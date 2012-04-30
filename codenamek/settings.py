@@ -40,7 +40,7 @@ elif os.getenv(RUN_ENV, '') == 'staging':
     config.read('/environments/db/postgresql_staging.ini')
 else:
     DEBUG = True
-    SITE_ROOT = 'localhost'
+    SITE_ROOT = 'localhost:8000'
     # SITE_ROOT = 'knetdev'
     config = RawConfigParser()
     config.read(os.path.join(os.path.dirname(__file__), 'developer.ini'))

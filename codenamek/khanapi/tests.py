@@ -34,24 +34,27 @@ class SimpleTest(TestCase):
                     
         self.assertIsNotNone(jsondata)
         
-    def ctest_get_khan_user_data(self):
-        jsondata = get_khan_user(self.user)
+    def test_get_khan_user_data(self):
+        csantiago = User.objects.get(username="csantiago")
+        jsondata = get_khan_user(csantiago)
+        print jsondata
         self.assertIsNotNone(jsondata)
        
-    def ctest_get_khan_badges(self):
+    def test_get_khan_badges(self):
         jsondata = get_khan_badges(self.user)
         self.assertIsNotNone(jsondata)
          
-    def ctest_get_exercises(self):
-        jsondata = get_khan_exercises(self.user)
+    def test_get_exercises(self):
+        csantiago = User.objects.get(username="csantiago")
+        jsondata = get_khan_exercises(csantiago)
         self.assertIsNotNone(jsondata)
             
-    def ctest_get_exercise_history(self):
+    def test_get_exercise_history(self):
         jsondata = get_khan_exercise_history(self.user)
         self.assertIsNotNone(jsondata)
 
           
-    def ctest_get_profiency_for_exercise(self):
-        exercise_states = get_proficiency_for_exercise(self.user, 'scientific_notation')
-        print "Proficient? %s" % exercise_states['proficient']
-        print "Struggling? %s" % exercise_states['struggling']
+    def test_get_profiency_for_exercise(self):
+        csantiago = User.objects.get(username="csantiago")
+        exercise_pro = get_proficiency_for_exercise(csantiago, 'Addition 1')
+        print "Proficient? %s" % exercise_pro
