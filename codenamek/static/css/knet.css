@@ -15,3 +15,6 @@ input#id_class_name {
 	max-width:400px;
 }
 
+#new-challenge div.modal-body {
+max-height: none;  
+}

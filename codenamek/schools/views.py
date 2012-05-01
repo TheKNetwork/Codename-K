@@ -14,7 +14,9 @@ from codenamek.usermanagement.usermanagement_api import *
 from codenamek.schools.models import *
 from codenamek.schools.schoolmanagement_api import *
 from codenamek.schools.forms import *
+from codenamek.whiteboard.models import *
 from django.views.decorators.cache import *
+import simplejson
 
 @login_required
 @never_cache
@@ -22,6 +24,127 @@ def index(request, user_name):
     schools = get_schools_for_user(id=request.user.id)
     data = {'user': request.user, 'schools': schools}
     return render(request, "schools/schools.html", data)
+
+def team_selection(request, user_name, school_id, class_id):
+    schools = get_schools_for_user(id=request.user.id)
+    classroom = Classroom.objects.get(id=class_id)
+    teams = classroom.teams
+    data = {'user': request.user, 'schools': schools, 'school_class':classroom, 'teams':teams }
+    return render(request, "schools/team_selection.html", data)
+
+@login_required
+@never_cache
+def group_section(request, user_name, school_id, class_id):
+    school = School.objects.get(id=school_id)
+    classroom = Classroom.objects.get(id=class_id)
+    teams = classroom.teams
+    team_pro_count = dict()
+    
+    for team in teams.all():
+        challenge_pro = 0
+        exercises_completed = 0
+        for challenge in team.challenges.all():
+            exercise_total = 0
+            exercise_pro = 0
+            for exercise in challenge.exercises.all():
+                is_pro = get_exercise_proficiency_for_team(team, exercise.exercise_name)
+                if is_pro:
+                    exercise_pro = exercise_pro + 1
+                    exercises_completed = exercises_completed + 1
+                exercise_total = exercise_total + 1
+            if exercise_total == exercise_pro and exercise_total > 0:
+                challenge_pro = challenge_pro + 1
+        team.challenge_complete_count = challenge_pro
+        team.exercise_complete_count = exercises_completed
+        team.save()
+         
+    form = ClassroomTeamForm()
+    data = {'school':school, 
+            'school_class': classroom, 
+            'teams':teams,
+            'form': form}
+    return render(request, "schools/class_congregation_groups.html", data, 
+                  context_instance=RequestContext(request, {}))
+
+@login_required
+@never_cache
+def challenges(request, user_name, school_id, class_id):
+    school = School.objects.get(id=school_id)
+    classroom = Classroom.objects.get(id=class_id)
+    teams = classroom.teams
+    challenges = classroom.challenges
+    
+    challenge_form = ChallengeForm()
+    data = {'school':school, 
+            'school_class': classroom, 
+            'challenges': challenges,
+            'teams':teams,
+            'challenges_form': challenge_form}
+    return render(request, "schools/class_challenges.html", data, 
+                  context_instance=RequestContext(request, {}))
+
+@login_required
+@never_cache
+def challenge_add(request, user_name, school_id, class_id):
+    school = School.objects.get(id=school_id)
+    _classroom = Classroom.objects.get(id=class_id)
+    
+    teams_to_add_string = request.POST['team_ids']
+    team_list = teams_to_add_string.split('^|^')
+    
+    exercises = request.POST['selected_exercises'].encode('utf-8')
+    print "Exercise string from form = %s" % exercises
+    
+    exercise_json = simplejson.loads(exercises);
+    
+    form = ChallengeForm(request.POST)
+    teams = _classroom.teams
+    challenge = None
+    
+    if form.is_valid(): 
+        print "Form is valid"
+        challenge = create_challenge_for_class(_classroom, form.cleaned_data['challenge_name'] )
+        for team_id in team_list:
+            try:
+                team_to_add = ClassroomTeam.objects.get(id=team_id)
+                add_team_to_challenge(team_to_add, challenge)
+                print "Added team %s to challenge" % team_to_add
+            except:
+                pass
+            
+        for obj in exercise_json:
+            title = obj[0]
+            url = obj[1]
+            print "Creating exercise challenge for %s" % title
+            chex = create_challenge_exercise(title, url, challenge)
+               
+    else:
+        print "Form not valid"
+        
+    new_form = ChallengeForm()
+    challenges = _classroom.challenges
+    data = {'school':school, 'school_class': _classroom, 'added_challenge':challenge, 'challenge_form':new_form, 'challenges':challenges, 'teams':teams}    
+    return render(request, "schools/class_challenges.html", data, 
+                  context_instance=RequestContext(request, {}))
+
+@login_required
+@never_cache
+def group_add(request, user_name, school_id, class_id):
+    school = School.objects.get(id=school_id)
+    classroom = Classroom.objects.get(id=class_id)
+    team = None
+    form = ClassroomTeamForm(request.POST)
+
+    if form.is_valid(): 
+        team = add_team_to_class(classroom.id, form.cleaned_data['team_name'] )
+        print "Added %s" % (form.cleaned_data['team_name'])
+    else:
+        print "Form not valid"
+        
+    new_form = ClassroomTeamForm()
+    data = {'school':school, 'school_class': classroom, 'added_team':team, 'form':new_form}
+    return render(request, "schools/class_congregation_groups.html", data, 
+                  context_instance=RequestContext(request, {}))
 
 @login_required
 @never_cache
@@ -56,6 +179,7 @@ def classes_for_school(request, school_id, user_name):
 def class_congregation(request, school_id, class_id, user_name):
     school_class = Classroom.objects.get(id=class_id)
     school = School.objects.get(id=school_id)
-    chat_url = '/chat'
-    data = {'user': request.user, 'school_class': school_class, 'school':school, 'chat_url': chat_url}
+    whiteboard_sessions = WhiteboardSession.objects.all()
+    data = {'user': request.user, 'school_class': school_class, 'school':school, 'whiteboard_sessions': whiteboard_sessions}
+
     return render(request, "schools/class_congregation.html", data)

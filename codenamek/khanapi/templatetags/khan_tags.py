@@ -22,25 +22,29 @@ def khan_user_login(context):
 @register.inclusion_tag('khanapi/khan_user_data.html', takes_context = True)
 def khan_user_data(context):
     request = context['request']
-    return { 'khan_user_active': is_khan_user_active(request), 'khan_user': get_khan_user(request) }
+    return { 'khan_user_active': is_khan_user_active(request), 'khan_user': get_khan_user(request.user) }
 
 @register.inclusion_tag('khanapi/khan_exercise.html', takes_context = True)
 def khan_exercises(context):
     request = context['request']
     return { 'khan_user_active': is_khan_user_active(request), 
-            'khan_exercises': get_khan_exercises(request), 
-            'khan_user': get_khan_user(request) }
+            'khan_exercises': get_khan_exercises(request.user), 
+            'khan_user': get_khan_user(request.user) }
 
 @register.inclusion_tag('khanapi/khan_badges.html', takes_context = True)
 def khan_badges(context):
     request = context['request']
-    return { 'khan_user_active': is_khan_user_active(request), 
-            'khan_badges': get_khan_badges(request), 
-            'khan_user': get_khan_user(request) }
+    khan_user_active = is_khan_user_active(request)
+    badges = get_khan_badges(request.user)
+    khan_user = get_khan_user(request.user)
+    
+    return { 'khan_user_active': khan_user_active, 
+            'khan_badges': badges, 
+            'khan_user': khan_user }
 
 @register.inclusion_tag('khanapi/khan_exercise_history.html', takes_context = True)
 def khan_exercise_history(context):
     request = context['request']
     return { 'khan_user_active': is_khan_user_active(request), 
-            'khan_exercise_history': get_khan_exercise_history(request), 
-            'khan_user': get_khan_user(request)}
+            'khan_exercise_history': get_khan_exercise_history(request.user), 
+            'khan_user': get_khan_user(request.user)}

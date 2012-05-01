@@ -20,10 +20,20 @@ urlpatterns = patterns('',
     url(r'^(?P<user_name>\w+)/homeroom/$', 'codenamek.usermanagement.views.index', name='homeroom'),
     url(r'^homeroom/$', 'codenamek.usermanagement.views.homeroom_failsafe', name='homeroom_safe'),
     
-    #     These urls come from the schools app
+    # These urls come from the schools app
     # TODO: Put these in the schools urls.py
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/team_selection','codenamek.schools.views.team_selection', name='team_selection'),
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/add_team_to_challenge/(?P<team_id>\d+)/(?P<challenge_id>\d+)','codenamek.schools.views.add_team_to_challenge', name='add_team_to_challenge'),
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/challenges','codenamek.schools.views.challenges', name='challenges'), 
     url(r'^(?P<user_name>\w+)/schools/(?P<_school_id>\d+)/create_a_class','codenamek.schools.views.create_a_class'),
+
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/challenge_add','codenamek.schools.views.challenge_add', name='challenge_add'),    
+    # url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/challenges','codenamek.schools.views.challenge_section', name='challenge_section'),
+
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/group_add','codenamek.schools.views.group_add', name='group_add'),    
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/groups','codenamek.schools.views.group_section', name='group_section'),
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)','codenamek.schools.views.class_congregation', name='class_congregation'),
+    
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)','codenamek.schools.views.classes_for_school', name='schools_class'),
     url(r'^(?P<user_name>\w+)/schools/$', 'codenamek.schools.views.index', name='schools'),
     
@@ -55,16 +65,13 @@ urlpatterns = patterns('',
     # CAUTION - These next two lines MUST be in the correct order
     ('^profiles/edit', 'profiles.views.edit_profile', {'form_class': ProfileForm, }), # 1
     (r'^profiles/', include('profiles.urls')), # 2
-    
-    # khan-academy api urls
-    url(r'^khan-academy/auth/$', 'usermanagement.views.request_token', name='request-token'),
-    url(r'^khan-academy/auth/callback/$', 'usermanagement.views.access_token', name='access-token'),
-    url(r'^khan-academy/api/test/$', 'usermanagement.views.khan_api_test', name='api-test'),
 
+    url(r'^khanapi/topic_tree', 'khanapi.views.topic_tree'),
     url(r'^khanapi/$', 'khanapi.views.index'),
     url(r'^proxy/$', 'khanapi.views.proxy'),
     url(r'^oauth_get_request_token/$', 'khanapi.views.oauth_get_request_token'),
     url(r'^oauth_callback/$', 'khanapi.views.oauth_callback'),
+    url(r'^khan/khan_user_info', 'khanapi.views.khan_user_info'),
     
     # django socket io
     url("", include("django_socketio.urls")),

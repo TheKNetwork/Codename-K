@@ -26,7 +26,7 @@ class School(Group):
     IS a django group, which makes it easy to manage authorization and membership
     without getting too complex.
     """
-    school_name = models.CharField(max_length=100, unique=True)
+    school_name = models.CharField(max_length=255, unique=True)
     address_line_one = models.CharField(max_length=100, blank=True)
     address_line_two = models.CharField(max_length=100, blank=True)
     address_city = models.CharField(max_length=100, blank=True)
@@ -64,6 +64,56 @@ class Classroom(Group):
 
     def __unicode__(self):
         return u"{0}".format(self.class_name)    
+    
+class Challenge(models.Model):
+    challenge_name = models.CharField(max_length=50)
+    classroom = models.ForeignKey(Classroom, null=True, blank=True, related_name="challenges")
+    
+    objects = models.Manager()
+
+    class Meta:
+            verbose_name = _('Challenge')
+            verbose_name_plural = _('Challenges')
+
+    def __unicode__(self):
+        return u"{0}".format(self.challenge_name) 
+       
+class ClassroomTeam(Group):
+    """
+    A team is a 'temporary' grouping of people who compete within a class
+    or just want to track progress together.
+    """
+    classroom = models.ForeignKey(Classroom, related_name="teams")
+    team_name = models.CharField(max_length=50)
+
+    challenges = models.ManyToManyField(Challenge, through='GroupChallenge')
+    challenge_complete_count = models.IntegerField(blank=True, null=True)
+    exercise_complete_count = models.IntegerField(blank=True, null=True)
+    
+    objects = models.Manager()
+
+    class Meta:
+            verbose_name = _('Classroom Team')
+            verbose_name_plural = _('Classroom Teams')
+
+    def __unicode__(self):
+        return u"{0}".format(self.team_name) 
+    
+challenge_SCOPE_CHOICES = (
+    ('S','School'),
+    ('C','Class'),
+    ('T','Team'),                           
+)
+    
+class GroupChallenge(models.Model):
+    classroom_team = models.ForeignKey(ClassroomTeam)
+    challenge = models.ForeignKey(Challenge, related_name="challenge_groups")
+    
+class ChallengeExercise(models.Model):
+    challenge = models.ForeignKey(Challenge, related_name="exercises")
+    exercise_name = models.CharField(max_length=150)
+    exercise_url = models.URLField(blank=True)
+    exercise_description = models.CharField(max_length=2000, null=True, blank=True)
     
 class ClassInvitation(models.Model):
     """

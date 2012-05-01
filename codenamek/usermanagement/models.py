@@ -25,8 +25,13 @@ class UserProfile(models.Model):
     personal_url = models.URLField(blank=True)
     home_address = models.TextField(blank=True)
     user = models.ForeignKey(User, unique=True)
+    
+    # Used for Khan API
     access_token = models.CharField(max_length=255, blank=True, null=True)
-    default_school = models.ForeignKey(School, blank=True, null=True, unique=True, related_name="users_with_this_default")
+    khan_user_id = models.CharField(max_length=255, blank=True, null=True)
+    
+    # Specific to KNet tracking
+    default_school = models.ForeignKey(School, blank=True, null=True, related_name="users_with_this_default")
 
     class Meta:
         verbose_name = _('User profile')

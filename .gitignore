@@ -6,3 +6,4 @@
 *.mo
 /.settings
 settings_local.py
+knetenv.sh

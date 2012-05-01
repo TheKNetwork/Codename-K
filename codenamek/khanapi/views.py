@@ -13,6 +13,7 @@ from khan_api import *
 from django.views.decorators.cache import *
 from api_explorer_oauth_client import APIExplorerOAuthClient
 from oauth import OAuthToken
+from codenamek.khanapi.khan_api import *
 
 import urllib
 from urllib import urlencode
@@ -26,6 +27,39 @@ def index(request):
     data = { 'has_access_token':has_access_token(request.session) }
     return render(request, "khanapi/index.html", data)
 
+@never_cache
+def khan_user_info(request):
+    data = { 'khan_user_active': is_khan_user_active(request), 'khan_user': get_khan_user(request.user) }
+    return render(request, "khanapi/khan_user_data.html", data)
+
+def topic_tree(request):
+    jsondata = get_khan_playlist_library(request.user)
+    print "Done getting json data"
+    _exercises = dict()
+    for listitem in jsondata:
+        add_topic_exercises(topic=listitem, user=request.user)
+        
+    return render(request, "khanapi/topic_tree.html", { 'topic_tree_json':jsondata })
+
+def add_topic_exercises(topic, user):
+    has_exercises = False
+    if topic.has_key('name'):
+        exercises = get_khan_playlist_exercises_for_title(user, topic['name'])
+        i = 0
+        for o in exercises:
+            has_exercises = True
+        topic['exercises'] = exercises
+        
+    if topic.has_key('items'):
+            for subtopic in topic['items']:
+                if subtopic.has_key('name'):
+                    _has = add_topic_exercises(subtopic, user)
+                    if _has == False and has_exercises == False:
+                        has_exercises = False
+                    else:
+                        has_exercises = True
+    topic['has_exercises'] = has_exercises
+    
 
 # Given a URL, makes a proxied request for an API resource and returns the
 # response.
@@ -34,7 +68,7 @@ def proxy(request):
     print 'In proxy'
     url = request.GET['url']
     # Get the json data from the api call
-    api_data = get_data_for_khan_api_call(request, url)
+    api_data = execute_khan_api_method(profile_access_token=request.user.get_profile().access_token, api_method=url)
     
     # Returns a dictionary with keys: 'headers', 'body', and 'status'.
     resource = CLIENT.access_api_resource(
@@ -100,5 +134,5 @@ def oauth_callback(request):
 
     # We're done authenticating, and the credentials are now stored in the
     # session. We can redirect back home.
-    return HttpResponseRedirect('/khanapi')
+    return HttpResponseRedirect('/homeroom')
 
