@@ -1,14 +1,12 @@
 # Django settings for codenamek project.
 import os, sys
-from ConfigParser import RawConfigParser
-from khanapi.api_explorer_oauth_client import APIExplorerOAuthClient
-
-LOCAL_TEMPLATE_CONTEXT_PROCESSORS_PREFIX = LOCAL_TEMPLATE_CONTEXT_PROCESSORS = LOCAL_MIDDLEWARE_CLASSES_PREFIX = LOCAL_MIDDLEWARE_CLASSES = LOCAL_INSTALLED_APPS_PREFIX = LOCAL_INSTALLED_APPS = ()
-
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.path.pardir))
 
-STATIC_FILE_PATH = os.path.join(os.path.dirname(__file__), 'static')
-TEMPLATE_FILE_PATH = os.path.join(os.path.dirname(__file__), 'templates')
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'knetserverinfo@gmail.com'
+EMAIL_HOST_PASSWORD = 'lsmto2012'
+EMAIL_PORT = 587
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -18,56 +16,45 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-RUN_ENV = 'DJANGO_ENV'
-SITE_ROOT = 'www.theknetwork.org'
 
-# Keep around an instance of the client. It's reusable because all the
-# stateful stuff is passed around as parameters.
-CLIENT = APIExplorerOAuthClient("http://www.khanacademy.org",
-                                os.getenv('KHAN_KEY', ''),
-                                os.getenv('KHAN_SECRET', '')
-        )
+RUN_ENV = 'DJANGO_ENV'
+
+DEBUG = True
+if os.getenv(RUN_ENV, '') == 'production':
+    # We don't want debug in production
+    DEBUG = False
+
+DB_CONF_PATH = '/environments/db'
 
 if os.getenv(RUN_ENV, '') == 'prod':
     DEBUG = False
-    SITE_ROOT = 'prod.theknetwork.org'
-    config = RawConfigParser()
-    config.read('/environments/db/postgresql_prod.ini')
-elif os.getenv(RUN_ENV, '') == 'staging':
-    DEBUG = True
-    SITE_ROOT = 'staging.theknetwork.org'
-    config = RawConfigParser()
-    config.read('/environments/db/postgresql_staging.ini')
-else:
-    DEBUG = True
-    SITE_ROOT = 'localhost:8000'
-    # SITE_ROOT = 'knetdev'
-    config = RawConfigParser()
-    config.read(os.path.join(os.path.dirname(__file__), 'developer.ini'))
-
-ENGINE = config.get('database', 'ENGINE')
-USER = config.get('database', 'USER')
-PASSWORD = config.get('database', 'PASSWORD')
-HOST = config.get('database', 'HOST')
-PORT = config.get('database', 'PORT')
-NAME = config.get('database', 'NAME')
-
-DATABASES = {
-    'default': {
-        'ENGINE': ENGINE,
-        'NAME': NAME,
-        'USER': USER,
-        'PASSWORD': PASSWORD,
-        'HOST': HOST,
-        'PORT': PORT,
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'OPTIONS': {
+                'read_default_file': os.path.join(DB_CONF_PATH, 'postgresql_prod.cnf')
+            }
+        }
     }
-}
+elif os.getenv(RUN_ENV, '') == 'staging':
+    DEBUG = False
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'OPTIONS': {
+                'read_default_file': os.path.join(DB_CONF_PATH, 'postgresql_staging.cnf')
+            }
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'sqlite.db',
+        }
+    }
 
-EMAIL_USE_TLS = config.get('email', 'EMAIL_USE_TLS')
-EMAIL_HOST = config.get('email', 'EMAIL_HOST')
-EMAIL_HOST_USER = config.get('email', 'EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config.get('email', 'EMAIL_HOST_PASSWORD')
-EMAIL_PORT = config.get('email', 'EMAIL_PORT')
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -118,14 +105,14 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    STATIC_FILE_PATH,
+    '/srv/www/codenamek/static',
 )
 
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
@@ -134,89 +121,47 @@ SECRET_KEY = 'd$y-3-@&ljccptb1c)4fe9%qvy-6x%3!bw70t%b9yd=nqbik1*'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    # 'django.template.loaders.eggs.Loader',
-    # 'django.template.loaders.app_directories.Loader',
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    'django.template.loaders.eggs.Loader',
+#     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 ROOT_URLCONF = 'codenamek.urls'
 
 TEMPLATE_DIRS = (
-    TEMPLATE_FILE_PATH,
+    "/srv/www/codenamek/templates",
 )
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    "django.contrib.auth.context_processors.auth",
-    "django.core.context_processors.debug",
-    "django.core.context_processors.i18n",
-    "django.core.context_processors.media",
-    "django.core.context_processors.static",
-    "django.core.context_processors.tz",
-    "django.contrib.messages.context_processors.messages",
-    "django.core.context_processors.request",
-    )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.admin',
+    'django.contrib.admin',    
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_socketio',
     'registration',
     'profiles',
-    # 'south',
     'django.contrib.admin',
-    'codenamek.usermanagement',
-    'codenamek.schools',
+    'codenamek.homeroom',
     'codenamek.whiteboard',
-    'codenamek.chat',
-    'codenamek.khanapi',
+    'codenamek.usermanagement',
 )
-
-# django needs to know what port to talk to for chat
-SOCKETIO_HOST = 'localhost'
-SOCKETIO_PORT = 9000
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
 AUTH_PROFILE_MODULE = 'usermanagement.UserProfile'
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': 'localhost:11211',
-        'TIMEOUT': 300,
-        'OPTIONS': {
-            'MAX_ENTRIES': 20000
-        }
-    },
-    'disk': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': '/var/tmp',
-        'TIMEOUT': 600,
-        'OPTIONS': {
-            'MAX_ENTRIES': 20000
-        }
-    }
-}
 
 LOGGING = {
     'version': 1,
@@ -253,23 +198,3 @@ LOGGING = {
         },
     }
 }
-
-MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
-try:
-    from settings_local import *
-except ImportError:
-    pass
-
-TEMPLATE_CONTEXT_PROCESSORS = \
-    LOCAL_TEMPLATE_CONTEXT_PROCESSORS_PREFIX + \
-    TEMPLATE_CONTEXT_PROCESSORS + \
-    LOCAL_TEMPLATE_CONTEXT_PROCESSORS
-MIDDLEWARE_CLASSES = \
-    LOCAL_MIDDLEWARE_CLASSES_PREFIX + \
-    MIDDLEWARE_CLASSES + \
-    LOCAL_MIDDLEWARE_CLASSES
-INSTALLED_APPS = \
-    LOCAL_INSTALLED_APPS_PREFIX + \
-    INSTALLED_APPS + \
-    LOCAL_INSTALLED_APPS
-
