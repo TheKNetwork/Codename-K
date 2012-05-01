@@ -63,12 +63,6 @@ DATABASES = {
     }
 }
 
-EMAIL_USE_TLS = config.get('email', 'EMAIL_USE_TLS')
-EMAIL_HOST = config.get('email', 'EMAIL_HOST')
-EMAIL_HOST_USER = config.get('email', 'EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config.get('email', 'EMAIL_HOST_PASSWORD')
-EMAIL_PORT = config.get('email', 'EMAIL_PORT')
-
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
