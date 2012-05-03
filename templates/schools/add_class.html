@@ -1,0 +1,17 @@
+{% extends "site_base.html" %}
+
+{% block body %}
+
+	<div id="classroom-form">
+        <h2>Create a new Class</h2>
+        <form action="{{ user }}/schools/{{ school_id }}/create_a_class/" method="POST">{% csrf_token %}
+            <table>
+            {{ form }}
+            </table>
+        <p>
+            <input type="submit" value="Create!" />
+        </p>
+        </form>
+	</div>
+
+{% endblock %}

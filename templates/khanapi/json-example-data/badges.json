@@ -1,0 +1,5216 @@
+[
+  {
+    "badge_category": 0,
+    "description": "Act I Scene I",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "actonesceneonebadge",
+    "points": 0,
+    "safe_extended_description": "Watch 20 minutes of video",
+    "user_badges": [
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T01:11:15Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/29d8fcb2be433bf39adb843a305fdd32"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T01:24:18Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/32dbc9f16aa39323ecad9a36e1cfb618"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T01:25:17Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/2619e5b92fe06965bb05cd420340490a"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T01:31:26Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/4815d830dea6e457a688e86a7a6eaec9"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T01:32:24Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/d1fa4d021fdcf89a8284248964362552"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T01:34:46Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/f072bf4eb09f4b0deda6cddcc010062e"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T01:58:32Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/a739cea9c4165f2f7a89ce8c6d32a561"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T02:03:26Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/2578041de8525e089a2b3cdc35d538f8"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T02:10:45Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/2f157d576b5652071108b900022e3952"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T02:18:22Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/539a74c33fcb0aaf4102b157a594b08c"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T02:29:26Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/37941b69c3d1a91803b4ddf06c0e8f71"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T02:32:20Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://facebookid.khanacademy.org/661923071"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T02:33:11Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "annastar9"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T02:43:46Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/3eadd3fafc58cb09d78688688f14dcc0"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T02:44:29Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/347250ea5df673a738d7fdd6d3cf588e"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:00:43Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/2884e5126ebe7277fc5e46baada61665"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:04:20Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/e40289b6d5e0e2a596c29239bab03300"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:04:31Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "kelseyoeler"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:06:32Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/c1d28a6b9e6f0e95aee144a1af37437a"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:12:19Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/cfb69d59f724d1f8bfa4ed1b723a4534"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:12:26Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/5eeb0f90de72930a7e2df29d770e2416"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:15:42Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/de0cb68e6159e7b0f727391aa3321ed4"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:15:48Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "blaszaknj@s.dcsdk12.org"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:21:46Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/7471dfdfa916b5d9154cf25e3ced1ad3"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:23:17Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/17386b5a9cae4c6da3b39a188e7e5246"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:25:39Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/3c630f5f031f4f0a0d6573521a6ca71b"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:26:21Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/a846bb869d6aec7477ebb3c3a4265eca"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:27:26Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/2960680e6ac1d01cd5e4e1534c56a69c"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:28:28Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/4c59057062a8e17278d82a40d851fa7d"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:30:00Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/2a329d94bc307b0579c4163cb8a722fe"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:31:21Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/707b66e38f240584932a5aa1519562cb"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:35:42Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/39c3fe096d131d686409914673248023"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:37:31Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/677da7bc3b398eda9c713a7f016c0aee"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T03:47:15Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/1cefa54aa35ab89bdf4caf04a342ece7"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T04:06:09Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "greeff.ethan@asdk12.net"
+      },
+      {
+        "badge_name": "actonesceneonebadge",
+        "date": "2012-04-18T04:18:35Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/b2031a985fd9b044876e26789b29a649"
+      }
+    ]
+  },
+  {
+    "badge_category": 4,
+    "description": "Atlas",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/eclipse-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/eclipse-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/eclipse-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/eclipse-small.png"
+    },
+    "is_owned": false,
+    "is_retired": false,
+    "name": "atlasbadge",
+    "points": 200000,
+    "safe_extended_description": "???"
+  },
+  {
+    "badge_category": 1,
+    "description": "Awesome Listener",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "awesomeplaylisttimebadge",
+    "points": 0,
+    "safe_extended_description": "Watch 1 hour of video in a single topic",
+    "user_badges": [
+      {
+        "badge_name": "awesomeplaylisttimebadge",
+        "date": "2012-04-18T02:10:41Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Linear Algebra",
+        "user": "http://nouserid.khanacademy.org/2a50bc27804540b0f7b59d790030835a"
+      },
+      {
+        "badge_name": "awesomeplaylisttimebadge",
+        "date": "2012-04-18T02:43:53Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Calculus",
+        "user": "http://nouserid.khanacademy.org/c18806d5f662ef5682277c187ace8b57"
+      },
+      {
+        "badge_name": "awesomeplaylisttimebadge",
+        "date": "2012-04-18T03:42:27Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Macroeconomics",
+        "user": "esimmie"
+      },
+      {
+        "badge_name": "awesomeplaylisttimebadge",
+        "date": "2012-04-18T04:10:55Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Calculus",
+        "user": "http://nouserid.khanacademy.org/88696b642f9b329671e18ecf71608148"
+      }
+    ]
+  },
+  {
+    "badge_category": 0,
+    "description": "Awesome Streak",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "awesomestreakbadge",
+    "points": 0,
+    "safe_extended_description": "Correctly answer 60 problems in a row in a single skill",
+    "user_badges": [
+      {
+        "badge_name": "awesomestreakbadge",
+        "date": "2012-04-18T02:04:21Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": "",
+          "display_name": "Addition 1",
+          "h_position": 0,
+          "ka_url": "http://www.khanacademy.org/exercise/addition_1",
+          "kind": "Exercise",
+          "live": true,
+          "name": "addition_1",
+          "prerequisites": [],
+          "relative_url": "/exercise/addition_1",
+          "seconds_per_fast_problem": 4,
+          "sha1": "79fb7edca7eed84ae5d37d935418b663b944978d",
+          "short_display_name": "Add. 1",
+          "summative": false,
+          "tags": [],
+          "v_position": 5
+        },
+        "target_context_name": "Addition 1",
+        "user": "http://facebookid.khanacademy.org/100000583688096"
+      }
+    ]
+  },
+  {
+    "badge_category": 1,
+    "description": "Going Supersonic",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "awesometimedproblembadge",
+    "points": 750,
+    "safe_extended_description": "Quickly & correctly answer 20 skill problems in a row (time limit depends on skill difficulty)",
+    "user_badges": [
+      {
+        "badge_name": "awesometimedproblembadge",
+        "date": "2012-04-18T03:44:32Z",
+        "kind": "UserBadge",
+        "points_earned": 750,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-12-26T06:10:01Z",
+          "description": null,
+          "display_name": "Dividing fractions word problems",
+          "h_position": 24,
+          "ka_url": "http://www.khanacademy.org/exercise/dividing_fractions_word_problems",
+          "kind": "Exercise",
+          "live": true,
+          "name": "dividing_fractions_word_problems",
+          "prerequisites": [
+            "dividing_fractions_0.5"
+          ],
+          "relative_url": "/exercise/dividing_fractions_word_problems",
+          "seconds_per_fast_problem": 15,
+          "sha1": "3db99e4d4af17ec61621a8b308a69b577bba4970",
+          "short_display_name": "Div Frac WP",
+          "summative": false,
+          "tags": [],
+          "v_position": -13
+        },
+        "target_context_name": "Dividing fractions word problems",
+        "user": "hernanadezlexandro32"
+      }
+    ]
+  },
+  {
+    "badge_category": 3,
+    "description": "Copernicus",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/sun-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/sun-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/sun-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/sun-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "copernicusbadge",
+    "points": 80000,
+    "safe_extended_description": "Achieve proficiency in any 200 skills"
+  },
+  {
+    "badge_category": 2,
+    "description": "Double Power Hour",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/earth-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/earth-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/earth-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/earth-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "doublepowerhourbadge",
+    "points": 0,
+    "safe_extended_description": "Correctly answer 180 problems and watch 30 minutes of video in 2 hours"
+  },
+  {
+    "badge_category": 1,
+    "description": "Like Clockwork",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "fifteendayconsecutiveactivitybadge",
+    "points": 0,
+    "safe_extended_description": "Watch part of any video or work on any skill each day for 15 consecutive days"
+  },
+  {
+    "badge_category": 0,
+    "description": "Thumbs Down",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "firstdownvotebadge",
+    "points": 0,
+    "safe_extended_description": "Cast your first down vote for an unhelpful question, answer, or comment beneath a video"
+  },
+  {
+    "badge_category": 0,
+    "description": "Flag Duty",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "firstflagbadge",
+    "points": 0,
+    "safe_extended_description": "Flag your first question, comment, or answer beneath a video for a moderator's attention"
+  },
+  {
+    "badge_category": 0,
+    "description": "Thumbs Up",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "firstupvotebadge",
+    "points": 0,
+    "safe_extended_description": "Cast your first up vote for a helpful question, answer, or comment beneath a video"
+  },
+  {
+    "badge_category": 0,
+    "description": "Good Habits",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "fivedayconsecutiveactivitybadge",
+    "points": 0,
+    "safe_extended_description": "Watch part of any video or work on any skill each day for 5 consecutive days",
+    "user_badges": [
+      {
+        "badge_name": "fivedayconsecutiveactivitybadge",
+        "date": "2012-04-18T03:30:58Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://facebookid.khanacademy.org/6804636"
+      }
+    ]
+  },
+  {
+    "badge_category": 2,
+    "description": "Five Times Ten to the Fifth",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/earth-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/earth-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/earth-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/earth-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "fivehundredthousandairebadge",
+    "points": 0,
+    "safe_extended_description": "Earn 500,000 energy points"
+  },
+  {
+    "badge_category": 0,
+    "description": "Just Getting Started",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "gettingstartedbadge",
+    "points": 100,
+    "safe_extended_description": "Achieve proficiency in any 3 skills",
+    "user_badges": [
+      {
+        "badge_name": "gettingstartedbadge",
+        "date": "2012-04-18T01:07:35Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/4fdb1af6cc223446378c088a98bd1075"
+      },
+      {
+        "badge_name": "gettingstartedbadge",
+        "date": "2012-04-18T01:24:58Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "1caresjsd"
+      },
+      {
+        "badge_name": "gettingstartedbadge",
+        "date": "2012-04-18T01:50:50Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "SZRoberson"
+      },
+      {
+        "badge_name": "gettingstartedbadge",
+        "date": "2012-04-18T02:02:34Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "kyleegraper@comcast.net"
+      },
+      {
+        "badge_name": "gettingstartedbadge",
+        "date": "2012-04-18T03:20:26Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/86d1fb2413f1954cf671df3ca42ade6d"
+      }
+    ]
+  },
+  {
+    "badge_category": 0,
+    "description": "Great Listener",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "greatplaylisttimebadge",
+    "points": 0,
+    "safe_extended_description": "Watch 30 minutes of video in a single topic",
+    "user_badges": [
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T01:01:54Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Healthcare and Medicine",
+        "user": "http://nouserid.khanacademy.org/70512ccaacf4865ca6a2589eabd782b6"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T01:15:40Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Precalculus",
+        "user": "http://nouserid.khanacademy.org/589772ce8425903c4e5324f145e02960"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T02:02:17Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Linear equations and inequalities",
+        "user": "http://nouserid.khanacademy.org/5d7c47017471bd9dd55108cc33ec0507"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T02:07:13Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Solving linear equations",
+        "user": "http://nouserid.khanacademy.org/0389226ac589c4ddfced4b931b2c3289"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T02:20:46Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Matrices",
+        "user": "http://nouserid.khanacademy.org/1ac03bfb92719369914d73555a62cac2"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T02:20:46Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Linear Algebra",
+        "user": "http://nouserid.khanacademy.org/1ac03bfb92719369914d73555a62cac2"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T02:21:43Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Biology",
+        "user": "http://nouserid.khanacademy.org/a1cdb9aeff505e334716dff080e166a9"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T02:22:36Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Triangles",
+        "user": "http://nouserid.khanacademy.org/fce4e6e7becab88d5b8fa708385014d7"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T02:24:33Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Healthcare and Medicine",
+        "user": "http://nouserid.khanacademy.org/a4328822c3c9639a974f605bace44e9a"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T03:08:52Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Basic geometry",
+        "user": "shealueninghoener@oneillschools.org"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T03:12:06Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Physics",
+        "user": "tj257663@yahoo.com"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T03:20:55Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Logarithms",
+        "user": "http://nouserid.khanacademy.org/0aa3dea21bcecb286db5d61fe9251177"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T03:23:41Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Physics",
+        "user": "http://nouserid.khanacademy.org/662feaf61931c17a3219fed780ca33f4"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T03:32:05Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Quadratics",
+        "user": "http://nouserid.khanacademy.org/ca485cba31039662d5f1914e5b35f01d"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T03:34:15Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Biology",
+        "user": "http://nouserid.khanacademy.org/1cb0f6515e1608f7058a828a764cdd58"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T03:34:55Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Chemistry",
+        "user": "http://nouserid.khanacademy.org/5abfa8b9515ea8b7d3b1586e3eafdc1c"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T03:45:32Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Probability",
+        "user": "http://nouserid.khanacademy.org/8296eba1df215ff69bfc9061adfded9d"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T03:45:32Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Statistics",
+        "user": "http://nouserid.khanacademy.org/8296eba1df215ff69bfc9061adfded9d"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T03:56:11Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Solving linear equations",
+        "user": "http://nouserid.khanacademy.org/921919aa86c26c80b01231c87ac24b1f"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T04:02:02Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "New and Noteworthy",
+        "user": "http://nouserid.khanacademy.org/7ac62f58d1a12268a41dcbb36357aa20"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T04:11:07Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Biology",
+        "user": "http://nouserid.khanacademy.org/8003b511da31bf7da4a28cd11cb4eb9c"
+      },
+      {
+        "badge_name": "greatplaylisttimebadge",
+        "date": "2012-04-18T04:11:33Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Physics",
+        "user": "http://nouserid.khanacademy.org/0d2fe79d00dc36995c4a1b7fc941d5f5"
+      }
+    ]
+  },
+  {
+    "badge_category": 0,
+    "description": "Great Streak",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "greatstreakbadge",
+    "points": 0,
+    "safe_extended_description": "Correctly answer 40 problems in a row in a single skill",
+    "user_badges": [
+      {
+        "badge_name": "greatstreakbadge",
+        "date": "2012-04-18T02:29:29Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [
+            "addition_1"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": "",
+          "display_name": "Addition 2",
+          "h_position": 1,
+          "ka_url": "http://www.khanacademy.org/exercise/addition_2",
+          "kind": "Exercise",
+          "live": true,
+          "name": "addition_2",
+          "prerequisites": [
+            "number_line",
+            "addition_1",
+            "representing_numbers"
+          ],
+          "relative_url": "/exercise/addition_2",
+          "seconds_per_fast_problem": 5,
+          "sha1": "b2739d91cbed9f3f05637ca51b670ec7b591a4d2",
+          "short_display_name": "Add. 2",
+          "summative": false,
+          "tags": [],
+          "v_position": 4
+        },
+        "target_context_name": "Addition 2",
+        "user": "http://nouserid.khanacademy.org/7f5ca52207c870e55a3fd522857f5377"
+      }
+    ]
+  },
+  {
+    "badge_category": 1,
+    "description": "Going Transonic",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "greattimedproblembadge",
+    "points": 500,
+    "safe_extended_description": "Quickly & correctly answer 10 skill problems in a row (time limit depends on skill difficulty)",
+    "user_badges": [
+      {
+        "badge_name": "greattimedproblembadge",
+        "date": "2012-04-18T01:42:16Z",
+        "kind": "UserBadge",
+        "points_earned": 500,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Probability 1",
+          "h_position": 20,
+          "ka_url": "http://www.khanacademy.org/exercise/probability_1",
+          "kind": "Exercise",
+          "live": true,
+          "name": "probability_1",
+          "prerequisites": [
+            "equivalent_fractions",
+            "counting_2"
+          ],
+          "relative_url": "/exercise/probability_1",
+          "seconds_per_fast_problem": 11,
+          "sha1": "d38864dcc0d46c565c00cc4cd2c6fbe8c00750d3",
+          "short_display_name": "Prob. 1",
+          "summative": false,
+          "tags": [],
+          "v_position": -18
+        },
+        "target_context_name": "Probability 1",
+        "user": "http://nouserid.khanacademy.org/ba02e69d753900b9ca5e81a22a4ffea7"
+      },
+      {
+        "badge_name": "greattimedproblembadge",
+        "date": "2012-04-18T01:45:02Z",
+        "kind": "UserBadge",
+        "points_earned": 500,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2012-04-13T23:12:55Z",
+          "description": "",
+          "display_name": "Radius diameter and circumference",
+          "h_position": 31,
+          "ka_url": "http://www.khanacademy.org/exercise/radius_diameter_and_circumference",
+          "kind": "Exercise",
+          "live": true,
+          "name": "radius_diameter_and_circumference",
+          "prerequisites": [
+            "recognizing_rays_lines_and_line_segments"
+          ],
+          "relative_url": "/exercise/radius_diameter_and_circumference",
+          "seconds_per_fast_problem": 6,
+          "sha1": "a647020561a1be96c626811ce43ac19c185ead32",
+          "short_display_name": "Circumfrnce",
+          "summative": false,
+          "tags": [],
+          "v_position": -26
+        },
+        "target_context_name": "Radius diameter and circumference",
+        "user": "http://facebookid.khanacademy.org/100000501046440"
+      },
+      {
+        "badge_name": "greattimedproblembadge",
+        "date": "2012-04-18T01:51:37Z",
+        "kind": "UserBadge",
+        "points_earned": 500,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Greatest common divisor",
+          "h_position": 12,
+          "ka_url": "http://www.khanacademy.org/exercise/greatest_common_divisor",
+          "kind": "Exercise",
+          "live": true,
+          "name": "greatest_common_divisor",
+          "prerequisites": [
+            "division_3",
+            "prime_factorization"
+          ],
+          "relative_url": "/exercise/greatest_common_divisor",
+          "seconds_per_fast_problem": 5,
+          "sha1": "0a53eb1e229553a35ad308c56252e3418c5c4144",
+          "short_display_name": "GCD",
+          "summative": false,
+          "tags": [],
+          "v_position": -10
+        },
+        "target_context_name": "Greatest common divisor",
+        "user": "amp2017"
+      },
+      {
+        "badge_name": "greattimedproblembadge",
+        "date": "2012-04-18T02:03:12Z",
+        "kind": "UserBadge",
+        "points_earned": 500,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Recognizing rays lines and line segments",
+          "h_position": 30,
+          "ka_url": "http://www.khanacademy.org/exercise/recognizing_rays_lines_and_line_segments",
+          "kind": "Exercise",
+          "live": true,
+          "name": "recognizing_rays_lines_and_line_segments",
+          "prerequisites": [
+            "measuring_angles"
+          ],
+          "relative_url": "/exercise/recognizing_rays_lines_and_line_segments",
+          "seconds_per_fast_problem": 4,
+          "sha1": "186280e711f1803ff231ded7527cd8b098cb80a8",
+          "short_display_name": "Recog lines",
+          "summative": false,
+          "tags": [],
+          "v_position": -28
+        },
+        "target_context_name": "Recognizing rays lines and line segments",
+        "user": "ultragirl888@yahoo.ca"
+      },
+      {
+        "badge_name": "greattimedproblembadge",
+        "date": "2012-04-18T02:08:50Z",
+        "kind": "UserBadge",
+        "points_earned": 500,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2012-01-24T01:53:59Z",
+          "description": null,
+          "display_name": "Understanding moving the decimal",
+          "h_position": 14,
+          "ka_url": "http://www.khanacademy.org/exercise/understanding_moving_the_decimal",
+          "kind": "Exercise",
+          "live": true,
+          "name": "understanding_moving_the_decimal",
+          "prerequisites": [
+            "multiplying_decimals"
+          ],
+          "relative_url": "/exercise/understanding_moving_the_decimal",
+          "seconds_per_fast_problem": 5,
+          "sha1": "d908497766c4f904be0833231ae13dad678377ac",
+          "short_display_name": "Und mov dec",
+          "summative": false,
+          "tags": [],
+          "v_position": 2
+        },
+        "target_context_name": "Understanding moving the decimal",
+        "user": "Alyssa.Portes"
+      },
+      {
+        "badge_name": "greattimedproblembadge",
+        "date": "2012-04-18T02:37:46Z",
+        "kind": "UserBadge",
+        "points_earned": 500,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-12-16T20:58:01Z",
+          "description": null,
+          "display_name": "Least common multiple and greatest common divisor word problems",
+          "h_position": 14,
+          "ka_url": "http://www.khanacademy.org/exercise/least_common_multiple_and_greatest_common_divisor_word_problems",
+          "kind": "Exercise",
+          "live": true,
+          "name": "least_common_multiple_and_greatest_common_divisor_word_problems",
+          "prerequisites": [
+            "greatest_common_divisor",
+            "least_common_multiple"
+          ],
+          "relative_url": "/exercise/least_common_multiple_and_greatest_common_divisor_word_problems",
+          "seconds_per_fast_problem": 13,
+          "sha1": "72106896d0aa0499c1f01205942a55aaf060af13",
+          "short_display_name": "LCM GCD WP",
+          "summative": false,
+          "tags": [],
+          "v_position": -9
+        },
+        "target_context_name": "Least common multiple and greatest common divisor word problems",
+        "user": "http://facebookid.khanacademy.org/100003674297237"
+      }
+    ]
+  },
+  {
+    "badge_category": 1,
+    "description": "Hard at Work",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "hardatworkbadge",
+    "points": 6000,
+    "safe_extended_description": "Achieve proficiency in any 25 skills",
+    "user_badges": [
+      {
+        "badge_name": "hardatworkbadge",
+        "date": "2012-04-18T01:29:52Z",
+        "kind": "UserBadge",
+        "points_earned": 6000,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "marc.cordero@oxfordchampions.com"
+      },
+      {
+        "badge_name": "hardatworkbadge",
+        "date": "2012-04-18T02:41:12Z",
+        "kind": "UserBadge",
+        "points_earned": 6000,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/34d09f8afbf9478c685630e3a6229432"
+      }
+    ]
+  },
+  {
+    "badge_category": 2,
+    "description": "10,000 Year Clock",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/earth-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/earth-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/earth-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/earth-small.png"
+    },
+    "is_owned": false,
+    "is_retired": false,
+    "name": "hundreddayconsecutiveactivitybadge",
+    "points": 0,
+    "safe_extended_description": "Watch part of any video or work on any skill each day for 100 consecutive days"
+  },
+  {
+    "badge_category": 1,
+    "description": "Ten to the Fifth",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "hundredthousandairebadge",
+    "points": 0,
+    "safe_extended_description": "Earn 100,000 energy points",
+    "user_badges": [
+      {
+        "badge_name": "hundredthousandairebadge",
+        "date": "2012-04-18T01:01:41Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "anujppatel4"
+      },
+      {
+        "badge_name": "hundredthousandairebadge",
+        "date": "2012-04-18T01:33:16Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "nickt23"
+      },
+      {
+        "badge_name": "hundredthousandairebadge",
+        "date": "2012-04-18T03:59:37Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "anthonyisageek"
+      }
+    ]
+  },
+  {
+    "badge_category": 1,
+    "description": "Steadfastness",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "keepfightingbadge",
+    "points": 0,
+    "safe_extended_description": "Answer more than 40 problems mostly correctly in a skill before becoming proficient",
+    "user_badges": [
+      {
+        "badge_name": "keepfightingbadge",
+        "date": "2012-04-18T02:56:22Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2012-04-03T21:56:35Z",
+          "description": null,
+          "display_name": "Congruent segments",
+          "h_position": 31,
+          "ka_url": "http://www.khanacademy.org/exercise/congruent_segments",
+          "kind": "Exercise",
+          "live": true,
+          "name": "congruent_segments",
+          "prerequisites": [
+            "recognizing_rays_lines_and_line_segments"
+          ],
+          "relative_url": "/exercise/congruent_segments",
+          "seconds_per_fast_problem": 4,
+          "sha1": "e23c7b2595dd9b7ef66630b03309ba4c53eedaeb",
+          "short_display_name": "Congr sgmt",
+          "summative": false,
+          "tags": [],
+          "v_position": -30
+        },
+        "target_context_name": "Congruent segments",
+        "user": "BrentonLopez01"
+      },
+      {
+        "badge_name": "keepfightingbadge",
+        "date": "2012-04-18T03:49:00Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [
+            "addition_2"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": "",
+          "display_name": "Addition 3",
+          "h_position": 4,
+          "ka_url": "http://www.khanacademy.org/exercise/addition_3",
+          "kind": "Exercise",
+          "live": true,
+          "name": "addition_3",
+          "prerequisites": [
+            "addition_2"
+          ],
+          "relative_url": "/exercise/addition_3",
+          "seconds_per_fast_problem": 8,
+          "sha1": "e95450376fbc7e26525fa0c19c6dbeb0a770f256",
+          "short_display_name": "Add. 3",
+          "summative": false,
+          "tags": [],
+          "v_position": 4
+        },
+        "target_context_name": "Addition 3",
+        "user": "http://nouserid.khanacademy.org/295c16831fa6ce63c6cec5e1cc1c1dfd"
+      },
+      {
+        "badge_name": "keepfightingbadge",
+        "date": "2012-04-18T04:03:09Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-09-16T23:18:13Z",
+          "description": null,
+          "display_name": "Quadrilateral types",
+          "h_position": 34,
+          "ka_url": "http://www.khanacademy.org/exercise/quadrilateral_types",
+          "kind": "Exercise",
+          "live": true,
+          "name": "quadrilateral_types",
+          "prerequisites": [
+            "triangle_types"
+          ],
+          "relative_url": "/exercise/quadrilateral_types",
+          "seconds_per_fast_problem": 5,
+          "sha1": "642f4051673633feeb1e4162b01861699508fa5c",
+          "short_display_name": "Quadril Typ",
+          "summative": false,
+          "tags": [],
+          "v_position": -28
+        },
+        "target_context_name": "Quadrilateral types",
+        "user": "http://nouserid.khanacademy.org/9ef4ac9fd7d2f3bda58b3764226e50a6"
+      },
+      {
+        "badge_name": "keepfightingbadge",
+        "date": "2012-04-18T04:15:02Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-09-21T19:28:10Z",
+          "description": null,
+          "display_name": "Negative number word problems",
+          "h_position": 7,
+          "ka_url": "http://www.khanacademy.org/exercise/negative_number_word_problems",
+          "kind": "Exercise",
+          "live": true,
+          "name": "negative_number_word_problems",
+          "prerequisites": [
+            "number_line_3",
+            "adding_and_subtracting_negative_numbers"
+          ],
+          "relative_url": "/exercise/negative_number_word_problems",
+          "seconds_per_fast_problem": 10,
+          "sha1": "f444f8bbfaffea89155dba1da76440f7194726a6",
+          "short_display_name": "-Num WP",
+          "summative": false,
+          "tags": [],
+          "v_position": 2
+        },
+        "target_context_name": "Negative number word problems",
+        "user": "14jlilygren@lasdk8.org"
+      }
+    ]
+  },
+  {
+    "badge_category": 3,
+    "description": "Kepler",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/sun-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/sun-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/sun-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/sun-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "keplerbadge",
+    "points": 125000,
+    "safe_extended_description": "Achieve proficiency in any 300 skills"
+  },
+  {
+    "badge_category": 1,
+    "description": "Artisan III Algebraist",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "levelfivealgebraistbadge",
+    "points": 1000,
+    "safe_extended_description": "Achieve proficiency in New definitions 1, New definitions 2, Expressions with unknown variables 2, Absolute value equations, Rad Eq 1, Rate Prob 1"
+  },
+  {
+    "badge_category": 1,
+    "description": "Artisan II Algebraist",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "levelfouralgebraistbadge",
+    "points": 1000,
+    "safe_extended_description": "Achieve proficiency in Linear equations 4, Linear inequalities, Average word problems, Equation of a line, Solving quadratics by factoring, Quad. Eq., Solving Var, Unkn Vars 1"
+  },
+  {
+    "badge_category": 1,
+    "description": "Apprentice Algebraist",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "levelonealgebraistbadge",
+    "points": 100,
+    "safe_extended_description": "Achieve proficiency in Exponents 3, Exponent rules, Logarithms 1, Linear equations 1, Percentage word problems 1, Functions 1"
+  },
+  {
+    "badge_category": 1,
+    "description": "Good Answer",
+    "hide_context": true,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": false,
+    "is_retired": false,
+    "name": "leveloneanswervotecountbadge",
+    "points": 0,
+    "safe_extended_description": "Answer a question beneath a video and receive a score of 10 or more from others' votes"
+  },
+  {
+    "badge_category": 1,
+    "description": "Apprentice Arithmetician",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "levelonearithmeticianbadge",
+    "points": 100,
+    "safe_extended_description": "Achieve proficiency in Addition 1, Subtraction 1, Multiplication 1, Division 1"
+  },
+  {
+    "badge_category": 1,
+    "description": "Apprentice Pre-algebraist",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "leveloneprealgebraistbadge",
+    "points": 100,
+    "safe_extended_description": "Achieve proficiency in Exponents 1, Adding and subtracting negative numbers, Adding and subtracting fractions"
+  },
+  {
+    "badge_category": 1,
+    "description": "Good Question",
+    "hide_context": true,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": false,
+    "is_retired": false,
+    "name": "levelonequestionvotecountbadge",
+    "points": 0,
+    "safe_extended_description": "Ask a question beneath a video and receive a score of 10 or more from others' votes"
+  },
+  {
+    "badge_category": 1,
+    "description": "Apprentice Trigonometrician",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "levelonetrigonometricianbadge",
+    "points": 100,
+    "safe_extended_description": "Achieve proficiency in Angles 2, Distance formula, Pythagorean theorem 1"
+  },
+  {
+    "badge_category": 1,
+    "description": "Artisan I Algebraist",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "levelthreealgebraistbadge",
+    "points": 750,
+    "safe_extended_description": "Achieve proficiency in Linear equations 3, Systems of equations, Multiplying expressions 1, Even and odd functions, Inverse fx, Line slope, Midpoint F., Line Relat., Functions 3"
+  },
+  {
+    "badge_category": 2,
+    "description": "Incredible Answer",
+    "hide_context": true,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/earth-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/earth-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/earth-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/earth-small.png"
+    },
+    "is_owned": false,
+    "is_retired": false,
+    "name": "levelthreeanswervotecountbadge",
+    "points": 0,
+    "safe_extended_description": "Answer a question beneath a video and receive a score of 50 or more from others' votes"
+  },
+  {
+    "badge_category": 1,
+    "description": "Artisan Arithmetician",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "levelthreearithmeticianbadge",
+    "points": 750,
+    "safe_extended_description": "Achieve proficiency in Multiplying decimals, Dividing decimals, Multiplying fractions, Dividing fractions"
+  },
+  {
+    "badge_category": 1,
+    "description": "Artisan Pre-algebraist",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "levelthreeprealgebraistbadge",
+    "points": 750,
+    "safe_extended_description": "Achieve proficiency in Exponents 3, Order of operations, Ordering numbers, Scientific notation, Units, Simplifying radicals"
+  },
+  {
+    "badge_category": 2,
+    "description": "Incredible Question",
+    "hide_context": true,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/earth-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/earth-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/earth-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/earth-small.png"
+    },
+    "is_owned": false,
+    "is_retired": false,
+    "name": "levelthreequestionvotecountbadge",
+    "points": 0,
+    "safe_extended_description": "Ask a question beneath a video and receive a score of 50 or more from others' votes"
+  },
+  {
+    "badge_category": 1,
+    "description": "Artisan Trigonometrician",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "levelthreetrigonometricianbadge",
+    "points": 750,
+    "safe_extended_description": "Achieve proficiency in Trigonometry 2, Graphs of sine and cosine, Inverse trig functions, Trig identities 1"
+  },
+  {
+    "badge_category": 1,
+    "description": "Journeyman Algebraist",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "leveltwoalgebraistbadge",
+    "points": 500,
+    "safe_extended_description": "Achieve proficiency in Linear equations 2, Percentage word problems 2, Functions 2, Domain of a function, Even and odd functions, Shif/Ref fx"
+  },
+  {
+    "badge_category": 2,
+    "description": "Great Answer",
+    "hide_context": true,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/earth-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/earth-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/earth-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/earth-small.png"
+    },
+    "is_owned": false,
+    "is_retired": false,
+    "name": "leveltwoanswervotecountbadge",
+    "points": 0,
+    "safe_extended_description": "Answer a question beneath a video and receive a score of 25 or more from others' votes"
+  },
+  {
+    "badge_category": 1,
+    "description": "Journeyman Arithmetician",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "leveltwoarithmeticianbadge",
+    "points": 500,
+    "safe_extended_description": "Achieve proficiency in Addition 4, Subtraction 4, Multiplication 4, Division 4",
+    "user_badges": [
+      {
+        "badge_name": "leveltwoarithmeticianbadge",
+        "date": "2012-04-18T02:05:23Z",
+        "kind": "UserBadge",
+        "points_earned": 500,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "urwin.brianne@apps.sthenryschools.org"
+      }
+    ]
+  },
+  {
+    "badge_category": 1,
+    "description": "Journeyman Pre-algebraist",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "leveltwoprealgebraistbadge",
+    "points": 500,
+    "safe_extended_description": "Achieve proficiency in Exponents 2, Multiplying and dividing negative numbers, Multiplying fractions, Dividing fractions"
+  },
+  {
+    "badge_category": 2,
+    "description": "Great Question",
+    "hide_context": true,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/earth-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/earth-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/earth-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/earth-small.png"
+    },
+    "is_owned": false,
+    "is_retired": false,
+    "name": "leveltwoquestionvotecountbadge",
+    "points": 0,
+    "safe_extended_description": "Ask a question beneath a video and receive a score of 25 or more from others' votes"
+  },
+  {
+    "badge_category": 1,
+    "description": "Journeyman Trigonometrician",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "leveltwotrigonometricianbadge",
+    "points": 500,
+    "safe_extended_description": "Achieve proficiency in Pythagorean theorem 2, Trigonometry 1",
+    "user_badges": [
+      {
+        "badge_name": "leveltwotrigonometricianbadge",
+        "date": "2012-04-18T03:50:56Z",
+        "kind": "UserBadge",
+        "points_earned": 500,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/827d6534283134ea7dcc68f84cc2928e"
+      }
+    ]
+  },
+  {
+    "badge_category": 3,
+    "description": "Ludicrous Listener",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/sun-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/sun-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/sun-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/sun-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "ludicrousplaylisttimebadge",
+    "points": 0,
+    "safe_extended_description": "Watch 10 hours of video in a single topic",
+    "user_badges": [
+      {
+        "badge_name": "ludicrousplaylisttimebadge",
+        "date": "2012-04-18T01:23:19Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Statistics",
+        "user": "http://nouserid.khanacademy.org/48baf14bd55f93d0c119cdf22ab1cebd"
+      }
+    ]
+  },
+  {
+    "badge_category": 1,
+    "description": "Ludicrous Streak",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "ludicrousstreakbadge",
+    "points": 0,
+    "safe_extended_description": "Correctly answer 100 problems in a row in a single skill"
+  },
+  {
+    "badge_category": 2,
+    "description": "299,792,458 Meters per Second",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/earth-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/earth-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/earth-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/earth-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "ludicroustimedproblembadge",
+    "points": 5000,
+    "safe_extended_description": "Quickly & correctly answer 75 skill problems in a row (time limit depends on skill difficulty)"
+  },
+  {
+    "badge_category": 3,
+    "description": "Magellan",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/sun-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/sun-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/sun-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/sun-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "magellanbadge",
+    "points": 30000,
+    "safe_extended_description": "Achieve proficiency in any 100 skills",
+    "user_badges": [
+      {
+        "badge_name": "magellanbadge",
+        "date": "2012-04-18T01:20:09Z",
+        "kind": "UserBadge",
+        "points_earned": 30000,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/15f647bd95bd73ac800b055487bba03d"
+      }
+    ]
+  },
+  {
+    "badge_category": 0,
+    "description": "Making Progress",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "makingprogressbadge",
+    "points": 1000,
+    "safe_extended_description": "Achieve proficiency in any 7 skills",
+    "user_badges": [
+      {
+        "badge_name": "makingprogressbadge",
+        "date": "2012-04-18T01:24:59Z",
+        "kind": "UserBadge",
+        "points_earned": 1000,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "1caresjsd"
+      },
+      {
+        "badge_name": "makingprogressbadge",
+        "date": "2012-04-18T01:52:46Z",
+        "kind": "UserBadge",
+        "points_earned": 1000,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "gradillas187"
+      },
+      {
+        "badge_name": "makingprogressbadge",
+        "date": "2012-04-18T02:29:53Z",
+        "kind": "UserBadge",
+        "points_earned": 1000,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/034ed28e124d5534e491ba3714be4b1c"
+      },
+      {
+        "badge_name": "makingprogressbadge",
+        "date": "2012-04-18T03:24:25Z",
+        "kind": "UserBadge",
+        "points_earned": 1000,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/9e18ef698b011b82a24915583738a44d"
+      },
+      {
+        "badge_name": "makingprogressbadge",
+        "date": "2012-04-18T03:48:43Z",
+        "kind": "UserBadge",
+        "points_earned": 1000,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "Dnfoxx"
+      },
+      {
+        "badge_name": "makingprogressbadge",
+        "date": "2012-04-18T04:20:32Z",
+        "kind": "UserBadge",
+        "points_earned": 1000,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "spencerricchio66@yahoo.com"
+      }
+    ]
+  },
+  {
+    "badge_category": 3,
+    "description": "Millionaire",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/sun-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/sun-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/sun-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/sun-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "millionairebadge",
+    "points": 0,
+    "safe_extended_description": "Earn 1,000,000 energy points"
+  },
+  {
+    "badge_category": 0,
+    "description": "Nice Listener",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "niceplaylisttimebadge",
+    "points": 0,
+    "safe_extended_description": "Watch 15 minutes of video in a single topic",
+    "user_badges": [
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T01:25:12Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Linear Algebra",
+        "user": "http://nouserid.khanacademy.org/f5b5553c14e1f66e38eecfd54927962f"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T01:35:04Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Addition and subtraction",
+        "user": "rabicus"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T01:35:43Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Trigonometry",
+        "user": "http://nouserid.khanacademy.org/2206c4e2e652a471e2892e07cd1f962d"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T01:36:16Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Physics",
+        "user": "http://nouserid.khanacademy.org/643fdd4fe8f2d0a9f858a5fca941c096"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T01:39:47Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Cosmology and Astronomy",
+        "user": "http://facebookid.khanacademy.org/100002204554138"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T01:59:11Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Calculus",
+        "user": "http://nouserid.khanacademy.org/06835a78e7514dcce387ed8764a82623"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T01:59:36Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Linear equations and inequalities",
+        "user": "http://nouserid.khanacademy.org/296f7d12677f6ed80ab9409ab5aa98e5"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:06:38Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Finance",
+        "user": "http://nouserid.khanacademy.org/5b0edc9c021e1b56107a2e069c0fb62e"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:06:41Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Credit Crisis",
+        "user": "http://nouserid.khanacademy.org/5b0edc9c021e1b56107a2e069c0fb62e"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:08:38Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Cosmology and Astronomy",
+        "user": "http://nouserid.khanacademy.org/b58dfb4b4247f47e64a98d6f3dd96645"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:12:45Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Absolute value",
+        "user": "http://facebookid.khanacademy.org/641450986"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:16:12Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Linear Algebra",
+        "user": "http://nouserid.khanacademy.org/1d9ffd94c03ac459885dcfe15ada74e5"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:24:34Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Solving linear equations",
+        "user": "http://nouserid.khanacademy.org/ad5ad88b8a5f4b498a72cbf12417d035"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:27:13Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Probability",
+        "user": "http://nouserid.khanacademy.org/9ec6a1712146514cac0bbde9405e640b"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:29:03Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Statistics",
+        "user": "http://nouserid.khanacademy.org/1ec0bcf25ebfe6e45d3e6b21eb15276b"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:31:38Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Computer Science",
+        "user": "http://nouserid.khanacademy.org/d305a4b86b0af70f1d5e0d5e955e5503"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:32:05Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Chemistry",
+        "user": "http://nouserid.khanacademy.org/8e85cd84d8175452bf1ab9a208930523"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:34:38Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Trigonometry",
+        "user": "http://nouserid.khanacademy.org/f3e10a59535561cfa81536f2deab6cc6"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:36:54Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Addition and subtraction",
+        "user": "http://nouserid.khanacademy.org/1d75fc08165c9722895cf504508818eb"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:37:10Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Vi Hart",
+        "user": "http://nouserid.khanacademy.org/d5fac8a944656e85511fe4bd98b526e3"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:46:57Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Finance",
+        "user": "bcdhoops"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:47:27Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Number properties",
+        "user": "http://nouserid.khanacademy.org/aa4b5dd4785fba39c0f1ec4e96e2fc6f"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:49:15Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "History",
+        "user": "http://nouserid.khanacademy.org/cd3dd368d32e1af12598e08251931b16"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:56:19Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Cosmology and Astronomy",
+        "user": "http://nouserid.khanacademy.org/816222f5a6444785db4e04673f7d50e0"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:56:20Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Matrices",
+        "user": "http://facebookid.khanacademy.org/100000687075274"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:56:20Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Linear Algebra",
+        "user": "http://facebookid.khanacademy.org/100000687075274"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T02:57:47Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Trigonometry",
+        "user": "http://nouserid.khanacademy.org/99841c97804464dbc8e1ff806a0fa10f"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:06:34Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Finance",
+        "user": "ttullis@comcast.net"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:06:34Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Credit Crisis",
+        "user": "ttullis@comcast.net"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:07:54Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Solving linear equations",
+        "user": "http://nouserid.khanacademy.org/6d5bbe60a286e3d940ed8a6864e0bdac"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:10:16Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Chemistry",
+        "user": "http://nouserid.khanacademy.org/abe40746746ce4979437ec9444ac63e9"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:10:39Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Chemistry",
+        "user": "http://nouserid.khanacademy.org/aba38a9de9f7ab3f7aae1f8bb8c67eb2"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:14:41Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Physics",
+        "user": "http://nouserid.khanacademy.org/7471dfdfa916b5d9154cf25e3ced1ad3"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:15:10Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Polynomials",
+        "user": "sarah.tee114"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:16:36Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Biology",
+        "user": "http://nouserid.khanacademy.org/50ac7025d459856fcb6ac6295e739d44"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:18:08Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Conic sections",
+        "user": "http://nouserid.khanacademy.org/a0695ff409f9f4ff5a50ba184335bdd0"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:20:48Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "New and Noteworthy",
+        "user": "http://nouserid.khanacademy.org/abd4059ee7d05bfde0a5dceb57134774"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:21:17Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Solving linear equations",
+        "user": "http://nouserid.khanacademy.org/02564b211fb4cae242f6a9db9792bcbf"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:24:02Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Physics",
+        "user": "http://nouserid.khanacademy.org/23d3cd5f01996eac68a0e4c6d3414c48"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:31:17Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Valuation and Investing",
+        "user": "andreishestackov"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:33:27Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Biology",
+        "user": "http://nouserid.khanacademy.org/ea7c475c9b9af06f237b93dcd8d8df2b"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:48:55Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Biology",
+        "user": "http://nouserid.khanacademy.org/08a6ef944f493060a3dc9a4063eae4b2"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:53:06Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Microeconomics",
+        "user": "http://nouserid.khanacademy.org/e0a42b1c0e937b76aac92c9b1c302871"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T03:53:21Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Solving linear equations",
+        "user": "http://nouserid.khanacademy.org/56faf9e8f8b274b5dd98d443b540c736"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T04:01:07Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Solving linear equations",
+        "user": "http://nouserid.khanacademy.org/9e21239cadef30be0f8067355be8efb8"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T04:02:31Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Credit Crisis",
+        "user": "http://nouserid.khanacademy.org/c5475b488c9f634fbc68f7e9c607a93c"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T04:03:03Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Solving linear equations",
+        "user": "http://nouserid.khanacademy.org/ed90b6808e7b23f0f85f61d0a43a1cd6"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T04:04:03Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Physics",
+        "user": "http://nouserid.khanacademy.org/014250c0e99216a8523cb36ad0d48c4f"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T04:05:13Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Probability",
+        "user": "http://nouserid.khanacademy.org/c1a38cc00a27ce08c3bc89deb85dd7be"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T04:05:22Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Finance",
+        "user": "http://nouserid.khanacademy.org/19955c467d9f5aad88029f02c6829758"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T04:15:18Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Differential Equations",
+        "user": "http://nouserid.khanacademy.org/22c35843481ed8eba875f4cfc0bb79ae"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T04:17:05Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Calculus",
+        "user": "http://nouserid.khanacademy.org/1f82296c8f7be5a85bb5446903eba4f0"
+      },
+      {
+        "badge_name": "niceplaylisttimebadge",
+        "date": "2012-04-18T04:20:19Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Chemistry",
+        "user": "http://nouserid.khanacademy.org/dda54b3c68c16b8fa518d1ca6b057dd6"
+      }
+    ]
+  },
+  {
+    "badge_category": 0,
+    "description": "Nice Streak",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "nicestreakbadge",
+    "points": 0,
+    "safe_extended_description": "Correctly answer 20 problems in a row in a single skill",
+    "user_badges": [
+      {
+        "badge_name": "nicestreakbadge",
+        "date": "2012-04-18T02:12:29Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-09-27T17:58:15Z",
+          "description": null,
+          "display_name": "Rounding whole numbers",
+          "h_position": 14,
+          "ka_url": "http://www.khanacademy.org/exercise/rounding_whole_numbers",
+          "kind": "Exercise",
+          "live": true,
+          "name": "rounding_whole_numbers",
+          "prerequisites": [
+            "place_value"
+          ],
+          "relative_url": "/exercise/rounding_whole_numbers",
+          "seconds_per_fast_problem": 6,
+          "sha1": "13afe84936330b1a2b204f9f470bce2bc2a4ca19",
+          "short_display_name": "Rd whole #",
+          "summative": false,
+          "tags": [],
+          "v_position": 3
+        },
+        "target_context_name": "Rounding whole numbers",
+        "user": "http://nouserid.khanacademy.org/d09a11da1a112ad7463b54de66a6e1d6"
+      },
+      {
+        "badge_name": "nicestreakbadge",
+        "date": "2012-04-18T02:42:08Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-09-23T04:59:55Z",
+          "description": null,
+          "display_name": "Number line 2",
+          "h_position": 2,
+          "ka_url": "http://www.khanacademy.org/exercise/number_line_2",
+          "kind": "Exercise",
+          "live": true,
+          "name": "number_line_2",
+          "prerequisites": [
+            "addition_2"
+          ],
+          "relative_url": "/exercise/number_line_2",
+          "seconds_per_fast_problem": 5,
+          "sha1": "75245ed3ff75aaf0f5f5e53419701d60b3c9ae08",
+          "short_display_name": "# line 2",
+          "summative": false,
+          "tags": [],
+          "v_position": 3
+        },
+        "target_context_name": "Number line 2",
+        "user": "http://nouserid.khanacademy.org/9544974ce7d5defeecae168c69d33e25"
+      },
+      {
+        "badge_name": "nicestreakbadge",
+        "date": "2012-04-18T03:14:47Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Ordering negative numbers",
+          "h_position": 4,
+          "ka_url": "http://www.khanacademy.org/exercise/ordering_negative_numbers",
+          "kind": "Exercise",
+          "live": true,
+          "name": "ordering_negative_numbers",
+          "prerequisites": [
+            "number_line_3"
+          ],
+          "relative_url": "/exercise/ordering_negative_numbers",
+          "seconds_per_fast_problem": 7,
+          "sha1": "fff0ce45c2aff65457ad8749395db8abc2b37890",
+          "short_display_name": "Order Neg #",
+          "summative": false,
+          "tags": [],
+          "v_position": 1
+        },
+        "target_context_name": "Ordering negative numbers",
+        "user": "josecroldan@yahoo.com"
+      },
+      {
+        "badge_name": "nicestreakbadge",
+        "date": "2012-04-18T03:22:34Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [
+            "exponents_2"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Exponent rules",
+          "h_position": 20,
+          "ka_url": "http://www.khanacademy.org/exercise/exponent_rules",
+          "kind": "Exercise",
+          "live": true,
+          "name": "exponent_rules",
+          "prerequisites": [
+            "exponents_2"
+          ],
+          "relative_url": "/exercise/exponent_rules",
+          "seconds_per_fast_problem": 6,
+          "sha1": "31a282f7265d3e00a34a11061d32a59ecefdd0f8",
+          "short_display_name": "Exp. Rules",
+          "summative": false,
+          "tags": [],
+          "v_position": 7
+        },
+        "target_context_name": "Exponent rules",
+        "user": "http://nouserid.khanacademy.org/ef7222b9d08db1ff2aedc2c854906ff8"
+      },
+      {
+        "badge_name": "nicestreakbadge",
+        "date": "2012-04-18T03:54:24Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-12-23T16:51:50Z",
+          "description": null,
+          "display_name": "Adding decimals 0.5",
+          "h_position": 10,
+          "ka_url": "http://www.khanacademy.org/exercise/adding_decimals_0.5",
+          "kind": "Exercise",
+          "live": true,
+          "name": "adding_decimals_0.5",
+          "prerequisites": [
+            "decimals_on_the_number_line_2"
+          ],
+          "relative_url": "/exercise/adding_decimals_0.5",
+          "seconds_per_fast_problem": 11,
+          "sha1": "ee216e27658278252a016557073f964f8db42a86",
+          "short_display_name": "Add dec 0.5",
+          "summative": false,
+          "tags": [],
+          "v_position": 3
+        },
+        "target_context_name": "Adding decimals 0.5",
+        "user": "cjiwanaga09@bsd48.org"
+      }
+    ]
+  },
+  {
+    "badge_category": 0,
+    "description": "Picking Up Steam",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "nicetimedproblembadge",
+    "points": 100,
+    "safe_extended_description": "Quickly & correctly answer 5 skill problems in a row (time limit depends on skill difficulty)",
+    "user_badges": [
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:06:43Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [
+            "addition_1"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Multiplication 0.5",
+          "h_position": 3,
+          "ka_url": "http://www.khanacademy.org/exercise/multiplication_0.5",
+          "kind": "Exercise",
+          "live": true,
+          "name": "multiplication_0.5",
+          "prerequisites": [
+            "addition_2"
+          ],
+          "relative_url": "/exercise/multiplication_0.5",
+          "seconds_per_fast_problem": 4,
+          "sha1": "4992976cd5283f0c7454813f85e2e650d1472079",
+          "short_display_name": "Mult. 0.5",
+          "summative": false,
+          "tags": [],
+          "v_position": -5
+        },
+        "target_context_name": "Multiplication 0.5",
+        "user": "AubreyD83"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:18:38Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2012-01-13T07:54:34Z",
+          "description": null,
+          "display_name": "Telling time 2",
+          "h_position": 3,
+          "ka_url": "http://www.khanacademy.org/exercise/telling_time_2",
+          "kind": "Exercise",
+          "live": true,
+          "name": "telling_time_2",
+          "prerequisites": [
+            "telling_time"
+          ],
+          "relative_url": "/exercise/telling_time_2",
+          "seconds_per_fast_problem": 7,
+          "sha1": "e41980bd512b5b6182926c631e213eecfc96ad27",
+          "short_display_name": "Tell time 2",
+          "summative": false,
+          "tags": [],
+          "v_position": 11
+        },
+        "target_context_name": "Telling time 2",
+        "user": "hernandez.adrian@hotmail.com"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:19:10Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Greatest common divisor",
+          "h_position": 12,
+          "ka_url": "http://www.khanacademy.org/exercise/greatest_common_divisor",
+          "kind": "Exercise",
+          "live": true,
+          "name": "greatest_common_divisor",
+          "prerequisites": [
+            "division_3",
+            "prime_factorization"
+          ],
+          "relative_url": "/exercise/greatest_common_divisor",
+          "seconds_per_fast_problem": 5,
+          "sha1": "0a53eb1e229553a35ad308c56252e3418c5c4144",
+          "short_display_name": "GCD",
+          "summative": false,
+          "tags": [],
+          "v_position": -10
+        },
+        "target_context_name": "Greatest common divisor",
+        "user": "dgoodman808"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:22:22Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [
+            "linear_equations_2"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Linear equations 3",
+          "h_position": 30,
+          "ka_url": "http://www.khanacademy.org/exercise/linear_equations_3",
+          "kind": "Exercise",
+          "live": true,
+          "name": "linear_equations_3",
+          "prerequisites": [
+            "linear_equations_2"
+          ],
+          "relative_url": "/exercise/linear_equations_3",
+          "seconds_per_fast_problem": 15,
+          "sha1": "c939ee5312f840b7e94e11d6d86f5f8a1ca368c9",
+          "short_display_name": "Lin. Eq. 3",
+          "summative": false,
+          "tags": [],
+          "v_position": 6
+        },
+        "target_context_name": "Linear equations 3",
+        "user": "http://nouserid.khanacademy.org/6053589e5c5dd4ac025ded40e98d5911"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:22:40Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-09-13T01:47:43Z",
+          "description": null,
+          "display_name": "Rate problems 0.5",
+          "h_position": 29,
+          "ka_url": "http://www.khanacademy.org/exercise/rate_problems_0.5",
+          "kind": "Exercise",
+          "live": true,
+          "name": "rate_problems_0.5",
+          "prerequisites": [
+            "units"
+          ],
+          "relative_url": "/exercise/rate_problems_0.5",
+          "seconds_per_fast_problem": 12,
+          "sha1": "97c986b70ecd38f86976cc1d95c3925076718a27",
+          "short_display_name": "RateProb0.5",
+          "summative": false,
+          "tags": [],
+          "v_position": -11
+        },
+        "target_context_name": "Rate problems 0.5",
+        "user": "hellokimi61299"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:22:43Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [
+            "addition_2"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": "",
+          "display_name": "Addition 3",
+          "h_position": 4,
+          "ka_url": "http://www.khanacademy.org/exercise/addition_3",
+          "kind": "Exercise",
+          "live": true,
+          "name": "addition_3",
+          "prerequisites": [
+            "addition_2"
+          ],
+          "relative_url": "/exercise/addition_3",
+          "seconds_per_fast_problem": 8,
+          "sha1": "e95450376fbc7e26525fa0c19c6dbeb0a770f256",
+          "short_display_name": "Add. 3",
+          "summative": false,
+          "tags": [],
+          "v_position": 4
+        },
+        "target_context_name": "Addition 3",
+        "user": "http://nouserid.khanacademy.org/9f5e8f800319639fab994c8e2d32a9c2"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:30:22Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2012-01-13T07:54:34Z",
+          "description": null,
+          "display_name": "Telling time 2",
+          "h_position": 3,
+          "ka_url": "http://www.khanacademy.org/exercise/telling_time_2",
+          "kind": "Exercise",
+          "live": true,
+          "name": "telling_time_2",
+          "prerequisites": [
+            "telling_time"
+          ],
+          "relative_url": "/exercise/telling_time_2",
+          "seconds_per_fast_problem": 7,
+          "sha1": "e41980bd512b5b6182926c631e213eecfc96ad27",
+          "short_display_name": "Tell time 2",
+          "summative": false,
+          "tags": [],
+          "v_position": 11
+        },
+        "target_context_name": "Telling time 2",
+        "user": "cw.iaffolter@students.srvusd.net"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:31:29Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-10-20T18:49:27Z",
+          "description": null,
+          "display_name": "Telling time 0.5",
+          "h_position": 1,
+          "ka_url": "http://www.khanacademy.org/exercise/telling_time_0.5",
+          "kind": "Exercise",
+          "live": true,
+          "name": "telling_time_0.5",
+          "prerequisites": [],
+          "relative_url": "/exercise/telling_time_0.5",
+          "seconds_per_fast_problem": 6,
+          "sha1": "715dd43f91126b11aa6c2ceefb6f46266234e260",
+          "short_display_name": "Tell time",
+          "summative": false,
+          "tags": [],
+          "v_position": 11
+        },
+        "target_context_name": "Telling time 0.5",
+        "user": "montezm18"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:32:49Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Adding fractions with common denominators",
+          "h_position": 20,
+          "ka_url": "http://www.khanacademy.org/exercise/adding_fractions_with_common_denominators",
+          "kind": "Exercise",
+          "live": true,
+          "name": "adding_fractions_with_common_denominators",
+          "prerequisites": [
+            "order_of_operations",
+            "recognizing_fractions_0.5"
+          ],
+          "relative_url": "/exercise/adding_fractions_with_common_denominators",
+          "seconds_per_fast_problem": 5,
+          "sha1": "b716b299cb046de3a489ef2085cbe3d50a74c6d8",
+          "short_display_name": "+CommDenom",
+          "summative": false,
+          "tags": [],
+          "v_position": -5
+        },
+        "target_context_name": "Adding fractions with common denominators",
+        "user": "annac.harvey@yahoo.com"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:36:15Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-10-07T23:36:59Z",
+          "description": null,
+          "display_name": "Counting 1",
+          "h_position": 18,
+          "ka_url": "http://www.khanacademy.org/exercise/counting_1",
+          "kind": "Exercise",
+          "live": true,
+          "name": "counting_1",
+          "prerequisites": [
+            "order_of_operations"
+          ],
+          "relative_url": "/exercise/counting_1",
+          "seconds_per_fast_problem": 6,
+          "sha1": "1c8c1f8d6ba66299bb52c294b59b50093886bcc5",
+          "short_display_name": "Counting 1",
+          "summative": false,
+          "tags": [],
+          "v_position": -18
+        },
+        "target_context_name": "Counting 1",
+        "user": "fcobhummingbird"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:36:57Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Complementary angles",
+          "h_position": 27,
+          "ka_url": "http://www.khanacademy.org/exercise/complementary_angles",
+          "kind": "Exercise",
+          "live": true,
+          "name": "complementary_angles",
+          "prerequisites": [
+            "angle_types"
+          ],
+          "relative_url": "/exercise/complementary_angles",
+          "seconds_per_fast_problem": 6,
+          "sha1": "669b0507bbd9f1d8a0c4002054b876fa8fb9d501",
+          "short_display_name": "Comp Ang",
+          "summative": false,
+          "tags": [],
+          "v_position": -23
+        },
+        "target_context_name": "Complementary angles",
+        "user": "http://facebookid.khanacademy.org/508045484"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:38:42Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [
+            "division_0.5"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Division 1",
+          "h_position": 7,
+          "ka_url": "http://www.khanacademy.org/exercise/division_1",
+          "kind": "Exercise",
+          "live": true,
+          "name": "division_1",
+          "prerequisites": [
+            "division_0.5"
+          ],
+          "relative_url": "/exercise/division_1",
+          "seconds_per_fast_problem": 4,
+          "sha1": "69915120b413d2fbb8f0fd081889bdeba49abaf0",
+          "short_display_name": "Div. 1",
+          "summative": false,
+          "tags": [],
+          "v_position": -7
+        },
+        "target_context_name": "Division 1",
+        "user": "http://nouserid.khanacademy.org/3f51fa0eda31aa30f017be0eac5e161e"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:44:15Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Comparing absolute values",
+          "h_position": 8,
+          "ka_url": "http://www.khanacademy.org/exercise/comparing_absolute_values",
+          "kind": "Exercise",
+          "live": true,
+          "name": "comparing_absolute_values",
+          "prerequisites": [
+            "absolute_value"
+          ],
+          "relative_url": "/exercise/comparing_absolute_values",
+          "seconds_per_fast_problem": 4,
+          "sha1": "77b75dd55f1675e2cc95409488797f3e35a59ea9",
+          "short_display_name": "Cmp abs val",
+          "summative": false,
+          "tags": [],
+          "v_position": -1
+        },
+        "target_context_name": "Comparing absolute values",
+        "user": "brawoo@mychawanakee.org"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:44:31Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2012-04-13T23:12:55Z",
+          "description": "",
+          "display_name": "Radius diameter and circumference",
+          "h_position": 31,
+          "ka_url": "http://www.khanacademy.org/exercise/radius_diameter_and_circumference",
+          "kind": "Exercise",
+          "live": true,
+          "name": "radius_diameter_and_circumference",
+          "prerequisites": [
+            "recognizing_rays_lines_and_line_segments"
+          ],
+          "relative_url": "/exercise/radius_diameter_and_circumference",
+          "seconds_per_fast_problem": 6,
+          "sha1": "a647020561a1be96c626811ce43ac19c185ead32",
+          "short_display_name": "Circumfrnce",
+          "summative": false,
+          "tags": [],
+          "v_position": -26
+        },
+        "target_context_name": "Radius diameter and circumference",
+        "user": "http://facebookid.khanacademy.org/100000501046440"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:45:12Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Comparing absolute values",
+          "h_position": 8,
+          "ka_url": "http://www.khanacademy.org/exercise/comparing_absolute_values",
+          "kind": "Exercise",
+          "live": true,
+          "name": "comparing_absolute_values",
+          "prerequisites": [
+            "absolute_value"
+          ],
+          "relative_url": "/exercise/comparing_absolute_values",
+          "seconds_per_fast_problem": 4,
+          "sha1": "77b75dd55f1675e2cc95409488797f3e35a59ea9",
+          "short_display_name": "Cmp abs val",
+          "summative": false,
+          "tags": [],
+          "v_position": -1
+        },
+        "target_context_name": "Comparing absolute values",
+        "user": "chunkoduty"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T01:52:03Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2012-02-12T01:43:13Z",
+          "description": null,
+          "display_name": "Variance",
+          "h_position": 19,
+          "ka_url": "http://www.khanacademy.org/exercise/variance",
+          "kind": "Exercise",
+          "live": true,
+          "name": "variance",
+          "prerequisites": [
+            "mean_median_and_mode"
+          ],
+          "relative_url": "/exercise/variance",
+          "seconds_per_fast_problem": 43,
+          "sha1": "ceaa5e94245baf3c91c0d164778454d3bf61f25d",
+          "short_display_name": "Variance",
+          "summative": false,
+          "tags": [],
+          "v_position": -21
+        },
+        "target_context_name": "Variance",
+        "user": "iknowthedevs"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T02:07:32Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [
+            "multiplying_and_dividing_negative_numbers"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Exponents 1",
+          "h_position": 18,
+          "ka_url": "http://www.khanacademy.org/exercise/exponents_1",
+          "kind": "Exercise",
+          "live": true,
+          "name": "exponents_1",
+          "prerequisites": [
+            "multiplying_and_dividing_negative_numbers"
+          ],
+          "relative_url": "/exercise/exponents_1",
+          "seconds_per_fast_problem": 5,
+          "sha1": "2d24927dc7a41d2cd16d7765babc84bf51608296",
+          "short_display_name": "Exponents 1",
+          "summative": false,
+          "tags": [],
+          "v_position": 3
+        },
+        "target_context_name": "Exponents 1",
+        "user": "http://nouserid.khanacademy.org/aa71c2dab6af504dcefa8ea334edff01"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T02:10:08Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Absolute value",
+          "h_position": 7,
+          "ka_url": "http://www.khanacademy.org/exercise/absolute_value",
+          "kind": "Exercise",
+          "live": true,
+          "name": "absolute_value",
+          "prerequisites": [
+            "adding_and_subtracting_negative_numbers"
+          ],
+          "relative_url": "/exercise/absolute_value",
+          "seconds_per_fast_problem": 4,
+          "sha1": "57fc41b76dd006159bc015c3d665815b40862eb7",
+          "short_display_name": "Abs. Value",
+          "summative": false,
+          "tags": [],
+          "v_position": -1
+        },
+        "target_context_name": "Absolute value",
+        "user": "http://nouserid.khanacademy.org/c619cf306df781d12e25d91ff897752b"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T02:12:19Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2012-01-25T02:59:30Z",
+          "description": null,
+          "display_name": "Imaginary unit powers",
+          "h_position": 40,
+          "ka_url": "http://www.khanacademy.org/exercise/imaginary_unit_powers",
+          "kind": "Exercise",
+          "live": true,
+          "name": "imaginary_unit_powers",
+          "prerequisites": [
+            "equation_of_a_line"
+          ],
+          "relative_url": "/exercise/imaginary_unit_powers",
+          "seconds_per_fast_problem": 5,
+          "sha1": "11d181e9b427ba9be8b16be203f65b487c92d2c3",
+          "short_display_name": "Powers of i",
+          "summative": false,
+          "tags": [],
+          "v_position": -10
+        },
+        "target_context_name": "Imaginary unit powers",
+        "user": "http://facebookid.khanacademy.org/100000755861785"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T02:31:36Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2012-04-03T21:56:58Z",
+          "description": null,
+          "display_name": "Segment addition",
+          "h_position": 32,
+          "ka_url": "http://www.khanacademy.org/exercise/segment_addition",
+          "kind": "Exercise",
+          "live": true,
+          "name": "segment_addition",
+          "prerequisites": [
+            "measuring_segments",
+            "congruent_segments"
+          ],
+          "relative_url": "/exercise/segment_addition",
+          "seconds_per_fast_problem": 21,
+          "sha1": "8634eb8043a92215a7dc97763807c54ac22da01f",
+          "short_display_name": "Segmnt addn",
+          "summative": false,
+          "tags": [],
+          "v_position": -31
+        },
+        "target_context_name": "Segment addition",
+        "user": "http://nouserid.khanacademy.org/9245c0d338bcdec350fbe71957ef4c35"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T02:32:22Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Absolute value",
+          "h_position": 7,
+          "ka_url": "http://www.khanacademy.org/exercise/absolute_value",
+          "kind": "Exercise",
+          "live": true,
+          "name": "absolute_value",
+          "prerequisites": [
+            "adding_and_subtracting_negative_numbers"
+          ],
+          "relative_url": "/exercise/absolute_value",
+          "seconds_per_fast_problem": 4,
+          "sha1": "57fc41b76dd006159bc015c3d665815b40862eb7",
+          "short_display_name": "Abs. Value",
+          "summative": false,
+          "tags": [],
+          "v_position": -1
+        },
+        "target_context_name": "Absolute value",
+        "user": "http://facebookid.khanacademy.org/100000684815294"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T02:34:25Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Absolute value",
+          "h_position": 7,
+          "ka_url": "http://www.khanacademy.org/exercise/absolute_value",
+          "kind": "Exercise",
+          "live": true,
+          "name": "absolute_value",
+          "prerequisites": [
+            "adding_and_subtracting_negative_numbers"
+          ],
+          "relative_url": "/exercise/absolute_value",
+          "seconds_per_fast_problem": 4,
+          "sha1": "57fc41b76dd006159bc015c3d665815b40862eb7",
+          "short_display_name": "Abs. Value",
+          "summative": false,
+          "tags": [],
+          "v_position": -1
+        },
+        "target_context_name": "Absolute value",
+        "user": "http://nouserid.khanacademy.org/811d5133af85ae2258b3bbfb130a8bd6"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T02:35:50Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [
+            "addition_3",
+            "representing_numbers"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": "",
+          "display_name": "Addition 4",
+          "h_position": 5,
+          "ka_url": "http://www.khanacademy.org/exercise/addition_4",
+          "kind": "Exercise",
+          "live": true,
+          "name": "addition_4",
+          "prerequisites": [
+            "addition_3"
+          ],
+          "relative_url": "/exercise/addition_4",
+          "seconds_per_fast_problem": 10,
+          "sha1": "c865d335d1f3caa69b1029f5735fb1d26ce856c9",
+          "short_display_name": "Add. 4",
+          "summative": false,
+          "tags": [],
+          "v_position": 4
+        },
+        "target_context_name": "Addition 4",
+        "user": "mattmorrison@mac.com"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T02:39:37Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-09-16T22:33:32Z",
+          "description": null,
+          "display_name": "Triangle types",
+          "h_position": 33,
+          "ka_url": "http://www.khanacademy.org/exercise/triangle_types",
+          "kind": "Exercise",
+          "live": true,
+          "name": "triangle_types",
+          "prerequisites": [
+            "complementary_and_supplementary_angles"
+          ],
+          "relative_url": "/exercise/triangle_types",
+          "seconds_per_fast_problem": 4,
+          "sha1": "62a04398a9c6c5272b0c8ba62afe65251c5e37c6",
+          "short_display_name": "Tri types",
+          "summative": false,
+          "tags": [],
+          "v_position": -22
+        },
+        "target_context_name": "Triangle types",
+        "user": "74605@tosasd.com"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T02:44:46Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-12-23T16:52:25Z",
+          "description": null,
+          "display_name": "Subtracting decimals 0.5",
+          "h_position": 12,
+          "ka_url": "http://www.khanacademy.org/exercise/subtracting_decimals_0.5",
+          "kind": "Exercise",
+          "live": true,
+          "name": "subtracting_decimals_0.5",
+          "prerequisites": [
+            "subtraction_4",
+            "adding_decimals"
+          ],
+          "relative_url": "/exercise/subtracting_decimals_0.5",
+          "seconds_per_fast_problem": 11,
+          "sha1": "ec23f3f9f9eec4f249c3d437a03a035b4eae01ee",
+          "short_display_name": "Sub dec 0.5",
+          "summative": false,
+          "tags": [],
+          "v_position": 6
+        },
+        "target_context_name": "Subtracting decimals 0.5",
+        "user": "snaqvi980"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T02:55:37Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Absolute value",
+          "h_position": 7,
+          "ka_url": "http://www.khanacademy.org/exercise/absolute_value",
+          "kind": "Exercise",
+          "live": true,
+          "name": "absolute_value",
+          "prerequisites": [
+            "adding_and_subtracting_negative_numbers"
+          ],
+          "relative_url": "/exercise/absolute_value",
+          "seconds_per_fast_problem": 4,
+          "sha1": "57fc41b76dd006159bc015c3d665815b40862eb7",
+          "short_display_name": "Abs. Value",
+          "summative": false,
+          "tags": [],
+          "v_position": -1
+        },
+        "target_context_name": "Absolute value",
+        "user": "http://nouserid.khanacademy.org/751a772c9f5cff57090db7262b8f588e"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T03:00:53Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-12-23T16:51:50Z",
+          "description": null,
+          "display_name": "Adding decimals 0.5",
+          "h_position": 10,
+          "ka_url": "http://www.khanacademy.org/exercise/adding_decimals_0.5",
+          "kind": "Exercise",
+          "live": true,
+          "name": "adding_decimals_0.5",
+          "prerequisites": [
+            "decimals_on_the_number_line_2"
+          ],
+          "relative_url": "/exercise/adding_decimals_0.5",
+          "seconds_per_fast_problem": 11,
+          "sha1": "ee216e27658278252a016557073f964f8db42a86",
+          "short_display_name": "Add dec 0.5",
+          "summative": false,
+          "tags": [],
+          "v_position": 3
+        },
+        "target_context_name": "Adding decimals 0.5",
+        "user": "14o'neal17050@piqua.k12.oh.us"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T03:05:04Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [
+            "dividing_fractions_0.5"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": "",
+          "display_name": "Dividing fractions",
+          "h_position": 24,
+          "ka_url": "http://www.khanacademy.org/exercise/dividing_fractions",
+          "kind": "Exercise",
+          "live": true,
+          "name": "dividing_fractions",
+          "prerequisites": [
+            "multiplying_fractions",
+            "dividing_fractions_0.5"
+          ],
+          "relative_url": "/exercise/dividing_fractions",
+          "seconds_per_fast_problem": 12,
+          "sha1": "a1487938c6cad08b0c30c6996b81d4768602b3a9",
+          "short_display_name": "Div. Frac.",
+          "summative": false,
+          "tags": [],
+          "v_position": -12
+        },
+        "target_context_name": "Dividing fractions",
+        "user": "http://facebookid.khanacademy.org/1509214550"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T03:20:21Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [
+            "addition_1"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": "",
+          "display_name": "Addition 2",
+          "h_position": 1,
+          "ka_url": "http://www.khanacademy.org/exercise/addition_2",
+          "kind": "Exercise",
+          "live": true,
+          "name": "addition_2",
+          "prerequisites": [
+            "number_line",
+            "addition_1",
+            "representing_numbers"
+          ],
+          "relative_url": "/exercise/addition_2",
+          "seconds_per_fast_problem": 5,
+          "sha1": "b2739d91cbed9f3f05637ca51b670ec7b591a4d2",
+          "short_display_name": "Add. 2",
+          "summative": false,
+          "tags": [],
+          "v_position": 4
+        },
+        "target_context_name": "Addition 2",
+        "user": "lindroshouse@verizon.net"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T03:25:06Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2012-01-24T01:53:59Z",
+          "description": null,
+          "display_name": "Understanding moving the decimal",
+          "h_position": 14,
+          "ka_url": "http://www.khanacademy.org/exercise/understanding_moving_the_decimal",
+          "kind": "Exercise",
+          "live": true,
+          "name": "understanding_moving_the_decimal",
+          "prerequisites": [
+            "multiplying_decimals"
+          ],
+          "relative_url": "/exercise/understanding_moving_the_decimal",
+          "seconds_per_fast_problem": 5,
+          "sha1": "d908497766c4f904be0833231ae13dad678377ac",
+          "short_display_name": "Und mov dec",
+          "summative": false,
+          "tags": [],
+          "v_position": 2
+        },
+        "target_context_name": "Understanding moving the decimal",
+        "user": "tmishra@unishanoi.org"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T03:28:31Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [
+            "multiplication_1.5"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Multiplication 2",
+          "h_position": 6,
+          "ka_url": "http://www.khanacademy.org/exercise/multiplication_2",
+          "kind": "Exercise",
+          "live": true,
+          "name": "multiplication_2",
+          "prerequisites": [
+            "multiplication_1.5"
+          ],
+          "relative_url": "/exercise/multiplication_2",
+          "seconds_per_fast_problem": 7,
+          "sha1": "b02d795ade97eb35cffda48d814f7f2aa8dcedef",
+          "short_display_name": "Mult. 2",
+          "summative": false,
+          "tags": [],
+          "v_position": -5
+        },
+        "target_context_name": "Multiplication 2",
+        "user": "http://facebookid.khanacademy.org/583838176"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T03:29:18Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-10-20T18:49:27Z",
+          "description": null,
+          "display_name": "Telling time 0.5",
+          "h_position": 1,
+          "ka_url": "http://www.khanacademy.org/exercise/telling_time_0.5",
+          "kind": "Exercise",
+          "live": true,
+          "name": "telling_time_0.5",
+          "prerequisites": [],
+          "relative_url": "/exercise/telling_time_0.5",
+          "seconds_per_fast_problem": 6,
+          "sha1": "715dd43f91126b11aa6c2ceefb6f46266234e260",
+          "short_display_name": "Tell time",
+          "summative": false,
+          "tags": [],
+          "v_position": 11
+        },
+        "target_context_name": "Telling time 0.5",
+        "user": "http://nouserid.khanacademy.org/4a2f1d111d599051f9ba62c28aac54db"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T03:36:55Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Graphing points",
+          "h_position": 33,
+          "ka_url": "http://www.khanacademy.org/exercise/graphing_points",
+          "kind": "Exercise",
+          "live": true,
+          "name": "graphing_points",
+          "prerequisites": [
+            "linear_equations_1"
+          ],
+          "relative_url": "/exercise/graphing_points",
+          "seconds_per_fast_problem": 6,
+          "sha1": "f2d2f6286890620fd02b980a97f752769c4c8bed",
+          "short_display_name": "Graph Pts.",
+          "summative": false,
+          "tags": [],
+          "v_position": -1
+        },
+        "target_context_name": "Graphing points",
+        "user": "kinirist7011@student.sanjuan.edu"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T03:37:54Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [
+            "fractions_on_the_number_line_1"
+          ],
+          "creation_date": "2011-12-23T16:31:54Z",
+          "description": null,
+          "display_name": "Fractions on the number line 2",
+          "h_position": 24,
+          "ka_url": "http://www.khanacademy.org/exercise/fractions_on_the_number_line_2",
+          "kind": "Exercise",
+          "live": true,
+          "name": "fractions_on_the_number_line_2",
+          "prerequisites": [
+            "converting_mixed_numbers_and_improper_fractions"
+          ],
+          "relative_url": "/exercise/fractions_on_the_number_line_2",
+          "seconds_per_fast_problem": 6,
+          "sha1": "708e2c2abdc68d97bbc09fcb4160f64c41343d86",
+          "short_display_name": "Fr # line 2",
+          "summative": false,
+          "tags": [],
+          "v_position": -6
+        },
+        "target_context_name": "Fractions on the number line 2",
+        "user": "http://nouserid.khanacademy.org/a074cc6e769182e3b4ad683e7ee37901"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T03:50:35Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Absolute value",
+          "h_position": 7,
+          "ka_url": "http://www.khanacademy.org/exercise/absolute_value",
+          "kind": "Exercise",
+          "live": true,
+          "name": "absolute_value",
+          "prerequisites": [
+            "adding_and_subtracting_negative_numbers"
+          ],
+          "relative_url": "/exercise/absolute_value",
+          "seconds_per_fast_problem": 4,
+          "sha1": "57fc41b76dd006159bc015c3d665815b40862eb7",
+          "short_display_name": "Abs. Value",
+          "summative": false,
+          "tags": [],
+          "v_position": -1
+        },
+        "target_context_name": "Absolute value",
+        "user": "ivysad"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T03:57:42Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Properties of numbers 1",
+          "h_position": 13,
+          "ka_url": "http://www.khanacademy.org/exercise/properties_of_numbers_1",
+          "kind": "Exercise",
+          "live": true,
+          "name": "properties_of_numbers_1",
+          "prerequisites": [
+            "multiplying_and_dividing_negative_numbers"
+          ],
+          "relative_url": "/exercise/properties_of_numbers_1",
+          "seconds_per_fast_problem": 5,
+          "sha1": "49dca2958fbe353aa3150231f81ad6a6030b9d61",
+          "short_display_name": "# Props 1",
+          "summative": false,
+          "tags": [],
+          "v_position": -5
+        },
+        "target_context_name": "Properties of numbers 1",
+        "user": "zack6246"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T03:57:49Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-12-21T20:22:59Z",
+          "description": null,
+          "display_name": "Reading pictographs 1",
+          "h_position": 15,
+          "ka_url": "http://www.khanacademy.org/exercise/reading_pictographs_1",
+          "kind": "Exercise",
+          "live": true,
+          "name": "reading_pictographs_1",
+          "prerequisites": [
+            "reading_tables_1"
+          ],
+          "relative_url": "/exercise/reading_pictographs_1",
+          "seconds_per_fast_problem": 6,
+          "sha1": "e74e0835924e26369848f0265e3d27418bb956fa",
+          "short_display_name": "Rd picto 1",
+          "summative": false,
+          "tags": [],
+          "v_position": -23
+        },
+        "target_context_name": "Reading pictographs 1",
+        "user": "http://facebookid.khanacademy.org/100000099552293"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T04:02:59Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Prime factorization",
+          "h_position": 11,
+          "ka_url": "http://www.khanacademy.org/exercise/prime_factorization",
+          "kind": "Exercise",
+          "live": true,
+          "name": "prime_factorization",
+          "prerequisites": [
+            "prime_numbers",
+            "composite_numbers"
+          ],
+          "relative_url": "/exercise/prime_factorization",
+          "seconds_per_fast_problem": 7,
+          "sha1": "78acacd7b13e34d3c1b56ef31591abad808c085a",
+          "short_display_name": "Prime Fac.",
+          "summative": false,
+          "tags": [],
+          "v_position": -10
+        },
+        "target_context_name": "Prime factorization",
+        "user": "http://facebookid.khanacademy.org/100001510982242"
+      },
+      {
+        "badge_name": "nicetimedproblembadge",
+        "date": "2012-04-18T04:20:32Z",
+        "kind": "UserBadge",
+        "points_earned": 100,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Number line",
+          "h_position": 0,
+          "ka_url": "http://www.khanacademy.org/exercise/number_line",
+          "kind": "Exercise",
+          "live": true,
+          "name": "number_line",
+          "prerequisites": [],
+          "relative_url": "/exercise/number_line",
+          "seconds_per_fast_problem": 6,
+          "sha1": "379f7892adc1977cdff1e2d4844e1a02a2b166c7",
+          "short_display_name": "# line",
+          "summative": false,
+          "tags": [],
+          "v_position": 4
+        },
+        "target_context_name": "Number line",
+        "user": "spencerricchio66@yahoo.com"
+      }
+    ]
+  },
+  {
+    "badge_category": 0,
+    "description": "Inspired 15 Minutes",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "powerfifteenminutesbadge",
+    "points": 0,
+    "safe_extended_description": "Correctly answer 10 problems and watch 10 minutes of video in 15 minutes"
+  },
+  {
+    "badge_category": 1,
+    "description": "Power Hour",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "powerhourbadge",
+    "points": 0,
+    "safe_extended_description": "Correctly answer 90 problems and watch 15 minutes of video in 1 hour"
+  },
+  {
+    "badge_category": 0,
+    "description": "Express Yourself",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "profilecustomizationbadge",
+    "points": 0,
+    "safe_extended_description": "Customize your profile avatar and fill up your display case."
+  },
+  {
+    "badge_category": 0,
+    "description": "Persistence",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "recoverybadge",
+    "points": 0,
+    "safe_extended_description": "Answer a problem correctly after having some trouble with a few problems and sticking with the skill.",
+    "user_badges": [
+      {
+        "badge_name": "recoverybadge",
+        "date": "2012-04-18T02:15:23Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Slope of a line",
+          "h_position": 35,
+          "ka_url": "http://www.khanacademy.org/exercise/slope_of_a_line",
+          "kind": "Exercise",
+          "live": true,
+          "name": "slope_of_a_line",
+          "prerequisites": [
+            "interpreting_linear_equations"
+          ],
+          "relative_url": "/exercise/slope_of_a_line",
+          "seconds_per_fast_problem": 9,
+          "sha1": "44ef038989229d9e4361596424870a0d7c4c69f0",
+          "short_display_name": "Line slope",
+          "summative": false,
+          "tags": [],
+          "v_position": 6
+        },
+        "target_context_name": "Slope of a line",
+        "user": "http://facebookid.khanacademy.org/727809178"
+      }
+    ]
+  },
+  {
+    "badge_category": 1,
+    "description": "Sticktoitiveness",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "resurrectionbadge",
+    "points": 0,
+    "safe_extended_description": "Answer a problem correctly after having some trouble with many problems and sticking with the skill.",
+    "user_badges": [
+      {
+        "badge_name": "resurrectionbadge",
+        "date": "2012-04-18T01:40:11Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Writing proportions",
+          "h_position": 29,
+          "ka_url": "http://www.khanacademy.org/exercise/writing_proportions",
+          "kind": "Exercise",
+          "live": true,
+          "name": "writing_proportions",
+          "prerequisites": [
+            "expressing_ratios_as_fractions"
+          ],
+          "relative_url": "/exercise/writing_proportions",
+          "seconds_per_fast_problem": 9,
+          "sha1": "bf082eae57b25fcf71a5251c05ede7a8e8e493e7",
+          "short_display_name": "Writ Propor",
+          "summative": false,
+          "tags": [],
+          "v_position": -10
+        },
+        "target_context_name": "Writing proportions",
+        "user": "silviar80411@hotmail.com"
+      },
+      {
+        "badge_name": "resurrectionbadge",
+        "date": "2012-04-18T02:21:54Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Writing proportions",
+          "h_position": 29,
+          "ka_url": "http://www.khanacademy.org/exercise/writing_proportions",
+          "kind": "Exercise",
+          "live": true,
+          "name": "writing_proportions",
+          "prerequisites": [
+            "expressing_ratios_as_fractions"
+          ],
+          "relative_url": "/exercise/writing_proportions",
+          "seconds_per_fast_problem": 9,
+          "sha1": "bf082eae57b25fcf71a5251c05ede7a8e8e493e7",
+          "short_display_name": "Writ Propor",
+          "summative": false,
+          "tags": [],
+          "v_position": -10
+        },
+        "target_context_name": "Writing proportions",
+        "user": "dgoodman808"
+      }
+    ]
+  },
+  {
+    "badge_category": 2,
+    "description": "Ridiculous Listener",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/earth-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/earth-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/earth-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/earth-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "ridiculousplaylisttimebadge",
+    "points": 0,
+    "safe_extended_description": "Watch 4 hours of video in a single topic",
+    "user_badges": [
+      {
+        "badge_name": "ridiculousplaylisttimebadge",
+        "date": "2012-04-18T02:24:50Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": "Solving linear equations",
+        "user": "14kbennett@vianney.com"
+      }
+    ]
+  },
+  {
+    "badge_category": 1,
+    "description": "Ridiculous Streak",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "ridiculousstreakbadge",
+    "points": 0,
+    "safe_extended_description": "Correctly answer 80 problems in a row in a single skill",
+    "user_badges": [
+      {
+        "badge_name": "ridiculousstreakbadge",
+        "date": "2012-04-18T04:09:05Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-10-20T18:49:27Z",
+          "description": null,
+          "display_name": "Telling time 0.5",
+          "h_position": 1,
+          "ka_url": "http://www.khanacademy.org/exercise/telling_time_0.5",
+          "kind": "Exercise",
+          "live": true,
+          "name": "telling_time_0.5",
+          "prerequisites": [],
+          "relative_url": "/exercise/telling_time_0.5",
+          "seconds_per_fast_problem": 6,
+          "sha1": "715dd43f91126b11aa6c2ceefb6f46266234e260",
+          "short_display_name": "Tell time",
+          "summative": false,
+          "tags": [],
+          "v_position": 11
+        },
+        "target_context_name": "Telling time 0.5",
+        "user": "http://nouserid.khanacademy.org/3d01add77d5e96b0a91c3b314b23596f"
+      }
+    ]
+  },
+  {
+    "badge_category": 2,
+    "description": "Sub-light Speed",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/earth-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/earth-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/earth-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/earth-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "ridiculoustimedproblembadge",
+    "points": 1500,
+    "safe_extended_description": "Quickly & correctly answer 42 skill problems in a row (time limit depends on skill difficulty)"
+  },
+  {
+    "badge_category": 0,
+    "description": "Perseverance",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "soclosebadge",
+    "points": 0,
+    "safe_extended_description": "Answer more than 30 problems mostly correctly in a skill before becoming proficient",
+    "user_badges": [
+      {
+        "badge_name": "soclosebadge",
+        "date": "2012-04-18T01:26:53Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [
+            "multiplication_2"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Multiplication 3",
+          "h_position": 7,
+          "ka_url": "http://www.khanacademy.org/exercise/multiplication_3",
+          "kind": "Exercise",
+          "live": true,
+          "name": "multiplication_3",
+          "prerequisites": [
+            "multiplication_2"
+          ],
+          "relative_url": "/exercise/multiplication_3",
+          "seconds_per_fast_problem": 17,
+          "sha1": "fd05a98bcae0c5bbec15f267734e9c86a51770ba",
+          "short_display_name": "Mult. 3",
+          "summative": false,
+          "tags": [],
+          "v_position": -5
+        },
+        "target_context_name": "Multiplication 3",
+        "user": "http://nouserid.khanacademy.org/c1556a6d7c037c2194a3cd1dd59decc7"
+      },
+      {
+        "badge_name": "soclosebadge",
+        "date": "2012-04-18T01:37:55Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Adding and subtracting negative numbers",
+          "h_position": 6,
+          "ka_url": "http://www.khanacademy.org/exercise/adding_and_subtracting_negative_numbers",
+          "kind": "Exercise",
+          "live": true,
+          "name": "adding_and_subtracting_negative_numbers",
+          "prerequisites": [
+            "adding_negative_numbers"
+          ],
+          "relative_url": "/exercise/adding_and_subtracting_negative_numbers",
+          "seconds_per_fast_problem": 5,
+          "sha1": "ac8567d22254839f3c9c392aaa70521e7f317e6b",
+          "short_display_name": "+- Neg. #s",
+          "summative": false,
+          "tags": [],
+          "v_position": 1
+        },
+        "target_context_name": "Adding and subtracting negative numbers",
+        "user": "urwin.brianne@apps.sthenryschools.org"
+      },
+      {
+        "badge_name": "soclosebadge",
+        "date": "2012-04-18T01:49:43Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [
+            "angles_1"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Angles 2",
+          "h_position": 28,
+          "ka_url": "http://www.khanacademy.org/exercise/angles_2",
+          "kind": "Exercise",
+          "live": true,
+          "name": "angles_2",
+          "prerequisites": [
+            "angles_1"
+          ],
+          "relative_url": "/exercise/angles_2",
+          "seconds_per_fast_problem": 12,
+          "sha1": "d6cf61c9b146f3acd7e1a137d24518a193c7c4a2",
+          "short_display_name": "Angles 2",
+          "summative": false,
+          "tags": [],
+          "v_position": -19
+        },
+        "target_context_name": "Angles 2",
+        "user": "elizabethyclark"
+      },
+      {
+        "badge_name": "soclosebadge",
+        "date": "2012-04-18T02:15:44Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [
+            "angles_1"
+          ],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Angles 2",
+          "h_position": 28,
+          "ka_url": "http://www.khanacademy.org/exercise/angles_2",
+          "kind": "Exercise",
+          "live": true,
+          "name": "angles_2",
+          "prerequisites": [
+            "angles_1"
+          ],
+          "relative_url": "/exercise/angles_2",
+          "seconds_per_fast_problem": 12,
+          "sha1": "d6cf61c9b146f3acd7e1a137d24518a193c7c4a2",
+          "short_display_name": "Angles 2",
+          "summative": false,
+          "tags": [],
+          "v_position": -19
+        },
+        "target_context_name": "Angles 2",
+        "user": "http://nouserid.khanacademy.org/01f879980425247d79da904715ba6bcd"
+      },
+      {
+        "badge_name": "soclosebadge",
+        "date": "2012-04-18T02:17:45Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [
+            "corresponding_angles",
+            "same_side_exterior_angles",
+            "same_side_interior_angles",
+            "alternate_interior_angles",
+            "vertical_angles",
+            "alternate_exterior_angles"
+          ],
+          "creation_date": "2011-09-26T18:43:26Z",
+          "description": null,
+          "display_name": "Parallel lines 1",
+          "h_position": 30,
+          "ka_url": "http://www.khanacademy.org/exercise/parallel_lines_1",
+          "kind": "Exercise",
+          "live": true,
+          "name": "parallel_lines_1",
+          "prerequisites": [
+            "same_side_exterior_angles",
+            "same_side_interior_angles",
+            "alternate_exterior_angles",
+            "alternate_interior_angles",
+            "corresponding_angles",
+            "vertical_angles"
+          ],
+          "relative_url": "/exercise/parallel_lines_1",
+          "seconds_per_fast_problem": 5,
+          "sha1": "c516aea1ebc31168bd5c52bae75ab7de1ddb18c4",
+          "short_display_name": "|| angles",
+          "summative": false,
+          "tags": [],
+          "v_position": -19
+        },
+        "target_context_name": "Parallel lines 1",
+        "user": "http://nouserid.khanacademy.org/ad99a798ea95274641cc429a25ab94ea"
+      },
+      {
+        "badge_name": "soclosebadge",
+        "date": "2012-04-18T02:48:47Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2012-04-04T02:06:44Z",
+          "description": null,
+          "display_name": "Composite numbers",
+          "h_position": 10,
+          "ka_url": "http://www.khanacademy.org/exercise/composite_numbers",
+          "kind": "Exercise",
+          "live": true,
+          "name": "composite_numbers",
+          "prerequisites": [
+            "division_2"
+          ],
+          "relative_url": "/exercise/composite_numbers",
+          "seconds_per_fast_problem": 5,
+          "sha1": "3bddd3f03312421c160e44cd6da8b4541d33ed6f",
+          "short_display_name": "Composite #",
+          "summative": false,
+          "tags": [],
+          "v_position": -9
+        },
+        "target_context_name": "Composite numbers",
+        "user": "http://facebookid.khanacademy.org/100000614498916"
+      },
+      {
+        "badge_name": "soclosebadge",
+        "date": "2012-04-18T02:56:35Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Comparing absolute values",
+          "h_position": 8,
+          "ka_url": "http://www.khanacademy.org/exercise/comparing_absolute_values",
+          "kind": "Exercise",
+          "live": true,
+          "name": "comparing_absolute_values",
+          "prerequisites": [
+            "absolute_value"
+          ],
+          "relative_url": "/exercise/comparing_absolute_values",
+          "seconds_per_fast_problem": 4,
+          "sha1": "77b75dd55f1675e2cc95409488797f3e35a59ea9",
+          "short_display_name": "Cmp abs val",
+          "summative": false,
+          "tags": [],
+          "v_position": -1
+        },
+        "target_context_name": "Comparing absolute values",
+        "user": "http://nouserid.khanacademy.org/caf382e7cbb04ef1c16d2910bee70c9f"
+      },
+      {
+        "badge_name": "soclosebadge",
+        "date": "2012-04-18T03:10:25Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Comparing absolute values",
+          "h_position": 8,
+          "ka_url": "http://www.khanacademy.org/exercise/comparing_absolute_values",
+          "kind": "Exercise",
+          "live": true,
+          "name": "comparing_absolute_values",
+          "prerequisites": [
+            "absolute_value"
+          ],
+          "relative_url": "/exercise/comparing_absolute_values",
+          "seconds_per_fast_problem": 4,
+          "sha1": "77b75dd55f1675e2cc95409488797f3e35a59ea9",
+          "short_display_name": "Cmp abs val",
+          "summative": false,
+          "tags": [],
+          "v_position": -1
+        },
+        "target_context_name": "Comparing absolute values",
+        "user": "vmartinez@wusd.org"
+      },
+      {
+        "badge_name": "soclosebadge",
+        "date": "2012-04-18T04:09:57Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2012-01-13T07:54:34Z",
+          "description": null,
+          "display_name": "Telling time 2",
+          "h_position": 3,
+          "ka_url": "http://www.khanacademy.org/exercise/telling_time_2",
+          "kind": "Exercise",
+          "live": true,
+          "name": "telling_time_2",
+          "prerequisites": [
+            "telling_time"
+          ],
+          "relative_url": "/exercise/telling_time_2",
+          "seconds_per_fast_problem": 7,
+          "sha1": "e41980bd512b5b6182926c631e213eecfc96ad27",
+          "short_display_name": "Tell time 2",
+          "summative": false,
+          "tags": [],
+          "v_position": 11
+        },
+        "target_context_name": "Telling time 2",
+        "user": "Andrea.Vargas@oxfordchampions.com"
+      },
+      {
+        "badge_name": "soclosebadge",
+        "date": "2012-04-18T04:11:18Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Mean median and mode",
+          "h_position": 18,
+          "ka_url": "http://www.khanacademy.org/exercise/mean_median_and_mode",
+          "kind": "Exercise",
+          "live": true,
+          "name": "mean_median_and_mode",
+          "prerequisites": [
+            "exploring_mean_and_median"
+          ],
+          "relative_url": "/exercise/mean_median_and_mode",
+          "seconds_per_fast_problem": 8,
+          "sha1": "c76aca4fbd20f79995f093bd633a3bce4fc1749f",
+          "short_display_name": "M/M/M",
+          "summative": false,
+          "tags": [],
+          "v_position": -23
+        },
+        "target_context_name": "Mean median and mode",
+        "user": "mayerly.s.16363@palo-alto.edu"
+      }
+    ]
+  },
+  {
+    "badge_category": 4,
+    "description": "Tesla",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/eclipse-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/eclipse-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/eclipse-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/eclipse-small.png"
+    },
+    "is_owned": false,
+    "is_retired": false,
+    "name": "tenmillionairebadge",
+    "points": 0,
+    "safe_extended_description": "???"
+  },
+  {
+    "badge_category": 0,
+    "description": "Ten to the Fourth",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "tenthousandairebadge",
+    "points": 0,
+    "safe_extended_description": "Earn 10,000 energy points",
+    "user_badges": [
+      {
+        "badge_name": "tenthousandairebadge",
+        "date": "2012-04-18T01:45:11Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/ea98d75faa9520f3d9961169de26520d"
+      },
+      {
+        "badge_name": "tenthousandairebadge",
+        "date": "2012-04-18T02:34:26Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "julia.juarez@oxfordchampions.com"
+      },
+      {
+        "badge_name": "tenthousandairebadge",
+        "date": "2012-04-18T03:27:45Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "pierce.miller@whcs.org"
+      }
+    ]
+  },
+  {
+    "badge_category": 1,
+    "description": "Atomic Clockwork",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "thirtydayconsecutiveactivitybadge",
+    "points": 0,
+    "safe_extended_description": "Watch part of any video or work on any skill each day for 30 consecutive days"
+  },
+  {
+    "badge_category": 5,
+    "description": "Basic geometry",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/basic-geometry-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/basic-geometry-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/basic-geometry-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_10MlOxExUBBQNHgviilzlgi9KIpYSd7NQ2Z1todb",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Basic geometry"
+  },
+  {
+    "badge_category": 5,
+    "description": "Calculus",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/calculus-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/calculus-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/calculus-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_1fQH4dvaiy4S-o36n4_b-cyACZVHNGlb_JDOHTSk",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Calculus",
+    "user_badges": [
+      {
+        "badge_name": "topic_exercise_1fQH4dvaiy4S-o36n4_b-cyACZVHNGlb_JDOHTSk",
+        "date": "2012-04-18T03:39:59Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "fumero.damian"
+      }
+    ]
+  },
+  {
+    "badge_category": 5,
+    "description": "Fractions",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/fractions-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/fractions-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/fractions-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_6yXN4Yvo--fg2MGyd3mzG3MLP9ktdWa1iftIU9Ed",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Fractions"
+  },
+  {
+    "badge_category": 5,
+    "description": "Decimals",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/decimals-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/decimals-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/decimals-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_C0kfQ3mZSE_zBNfxY7EH4Kdwu_HaHM_oiR1BlAyW",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Decimals"
+  },
+  {
+    "badge_category": 5,
+    "description": "Percents",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/percents-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/percents-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/percents-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_E77BgovF2uX8uyzY5dIiY8ZdVXzd4Bw1WYITXvmn",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Percents"
+  },
+  {
+    "badge_category": 5,
+    "description": "Functions",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/functions-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/functions-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/functions-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_K5CAA_lSb0gdqtmMngO1hGkaLRdDAWa4JaXblBhJ",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Functions"
+  },
+  {
+    "badge_category": 5,
+    "description": "Equation of a line",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/equation-of-a-line-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/equation-of-a-line-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/equation-of-a-line-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_K62pPNvRVUW0wCVsQWqSSZDj2SUVisbA4AMNuqJe",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Equation of a line"
+  },
+  {
+    "badge_category": 5,
+    "description": "Addition and subtraction",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/addition-and-subtraction-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/addition-and-subtraction-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/addition-and-subtraction-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_KHDySQBco4Z5ChI1U4UpyHU954YJ8QahCFcDsImA",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Addition and subtraction",
+    "user_badges": [
+      {
+        "badge_name": "topic_exercise_KHDySQBco4Z5ChI1U4UpyHU954YJ8QahCFcDsImA",
+        "date": "2012-04-18T01:53:42Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/01f879980425247d79da904715ba6bcd"
+      },
+      {
+        "badge_name": "topic_exercise_KHDySQBco4Z5ChI1U4UpyHU954YJ8QahCFcDsImA",
+        "date": "2012-04-18T02:08:02Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "tlangton@brinleykahn.com"
+      }
+    ]
+  },
+  {
+    "badge_category": 5,
+    "description": "Conic sections",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/conic-sections-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/conic-sections-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/conic-sections-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_KwnHF4txdhqHOdS868IJJuOdEkhn0CeYJxtMAyuu",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Conic sections"
+  },
+  {
+    "badge_category": 5,
+    "description": "Pythagorean theorem",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/pythagorean-theorem-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/pythagorean-theorem-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/pythagorean-theorem-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_LG71-yDGhJGaSWe3sQ99vsMq92PyzTsZY7AyG5Fh",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Pythagorean theorem"
+  },
+  {
+    "badge_category": 5,
+    "description": "Rates and ratios",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/rates-and-ratios-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/rates-and-ratios-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/rates-and-ratios-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_LjZH9OiVLkOOeF4QDuyKlI1QzI8U9dRelqF81GWH",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Rates and ratios"
+  },
+  {
+    "badge_category": 5,
+    "description": "Polynomials and quadratics",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/polynomials-and-quadratics-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/polynomials-and-quadratics-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/polynomials-and-quadratics-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_N5N8pHbWmakbB3XygvnJivtfHLFMPt4NE2PQgnsw",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Polynomials and quadratics"
+  },
+  {
+    "badge_category": 5,
+    "description": "Probability",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/probability-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/probability-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/probability-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_XQlJ7xotRQg3QeW9VCiED2Jt7T7VmIkAoQP03zq9",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Probability"
+  },
+  {
+    "badge_category": 5,
+    "description": "Order of operations",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/order-of-operations-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/order-of-operations-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/order-of-operations-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_XrktPu74_wbKu_89ocp_AJFmuV0pYodt0QnFR1Ab",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Order of operations"
+  },
+  {
+    "badge_category": 5,
+    "description": "Solving linear equations and inequalities",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/solving-linear-equations-and-inequalities-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/solving-linear-equations-and-inequalities-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/solving-linear-equations-and-inequalities-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_ZRz9FP3Oc1JYP1M_xLUezZcfX1bM8F63rnN4syNu",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Solving linear equations and inequalities"
+  },
+  {
+    "badge_category": 5,
+    "description": "Statistics",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/statistics-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/statistics-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/statistics-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_a11EYuB8JELuSLuK70DfUGQlRMEKtVAxQdu1UtVK",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Statistics",
+    "user_badges": [
+      {
+        "badge_name": "topic_exercise_a11EYuB8JELuSLuK70DfUGQlRMEKtVAxQdu1UtVK",
+        "date": "2012-04-18T04:07:39Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://facebookid.khanacademy.org/1183173252"
+      }
+    ]
+  },
+  {
+    "badge_category": 5,
+    "description": "Exponents and Radicals",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/exponents-and-radicals-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/exponents-and-radicals-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/exponents-and-radicals-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_btJEpdEmmhhYt0pelz-5BBCZXl4ft3nGTawvnrPq",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Exponents and Radicals"
+  },
+  {
+    "badge_category": 5,
+    "description": "Absolute value",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/absolute-value-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/absolute-value-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/absolute-value-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_dCbo4FwcSVKyciaY4Ok6F0a-FtFxcOcAKOILdb6q",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Absolute value",
+    "user_badges": [
+      {
+        "badge_name": "topic_exercise_dCbo4FwcSVKyciaY4Ok6F0a-FtFxcOcAKOILdb6q",
+        "date": "2012-04-18T03:39:59Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "fumero.damian"
+      }
+    ]
+  },
+  {
+    "badge_category": 5,
+    "description": "Trigonometry",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/trigonometry-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/trigonometry-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/trigonometry-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_i9cU2Edaq1iebOqo9moc9Nmd7pd8k9yg60m4gSMh",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Trigonometry"
+  },
+  {
+    "badge_category": 5,
+    "description": "Complex numbers",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/complex-numbers-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/complex-numbers-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/complex-numbers-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_iYzaSYnmicOVqDRgZ3-F6uu7_YRWkGarVgmzfjlP",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Complex numbers",
+    "user_badges": [
+      {
+        "badge_name": "topic_exercise_iYzaSYnmicOVqDRgZ3-F6uu7_YRWkGarVgmzfjlP",
+        "date": "2012-04-18T02:50:06Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://facebookid.khanacademy.org/674347547"
+      }
+    ]
+  },
+  {
+    "badge_category": 5,
+    "description": "Systems of equations and inequalities",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/systems-of-equations-and-inequalities-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/systems-of-equations-and-inequalities-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/systems-of-equations-and-inequalities-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_iuUnywliLBQQ_Dibzrrsruwox-Wp7915SgZ2mBk6",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Systems of equations and inequalities"
+  },
+  {
+    "badge_category": 5,
+    "description": "Multiplication and division",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/multiplication-and-division-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/multiplication-and-division-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/multiplication-and-division-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_jjNw_P7DF9IrnyNAI0qQuJOPP9EygH7UKatgWVem",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Multiplication and division"
+  },
+  {
+    "badge_category": 5,
+    "description": "Triangles",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/triangles-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/triangles-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/triangles-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_poP8_dlXseXQhxTvqjWcLxX-MbJ4LI2ezxgFTtFT",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Triangles"
+  },
+  {
+    "badge_category": 5,
+    "description": "Factors and multiples",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/factors-and-multiples-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/factors-and-multiples-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/factors-and-multiples-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_sKjw8V-WXbRYuuomASZQ5frgIw26JwZwK9yjuMdv",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Factors and multiples",
+    "user_badges": [
+      {
+        "badge_name": "topic_exercise_sKjw8V-WXbRYuuomASZQ5frgIw26JwZwK9yjuMdv",
+        "date": "2012-04-18T01:16:50Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://facebookid.khanacademy.org/100001640316335"
+      }
+    ]
+  },
+  {
+    "badge_category": 5,
+    "description": "Linear equations and inequalities",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/linear-equations-and-inequalities-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/linear-equations-and-inequalities-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/linear-equations-and-inequalities-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_st2s3FGaM9_CDZZFCq1BvO8SPXzr8HZi-Je63cKP",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Linear equations and inequalities"
+  },
+  {
+    "badge_category": 5,
+    "description": "Vectors",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/vectors-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/vectors-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/vectors-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_t4B-w8_x_OAaX1N6RNH_7Pessb4vRhqDR-jge3sr",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Vectors"
+  },
+  {
+    "badge_category": 5,
+    "description": "Telling time",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/telling-time-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/telling-time-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/telling-time-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_uE6pzc4wW0sC9WfpeFF493N6oi7w_e4pZ-alrrG6",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Telling time",
+    "user_badges": [
+      {
+        "badge_name": "topic_exercise_uE6pzc4wW0sC9WfpeFF493N6oi7w_e4pZ-alrrG6",
+        "date": "2012-04-18T01:30:22Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "cw.iaffolter@students.srvusd.net"
+      },
+      {
+        "badge_name": "topic_exercise_uE6pzc4wW0sC9WfpeFF493N6oi7w_e4pZ-alrrG6",
+        "date": "2012-04-18T01:53:42Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://nouserid.khanacademy.org/01f879980425247d79da904715ba6bcd"
+      },
+      {
+        "badge_name": "topic_exercise_uE6pzc4wW0sC9WfpeFF493N6oi7w_e4pZ-alrrG6",
+        "date": "2012-04-18T02:18:51Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "http://facebookid.khanacademy.org/100000900817913"
+      },
+      {
+        "badge_name": "topic_exercise_uE6pzc4wW0sC9WfpeFF493N6oi7w_e4pZ-alrrG6",
+        "date": "2012-04-18T03:53:30Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "megangreenwald@students.talmudtorah.com"
+      }
+    ]
+  },
+  {
+    "badge_category": 5,
+    "description": "Angles",
+    "hide_context": false,
+    "icon_src": "/images/power-mode/badges/angles-40x40.png?6",
+    "icons": {
+      "compact": "/images/power-mode/badges/angles-60x60.png?6",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/power-mode/badges/angles-40x40.png?6"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "topic_exercise_zLUoyCRdhg6AGMXI0nbaivw4kCDcw5idgn5TQmn2",
+    "points": 0,
+    "safe_extended_description": "Achieve proficiency in all skills in Angles"
+  },
+  {
+    "badge_category": 5,
+    "description": "Master of Algebra",
+    "hide_context": false,
+    "icon_src": "/images/badges/Algebra.png",
+    "icons": {
+      "compact": "/images/badges/Algebra.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/badges/Algebra.png"
+    },
+    "is_owned": true,
+    "is_retired": true,
+    "name": "toplevelalgebraistbadge",
+    "points": 10000,
+    "safe_extended_description": "Complete the Algebra challenge"
+  },
+  {
+    "badge_category": 5,
+    "description": "Master of Arithmetic",
+    "hide_context": false,
+    "icon_src": "/images/badges/Arithmetic.png",
+    "icons": {
+      "compact": "/images/badges/Arithmetic.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/badges/Arithmetic.png"
+    },
+    "is_owned": true,
+    "is_retired": true,
+    "name": "toplevelarithmeticianbadge",
+    "points": 10000,
+    "safe_extended_description": "Complete the Arithmetic challenge"
+  },
+  {
+    "badge_category": 5,
+    "description": "Master of Pre-algebra",
+    "hide_context": false,
+    "icon_src": "/images/badges/Pre-Algebra.png",
+    "icons": {
+      "compact": "/images/badges/Pre-Algebra.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/badges/Pre-Algebra.png"
+    },
+    "is_owned": true,
+    "is_retired": true,
+    "name": "toplevelprealgebraistbadge",
+    "points": 10000,
+    "safe_extended_description": "Complete the Pre-algebra challenge"
+  },
+  {
+    "badge_category": 5,
+    "description": "Master of Trigonometry",
+    "hide_context": false,
+    "icon_src": "/images/badges/Geometry-Trig.png",
+    "icons": {
+      "compact": "/images/badges/Geometry-Trig.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/master-challenge-blue-medium.png",
+      "small": "/images/badges/Geometry-Trig.png"
+    },
+    "is_owned": true,
+    "is_retired": true,
+    "name": "topleveltrigonometricianbadge",
+    "points": 10000,
+    "safe_extended_description": "Complete the Trigonometry challenge"
+  },
+  {
+    "badge_category": 1,
+    "description": "Tenacity",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "undeterrablebadge",
+    "points": 0,
+    "safe_extended_description": "Answer more than 50 problems mostly correctly in a skill before becoming proficient",
+    "user_badges": [
+      {
+        "badge_name": "undeterrablebadge",
+        "date": "2012-04-18T02:07:43Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Arithmetic word problems 2",
+          "h_position": 8,
+          "ka_url": "http://www.khanacademy.org/exercise/arithmetic_word_problems_2",
+          "kind": "Exercise",
+          "live": true,
+          "name": "arithmetic_word_problems_2",
+          "prerequisites": [
+            "multiplication_2",
+            "division_1"
+          ],
+          "relative_url": "/exercise/arithmetic_word_problems_2",
+          "seconds_per_fast_problem": 7,
+          "sha1": "57fe66b0484825d2ce110dcf189953d3d904236f",
+          "short_display_name": "Arith WP2",
+          "summative": false,
+          "tags": [],
+          "v_position": -4
+        },
+        "target_context_name": "Arithmetic word problems 2",
+        "user": "larenj5@msn.com"
+      },
+      {
+        "badge_name": "undeterrablebadge",
+        "date": "2012-04-18T04:21:12Z",
+        "kind": "UserBadge",
+        "points_earned": 0,
+        "target_context": {
+          "covers": [],
+          "creation_date": "2011-08-29T00:00:00Z",
+          "description": null,
+          "display_name": "Ratio word problems",
+          "h_position": 29,
+          "ka_url": "http://www.khanacademy.org/exercise/ratio_word_problems",
+          "kind": "Exercise",
+          "live": true,
+          "name": "ratio_word_problems",
+          "prerequisites": [
+            "expressing_ratios_as_fractions"
+          ],
+          "relative_url": "/exercise/ratio_word_problems",
+          "seconds_per_fast_problem": 11,
+          "sha1": "00e4f09372a2b2a7b31959edc2460071448e7f49",
+          "short_display_name": "Ratio WP",
+          "summative": false,
+          "tags": [],
+          "v_position": -8
+        },
+        "target_context_name": "Ratio word problems",
+        "user": "hernanadezlexandro32"
+      }
+    ]
+  },
+  {
+    "badge_category": 2,
+    "description": "Work Horse",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/earth-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/earth-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/earth-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/earth-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "workhorsebadge",
+    "points": 14000,
+    "safe_extended_description": "Achieve proficiency in any 50 skills",
+    "user_badges": [
+      {
+        "badge_name": "workhorsebadge",
+        "date": "2012-04-18T01:01:41Z",
+        "kind": "UserBadge",
+        "points_earned": 14000,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "anujppatel4"
+      },
+      {
+        "badge_name": "workhorsebadge",
+        "date": "2012-04-18T01:33:16Z",
+        "kind": "UserBadge",
+        "points_earned": 14000,
+        "target_context": null,
+        "target_context_name": null,
+        "user": "nickt23"
+      }
+    ]
+  },
+  {
+    "badge_category": 0,
+    "description": "Cypress",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/meteorite-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/meteorite-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/meteorite-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/meteorite-small.png"
+    },
+    "is_owned": true,
+    "is_retired": false,
+    "name": "yearonebadge",
+    "points": 0,
+    "safe_extended_description": "Remain a member of the Khan Academy for 1 year"
+  },
+  {
+    "badge_category": 2,
+    "description": "Sequoia",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/earth-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/earth-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/earth-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/earth-small.png"
+    },
+    "is_owned": false,
+    "is_retired": false,
+    "name": "yearthreebadge",
+    "points": 0,
+    "safe_extended_description": "Remain a member of the Khan Academy for 3 years"
+  },
+  {
+    "badge_category": 1,
+    "description": "Redwood",
+    "hide_context": false,
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "icons": {
+      "compact": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+      "medium": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+      "small": "http://khan-academy.appspot.com/images/badges/moon-small.png"
+    },
+    "is_owned": false,
+    "is_retired": false,
+    "name": "yeartwobadge",
+    "points": 0,
+    "safe_extended_description": "Remain a member of the Khan Academy for 2 years"
+  }
+]

@@ -1,0 +1,8 @@
+    <div id="khan-connect" style="margin-bottom:15px">
+    {% if not khan_user_active %}
+    <div id="authenticate_alert" class="alert alert-error">
+    <p>You haven't connected with the Khan Academy site.</p>
+    <a href="/oauth_get_request_token">Connect With the Khan Academy</a>
+    </div>
+    {% endif %}
+    </div>

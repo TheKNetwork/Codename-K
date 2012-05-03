@@ -1,0 +1,21 @@
+{% extends "banner_base.html" %}
+
+{% load i18n %}
+{% load ifsetting_tag %}
+
+{% block head_title %}{% trans "Welcome" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block banner %}
+    <h1>{% trans "The K-Network" %}</h1>
+    <p>
+        A Not-for-Profit Peer to Peer Network<br />
+        Teaching, Learning and Credentialing<br />
+        Give help. Get help. Now.<br />
+    </p>
+
+    <p>
+        <a class="btn btn-primary btn-large" href="mailto:info@theknetwork.org">Contact Us</a> 
+    </p>
+{% endblock %}
