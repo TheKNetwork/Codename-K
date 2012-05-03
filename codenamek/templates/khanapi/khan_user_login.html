@@ -1,8 +1,0 @@
-    <div id="khan-connect">
-    {% if not khan_user_active %}
-    <div id="authenticate_alert" class="alert alert-warning">
-    <p>You haven't connected with the Khan Academy site. API methods that require authentication will return <strong>401 Unauthorized</strong>.</p>
-    <a class="btn btn-success" href="/oauth_get_request_token">Connect With the Khan Academy</a>
-    </div>
-    {% endif %}
-    </div>

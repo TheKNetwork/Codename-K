@@ -1,0 +1,15 @@
+{% extends "default_layout.html" %}{% load i18n %}
+{% load i18n %}
+
+{% block content %}
+    {% if account %}
+        <h2>Your account is now active!</h2>
+        <a href="/accounts/login/?next=/">Login</a>
+        <form action="." method="post" accept-charset="utf-8">{% csrf_token %}
+            {{ form.as_p  }}
+            <p><input type="submit" value="{% trans "Save" %}"></p>
+        </form>
+    {% endif %}
+
+        
+{% endblock %}

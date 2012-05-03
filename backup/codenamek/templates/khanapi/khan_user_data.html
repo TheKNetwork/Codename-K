@@ -1,0 +1,81 @@
+{% if not khan_user_active %}
+    <h3><small>You are currently not associated with a Khan User Id</small></h3>
+{% endif %}
+
+{% if khan_user_active %}
+    <h3><small>Khan User Data for &nbsp;</small>{{khan_user.nickname}}</h3>
+    <table class="table table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Developer</td>
+                <td>{{ khan_user.developer }}</td>
+            </tr>
+            <tr>
+                <td>Proficient Exercises</td>
+                <td>
+                    {% for ex in khan_user.all_proficient_exercises %}
+                    <ul>
+                        <li>{{ ex }}</li>
+                    </ul>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>Badge Counts</td>
+                <td>
+                    {% for bc in khan_user.badge_counts %}
+                    <ul>
+                        <li>{{ bc }}</li>
+                    </ul>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>Coaches</td>
+                <td>
+                    {% for coach in khan_user.coaches %}
+                    <ul>
+                        <li>{{ coach }}</li>
+                    </ul>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>Coworkers</td>
+                <td>
+                    {% for coworker in khan_user.coworkers %}
+                    <ul>
+                        <li>{{ coworker }}</li>
+                    </ul>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>Discussion Banned?</td>
+                <td>{{ khan_user.discussion_banned }}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ khan_user.email }}</td>
+            </tr>
+            <tr>
+                <td>Is a Facebook User?</td>
+                <td>{{ khan_user.is_facebook_user }}</td>
+            </tr>
+            <tr>
+                <td>Nickname</td>
+                <td>{{ khan_user.nickname }}</td>
+            </tr>
+            <tr>
+                <td>Total Video Seconds Watched</td>
+                <td>{{ khan_user.total_seconds_watched }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endif %}

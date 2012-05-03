@@ -1,0 +1,28 @@
+# project.txt is a pip requirements file which describes the distributions
+# required by your project to run.
+
+--requirement=base.txt
+
+# Put project-specific requirements here.
+# See http://pip-installer.org/requirement-format.html for more information.
+
+# for khan api calls
+# -- some of these are shared, but mainly they were
+# -- added for khan api calls.
+
+simplejson
+python-memcached
+oauth2
+oauth2client
+httplib2
+oauth
+
+south
+requests
+
+django_extensions
+django-socketio
+
+hiredis
+redis
+django-redis-cache

@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>{% block title %}Chat{% endblock %}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/chat.css">
+    
+    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 10px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <link href="{{STATIC_URL}}css/bootstrap-responsive.css" rel="stylesheet">
+    
+    {% block extra_css %}{% endblock %}
+    <script type="text/javascript" src="{{STATIC_URL}}js/jquery.min.js"></script>
+    <script>
+        var showForm = function() {
+            $('form').slideDown(function() {
+                $('form input[type="text"]').focus();
+            });
+        };
+    </script>
+    {% block extra_js %}{% endblock %}
+
+	<style>
+		ul {margin:0; padding:0; list-style-type:none;}
+	</style>
+</head>
+<body>
+    <div id="main">{% block main %}{% endblock %}</div>
+    {% block form %}{% endblock %}
+</body>
