@@ -1,0 +1,12 @@
+[
+  {
+    "category": 1,
+    "chart_icon_src": "http://khan-academy.appspot.com/images/badges/moon-small-chart.png",
+    "compact_icon_src": "http://khan-academy.appspot.com/images/badges/moon-60x60.png",
+    "description": "Moon badges are uncommon and represent an investment in learning.",
+    "icon_src": "http://khan-academy.appspot.com/images/badges/moon-small.png",
+    "large_icon_src": "http://khan-academy.appspot.com/images/badges/moon.png",
+    "medium_icon_src": "http://khan-academy.appspot.com/images/badges/moon-medium.png",
+    "type_label": "Moon"
+  }
+]

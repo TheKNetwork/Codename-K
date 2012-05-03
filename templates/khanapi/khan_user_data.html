@@ -1,0 +1,39 @@
+{% if not khan_user_active %}
+    <h6><small>You are currently not associated with a Khan User Id</small></h6>
+{% endif %}
+
+{% if khan_user_active %}
+    <h6>{{khan_user.nickname}}</h6>
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <td>Coaches</td>
+                <td>
+                    {% for coach in khan_user.coaches %}
+                    <ul>
+                        <li>{{ coach }}</li>
+                    </ul>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>Coworkers</td>
+                <td>
+                    {% for coworker in khan_user.coworkers %}
+                    <ul>
+                        <li>{{ coworker }}</li>
+                    </ul>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ khan_user.email }}</td>
+            </tr>
+            <tr>
+                <td>Total Video Seconds Watched</td>
+                <td>{{ khan_user.total_seconds_watched }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endif %}

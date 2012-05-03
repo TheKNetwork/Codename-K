@@ -1,0 +1,134 @@
+{% extends "site_base.html" %}
+
+{% block body %}
+
+<script type="text/javascript">
+	function refreshTeamsAndChallenges() {
+		$("#class-challenges").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenges');
+    	$("#class-congregation-groups").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/groups');
+	}
+</script>
+
+<div class="modal hide" id="createWhiteboardModal">
+    <form id="createWhiteboardForm"
+    action="/classroom/create_whiteboard"
+    method="post">
+
+        <div class="modal-header">
+            <button class="close" data-dismiss="modal">
+                ×
+            </button>
+            <h3>Create a new Live Session!</h3>
+        </div>
+        <div class="modal-body">
+
+            {% csrf_token %}
+            <input class="span3" id="id_whiteboard_title"
+            name="whiteboard_title"
+            type="text"
+            placeholder="Whiteboard Title"/>
+
+        </div>
+        <div class="modal-footer">
+            <a href="#" onclick="hideWhiteboardForm()" class="btn btn-medium">Cancel</a>
+            <input type="submit"
+            name="submit"
+            value="Let's GO!"
+            class="btn btn-primary btn-medium"/>
+        </div>
+    </form>
+</div>
+<script>
+    
+    $('#createWhiteboardModal').modal({
+        keyboard: true,
+        show: false
+    });
+    
+    function showWhiteboardForm() {
+        $('#createWhiteboardModal').modal('show');
+    }
+    
+    function hideWhiteboardForm() {
+        $('#createWhiteboardModal').modal('hide');
+    }
+</script>
+
+<div class="row-fluid">
+    <div class="span3" style="position: relative; top: -20px">
+
+        <div id="logo-large">
+            <img src="{{STATIC_URL}}img/logo-main.png"/>
+        </div>
+
+        <div class="well">
+            <ul class="nav nav-list">
+                <li class="nav-header">
+                    <h4>Active Real-time Sessions</h4>
+                </li>
+                {% for whiteboard in whiteboard_sessions %}
+                <li style="padding-left: 7px">
+                    <a href="/classroom/{{ whiteboard.id }}">{{ whiteboard.whiteboard_title }}</a>
+                </li>
+                {% endfor %}
+
+                <li class="nav-header">
+                    <h4><a data-toggle="modal" href="#"
+                    onclick="showWhiteboardForm()">Create a Session</a></h4>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="span9">
+        <div style="margin-bottom:13px">
+            <a href="/{{ user }}/homeroom"> <i class="icon-home"></i> Homeroom </a>
+            <span class="divider">/</span>
+            <i class="icon-book"></i>
+            {{ school_class }}
+        </div>
+
+        <h3>{{school}} - {{school_class}} </h3>
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#tab1" data-toggle="tab">Teams</a>
+            </li>
+            <li>
+                <a href="#tab2" data-toggle="tab">Challenges</a>
+            </li>
+        </ul>
+        <div id="congregation-tabs" class="tab-content">
+            <div class="tab-pane active in" id="tab1">
+                <div id="class-congregation-groups"></div>
+            </div>
+            <div class="tab-pane" id="tab2">
+                <div id="class-challenges"></div>
+            </div>
+        </div>
+
+    </div>
+
+	<!-- Classroom Chat  
+	<div class="span3" style="position: relative; top: 25px">
+	    <h6>Chat Live</h6>
+		<div id="chat-iframe-div">
+			<iframe name="inlineframe"
+					src="/chat/{{school.id}}/{{school_class.id}}"
+					frameborder="0"
+					scrolling="auto"
+					width="100%"
+					height="500px"
+					marginwidth="0"
+					marginheight="0">
+			</iframe>
+		</div>
+	</div>
+	-->
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    refreshTeamsAndChallenges();
+});
+</script>
+{% endblock %}

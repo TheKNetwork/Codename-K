@@ -1,0 +1,110 @@
+{% load cache %}
+{% cache 86400 topictree %}
+<link rel='stylesheet' type='text/css' href='{{STATIC_URL}}css/khanapi/tree-skin/ui.dynatree.css'>
+
+<div id="topic-tree"></div>
+
+<script src='{{STATIC_URL}}js/jquery.min.js' type='text/javascript'></script>
+<script src='{{STATIC_URL}}js/jquery-ui.custom.min.js' type='text/javascript'></script>
+<script src='{{STATIC_URL}}js/jquery.cookie.js' type='text/javascript'></script>
+<script type="text/javascript" src='{{STATIC_URL}}js/khanapi/jquery.dynatree.min.js' ></script>
+<!-- Add code to initialize the tree when the document is loaded: -->
+<script type="text/javascript">
+    $("#topic-tree").dynatree({
+    	
+        checkbox: true,
+        selectMode: 3,
+        
+		onSelect: function(select, node) {
+	        // Display list of selected nodes
+	        var selNodes = node.tree.getSelectedNodes();
+	        // convert to title/key array
+	        var selKeys = $.map(selNodes, function(node){
+	             return "[" + node.data.key + "]: '" + node.data.title + "'";
+	        });
+	        // $("#echoSelection2").text(selKeys.join(", "));
+	      },
+	      
+	      onClick: function(node, event) {
+	        // We should not toggle, if target was "checkbox", because this
+	        // would result in double-toggle (i.e. no toggle)
+	        if( node.getEventTargetType(event) == "title" )
+	          node.toggleSelect();
+	      },
+	      
+	      onKeydown: function(node, event) {
+	        if( event.which == 32 ) {
+	          node.toggleSelect();
+	          return false;
+	        }
+	      },        
+        
+    });
+
+    function addTopicNode(topicName, parentNode) {
+        child = parentNode.addChild({
+            title : topicName,
+            tooltip : topicName,
+            isFolder : true
+        });
+        return child;
+    }
+    
+    function addLeafNode(leafKey, leafName, leafDescription, leafUrl, parentNode) {
+        leaf = parentNode.addChild({
+            key: leafKey,
+            title : leafName,
+            tooltip : leafName,
+            isFolder : false,
+            href: leafUrl
+        });
+        
+        return leaf;
+    }    
+
+    // now that the tree is in place, get the root node
+    var rootNode = $("#topic-tree").dynatree("getRoot");
+    
+    // for every json main topic, add a topic node to root
+    {% for topic in topic_tree_json %}
+    	{% if topic.name == 'Math' %}
+	        topicNode = rootNode;
+	        // addTopicNode('{{topic.name}}', rootNode)
+	        
+	        // Loop through the subitems - check if they are topics or items
+	        {% for subitem in topic.items %}
+	            // If there are subitems, add as a folder
+	            {% if subitem.has_exercises %}
+		            {% if subitem.items %}
+		                subtopicNode = addTopicNode('{{subitem.name}}', topicNode);
+		                
+		                // add children
+		                {% for subsubitem in subitem.items %}
+		                    // If there are subitems, add as a folder
+		                    {% if subsubitem.has_exercises and subsubitem.items %}
+		                        subsubtopicNode = addTopicNode('{{subsubitem.name}}', subtopicNode);
+		                        
+		                        {% for ex3 in subsubitem.exercises %}
+		                            addLeafNode('{{ex3.name}}', '{{ex3.display_name}}', '{{ex3.description}}', '{{ex3.ka_url}}', subsubtopicNode);
+		                        {% endfor %}
+		                    {% endif %}                   
+		                 {% endfor %}
+		                 
+		                 // done adding subtopics, add exercises now          
+		                {% for ex2 in subitem.exercises %}
+		                    addLeafNode('{{ex2.name}}', '{{ex2.display_name}}', '{{ex2.description}}', '{{ex2.ka_url}}', subtopicNode);
+		                {% endfor %}
+		            {% endif %}
+		    	{% endif %}       
+	        {% endfor %}
+	        
+	        // done adding topics, add exercises now          
+	        {% for ex1 in topic.exercises %}
+	            addLeafNode('{{ex1.name}}', '{{ex1.display_name}}', '{{ex1.description}}', '{{ex1.ka_url}}', topicNode);
+	        {% endfor %}  
+		{% endif %}     
+    {% endfor %}
+
+    
+</script>
+{% endcache %}
