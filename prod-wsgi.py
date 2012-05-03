@@ -5,7 +5,7 @@ import os
 
 # setup the environment for Django and Pinax
 pinax.env.setup_environ(__file__)
-os.environ['DJANGO_ENV'] = 'staging'
+os.environ['DJANGO_ENV'] = 'prod'
 
 # set application for WSGI processing
 application = WSGIHandler()

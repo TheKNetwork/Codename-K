@@ -15,7 +15,6 @@ from urllib import urlencode
 
 from khanapi.api_explorer_oauth_client import APIExplorerOAuthClient
 from khanapi.khan_api import *
-from settings import *
 
 import urllib
 import urllib2
@@ -73,7 +72,7 @@ def proxy(request):
     api_data = execute_khan_api_method(profile_access_token=request.user.knet_profile.access_token, api_method=url)
     
     # Returns a dictionary with keys: 'headers', 'body', and 'status'.
-    resource = CLIENT.access_api_resource(
+    resource = settings.CLIENT.access_api_resource(
         url,
         access_token(request.session),
         method = request.method
@@ -102,7 +101,7 @@ def oauth_get_request_token(request):
     print "getting request token"
     callback_url = '%s/oauth_callback' % current_site_url()
     print "callback url is %s" % callback_url
-    request_token_url = CLIENT.url_for_request_token(
+    request_token_url = settings.CLIENT.url_for_request_token(
             callback = callback_url
             )
     print "Redirecting to request token URL: \n%s" % (request_token_url)
@@ -124,7 +123,7 @@ def oauth_callback(request):
     
     # We do this before we redirect so that there's no "limbo" state where the
     # user has a request token but no access token.
-    access_token = CLIENT.fetch_access_token(request_token)
+    access_token = settings.CLIENT.fetch_access_token(request_token)
     request.session['oauth_token_string'] = access_token.to_string()
     print "Access token is %s" % access_token.to_string()
     

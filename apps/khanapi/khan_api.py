@@ -15,7 +15,6 @@ from oauth import OAuthToken
 
 from khanapi.views import *
 from khanapi.api_explorer_oauth_client import APIExplorerOAuthClient
-from settings import *
 
 import urllib
 import urllib2
@@ -172,7 +171,7 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=TYPI
     result_data = _chosen_cache.get(cache_key)
     
     if force_refresh or result_data is None:
-        resource = CLIENT.access_api_resource(
+        resource = settings.CLIENT.access_api_resource(
             api_method,
             access_token = OAuthToken.from_string(profile_access_token),
             method = "GET"
@@ -248,5 +247,5 @@ def has_text_html_header(headers):
 
 def current_site_url():
     from django.contrib.sites.models import Site
-    url = 'http://%s' % SITE_ROOT
+    url = 'http://%s' % settings.SITE_ROOT
     return url
