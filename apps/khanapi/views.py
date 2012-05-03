@@ -15,6 +15,7 @@ from urllib import urlencode
 
 from khanapi.api_explorer_oauth_client import APIExplorerOAuthClient
 from khanapi.khan_api import *
+from khan_api import *
 
 import urllib
 import urllib2
