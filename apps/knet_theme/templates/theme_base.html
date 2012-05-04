@@ -33,6 +33,12 @@
         {% block extra_head_base %}
             {% block extra_head %}{% endblock %}
         {% endblock %}
+        
+        <script type="text/javascript">
+            function toggleCollapse(collapseId) {
+                $('#'+collapseId).collapse('toggle');
+            }
+        </script>
     </head>
     <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
         
