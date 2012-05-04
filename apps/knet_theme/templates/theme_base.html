@@ -43,7 +43,7 @@
             <div class="container-fluid">
               <div class="nav-collapse">
                 <span class="nav" 
-                style="color: #fff;text-transform: uppercase;padding: 3px 7px 3px 7px; text-align: center; font-size: 14px">
+                style="color: #fff;text-transform: uppercase;padding: 4px 7px 4px 7px; text-align: center;">
                     <a href="/" style="color: #fff; text-decoration: none">{{ SITE_NAME }}</a>
                 </span>
                 <span class="nav" style="padding: 4px 7px 4px 7px">
@@ -56,20 +56,20 @@
                   <a href="mailto:info@theknetwork.org" style="color: #85e55b">Contact</a>
                 </span>
                 
-                {% if not user.is_active %}
-                <p class="navbar-text pull-right">
-                    <a href="{% url acct_login %}">Login</a>
-                    <span style="color: #555; padding-left: 7px; padding-right: 7px"> | </span>
-                    <a href="{% url acct_signup %}">Register</a>
-                </p>        
-                {% endif %}
                 
-                {% if user.is_active %}
+                {% if user.is_active %} 
                 <span class="nav pull-right" style="padding: 4px 7px 4px 7px">
                     <span style="color: #aaa">Welcome, </span>
                     <a href="{% url acct_email %}" style="color: #3299c9">{{ user.first_name }} {{ user.last_name }}</a>
                     <span style="color: #555; padding-left: 7px; padding-right: 7px"> | </span>
                     <a href="{% url acct_logout %}" style="color: #3299c9">Logout</a>
+                </span>  
+                {% endif %}
+                {% if not user.is_active %}
+                <span class="nav pull-right" style="padding: 4px 7px 4px 7px">
+                    <a href="{% url acct_login %}" style="color: #3299c9">Login</a>
+                    <span style="color: #555; padding-left: 7px; padding-right: 7px"> | </span>
+                    <a href="{% url acct_signup %}" style="color: #3299c9">Register</a>
                 </span>
                 {% endif %}
               </div>
@@ -87,8 +87,17 @@
     </div>
      
         {% block body_base %}
-            <div class="container-fluid">
-                {% include "_messages.html" %}
+            <div class="container-fluid" style="position: relative; top: -13px">
+                <div class="span6 offset3">
+                    {% if messages %}
+                        <div class="alert">
+                            {% for msg in messages %}
+                                {{ msg }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                
                 {% block body %}
                 {% endblock %}
             </div>
