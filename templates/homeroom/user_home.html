@@ -97,8 +97,8 @@
                                     <input id="id_class_name" 
                                             name="class_name"
                                             type="text"
-                                            placeholder="Classname">
-                                    </input>
+                                            placeholder="Classname"/>
+                                            
                                     <span id="create-class-row-buttons" class="span4">
                                         <a id="cancel-class-creation" name="cancel-class-creation" type="" class="btn btn-danger">Cancel</a>
                                         <button id="submit" name="submit" type="submit" class="btn btn-success">Confirm</button>
@@ -127,8 +127,23 @@
                                                                                 
                                     data-placement="left">  
                                 <i class="icon-user"></i> {{classroom.user_set.all.count}} Users</a></td>
+                                <!--
                             <td><a href="#invite-users" data-toggle="modal"><i class="icon-plus-sign"></i> Invite Users</a></td>
                             <td><a href=#pending-invites>{{ classroom.invitations.count }} Pending Invites</a></td>
+                                -->
+                                <td colspan="2">
+                                    {% for u in classroom.user_set.all %}
+                                        {% if u.id == user.id %}
+                                            <a href="/{{user}}/leave_class/{{main_school.id}}/{{classroom.id}}">Leave this Class</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                    
+                                    {% for c in classes_not_joined %}
+                                        {% if c.id == classroom.id %}
+                                            <a href="/{{user}}/join_class/{{main_school.id}}/{{classroom.id}}">Join this Class</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                </td>
                         </tr>
                         {% endfor %}
                     </tbody>    

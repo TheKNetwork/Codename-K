@@ -126,13 +126,15 @@ def get_proficiency_for_exercise(user, exercise_name):
     json_friendly_exercise_name = exercise_name.replace(" ","_")
     json_friendly_exercise_name = json_friendly_exercise_name.lower()
     
-    print "json friendly name: %s" % json_friendly_exercise_name
-    
-    for item in jsondata['all_proficient_exercises']:
-        if item == json_friendly_exercise_name:
-            print "Is a pro at %s" % item
-            return True
-    
+    try:
+        if jsondata is not None:
+            for item in jsondata['all_proficient_exercises']:
+                if item == json_friendly_exercise_name:
+                    print "Is a pro at %s" % item
+                    return True
+    except e:
+        print "Got error %s" % e
+        
     return default
 
 def get_proficiency_date_for_exercise(user, exercise_name):
@@ -153,6 +155,7 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=TYPI
     
     cache_key = ""
     _chosen_cache = get_cache('default')
+    
     
     if cache_per_user:
         if user_id is not None:
@@ -193,6 +196,7 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=TYPI
                 result_data = simplejson.loads(text)
                 
             _chosen_cache.set(cache_key, result_data, cache_timeout)
+            
         except:
             print "exception storing in cache"
         

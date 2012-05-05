@@ -10,7 +10,7 @@
                         {% for challenge in challenges.all %}
                         <tr>
                             <td>
-                                <a href="#" onclick="toggleChallenge('challenge-{{challenge.id}}')">{{ challenge }}</a>
+                                <a href="#" onclick="toggleCollapse('challenge-{{challenge.id}}')">{{ challenge }}</a>
                                 <div id="challenge-{{ challenge.id }}" class"collapse in">
                                     Some Menu Content here
                                 </div>
