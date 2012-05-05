@@ -124,7 +124,7 @@ def add_challenge_form(request, user_name, school_id, class_id):
     return render(request, "schools/add_challenge.html", data)
 
 @login_required
-@never_cache
+@cache_page(5)
 def group_section(request, user_name, school_id, class_id):
     school = School.objects.get(id=school_id)
     classroom = Classroom.objects.get(id=class_id)
@@ -167,7 +167,7 @@ def group_section(request, user_name, school_id, class_id):
                   context_instance=RequestContext(request, {}))
 
 @login_required
-@never_cache
+@cache_page(3)
 def challenges(request, user_name, school_id, class_id):
     school = School.objects.get(id=school_id)
     classroom = Classroom.objects.get(id=class_id)
@@ -267,7 +267,7 @@ def create_a_class(request, _school_id, user_name):
     }, context_instance=RequestContext(request, {}))
 
 @login_required
-@never_cache
+@cache_page(5)
 def classes_for_school(request, school_id, user_name):
     school = School.objects.get(id=school_id)
     classes = school.classrooms.all()
@@ -275,7 +275,7 @@ def classes_for_school(request, school_id, user_name):
     return render(request, "schools/classes.html", data)
 
 @login_required
-@never_cache
+@cache_page(5)
 def class_congregation(request, school_id, class_id, user_name):
     school_class = Classroom.objects.get(id=class_id)
     school = School.objects.get(id=school_id)
