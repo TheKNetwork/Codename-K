@@ -290,6 +290,11 @@ def class_congregation(request, school_id, class_id, user_name):
     school_class = Classroom.objects.get(id=class_id)
     school = School.objects.get(id=school_id)
     whiteboard_sessions = WhiteboardSession.objects.all()
-    data = {'user': request.user, 'school_class': school_class, 'school':school, 'whiteboard_sessions': whiteboard_sessions}
+    unfinished_exercises, found_any_unfinished = get_unfinished_challenges_for_user(id=request.user.id)
+    
+    data = {'user': request.user, 'school_class': school_class, 
+            'school':school, 'whiteboard_sessions': whiteboard_sessions,
+            'unfinished_exercises': unfinished_exercises,
+            'found_any_unfinished': found_any_unfinished, }
 
     return render(request, "schools/class_congregation.html", data)
