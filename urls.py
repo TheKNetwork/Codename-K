@@ -32,8 +32,16 @@ urlpatterns = patterns("",
     url(r'^homeroom/$', 'schools.views.homeroom_failsafe', name='homeroom'),
     
     # School related urls
+    url(r'^(?P<user_name>\w+)/join_team/(?P<school_id>\d+)/(?P<class_id>\d+)/(?P<team_id>\d+)','schools.views.join_team', name='join_team'), 
+    url(r'^(?P<user_name>\w+)/leave_team/(?P<school_id>\d+)/(?P<class_id>\d+)/(?P<team_id>\d+)','schools.views.leave_team', name='leave_team'), 
+    
+    url(r'^(?P<user_name>\w+)/join_class/(?P<school_id>\d+)/(?P<class_id>\d+)','schools.views.join_class', name='join_class'), 
+    url(r'^(?P<user_name>\w+)/leave_class/(?P<school_id>\d+)/(?P<class_id>\d+)','schools.views.leave_class', name='leave_class'), 
+    
     url(r'^(?P<user_name>\w+)/join_school/(?P<school_id>\d+)','schools.views.join_school', name='join_school'), 
     url(r'^(?P<user_name>\w+)/leave_school/(?P<school_id>\d+)','schools.views.leave_school', name='leave_school'), 
+    
+    
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/team_selection','schools.views.team_selection', name='team_selection'),
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/add_team_to_challenge/(?P<team_id>\d+)/(?P<challenge_id>\d+)','schools.views.add_team_to_challenge', name='add_team_to_challenge'),
     url(r'^(?P<user_name>\w+)/(?P<school_id>\d+)/(?P<class_id>\d+)/add_challenge_form','schools.views.add_challenge_form', name='add_challenge_form'), 

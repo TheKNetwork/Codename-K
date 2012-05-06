@@ -58,6 +58,7 @@ class APIExplorerOAuthClient(object):
         # Escape each parameter value.
         url = urlparse.urlparse(full_url)
         query_params = cgi.parse_qs(url.query)
+        
         for key in query_params:
             query_params[key] = query_params[key][0]
         
@@ -71,7 +72,7 @@ class APIExplorerOAuthClient(object):
         oauth_request.sign_request(
             OAuthSignatureMethod_HMAC_SHA1(), self.consumer, access_token
             )
-            
+        
         file = None
         ret  = None
         
@@ -88,6 +89,8 @@ class APIExplorerOAuthClient(object):
             # Luckily, the exception raised here acts very much like an
             # `HTTPResponse` object. Good enough for our purposes.
             file = error
+        except e:
+            print "Got an unknown exception %s" % e
             
         finally:
             if file:

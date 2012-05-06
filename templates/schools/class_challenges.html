@@ -7,24 +7,36 @@
                         <th>Actions</th>
                     </thead>
                     <tbody>
+                        {% for challenge in challenges.all %}
                         <tr>
                             <td>
+                                <a href="#" onclick="toggleCollapse('challenge-{{challenge.id}}')">{{ challenge }}</a>
+                                <div id="challenge-{{ challenge.id }}" class"collapse in">
+                                    Some Menu Content here
+                                </div>
+                                <script>
+                                    $('#challenge-{{ challenge.id }}').collapse({
+                                        toggle: false
+                                    });
+                                </script>
+                            </td>
+                            <td>{{ challenge.challenge_groups.all.count }} Groups</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        {% endfor %}
+                        <tr><td colspan="3">&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td colspan="3">
                                 <span>
                                     <a href="/{{user}}/{{school.id}}/{{school_class.id}}/add_challenge_form" 
                                     class="btn btn-primary btn-small">Create Challenge</a>
                                 </span>
                             </td>
-                            <td></td>
                         </tr>
-                        {% for challenge in challenges.all %}
-                        <tr>
-                            <td>{{ challenge }}</td>
-                            <td>{{ challenge.challenge_groups.all.count }} Groups</td>
-                        </tr>
-                        {% endfor %}
                     </tbody>
                 </table>
-                
+
 <script type="text/javascript">
 	//$("#class-congregation-groups").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/groups');
 </script>

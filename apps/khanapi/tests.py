@@ -15,11 +15,11 @@ class SimpleTest(TestCase):
         self.user = ccoy    
         
                  
-    def test_get_playlist_library(self):
+    def xtest_get_playlist_library(self):
         jsondata = get_khan_playlist_library(self.user)
         # print jsondata
         for topic in jsondata:
-            print "Topic name: %s" % topic['name']
+            print "Topic name: %s" % topic
             if topic.has_key('items'):
                 for subtopic in topic['items']:
                     if subtopic.has_key('name'):
@@ -34,27 +34,40 @@ class SimpleTest(TestCase):
                     
         self.assertIsNotNone(jsondata)
         
-    def test_get_khan_user_data(self):
+        
+    def xtest_get_topic_tree(self):
+        jsondata = get_khan_topic_tree(self.user)
+        
+        #for topic in jsondata:
+        #    print "Topic name: %s" % topic
+        print_topic(jsondata)
+        # self.assertIsNotNone(jsondata)
+        print "done"
+       
+    def test_tree(self):
+        print get_topic_tree_js(self.user)
+        
+    def xtest_get_khan_user_data(self):
         csantiago = User.objects.get(username="csantiago")
         jsondata = get_khan_user(csantiago)
         print jsondata
         self.assertIsNotNone(jsondata)
        
-    def test_get_khan_badges(self):
+    def xtest_get_khan_badges(self):
         jsondata = get_khan_badges(self.user)
         self.assertIsNotNone(jsondata)
          
-    def test_get_exercises(self):
+    def xtest_get_exercises(self):
         csantiago = User.objects.get(username="csantiago")
         jsondata = get_khan_exercises(csantiago)
         self.assertIsNotNone(jsondata)
             
-    def test_get_exercise_history(self):
+    def xtest_get_exercise_history(self):
         jsondata = get_khan_exercise_history(self.user)
         self.assertIsNotNone(jsondata)
 
           
-    def test_get_profiency_for_exercise(self):
+    def xtest_get_profiency_for_exercise(self):
         csantiago = User.objects.get(username="csantiago")
         exercise_pro = get_proficiency_for_exercise(csantiago, 'Addition 1')
         print "Proficient? %s" % exercise_pro

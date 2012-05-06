@@ -22,6 +22,29 @@ def get_schools_for_user(**kwargs):
     schools = School.objects.filter(group_ptr=user.groups.filter(name__startswith="school."))
     return schools
 
+def get_classes_for_user(**kwargs):
+    """
+    Retrieves a list of team for a certain user. A team *is* a group,
+    so this relies on the built in django auth module
+    """
+    user = User.objects.get(**kwargs)
+    classes = Classroom.objects.filter(group_ptr=user.groups.filter(name__startswith="class."))
+    return classes
+
+def get_classes_not_joined(user_id, school_id):
+    user = User.objects.get(id=user_id)
+    school = School.objects.get(id=school_id)
+    classes = []
+    for c in school.classrooms.all():
+        found = False
+        for u in c.user_set.filter(id=user_id):
+            found = True
+            
+        if not found:
+            classes.append(c)
+    
+    return classes
+
 def get_teams_for_user(**kwargs):
     """
     Retrieves a list of team for a certain user. A team *is* a group,

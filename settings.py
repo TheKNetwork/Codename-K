@@ -282,6 +282,14 @@ CACHES = {
             'PARSER_CLASS': 'redis.connection.HiredisParser'
         },
     },
+    'disk': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/var/tmp/django_cache',
+        'TIMEOUT': 60*60*24*30,
+        'OPTIONS': {
+            'MAX_ENTRIES': 1000
+        }
+    },
 }
 
 DEBUG_TOOLBAR_CONFIG = {

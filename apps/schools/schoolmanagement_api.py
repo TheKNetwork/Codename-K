@@ -69,9 +69,21 @@ def add_user_to_class(user, classroom):
     group.save()
     return
 
+def remove_user_from_class(user, classroom):
+    group = Group.objects.get(id=classroom.id)
+    group.user_set.remove(user)
+    group.save()
+    return
+
 def add_user_to_team(user, team):
     group = Group.objects.get(id=team.id)
     group.user_set.add(user)
+    group.save()
+    return
+
+def remove_user_from_team(user, team):
+    group = Group.objects.get(id=team.id)
+    group.user_set.remove(user)
     group.save()
     return
 

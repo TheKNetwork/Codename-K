@@ -46,10 +46,10 @@ def homeroom_failsafe(request):
             request.session['oauth_token_string'] = request.user.knet_profile.access_token
             active_khan_user = True
             
-    whiteboard_sessions = WhiteboardSession.objects.all()
     main_school = get_main_school_for_user(id=request.user.id)
     teams = get_teams_for_user(id=request.user.id)
     all_schools = School.objects.all()
+    classes_not_joined = get_classes_not_joined(user_id=request.user.id, school_id=main_school.id)
     # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
     
     data = {'user': request.user, 
@@ -57,7 +57,7 @@ def homeroom_failsafe(request):
             'khan_user_active':active_khan_user, 
             'teams':teams,
             'all_schools':all_schools,
-            'whiteboard_sessions': whiteboard_sessions}
+            'classes_not_joined': classes_not_joined }
     
     return render(request, "homeroom/user_home.html", data, context_instance = RequestContext(request))
 
@@ -77,6 +77,38 @@ def leave_school(request, user_name, school_id):
     remove_user_from_school(user, school)
     return HttpResponseRedirect('/homeroom')
 
+@login_required
+@never_cache
+def join_class(request, user_name, school_id, class_id):
+    user = request.user
+    classroom = Classroom.objects.get(id=class_id)
+    add_user_to_class(user, classroom)
+    return HttpResponseRedirect('/homeroom')
+
+@login_required
+@never_cache
+def leave_class(request, user_name, school_id, class_id):
+    user = request.user
+    classroom = Classroom.objects.get(id=class_id)
+    remove_user_from_class(user, classroom)
+    return HttpResponseRedirect('/homeroom')
+
+@login_required
+@never_cache
+def join_team(request, user_name, school_id, class_id, team_id):
+    user = request.user
+    team = ClassroomTeam.objects.get(id=team_id)
+    add_user_to_team(user, team)
+    return HttpResponseRedirect('/%s/schools/%s/%s' % (user_name, school_id, class_id))
+
+@login_required
+@never_cache
+def leave_team(request, user_name, school_id, class_id, team_id):
+    user = request.user
+    team = ClassroomTeam.objects.get(id=team_id)
+    remove_user_from_team(user, team)
+    return HttpResponseRedirect('/%s/schools/%s/%s' % (user_name, school_id, class_id))
+
 def team_selection(request, user_name, school_id, class_id):
     schools = get_schools_for_user(id=request.user.id)
     classroom = Classroom.objects.get(id=class_id)
@@ -92,16 +124,23 @@ def add_challenge_form(request, user_name, school_id, class_id):
     return render(request, "schools/add_challenge.html", data)
 
 @login_required
-@never_cache
+@cache_page(5)
 def group_section(request, user_name, school_id, class_id):
     school = School.objects.get(id=school_id)
     classroom = Classroom.objects.get(id=class_id)
     teams = classroom.teams
     team_pro_count = dict()
+    current_team = None
     
     for team in teams.all():
         challenge_pro = 0
         exercises_completed = 0
+        
+        for u in team.user_set.all():
+            if u.id == request.user.id:
+                current_team = team
+                print "Found current team"
+        
         for challenge in team.challenges.all():
             exercise_total = 0
             exercise_pro = 0
@@ -121,12 +160,14 @@ def group_section(request, user_name, school_id, class_id):
     data = {'school':school, 
             'school_class': classroom, 
             'teams':teams,
-            'form': form}
+            'form': form,
+            'current_team':current_team }
+    
     return render(request, "schools/class_congregation_groups.html", data, 
                   context_instance=RequestContext(request, {}))
 
 @login_required
-@never_cache
+@cache_page(3)
 def challenges(request, user_name, school_id, class_id):
     school = School.objects.get(id=school_id)
     classroom = Classroom.objects.get(id=class_id)
@@ -226,7 +267,7 @@ def create_a_class(request, _school_id, user_name):
     }, context_instance=RequestContext(request, {}))
 
 @login_required
-@never_cache
+@cache_page(5)
 def classes_for_school(request, school_id, user_name):
     school = School.objects.get(id=school_id)
     classes = school.classrooms.all()
@@ -234,7 +275,7 @@ def classes_for_school(request, school_id, user_name):
     return render(request, "schools/classes.html", data)
 
 @login_required
-@never_cache
+@cache_page(5)
 def class_congregation(request, school_id, class_id, user_name):
     school_class = Classroom.objects.get(id=class_id)
     school = School.objects.get(id=school_id)

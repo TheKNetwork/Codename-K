@@ -4,15 +4,31 @@
                     <thead>
                         <tr>
                             <th>Teams</th>
-                            <th>Exercises</th>
-                            <th>Challenge</th>
+                            <th></th>
+                            <th>Exercises Complete</th>
+                            <th>Challenges Complete</th>
                         </tr>
                     </thead>
                     {% for team in school_class.teams.all %}
                     <tr>
                         <td>
                             <i class="icon-book"></i>
-                            {{team}}
+                            <a href="#" onclick="toggleCollapse('team-{{team.id}}')">{{ team }}</a>
+                            <div id="team-{{team.id}}" class="collapse in" style="color:#555; padding-left:18px">
+                                {% for u in team.user_set.all %}
+                                <i class="icon-person"></i>{{u.last_name}}, {{u.first_name}}<br/>
+                                {% endfor %}
+                            </div>
+                            <script>$('#team-{{team.id}}').collapse()</script>
+                        </td>
+                        <td>
+                            {% if not current_team %}
+                                <a href="/{{user}}/join_team/{{school.id}}/{{school_class.id}}/{{team.id}}">Join this Team</a>
+                            {% else %}
+                                {% if current_team.id == team.id %}
+                                <a href="/{{user}}/leave_team/{{school.id}}/{{school_class.id}}/{{team.id}}">Leave this Team</a>
+                                {% endif %}
+                            {% endif %}
                         </td>
                         <td>{{ team.exercise_complete_count }}</td>
                         <td>{{ team.challenge_complete_count }}/{{ team.challenges.count }}</td>
@@ -24,18 +40,14 @@
                                     <input id="group-name"
                                             name="group_name"
                                             type="text"
-                                            placeholder="Group Name">
-                                    </input>
+                                            placeholder="Group Name"/>
+                                            
                                     <span id="create-group-row-buttons">
-                                        <a id="cancel-group-creation" 
-                                            name="cancel-group-creation"
-                                            type="" class="btn btn-danger btn-small">Cancel
-                                        </a>
                                         <button id="submit"
                                                 name="submit"
                                                 type="submit"
                                                 class="btn btn-success btn-small">
-                                                Confirm
+                                                Create a New Team
                                         </button>
                                     </span>
                                     
