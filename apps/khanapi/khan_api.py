@@ -12,6 +12,7 @@ from django.core.cache import *
 
 from urllib import urlencode
 from oauth import OAuthToken
+from cStringIO import StringIO
 
 from khanapi.views import *
 from khanapi.api_explorer_oauth_client import APIExplorerOAuthClient
@@ -30,6 +31,8 @@ QUARTER_DAY = 60 * 60 * 6
 TYPICAL_SESSION = 60 * 60 * 2
 ONE_MINUTE = 60
 
+TOPIC_TREE = ''
+
 # PUBLIC FACING METHODS HERE
 def is_khan_user_active(request):
     active_khan_user = False
@@ -39,74 +42,134 @@ def is_khan_user_active(request):
             active_khan_user = True
     return active_khan_user;
 
-def get_khan_user(user):
+def get_khan_user(user, force_refresh=False):
     try:
         return execute_khan_api_method(
                                        user.knet_profile.access_token, 
-                                       '/api/v1/user', 
-                                       user_id=user.id)
+                                       '/api/v1/user', cache_timeout=DAY,
+                                       user_id=user.id,
+                                       force_refresh=force_refresh)
     except:
         return ''   
 
-def get_all_khan_exercises(user):
+def get_all_khan_exercises(user, force_refresh=False):
     try:
         return execute_khan_api_method(
                                        user.knet_profile.access_token, 
                                        '/api/v1/exercises', 
                                        user_id=user.id, 
-                                       cache_per_user=False)
+                                       cache_per_user=False,
+                                       force_refresh=force_refresh)
     except:
         return ''  
 
-def get_khan_exercises(user):
+def get_khan_exercises(user, force_refresh=False):
     try:
         return execute_khan_api_method(user.knet_profile.access_token, 
                                        '/api/v1/user/exercises', user_id=user.id, 
-                                       disk_cache=True, 
-                                       cache_timeout=ONE_MINUTE,
-                                       cache_per_user=True)
+                                       disk_cache=True, cache_timeout=HALF_A_DAY,
+                                       cache_per_user=True,
+                                       force_refresh=force_refresh)
     except:
         return ''  
 
-def get_khan_badges(user):
+def get_khan_badges(user, force_refresh=False):
     try:
         return execute_khan_api_method(
                                        user.knet_profile.access_token, 
                                        '/api/v1/badges', 
                                        user_id=user.id, 
                                        cache_timeout=MONTH,
-                                       cache_per_user=False)
+                                       cache_per_user=False,
+                                       force_refresh=force_refresh)
     except:
         return '' 
     
-def get_khan_playlist_library(user):
+def print_topic(topic):
+    print "Topic is %s" % topic['title']
+    for item in topic['children']:
+        if item['kind'] == "Exercise":
+            print "Exercise: %s" % item['display_name']
+        elif item['kind'] == "Topic":
+            print_topic(item)      
+
+topic_count = 0
+def write_javascript_for_topic(topic, file_str, parent_topic_node_name):
+    global topic_count
+    file_str.write("var node%s = addTopicNode('%s', %s);" % (topic_count, topic['title'], parent_topic_node_name))
+    current_node_name = "node%s" % topic_count
+    topic_count = topic_count + 1
+    
+    for item in topic['children']:
+        
+        if item['kind'] == "Exercise":
+            file_str.write("addLeafNode('%s', '%s', '%s', '%s', %s);"
+                           % (item['name'], item['display_name'], item['description'], item['ka_url'], current_node_name)
+                           )
+        elif item['kind'] == "Topic":
+            write_javascript_for_topic(item, file_str, current_node_name)
+
+#@cache_page(60*60*24*60)
+def get_topic_tree_js(user):
+    _cache = get_cache('default')
+    cache_key = 'topic_tree_js'
+    topic_tree_result = _cache.get(cache_key)
+    
+    if topic_tree_result is None:
+        jsondata = get_khan_topic_tree(user)
+        file_str = StringIO()
+        file_str.write("<script>")
+        file_str.write("var rootNode = $('#topic-tree').dynatree('getRoot');")
+        write_javascript_for_topic(jsondata, file_str, 'rootNode')
+        file_str.write("</script>")
+        topic_tree_result = file_str.getvalue()
+        _cache.set(cache_key, topic_tree_result, MONTH)
+        
+    return topic_tree_result
+    
+def get_khan_topic_tree(user, force_refresh=False):
+    try:
+        jsondata = execute_khan_api_method(user.knet_profile.access_token,
+                                           '/api/v1/topictree',
+                                           cache_timeout=MONTH,
+                                           cache_per_user=False,
+                                           force_refresh=force_refresh)
+    except:
+        return 'ERROR'
+    
+    return jsondata
+    
+def get_khan_playlist_library(user, force_refresh=False):
     try:
         jsondata = execute_khan_api_method(user.knet_profile.access_token, 
                                            '/api/v1/playlists/library', 
                                            user_id=user.id, 
                                            cache_timeout=MONTH,
-                                           cache_per_user=False)
+                                           cache_per_user=False,
+                                           force_refresh=force_refresh)
         
         return jsondata
     except:
         return ''     
     
-def get_khan_playlist_exercises_for_title(user, playlist_title):
+def get_khan_playlist_exercises_for_title(user, playlist_title, force_refresh=False):
     try:
         return execute_khan_api_method(
                                        user.knet_profile.access_token, 
                                        '/api/v1/playlists/%s/exercises' % playlist_title, 
                                        user_id=user.id, 
                                        cache_timeout=MONTH,
-                                       cache_per_user=False)
+                                       cache_per_user=False,
+                                       force_refresh=force_refresh)
     except:
         return ''    
 
-def get_khan_exercise_history(user):
+def get_khan_exercise_history(user, force_refresh=False):
     return execute_khan_api_method(
                                    user.knet_profile.access_token, 
                                    '/api/v1/exercise_history', 
-                                   user_id=user.id)
+                                   user_id=user.id,
+                                   force_refresh=force_refresh)
 
 
 from datetime import datetime
@@ -117,12 +180,12 @@ def convert_khan_string_to_date(str_date):
     return date_object
     
 # Returns a dict of exercise_states{ }
-def get_proficiency_for_exercise(user, exercise_name):
+def get_proficiency_for_exercise(user, exercise_name, force_refresh=False):
     default = False
     if user.knet_profile.access_token is None or user.knet_profile.access_token == '':
         return default
     
-    jsondata = get_khan_user(user)
+    jsondata = get_khan_user(user, force_refresh=force_refresh)
     json_friendly_exercise_name = exercise_name.replace(" ","_")
     json_friendly_exercise_name = json_friendly_exercise_name.lower()
     
@@ -137,25 +200,32 @@ def get_proficiency_for_exercise(user, exercise_name):
         
     return default
 
-def get_proficiency_date_for_exercise(user, exercise_name):
-    exercise_data = get_exercise_for_user(user, exercise_name)
+def get_proficiency_date_for_exercise(user, exercise_name, force_refresh=False):
+    exercise_data = get_exercise_for_user(user, exercise_name, force_refresh=force_refresh)
     return exercise_data['proficient_date']
 
-def get_exercise_for_user(user, exercise_name):
+def get_exercise_for_user(user, exercise_name, force_refresh=False):
     return execute_khan_api_method(user.knet_profile.access_token, 
                                    '/api/v1/user/exercises/%s' % exercise_name, 
-                                   user_id=user.id)   
+                                   cache_timeout=HALF_A_DAY,
+                                   user_id=user.id,
+                                   force_refresh=force_refresh)   
+
 
 # This method is the funnel point for all khan api calls. It caches data based on
 # the user's access token and method passed in.
 # The default cache timeout is one hour, 60 seconds * 60 minutes
 # Regardless of the cache, a refresh can be forced by passing in force_refresh=True
 def execute_khan_api_method(profile_access_token, api_method, cache_timeout=TYPICAL_SESSION, 
-                            force_refresh=False, return_raw_text=False, user_id=None, cache_per_user=True):
+                            force_refresh=False, return_raw_text=False, user_id=None, cache_per_user=True,
+                            disk_cache=False):
     
     cache_key = ""
-    _chosen_cache = get_cache('default')
-    
+    _chosen_cache = None
+    if disk_cache == False:
+        _chosen_cache = get_cache('default')
+    else:
+        _chosen_cache = get_cache('disk')
     
     if cache_per_user:
         if user_id is not None:
@@ -174,20 +244,18 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=TYPI
     result_data = _chosen_cache.get(cache_key)
     
     if force_refresh or result_data is None:
+        
         resource = settings.CLIENT.access_api_resource(
             api_method,
             access_token = OAuthToken.from_string(profile_access_token),
             method = "GET"
             )
         
-        text = resource['body']
-        
+        text =  resource['body']
         # Error messages can contain HTML. Escape them so they're not rendered.
         is_html = has_text_html_header(resource['headers'])
         if is_html:
             text = cgi.escape(text)
-        
-        print text
         
         try:
             if return_raw_text:
@@ -196,7 +264,6 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=TYPI
                 result_data = simplejson.loads(text)
                 
             _chosen_cache.set(cache_key, result_data, cache_timeout)
-            
         except:
             print "exception storing in cache"
         

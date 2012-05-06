@@ -1,5 +1,3 @@
-{% load cache %}
-{% cache 86400 topictree %}
 <link rel='stylesheet' type='text/css' href='{{STATIC_URL}}css/khanapi/tree-skin/ui.dynatree.css'>
 
 <div id="topic-tree"></div>
@@ -61,50 +59,12 @@
         
         return leaf;
     }    
-
-    // now that the tree is in place, get the root node
-    var rootNode = $("#topic-tree").dynatree("getRoot");
-    
-    // for every json main topic, add a topic node to root
-    {% for topic in topic_tree_json %}
-    	{% if topic.name == 'Math' %}
-	        topicNode = rootNode;
-	        // addTopicNode('{{topic.name}}', rootNode)
-	        
-	        // Loop through the subitems - check if they are topics or items
-	        {% for subitem in topic.items %}
-	            // If there are subitems, add as a folder
-	            {% if subitem.has_exercises %}
-		            {% if subitem.items %}
-		                subtopicNode = addTopicNode('{{subitem.name}}', topicNode);
-		                
-		                // add children
-		                {% for subsubitem in subitem.items %}
-		                    // If there are subitems, add as a folder
-		                    {% if subsubitem.has_exercises and subsubitem.items %}
-		                        subsubtopicNode = addTopicNode('{{subsubitem.name}}', subtopicNode);
-		                        
-		                        {% for ex3 in subsubitem.exercises %}
-		                            addLeafNode('{{ex3.name}}', '{{ex3.display_name}}', '{{ex3.description}}', '{{ex3.ka_url}}', subsubtopicNode);
-		                        {% endfor %}
-		                    {% endif %}                   
-		                 {% endfor %}
-		                 
-		                 // done adding subtopics, add exercises now          
-		                {% for ex2 in subitem.exercises %}
-		                    addLeafNode('{{ex2.name}}', '{{ex2.display_name}}', '{{ex2.description}}', '{{ex2.ka_url}}', subtopicNode);
-		                {% endfor %}
-		            {% endif %}
-		    	{% endif %}       
-	        {% endfor %}
-	        
-	        // done adding topics, add exercises now          
-	        {% for ex1 in topic.exercises %}
-	            addLeafNode('{{ex1.name}}', '{{ex1.display_name}}', '{{ex1.description}}', '{{ex1.ka_url}}', topicNode);
-	        {% endfor %}  
-		{% endif %}     
-    {% endfor %}
-
-    
 </script>
-{% endcache %}
+
+<div id="topic_tree_content">
+    
+</div>
+
+<script type="text/javascript">
+    $("#topic_tree_content").load("/khanapi/js_topic_tree");
+</script>

@@ -33,15 +33,16 @@ def khan_user_info(request):
     data = { 'khan_user_active': is_khan_user_active(request), 'khan_user': get_khan_user(request.user) }
     return render(request, "khanapi/khan_user_data.html", data)
 
+#@cache_page(60*60*24*60)
 def topic_tree(request):
-    print request.user
-    jsondata = get_khan_playlist_library(request.user)
-    print "Done getting json data"
-    _exercises = dict()
-    for listitem in jsondata:
-        add_topic_exercises(topic=listitem, user=request.user)
-        
-    return render(request, "khanapi/topic_tree.html", { 'topic_tree_json':jsondata })
+    return render(request, 
+                  "khanapi/topic_tree.html")
+
+def topic_tree_javascript(request):
+    js = get_topic_tree_js(request.user)
+    response = HttpResponse(js)
+    response.__setitem__('Content-Type','text/plain')
+    return response
 
 def add_topic_exercises(topic, user):
     has_exercises = False
