@@ -78,9 +78,9 @@ class APIExplorerOAuthClient(object):
         
         try:
             if method == "GET":
-                file = urllib2.urlopen(oauth_request.to_url(), timeout=5)
+                file = urllib2.urlopen(oauth_request.to_url())
             else:
-                file = urllib2.urlopen(url.path, oauth_request.to_postdata(), timeout=5)
+                file = urllib2.urlopen(url.path, oauth_request.to_postdata())
                 
         except urllib2.HTTPError, error:
             # We don't want to treat HTTP error codes (401, 404, etc.) like
