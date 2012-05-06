@@ -44,6 +44,41 @@ def topic_tree_javascript(request):
     response.__setitem__('Content-Type','text/plain')
     return response
 
+
+topic_count = 0
+def write_javascript_for_topic(topic, file_str, parent_topic_node_name):
+    global topic_count
+    file_str.write("var node%s = addTopicNode('%s', %s);" % (topic_count, topic['title'], parent_topic_node_name))
+    current_node_name = "node%s" % topic_count
+    topic_count = topic_count + 1
+    
+    for item in topic['children']:
+        
+        if item['kind'] == "Exercise":
+            file_str.write("addLeafNode('%s', '%s', '%s', '%s', %s);"
+                           % (item['name'], item['display_name'], item['description'], item['ka_url'], current_node_name)
+                           )
+        elif item['kind'] == "Topic":
+            write_javascript_for_topic(item, file_str, current_node_name)
+
+#@cache_page(60*60*24*60)
+def get_topic_tree_js(user):
+    _cache = get_cache('default')
+    cache_key = 'topic_tree_js'
+    topic_tree_result = _cache.get(cache_key)
+    
+    if topic_tree_result is None:
+        jsondata = get_khan_topic_tree(user)
+        file_str = StringIO()
+        file_str.write("<script>")
+        file_str.write("var rootNode = $('#topic-tree').dynatree('getRoot');")
+        write_javascript_for_topic(jsondata, file_str, 'rootNode')
+        file_str.write("</script>")
+        topic_tree_result = file_str.getvalue()
+        _cache.set(cache_key, topic_tree_result, MONTH)
+        
+    return topic_tree_result
+
 def add_topic_exercises(topic, user):
     has_exercises = False
     if topic.has_key('name'):

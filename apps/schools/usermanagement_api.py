@@ -12,6 +12,7 @@ import os, datetime
 
 from schools.signals import *
 from schools.models import *
+from khanapi.khan_api import *
 
 def get_schools_for_user(**kwargs):
     """
@@ -99,6 +100,14 @@ def accept_invitation_to_class(current_user, invitation_id):
             return invitation
         
     raise "No matching invitation found."
+
+def create_user(username, first_name, last_name):
+    user = User(username=username, first_name=first_name, last_name=last_name)
+    user.save()
+    
+    UserProfile(user = instance).save()    
+    
+    return user
 
 def reject_invitation_to_class(current_user, invitation_id):
     """

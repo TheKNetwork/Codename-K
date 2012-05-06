@@ -9,6 +9,7 @@ from django.utils.translation import ugettext as _
 from django.db.models import signals
 from django.core.exceptions import ObjectDoesNotExist
 
+from usermanagement_api import *
 from schools.models import *
 from chat.models import *
 from khanapi.khan_api import *
@@ -25,6 +26,26 @@ def create_challenge_exercise(_exercise_name, _url, _challenge):
     
     challenge_exercise.save()
     return challenge_exercise
+
+
+def get_unfinished_challenges_for_user(**kwargs):
+    user = User.objects.get(**kwargs)
+    teams = get_teams_for_user(**kwargs)
+    unfinished_exercises = []
+    found_any_unfinished = False
+    
+    for team in teams:
+        challenges = team.challenges.all()
+        for challenge in challenges:
+            exercises = challenge.exercises.all()
+            for exercise in exercises:
+                is_pro = get_proficiency_for_exercise(user, exercise.exercise_name)
+                print "User is a pro at %s? ... %s" % (exercise, is_pro)
+                if not is_pro:
+                    unfinished_exercises.append(exercise)
+                    found_any_unfinished = True
+    
+    return unfinished_exercises, found_any_unfinished
 
 def add_school(**kwargs):
     """
@@ -103,6 +124,13 @@ def create_challenge_for_class(_classroom, _challenge_name):
         print e
         
     return challenge
+
+def remove_challenge_and_exercises(**kwargs):
+    challenge = Challenge.objects.get(**kwargs)
+    for ex in challenge.exercises.all():
+        ex.delete()
+    
+    challenge.delete()
 
 def add_team_to_challenge(team, challenge):
     challenge_group = GroupChallenge(classroom_team=team, challenge=challenge)
