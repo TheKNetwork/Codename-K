@@ -14,6 +14,9 @@ def rooms(request, template="rooms.html"):
     context = {"rooms": ChatRoom.objects.all()}
     return render(request, template, context)
 
+def candy(request):
+    return render(request, "candy.html", {})
+
 @never_cache
 def room(request, school_id, class_id, template="room.html"):
     """
