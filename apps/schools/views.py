@@ -50,7 +50,6 @@ def homeroom_failsafe(request):
     teams = get_teams_for_user(id=request.user.id)
     all_schools = School.objects.all()
     classes_not_joined = get_classes_not_joined(user_id=request.user.id, school_id=main_school.id)
-    unfinished_exercises, found_any_unfinished = get_unfinished_challenges_for_user(id=request.user.id)
     
     # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
     
@@ -59,12 +58,28 @@ def homeroom_failsafe(request):
             'khan_user_active':active_khan_user, 
             'teams':teams,
             'all_schools':all_schools,
-            'classes_not_joined': classes_not_joined,
-            'unfinished_exercises': unfinished_exercises,
-            'found_any_unfinished': found_any_unfinished }
+            'classes_not_joined': classes_not_joined, }
     
     return render(request, "homeroom/user_home.html", data, context_instance = RequestContext(request))
 
+@login_required
+@never_cache
+def unfinished_exercises(request, user_name):
+    unfinished_exercises, found_any_unfinished = get_unfinished_challenges_for_user(id=request.user.id)
+    data = {'unfinished_exercises': unfinished_exercises,
+            'found_any_unfinished': found_any_unfinished }
+    
+    return render(request, "schools/unfinished_exercises.html", data, context_instance = RequestContext(request))
+    
+@login_required
+@never_cache
+def unfinished_exercises_nocache(request, user_name):
+    unfinished_exercises, found_any_unfinished = get_unfinished_challenges_for_user(id=request.user.id, force_refresh=True)
+    data = {'unfinished_exercises': unfinished_exercises,
+            'found_any_unfinished': found_any_unfinished }
+    
+    return render(request, "schools/unfinished_exercises.html", data, context_instance = RequestContext(request))
+    
 @login_required
 @never_cache
 def join_school(request, user_name, school_id):
