@@ -65,7 +65,7 @@ def homeroom_failsafe(request):
 @login_required
 @never_cache
 def unfinished_exercises(request, user_name):
-    unfinished_exercises, found_any_unfinished = get_unfinished_challenges_for_user(id=request.user.id)
+    unfinished_exercises, found_any_unfinished = get_unfinished_challenges_for_user(user_id=request.user.id)
     data = {'unfinished_exercises': unfinished_exercises,
             'found_any_unfinished': found_any_unfinished }
     
@@ -74,7 +74,8 @@ def unfinished_exercises(request, user_name):
 @login_required
 @never_cache
 def unfinished_exercises_nocache(request, user_name):
-    unfinished_exercises, found_any_unfinished = get_unfinished_challenges_for_user(id=request.user.id, force_refresh=True)
+    print "FORCING REFRESH"
+    unfinished_exercises, found_any_unfinished = get_unfinished_challenges_for_user(user_id=request.user.id, force_refresh=True)
     data = {'unfinished_exercises': unfinished_exercises,
             'found_any_unfinished': found_any_unfinished }
     

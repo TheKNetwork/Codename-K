@@ -1,7 +1,7 @@
 {% if found_any_unfinished %}
     <script>
         function refreshMyData() {
-            $("#unfinished-exercises").load("/{{user}}/unfinished-exercises-nocache");
+            ajax("/{{user}}/unfinished-exercises-nocache", "GET", null, "unfinished-exercises") 
         }
     </script>
     <div class="row-fluid">
@@ -9,6 +9,7 @@
             <h4 style="color: #bb0000">ATTENTION: 
                 <small>The following Exercises are part of a competition and should be completed as soon as possible!</small>
             </h4>
+            <h5><a href="#" onclick="refreshMyData()">Refresh My Data from the Khan Academy</a></h5>
             <table class="table-striped table-condensed">
                <thead>
                    <th align="left">Challenge</th>
