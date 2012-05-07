@@ -274,12 +274,18 @@ EMAIL_CONFIRMATION_DAYS = 2
 EMAIL_DEBUG = DEBUG
 
 CACHES = {
+    'memcached': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    },
     'default': {
         'BACKEND': 'redis_cache.RedisCache',
         'LOCATION': 'localhost:6379',
+        'TIMEOUT': 60*60*24,
         'OPTIONS': {
             'DB': 1,
-            'PARSER_CLASS': 'redis.connection.HiredisParser'
+            'PARSER_CLASS': 'redis.connection.HiredisParser',
+            'MAX_ENTRIES': 500000
         },
     },
     'disk': {

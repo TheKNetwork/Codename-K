@@ -57,7 +57,7 @@ def get_all_khan_exercises(user, force_refresh=False):
         return execute_khan_api_method(
                                        user.knet_profile.access_token, 
                                        '/api/v1/exercises', 
-                                       user_id=user.id, 
+                                       user_id=user.id, cache_timeout=MONTH,
                                        cache_per_user=False,
                                        force_refresh=force_refresh)
     except:
@@ -67,7 +67,7 @@ def get_khan_exercises(user, force_refresh=False):
     try:
         return execute_khan_api_method(user.knet_profile.access_token, 
                                        '/api/v1/user/exercises', user_id=user.id, 
-                                       disk_cache=True, cache_timeout=HALF_A_DAY,
+                                       disk_cache=True, cache_timeout=DAY,
                                        cache_per_user=True,
                                        force_refresh=force_refresh)
     except:
