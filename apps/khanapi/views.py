@@ -23,6 +23,8 @@ import string
 import time
 import cgi, os, sys
 
+TOPIC_TREE_JS = ''
+
 @never_cache
 def index(request):
     data = { 'has_access_token':has_access_token(request.session) }
@@ -39,8 +41,11 @@ def topic_tree(request):
                   "khanapi/topic_tree.html")
 
 def topic_tree_javascript(request):
-    js = get_topic_tree_js(request.user)
-    response = HttpResponse(js)
+    global TOPIC_TREE_JS
+    if TOPIC_TREE_JS == '':
+        TOPIC_TREE_JS = get_topic_tree_js(request.user)
+        
+    response = HttpResponse(TOPIC_TREE_JS)
     response.__setitem__('Content-Type','text/plain')
     return response
 

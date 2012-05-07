@@ -29,8 +29,8 @@ urlpatterns = patterns("",
     url(r"^khanapi/", include("khanapi.urls")),
     
     url(r'^(?P<user_name>\w+)/homeroom/$', 'schools.views.index', name='homeroom_user'),
-    url(r'^(?P<user_name>\w+)/unfinished-exercises', 'schools.views.unfinished_exercises', name='unfinished_exercises'),
-    url(r'^(?P<user_name>\w+)/unfinished-exercises-nocache', 'schools.views.unfinished_exercises_nocache', name='unfinished_exercises_nocache'),
+    url(r'^(?P<user_name>\w+)/unfinished-exercises-nocache/', 'schools.views.unfinished_exercises_nocache', name='unfinished_exercises_nocache'),
+    url(r'^(?P<user_name>\w+)/unfinished-exercises/', 'schools.views.unfinished_exercises', name='unfinished_exercises'),
     url(r'^homeroom/$', 'schools.views.homeroom_failsafe', name='homeroom'),
     
     # School related urls
