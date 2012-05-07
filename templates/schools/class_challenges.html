@@ -1,4 +1,16 @@
                 
+                <script>
+                    function removeChallenge(challengeId) {
+                        var _url = "/{{user}}/remove_challenge/{{school.id}}/{{school_class.id}}/" + challengeId;
+                        $.ajax({
+                           url: _url,
+                           complete: function() {
+                               $("#class-challenges").load('/{{user}}/schools/{{school.id}}/{{school_class.id}}/challenges');
+                           }
+                        });
+                    }
+                </script>
+                
                 <h3>Challenges</h3>
                 <table class="table table-striped table-condensed">
                     <thead>
@@ -10,18 +22,12 @@
                         {% for challenge in challenges.all %}
                         <tr>
                             <td>
-                                <a href="#" onclick="toggleCollapse('challenge-{{challenge.id}}')">{{ challenge }}</a>
-                                <div id="challenge-{{ challenge.id }}" class"collapse in">
-                                    Some Menu Content here
-                                </div>
-                                <script>
-                                    $('#challenge-{{ challenge.id }}').collapse({
-                                        toggle: false
-                                    });
-                                </script>
+                                {{challenge}}
                             </td>
                             <td>{{ challenge.challenge_groups.all.count }} Groups</td>
-                            <td>&nbsp;</td>
+                            <td>
+                                <a href="#" onclick="removeChallenge({{challenge.id}})">Remove</a>
+                            </td>
                         </tr>
                         {% endfor %}
                         <tr><td colspan="3">&nbsp;</td></tr>

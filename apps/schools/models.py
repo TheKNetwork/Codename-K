@@ -44,8 +44,6 @@ class School(Group):
     def __unicode__(self):
         return self.school_name   
 
-# When model instance is saved, trigger creation of corresponding profile
-signals.post_save.connect(create_profile, sender=User)
 class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True, related_name="knet_profile")
     personal_url = models.URLField(blank=True)
@@ -134,6 +132,9 @@ class ChallengeExercise(models.Model):
     exercise_name = models.CharField(max_length=150)
     exercise_url = models.URLField(blank=True)
     exercise_description = models.CharField(max_length=2000, null=True, blank=True)
+    
+    def __unicode__(self):
+        return u"{0}".format(self.exercise_name) 
     
 class ClassInvitation(models.Model):
     """

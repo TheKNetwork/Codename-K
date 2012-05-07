@@ -50,6 +50,8 @@ def homeroom_failsafe(request):
     teams = get_teams_for_user(id=request.user.id)
     all_schools = School.objects.all()
     classes_not_joined = get_classes_not_joined(user_id=request.user.id, school_id=main_school.id)
+    unfinished_exercises, found_any_unfinished = get_unfinished_challenges_for_user(id=request.user.id)
+    
     # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
     
     data = {'user': request.user, 
@@ -57,7 +59,9 @@ def homeroom_failsafe(request):
             'khan_user_active':active_khan_user, 
             'teams':teams,
             'all_schools':all_schools,
-            'classes_not_joined': classes_not_joined }
+            'classes_not_joined': classes_not_joined,
+            'unfinished_exercises': unfinished_exercises,
+            'found_any_unfinished': found_any_unfinished }
     
     return render(request, "homeroom/user_home.html", data, context_instance = RequestContext(request))
 
@@ -124,6 +128,12 @@ def add_challenge_form(request, user_name, school_id, class_id):
     return render(request, "schools/add_challenge.html", data)
 
 @login_required
+@never_cache
+def remove_challenge(request, user_name, school_id, class_id, challenge_id):
+    remove_challenge_and_exercises(id=challenge_id)
+    return HttpResponse("removed")
+
+@login_required
 @cache_page(5)
 def group_section(request, user_name, school_id, class_id):
     school = School.objects.get(id=school_id)
@@ -167,7 +177,7 @@ def group_section(request, user_name, school_id, class_id):
                   context_instance=RequestContext(request, {}))
 
 @login_required
-@cache_page(3)
+@never_cache
 def challenges(request, user_name, school_id, class_id):
     school = School.objects.get(id=school_id)
     classroom = Classroom.objects.get(id=class_id)
@@ -280,6 +290,11 @@ def class_congregation(request, school_id, class_id, user_name):
     school_class = Classroom.objects.get(id=class_id)
     school = School.objects.get(id=school_id)
     whiteboard_sessions = WhiteboardSession.objects.all()
-    data = {'user': request.user, 'school_class': school_class, 'school':school, 'whiteboard_sessions': whiteboard_sessions}
+    unfinished_exercises, found_any_unfinished = get_unfinished_challenges_for_user(id=request.user.id)
+    
+    data = {'user': request.user, 'school_class': school_class, 
+            'school':school, 'whiteboard_sessions': whiteboard_sessions,
+            'unfinished_exercises': unfinished_exercises,
+            'found_any_unfinished': found_any_unfinished, }
 
     return render(request, "schools/class_congregation.html", data)

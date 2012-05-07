@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Candy - Chats are not dead yet</title>
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}candy/res/default.css" />
+	
+	<script type="text/javascript" src="{{STATIC_URL}}js/jquery.min.js"></script>
+	<script type="text/javascript" src="{{STATIC_URL}}candy/libs/libs.min.js"></script>
+	<script type="text/javascript" src="{{STATIC_URL}}candy/candy.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			Candy.init('http://staging.theknetwork.org/http-bind/', {
+				core: { debug: true },
+				view: { resources: '{{STATIC_URL}}candy/res/' }
+			});
+			
+			Candy.Core.connect();
+		});
+	</script>
+</head>
+<body>
+	<div id="candy"></div>
+</body>
+</html>
