@@ -28,7 +28,7 @@ def create_challenge_exercise(_exercise_name, _url, _challenge):
     return challenge_exercise
 
 
-def get_unfinished_challenges_for_user(**kwargs):
+def get_unfinished_challenges_for_user(force_refresh=False, **kwargs):
     user = User.objects.get(**kwargs)
     teams = get_teams_for_user(**kwargs)
     unfinished_exercises = []
@@ -39,7 +39,7 @@ def get_unfinished_challenges_for_user(**kwargs):
         for challenge in challenges:
             exercises = challenge.exercises.all()
             for exercise in exercises:
-                is_pro = get_proficiency_for_exercise(user, exercise.exercise_name)
+                is_pro = get_proficiency_for_exercise(user, exercise.exercise_name, force_refresh)
                 print "User is a pro at %s? ... %s" % (exercise, is_pro)
                 if not is_pro:
                     unfinished_exercises.append(exercise)

@@ -40,7 +40,11 @@
 
 <div class="span12">
     <div class="row-fluid">
-    <div class="span6 well">
+        {% load khan_tags %}
+        {% khan_user_login %}
+        {# khan_user_data #}
+    </div>
+    <div class="row-fluid well">
         <div>
             <table><tr>
                 <td valign="center">
@@ -61,31 +65,11 @@
         </div>
     </div>
     
-    {% if found_any_unfinished %}
-    <div class="span4 well">
-        <div class="row-fluid">
-        <h4 style="color: #bb0000">ATTENTION: 
-            <small>The following Exercises are part of a competition and should be completed as soon as possible!</small>
-        </h4>
-        <table class="table-striped table-condensed">
-           <thead>
-               <th align="left">Challenge</th>
-               <th align="left" colspan="2">Incomplete Exercise</th>
-           </thead>
-           <tbody>
-               {% for exercise in unfinished_exercises %}
-               <tr>
-                   <td>{{exercise.challenge}}</td>
-                   <td>{{exercise}}</td>
-                   <td><a href="{{exercise.exercise_url}}" target="khan_window">Work on this exercise</a></td>
-               </tr>
-               {% endfor %}
-           </tbody>
-        </table>
-        </div>
+    <div id="unfinished-exercises">
     </div>
-    {% endif %}
-    </div>
+    <script>
+        $("#unfinished-exercises").load("/{{user}}/unfinished-exercises");
+    </script>
 </div>
 
     <div class="span12" style="margin-top:18px">
@@ -227,9 +211,5 @@
             </div>
     </div>
     </div>
-      
-<script type="text/javascript">
-    $("#khan-user-data").load('/khanapi/khan_user_info');
-</script>
       
 {% endblock %}
