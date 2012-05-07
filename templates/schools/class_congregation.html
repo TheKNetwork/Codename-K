@@ -84,22 +84,22 @@
         
         {% if found_any_unfinished %}
         <div class="row-fluid">
-            <div class="span4 well">
+            <div class="span9 well">
             
             <h4 style="color: #bb0000">ATTENTION: 
                 <small>The following Exercises are part of a competition and should be completed as soon as possible!</small>
             </h4>
             <table class="table-striped table-condensed">
                <thead>
-                   <th align="left">Challenge</th>
                    <th align="left" colspan="2">Incomplete Exercise</th>
+                   <th align="left">Challenge</th>
                </thead>
                <tbody>
                    {% for exercise in unfinished_exercises %}
                    <tr>
-                       <td>{{exercise.challenge}}</td>
                        <td>{{exercise}}</td>
                        <td><a href="{{exercise.exercise_url}}" target="khan_window">Work on this exercise</a></td>
+                       <td>{{exercise.challenge}}</td>
                    </tr>
                    {% endfor %}
                </tbody>
