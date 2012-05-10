@@ -53,7 +53,7 @@ elif os.getenv(RUN_ENV, '') == 'staging':
 else:
     DEBUG = True
     SITE_ROOT = 'localhost:8000'
-    config.read(os.getenv('KNET_INI', '/etc/knet.ini'))
+    config.read(os.getenv('KNET_INI', '../knet.ini'))
 
 ENGINE = 'django.db.backends.sqlite3'
 USER = ''
