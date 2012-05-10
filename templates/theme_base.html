@@ -8,8 +8,9 @@
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-knet.css">
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/extra.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/knet.css">
         <script src="{{ STATIC_URL }}js/jquery.min.js"></script>
         <script src="{{ STATIC_URL }}js/jquery.form.js"></script>
         
@@ -42,58 +43,43 @@
     </head>
     <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
         
-
-        
-    <div class="navbar navbar-fixed-top" style="height: 47px">
-          <div style="background-color: #444; font-weight:bold">
-            <div class="container-fluid">
-              <div class="nav-collapse">
-                <span class="nav" 
-                style="color: #fff;text-transform: uppercase;padding: 4px 7px 4px 7px; text-align: center;">
-                    <a href="/" style="color: #fff; text-decoration: none">{{ SITE_NAME }}</a>
-                </span>
-                <span class="nav" style="padding: 4px 7px 4px 7px">
-                  {% if user.is_active %}
-                  <a href="/homeroom" style="color: #f89406">Home</a>
-                  <span style="color: #555; padding-left: 7px; padding-right: 7px"> | </span>
-                  {% endif %}
-                  <a href="#about" style="color: #3299c9">About</a>
-                  <span style="color: #555; padding-left: 7px; padding-right: 7px"> | </span>
-                  <a href="mailto:info@theknetwork.org" style="color: #85e55b">Contact</a>
-                </span>
-                
-                
-                {% if user.is_active %} 
-                <span class="nav pull-right" style="padding: 4px 7px 4px 7px">
-                    <span style="color: #aaa">Welcome, </span>
-                    <a href="{% url acct_email %}" style="color: #3299c9">{{ user.first_name }} {{ user.last_name }}</a>
-                    <span style="color: #555; padding-left: 7px; padding-right: 7px"> | </span>
-                    <a href="{% url acct_logout %}" style="color: #3299c9">Logout</a>
-                </span>  
-                {% endif %}
-                {% if not user.is_active %}
-                <span class="nav pull-right" style="padding: 4px 7px 4px 7px">
-                    <a href="{% url acct_login %}" style="color: #3299c9">Login</a>
-                    <span style="color: #555; padding-left: 7px; padding-right: 7px"> | </span>
-                    <a href="{% url acct_signup %}" style="color: #3299c9">Register</a>
-                </span>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-      
-        <div style="height: 2px">
-                <table width="100%" height="2px"><tr>
-                    <td height"2px" width="30%" style="background-color:#f89406"></td>
-                    <td height"2px" width="40%" style="background-color:#3299c9"></td>
-                    <td height"2px" width="30%" style="background-color:#85e55b"></td>
-                </tr></table>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">K Network</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              {% if user.is_active %}
+              <li class="active"><a href="/{{ user }}/homeroom">Home</a></li>
+              {% endif %}
+              <li><a href="#about">About</a></li>
+              <li><a href="mailto:info@theknetwork.org">Contact</a></li>
+            </ul>
+            
+            {% if not user.is_active %}
+            <p class="navbar-text pull-right">
+            	<a href="/accounts/login/?next=/homeroom">Login</a> | 
+            	<a href="/accounts/register/">Register</a>
+			</p>	    
+			{% endif %}
+            
+            {% if user.is_active %}
+            <p class="navbar-text pull-right">Logged in as <a href="/profiles/edit/">{{ user }}</a> | <a href="/accounts/logout/?next=/">Logout</a></p>
+            {% endif %}
+          </div><!--/.nav-collapse -->
         </div>
-    
-    </div>
-     
+      </div>
+    </div> 
+        
+<!-- ..... -->
+
         {% block body_base %}
-            <div class="container-fluid" style="position: relative; top: -13px">
+            <div id="main-container" class="container-fluid">
                 <div class="span6 offset3">
                     {% if messages %}
                         <div class="alert">
@@ -122,7 +108,7 @@
         {% block extra_body_base %}
             {% block extra_body %}{% endblock %}
         {% endblock %}
-        <div style="width: 100%; height: 24px; position: fixed; bottom: 0; background-color: #666; z-index: 100">
+        <div style="width: 100%; height: 24px; position: fixed; bottom: 0; background-color: #000; z-index: 100">
             <div style="height: 2px">
                 <table width="100%" height="2px"><tr>
                     <td height"2px" width="30%" style="background-color:#f89406"></td>

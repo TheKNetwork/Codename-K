@@ -205,7 +205,6 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.messages",
     "django.contrib.humanize",
-    'django_socketio',
     
     "pinax.templatetags",
     
