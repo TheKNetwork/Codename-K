@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block head_title_base %}{% if SITE_NAME %}{{ SITE_NAME }} : {% endif %}{% block head_title %}{% endblock %}{% endblock %}</title>
+        <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-knet.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/extra.css">
+        <script src="{{ STATIC_URL }}js/jquery.min.js"></script>
+        <script src="{{ STATIC_URL }}js/jquery.form.js"></script>
+        
+        <script type="text/javascript" src="{{STATIC_URL}}js/knet.form.util.js"></script>
+        <script type="text/javascript" src="{{STATIC_URL}}js/knet.js"></script>     
+    
+        <link href="{{STATIC_URL}}js/chosen/chosen.css" rel="stylesheet">
+        <script type="text/javascript" src="{{STATIC_URL}}js/chosen/chosen.jquery.min.js"></script>
+        
+        <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-modal.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-tooltip.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-alerts.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-twipsy.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-popover.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-tabs.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-scrollspy.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-buttons.js"></script>
+        
+        {% block extra_head_base %}
+            {% block extra_head %}{% endblock %}
+        {% endblock %}
+        
+        <script type="text/javascript">
+            function toggleCollapse(collapseId) {
+                $('#'+collapseId).collapse('toggle');
+            }
+        </script>
+    </head>
+    <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
+        
+
+        
+    <div class="navbar navbar-fixed-top" style="height: 47px">
+          <div style="background-color: #444; font-weight:bold">
+            <div class="container-fluid">
+              <div class="nav-collapse">
+                <span class="nav" 
+                style="color: #fff;text-transform: uppercase;padding: 4px 7px 4px 7px; text-align: center;">
+                    <a href="/" style="color: #fff; text-decoration: none">{{ SITE_NAME }}</a>
+                </span>
+                <span class="nav" style="padding: 4px 7px 4px 7px">
+                  {% if user.is_active %}
+                  <a href="/homeroom" style="color: #f89406">Home</a>
+                  <span style="color: #555; padding-left: 7px; padding-right: 7px"> | </span>
+                  {% endif %}
+                  <a href="#about" style="color: #3299c9">About</a>
+                  <span style="color: #555; padding-left: 7px; padding-right: 7px"> | </span>
+                  <a href="mailto:info@theknetwork.org" style="color: #85e55b">Contact</a>
+                </span>
+                
+                
+                {% if user.is_active %} 
+                <span class="nav pull-right" style="padding: 4px 7px 4px 7px">
+                    <span style="color: #aaa">Welcome, </span>
+                    <a href="{% url acct_email %}" style="color: #3299c9">{{ user.first_name }} {{ user.last_name }}</a>
+                    <span style="color: #555; padding-left: 7px; padding-right: 7px"> | </span>
+                    <a href="{% url acct_logout %}" style="color: #3299c9">Logout</a>
+                </span>  
+                {% endif %}
+                {% if not user.is_active %}
+                <span class="nav pull-right" style="padding: 4px 7px 4px 7px">
+                    <a href="{% url acct_login %}" style="color: #3299c9">Login</a>
+                    <span style="color: #555; padding-left: 7px; padding-right: 7px"> | </span>
+                    <a href="{% url acct_signup %}" style="color: #3299c9">Register</a>
+                </span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+      
+        <div style="height: 2px">
+                <table width="100%" height="2px"><tr>
+                    <td height"2px" width="30%" style="background-color:#f89406"></td>
+                    <td height"2px" width="40%" style="background-color:#3299c9"></td>
+                    <td height"2px" width="30%" style="background-color:#85e55b"></td>
+                </tr></table>
+        </div>
+    
+    </div>
+     
+        {% block body_base %}
+            <div class="container-fluid" style="position: relative; top: -13px">
+                <div class="span6 offset3">
+                    {% if messages %}
+                        <div class="alert">
+                            {% for msg in messages %}
+                                {{ msg }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                
+                {% block body %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+        
+        {% block footer_base %}
+            <div id="footer">
+                <div class="inner">
+                    <div class="container-fluid">
+                        {% block footer %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        
+        {% block extra_body_base %}
+            {% block extra_body %}{% endblock %}
+        {% endblock %}
+        <div style="width: 100%; height: 24px; position: fixed; bottom: 0; background-color: #666; z-index: 100">
+            <div style="height: 2px">
+                <table width="100%" height="2px"><tr>
+                    <td height"2px" width="30%" style="background-color:#f89406"></td>
+                    <td height"2px" width="40%" style="background-color:#3299c9"></td>
+                    <td height"2px" width="30%" style="background-color:#85e55b"></td>
+                </tr></table>
+            </div>
+            
+            <table width="100%" height="2px"><tr>
+                <td height"2px" width="30%"></td>
+                <td height"2px" width="40%" align="center"><h6>&copy; 2012 The K-Network</h6></td>
+                <td height"2px" width="30%"></td>
+            </tr></table>
+        </div>
+        
+    </body>
+    
+</html>
