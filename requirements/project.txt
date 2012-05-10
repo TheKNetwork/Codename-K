@@ -21,8 +21,3 @@ south
 requests
 
 django_extensions
-django-socketio
-
-hiredis
-redis
-django-redis-cache
