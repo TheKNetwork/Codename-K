@@ -1,0 +1,29 @@
+<ul>
+{% for team_status in team_statuses %}
+	<li><b>Team name: {{team_status.team}}</b><br/>
+			<ul>
+			{% for exercise_status in team_status.exercises %}
+				<li><b>Exercise: {{ exercise_status.exercise }} </b>
+					{% if exercise_status.is_pro %}
+						Team has completed this exercise
+					{% else %}
+						Incomplete
+					{% endif %}<br/>
+					<ul>
+						{% for user_status in exercise_status.users %}
+							<li>{{ user_status.user }} 
+								{% if user_status.is_pro %}
+								has completed this exercise
+								{% else %}
+								has NOT completed this exercise
+								{% endif %}
+								</li>
+						{% endfor %}
+					</ul>
+				</li>
+				
+			{% endfor %}
+			</ul>
+	</li>
+{% endfor %}
+</ul>
