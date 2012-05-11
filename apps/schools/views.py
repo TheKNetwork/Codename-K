@@ -211,18 +211,16 @@ def challenges(request, user_name, school_id, class_id):
 
 @login_required
 @never_cache
-def challenge(request, user_name, school_id, class_id, challenge_id):
+def challenge(request, school_id, class_id, challenge_id):
     school = School.objects.get(id=school_id)
     classroom = Classroom.objects.get(id=class_id)
-    teams = classroom.teams
     challenge = Challenge.objects.get(id=challenge_id)
-    
-    exercises
+    team_statuses = get_team_status_for_challenge(challenge_id=challenge_id)
     
     data = {'school':school, 
             'school_class': classroom, 
-            'teams':teams,
-            'challenge': challenge, }
+            'challenge': challenge, 
+            'team_statuses': team_statuses, }
     
     return render(request, "schools/challenge.html", data, 
                   context_instance=RequestContext(request, {}))
