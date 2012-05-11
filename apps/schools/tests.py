@@ -20,8 +20,9 @@ class SimpleTest(TestCase):
 
     # END OF LINE
     
-    def test_show_challenges_for_user(self):
-        map_unfinished_stuff, found_any = get_unfinished_challenges_for_user(username='csantiago')
+    def xtest_show_challenges_for_user(self):
+        user = User.objects.get(username='csantiago')
+        map_unfinished_stuff, found_any = get_unfinished_challenges_for_user(user_id=user.id)
         print "Found any? %s" % found_any
         
         for team in map_unfinished_stuff:
@@ -37,6 +38,15 @@ class SimpleTest(TestCase):
         associated_group_name = school.name
         self.assertIsNotNone(associated_group_name, "Saving the school didn't create the correct group entry")
         pass
+    
+    def test_get_teams_for_challenge(self):
+        teams = get_team_status_for_challenge(challenge_id=1)
+        for team in teams:
+            print team['team']
+            for exercise in team['exercises']:
+                print '  exercise: %s, team is pro/complete? %s' % (exercise['exercise'], exercise['is_pro'])
+                for user in exercise['users']:
+                    print '        user:%s is pro/complete? %s' % (user['user'], user['is_pro'])
     
     def norun_test_add_challenge(self):
         # get reference to a school and a class

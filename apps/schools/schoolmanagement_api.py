@@ -120,6 +120,31 @@ def get_challenges_for_group(group):
     
     return challenges
 
+def get_team_status_for_challenge(challenge_id):
+    challenge = Challenge.objects.get(id=1)
+    teams = []
+    for team in challenge.teams.all():
+        team_entry = dict()
+        team_entry['team'] = team
+        exercise_entries = []
+        for exercise in challenge.exercises.all():
+            team_exercise_entry = dict()
+            is_pro = get_exercise_proficiency_for_team(team=team, exercise_name=exercise.exercise_name)
+            team_exercise_entry = {'exercise':exercise, 'is_pro': is_pro,}
+            
+            user_entries = []
+            for user in team.user_set.all():
+                user_is_pro = get_proficiency_for_exercise(user=user, exercise_name=exercise.exercise_name)
+                user_entry = {'user':user, 'is_pro':user_is_pro,}
+                user_entries.append(user_entry)
+                
+            team_exercise_entry['users'] = user_entries
+            exercise_entries.append(team_exercise_entry)
+        team_entry['exercises'] = exercise_entries
+        teams.append(team_entry)
+    
+    return teams
+
 def create_challenge_for_class(_classroom, _challenge_name):
     challenge = Challenge(challenge_name=_challenge_name, classroom=_classroom)
     try:
