@@ -40,7 +40,13 @@ class SimpleTest(TestCase):
         pass
     
     def test_get_teams_for_challenge(self):
-        get_team_status_for_challenge(challenge_id=1)
+        teams = get_team_status_for_challenge(challenge_id=1)
+        for team in teams:
+            print team['team']
+            for exercise in team['exercises']:
+                print '  exercise: %s, team is pro/complete? %s' % (exercise['exercise'], exercise['is_pro'])
+                for user in exercise['users']:
+                    print '        user:%s is pro/complete? %s' % (user['user'], user['is_pro'])
     
     def norun_test_add_challenge(self):
         # get reference to a school and a class

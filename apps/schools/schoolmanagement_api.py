@@ -137,10 +137,13 @@ def get_team_status_for_challenge(challenge_id):
                 user_is_pro = get_proficiency_for_exercise(user=user, exercise_name=exercise.exercise_name)
                 user_entry = {'user':user, 'is_pro':user_is_pro,}
                 user_entries.append(user_entry)
-            
+                
+            team_exercise_entry['users'] = user_entries
             exercise_entries.append(team_exercise_entry)
         team_entry['exercises'] = exercise_entries
         teams.append(team_entry)
+    
+    return teams
 
 def create_challenge_for_class(_classroom, _challenge_name):
     challenge = Challenge(challenge_name=_challenge_name, classroom=_classroom)
