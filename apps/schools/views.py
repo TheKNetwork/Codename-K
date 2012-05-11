@@ -217,6 +217,8 @@ def challenge(request, user_name, school_id, class_id, challenge_id):
     teams = classroom.teams
     challenge = Challenge.objects.get(id=challenge_id)
     
+    exercises
+    
     data = {'school':school, 
             'school_class': classroom, 
             'teams':teams,
