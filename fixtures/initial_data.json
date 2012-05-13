@@ -1654,13 +1654,6 @@
             "exercise_description": ""
         }
     }, {
-        "pk": 1,
-        "model": "chat.chatroom",
-        "fields": {
-            "name": "POCS: Patel 8th",
-            "slug": "pfc-omar-e-torres-charter-school-patel-8th"
-        }
-    }, {
         "pk": 58,
         "model": "auth.permission",
         "fields": {
