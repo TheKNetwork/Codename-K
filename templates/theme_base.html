@@ -70,7 +70,7 @@
             
             {% if user.is_active %}
             <p class="navbar-text pull-right">Logged in as <a href="{% url acct_email %}">{{ user }}</a> | 
-                <a href="">Logout</a></p>
+                <a href="{% url acct_logout %}">Logout</a></p>
             {% endif %}
           </div><!--/.nav-collapse -->
         </div>

@@ -120,6 +120,31 @@ def get_challenges_for_group(group):
     
     return challenges
 
+def get_team_status_for_challenge(challenge_id):
+    challenge = Challenge.objects.get(id=1)
+    teams = []
+    for team in challenge.teams.all():
+        team_entry = dict()
+        team_entry['team'] = team
+        exercise_entries = []
+        for exercise in challenge.exercises.all():
+            team_exercise_entry = dict()
+            is_pro = get_exercise_proficiency_for_team(team=team, exercise_name=exercise.exercise_name)
+            team_exercise_entry = {'exercise':exercise, 'is_pro': is_pro,}
+            
+            user_entries = []
+            for user in team.user_set.all():
+                user_is_pro = get_proficiency_for_exercise(user=user, exercise_name=exercise.exercise_name)
+                user_entry = {'user':user, 'is_pro':user_is_pro,}
+                user_entries.append(user_entry)
+                
+            team_exercise_entry['users'] = user_entries
+            exercise_entries.append(team_exercise_entry)
+        team_entry['exercises'] = exercise_entries
+        teams.append(team_entry)
+    
+    return teams
+
 def create_challenge_for_class(_classroom, _challenge_name):
     challenge = Challenge(challenge_name=_challenge_name, classroom=_classroom)
     try:
@@ -189,6 +214,34 @@ def get_team_proficiency_date_for_exercise(team, exercise_name):
             print "WARNING: Most recent date for proficiency in team was %s, but some users didn't have any proficiency, so no team date is valid yet." % most_recent_proficiency_date
     
     return most_recent_proficiency_date
+
+def refresh_team_info_for_user(user_id, teams):
+        
+    for team in teams.all():
+        challenge_pro = 0
+        exercises_completed = 0
+        
+        for u in team.user_set.all():
+            if u.id == user_id:
+                current_team = team
+                print "Found current team"
+        
+        for challenge in team.challenges.all():
+            exercise_total = 0
+            exercise_pro = 0
+            for exercise in challenge.exercises.all():
+                is_pro = get_exercise_proficiency_for_team(team, exercise.exercise_name)
+                print "Got team proficiency"
+                if is_pro:
+                    exercise_pro = exercise_pro + 1
+                    exercises_completed = exercises_completed + 1
+                exercise_total = exercise_total + 1
+            if exercise_total == exercise_pro and exercise_total > 0:
+                challenge_pro = challenge_pro + 1
+        team.challenge_complete_count = challenge_pro
+        team.exercise_complete_count = exercises_completed
+        team.save()
+    return teams, current_team
 
 def get_main_school_for_user(**kwargs):
     """

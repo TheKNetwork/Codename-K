@@ -23,6 +23,12 @@
                         <tr>
                             <td>
                                 {{challenge}}
+                                <div id="challenge{{challenge.id}}">
+                                	
+                                </div>
+                                <script>
+                                	$("#challenge{{challenge.id}}").load('/challenge/{{challenge.id}}/{{school.id}}/{{school_class.id}}');
+                                </script>
                             </td>
                             <td>{{ challenge.challenge_groups.all.count }} Groups</td>
                             <td>

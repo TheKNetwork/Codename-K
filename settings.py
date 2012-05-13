@@ -81,6 +81,13 @@ DATABASES = {
     }
 }
 
+  
+import djcelery  
+djcelery.setup_loader() 
+BROKER_URL = "django://" # tell kombu to use the Django database as the message queue  
+BROKER_BACKEND = "django"
+CELERY_IMPORTS = ('schools.views',)
+
 # django needs to know what port to talk to for chat
 SOCKETIO_HOST = 'localhost'
 SOCKETIO_PORT = 9000
@@ -88,6 +95,8 @@ SOCKETIO_PORT = 9000
 # KHAN API Stuff
 KHAN_KEY = config.get('khanapi','KHAN_KEY')
 KHAN_SECRET = config.get('khanapi','KHAN_SECRET')
+
+# ASYNC and TASK QUEUEING/SCHEDULING
 
 # Keep around an instance of the client. It's reusable because all the
 # stateful stuff is passed around as parameters.
@@ -205,6 +214,9 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.messages",
     "django.contrib.humanize",
+    
+    'kombu.transport.django',  
+    'djcelery',
     
     "pinax.templatetags",
     
