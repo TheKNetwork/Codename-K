@@ -215,6 +215,34 @@ def get_team_proficiency_date_for_exercise(team, exercise_name):
     
     return most_recent_proficiency_date
 
+def refresh_team_info_for_user(user_id, teams):
+        
+    for team in teams.all():
+        challenge_pro = 0
+        exercises_completed = 0
+        
+        for u in team.user_set.all():
+            if u.id == user_id:
+                current_team = team
+                print "Found current team"
+        
+        for challenge in team.challenges.all():
+            exercise_total = 0
+            exercise_pro = 0
+            for exercise in challenge.exercises.all():
+                is_pro = get_exercise_proficiency_for_team(team, exercise.exercise_name)
+                print "Got team proficiency"
+                if is_pro:
+                    exercise_pro = exercise_pro + 1
+                    exercises_completed = exercises_completed + 1
+                exercise_total = exercise_total + 1
+            if exercise_total == exercise_pro and exercise_total > 0:
+                challenge_pro = challenge_pro + 1
+        team.challenge_complete_count = challenge_pro
+        team.exercise_complete_count = exercises_completed
+        team.save()
+    return teams, current_team
+
 def get_main_school_for_user(**kwargs):
     """
     Gets the user's default school
