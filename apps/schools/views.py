@@ -34,30 +34,6 @@ from celery.registry import tasks
 
 logger = logging.getLogger('dev')
 
-class UpdateUserRelatedInfo(Task):
-
-    def run(self, user_id, **kwargs):
-
-        try:
-            print "Running async task"
-    
-            user = User.objects.get(id=user_id)
-            school = user.knet_profile.default_school
-            print school
-            
-            classrooms = school.classrooms
-            for classroom in classrooms.all():
-                teams = classroom.teams
-                refresh_team_info_for_user(user_id=user_id, teams=teams)
-            
-            #refresh_team_info_for_user(user_id=user_id, teams=teams)
-            print "Finished async task"
-
-        except Exception, e:
-            print e
-
-tasks.register(UpdateUserRelatedInfo)
-
 @login_required
 @never_cache
 def index(request, user_name):

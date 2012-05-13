@@ -88,6 +88,15 @@ BROKER_URL = "django://" # tell kombu to use the Django database as the message 
 BROKER_BACKEND = "django"
 CELERY_IMPORTS = ('schools.views',)
 
+from datetime import timedelta
+
+CELERYBEAT_SCHEDULE = {
+    "runs-every-5-minutes": {
+        "task": "khanapi.async.UpdateAllUsersRelatedInfo",
+        "schedule": timedelta(seconds=60*5),
+    },
+}
+
 # django needs to know what port to talk to for chat
 SOCKETIO_HOST = 'localhost'
 SOCKETIO_PORT = 9000

@@ -44,7 +44,6 @@ def get_unfinished_challenges_for_user(user_id, force_refresh=False):
                 if force_refresh:
                     force_refresh = False
                     
-                print "User is a pro at %s? ... %s" % (exercise, is_pro)
                 if not is_pro:
                     unfinished_exercises.append(exercise)
                     found_any_unfinished = True
@@ -224,14 +223,12 @@ def refresh_team_info_for_user(user_id, teams):
         for u in team.user_set.all():
             if u.id == user_id:
                 current_team = team
-                print "Found current team"
         
         for challenge in team.challenges.all():
             exercise_total = 0
             exercise_pro = 0
             for exercise in challenge.exercises.all():
                 is_pro = get_exercise_proficiency_for_team(team, exercise.exercise_name)
-                print "Got team proficiency"
                 if is_pro:
                     exercise_pro = exercise_pro + 1
                     exercises_completed = exercises_completed + 1

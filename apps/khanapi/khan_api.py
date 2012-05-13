@@ -233,7 +233,6 @@ def execute_khan_api_method(profile_access_token, api_method, cache_timeout=TYPI
             if test_result is None:
                 print "WHOA - storing in cache didn't do jack squat!!"
                 print "   cache key: %s" % cache_key
-                print "   original data: %s" % result_data
                 print
                 print 
         except:
