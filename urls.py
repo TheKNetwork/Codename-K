@@ -71,14 +71,7 @@ urlpatterns = patterns("",
     url(r'^oauth_callback/$', 'khanapi.views.oauth_callback'),
     url(r'^khanapi/khan_user_info', 'khanapi.views.khan_user_info'),
     
-    url("^chat/candy", "chat.views.candy", name="candy"),
-    url("^chat/rooms/$", "chat.views.rooms", name="rooms"),
-    url("^chat/create/$", "chat.views.create", name="create"),
-    url("^chat/system_message/$", "chat.views.system_message", name="system_message"),
-    # url("^chat/(?P<slug>.*)$", "chat.views.room", name="room"),
-    url("^chat/(?P<school_id>\d+)/(?P<class_id>\d+)", "chat.views.room", name="room"),
-    url("^chat/(?P<room_id>\d+)", "chat.views.room_by_id", name="room_by_id"),
-        
+    url(r"^chat/", include("chat.urls")),
 )
 
 
