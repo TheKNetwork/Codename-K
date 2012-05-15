@@ -21,3 +21,5 @@ south
 requests
 
 django_extensions
+celery
+django-celery==2.5.5

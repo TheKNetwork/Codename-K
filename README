@@ -1,0 +1,8 @@
+1. pip install -r requirements/project.txt
+2. manage.py syncdb
+3. open a second terminal, run manage.py celeryd -l info
+4. go to original terminal, run manage.py runserver
+
+From now on, when the user hits their homeroom, an asynchronous task will be executed in the celery window instead of the app waiting on the task to finish.
+
+Celery can and probably be used in the future to schedule bulk updates from the khan academy.

@@ -104,7 +104,7 @@ class ClassroomTeam(Group):
     classroom = models.ForeignKey(Classroom, related_name="teams")
     team_name = models.CharField(max_length=50)
 
-    challenges = models.ManyToManyField(Challenge, through='GroupChallenge')
+    challenges = models.ManyToManyField(Challenge, through='GroupChallenge', related_name="teams")
     challenge_complete_count = models.IntegerField(blank=True, null=True)
     exercise_complete_count = models.IntegerField(blank=True, null=True)
     
@@ -124,7 +124,7 @@ challenge_SCOPE_CHOICES = (
 )
     
 class GroupChallenge(models.Model):
-    classroom_team = models.ForeignKey(ClassroomTeam)
+    classroom_team = models.ForeignKey(ClassroomTeam, related_name="group_challenges")
     challenge = models.ForeignKey(Challenge, related_name="challenge_groups")
     
 class ChallengeExercise(models.Model):

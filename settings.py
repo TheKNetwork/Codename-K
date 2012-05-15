@@ -81,6 +81,22 @@ DATABASES = {
     }
 }
 
+  
+import djcelery  
+djcelery.setup_loader() 
+BROKER_URL = "django://" # tell kombu to use the Django database as the message queue  
+BROKER_BACKEND = "django"
+CELERY_IMPORTS = ('schools.views',)
+
+from datetime import timedelta
+
+CELERYBEAT_SCHEDULE = {
+    "runs-every-5-minutes": {
+        "task": "khanapi.async.UpdateAllUsersRelatedInfo",
+        "schedule": timedelta(seconds=60*5),
+    },
+}
+
 # django needs to know what port to talk to for chat
 SOCKETIO_HOST = 'localhost'
 SOCKETIO_PORT = 9000
@@ -88,6 +104,8 @@ SOCKETIO_PORT = 9000
 # KHAN API Stuff
 KHAN_KEY = config.get('khanapi','KHAN_KEY')
 KHAN_SECRET = config.get('khanapi','KHAN_SECRET')
+
+# ASYNC and TASK QUEUEING/SCHEDULING
 
 # Keep around an instance of the client. It's reusable because all the
 # stateful stuff is passed around as parameters.
@@ -206,6 +224,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.humanize",
     
+    'kombu.transport.django',  
+    'djcelery',
+    
     "pinax.templatetags",
     
     # theme
@@ -272,20 +293,31 @@ LOGOUT_REDIRECT_URLNAME = "home"
 EMAIL_CONFIRMATION_DAYS = 2
 EMAIL_DEBUG = DEBUG
 
-CACHES = {
-    'default': {
+if os.getenv(RUN_ENV, '') == 'prod':
+    print "Cache: MEMCACHED (STAGING)"
+    CACHES = {
+    'memcached': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '127.0.0.1:11211',
-    },
-    'disk': {
+    },}
+elif os.getenv(RUN_ENV, '') == 'staging':
+    print "Cache: MEMCACHED (PROD)"
+    CACHES = {
+    'memcached': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    },}
+else:
+    print "Cache: DISK/TMP (DEV)"
+    CACHES = {
+    'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
         'LOCATION': '/var/tmp/django_cache',
-        'TIMEOUT': 60*60*24*30,
         'OPTIONS': {
             'MAX_ENTRIES': 1000
         }
-    },
-}
+    },}
+    
 
 DEBUG_TOOLBAR_CONFIG = {
     "INTERCEPT_REDIRECTS": False,

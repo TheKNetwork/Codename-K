@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>nowjs test</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/nowjs/now.js"></script>
+
+<script>
+function getParameterByName(name) {
+    var match = RegExp('[?&]' + name + '=([^&]*)')
+                    .exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+$(document).ready(function(){
+  var roomName = getParameterByName("room");
+  var userName = getParameterByName("user");
+
+  now.receiveMessage = function(name, message){
+    $("#messages").append("<br><b>" + name + "</b>: " + message);
+  }
+  
+  $("#send-button").click(function(){
+    now.distributeMessage($("#text-input").val());
+    $("#text-input").val("");
+  });
+  
+  $(".change").click(function(){
+    now.changeRoom($(this).text());
+  });
+  
+  $("#text-input").keypress(function (e) {
+    if (e.which && e.which === 13) {
+      $("#send-button").click();
+      return false;
+    }
+  });
+  
+  now.name = userName;
+  now.room = roomName;
+  
+  $("#text-input").focus();
+});
+</script>
+</head>
+
+<body>
+<br>
+<div id="messages"><br/></div>
+<input type="text" id="text-input">
+<input type="button" value="Send" id="send-button">
+</body>
+</html>

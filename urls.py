@@ -28,6 +28,7 @@ urlpatterns = patterns("",
     # begin knet added urls
     url(r"^khanapi/", include("khanapi.urls")),
     
+    url(r'^challenge/(?P<challenge_id>\d+)/(?P<school_id>\d+)/(?P<class_id>\d+)', 'schools.views.challenge', name='challenge'),
     url(r'^(?P<user_name>\w+)/homeroom/$', 'schools.views.index', name='homeroom_user'),
     url(r'^(?P<user_name>\w+)/unfinished-exercises-nocache/', 'schools.views.unfinished_exercises_nocache', name='unfinished_exercises_nocache'),
     url(r'^(?P<user_name>\w+)/unfinished-exercises/', 'schools.views.unfinished_exercises', name='unfinished_exercises'),
@@ -70,14 +71,7 @@ urlpatterns = patterns("",
     url(r'^oauth_callback/$', 'khanapi.views.oauth_callback'),
     url(r'^khanapi/khan_user_info', 'khanapi.views.khan_user_info'),
     
-    url("^chat/candy", "chat.views.candy", name="candy"),
-    url("^chat/rooms/$", "chat.views.rooms", name="rooms"),
-    url("^chat/create/$", "chat.views.create", name="create"),
-    url("^chat/system_message/$", "chat.views.system_message", name="system_message"),
-    # url("^chat/(?P<slug>.*)$", "chat.views.room", name="room"),
-    url("^chat/(?P<school_id>\d+)/(?P<class_id>\d+)", "chat.views.room", name="room"),
-    url("^chat/(?P<room_id>\d+)", "chat.views.room_by_id", name="room_by_id"),
-        
+    url(r"^chat/", include("chat.urls")),
 )
 
 

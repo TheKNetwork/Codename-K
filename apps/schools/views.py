@@ -27,6 +27,10 @@ import logging
 import uuid
 
 from khanapi.khan_api import *
+from khanapi.async import *
+
+from celery.task import Task
+from celery.registry import tasks
 
 logger = logging.getLogger('dev')
 
@@ -45,6 +49,7 @@ def homeroom_failsafe(request):
             print "Found Khan API access token for user %s" % request.user
             request.session['oauth_token_string'] = request.user.knet_profile.access_token
             active_khan_user = True
+            UpdateUserRelatedInfo.delay(user_id=request.user.id)
             
     main_school = get_main_school_for_user(id=request.user.id)
     teams = get_teams_for_user(id=request.user.id)
@@ -157,30 +162,31 @@ def group_section(request, user_name, school_id, class_id):
     teams = classroom.teams
     team_pro_count = dict()
     current_team = None
+
+    teams, current_team = refresh_team_info_for_user(user_id=request.user.id, teams=teams)
     
-    for team in teams.all():
-        challenge_pro = 0
-        exercises_completed = 0
-        
-        for u in team.user_set.all():
-            if u.id == request.user.id:
-                current_team = team
-                print "Found current team"
-        
+    for team in teams:
         for challenge in team.challenges.all():
-            exercise_total = 0
-            exercise_pro = 0
+            print "  %s" % challenge
+        
+            complete_count = 0
             for exercise in challenge.exercises.all():
-                is_pro = get_exercise_proficiency_for_team(team, exercise.exercise_name)
-                if is_pro:
-                    exercise_pro = exercise_pro + 1
-                    exercises_completed = exercises_completed + 1
-                exercise_total = exercise_total + 1
-            if exercise_total == exercise_pro and exercise_total > 0:
-                challenge_pro = challenge_pro + 1
-        team.challenge_complete_count = challenge_pro
-        team.exercise_complete_count = exercises_completed
-        team.save()
+                ex_pro = get_exercise_proficiency_for_team(team, exercise.exercise_name)
+                print "Exercise %s complete? %s" % (exercise, ex_pro)
+                if ex_pro:
+                    complete_count = complete_count + 1
+        
+            print "Challenge exercise complete count: %s" % complete_count
+        
+        user_ex = []
+        for user in team.user_set.all():
+            ex_status = {}
+            for exercise in challenge.exercises.all():
+                ex_status['user'] = user
+                ex_status['exercise'] = exercise
+                user_ex_pro = get_proficiency_for_exercise(user, exercise.exercise_name)
+                ex_status['is_pro'] = user_ex_pro
+            user_ex.append(ex_status)
          
     form = ClassroomTeamForm()
     data = {'school':school, 
@@ -207,6 +213,22 @@ def challenges(request, user_name, school_id, class_id):
             'teams':teams,
             'challenges_form': challenge_form}
     return render(request, "schools/class_challenges.html", data, 
+                  context_instance=RequestContext(request, {}))
+
+@login_required
+@never_cache
+def challenge(request, school_id, class_id, challenge_id):
+    school = School.objects.get(id=school_id)
+    classroom = Classroom.objects.get(id=class_id)
+    challenge = Challenge.objects.get(id=challenge_id)
+    team_statuses = get_team_status_for_challenge(challenge_id=challenge_id)
+    
+    data = {'school':school, 
+            'school_class': classroom, 
+            'challenge': challenge, 
+            'team_statuses': team_statuses, }
+    
+    return render(request, "schools/challenge.html", data, 
                   context_instance=RequestContext(request, {}))
 
 @login_required
