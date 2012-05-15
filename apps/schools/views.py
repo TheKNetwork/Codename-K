@@ -164,6 +164,29 @@ def group_section(request, user_name, school_id, class_id):
     current_team = None
 
     teams, current_team = refresh_team_info_for_user(user_id=request.user.id, teams=teams)
+    
+    for team in teams:
+        for challenge in team.challenges.all():
+            print "  %s" % challenge
+        
+            complete_count = 0
+            for exercise in challenge.exercises.all():
+                ex_pro = get_exercise_proficiency_for_team(team, exercise.exercise_name)
+                print "Exercise %s complete? %s" % (exercise, ex_pro)
+                if ex_pro:
+                    complete_count = complete_count + 1
+        
+            print "Challenge exercise complete count: %s" % complete_count
+        
+        user_ex = []
+        for user in team.user_set.all():
+            ex_status = {}
+            for exercise in challenge.exercises.all():
+                ex_status['user'] = user
+                ex_status['exercise'] = exercise
+                user_ex_pro = get_proficiency_for_exercise(user, exercise.exercise_name)
+                ex_status['is_pro'] = user_ex_pro
+            user_ex.append(ex_status)
          
     form = ClassroomTeamForm()
     data = {'school':school, 

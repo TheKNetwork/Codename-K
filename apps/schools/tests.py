@@ -39,7 +39,42 @@ class SimpleTest(TestCase):
         self.assertIsNotNone(associated_group_name, "Saving the school didn't create the correct group entry")
         pass
     
-    def test_get_teams_for_challenge(self):
+    def test_info_for_team_view(self):
+        team = ClassroomTeam.objects.get(team_name="UE")
+        print "Team: %s" % team
+        
+        for user in team.user_set.all():
+            print "  Member: %s: %s, %s" % (user, user.last_name, user.first_name)
+        
+        print "Challenges: completed %s out of %s challenges" % (team.challenge_complete_count, team.challenges.count())
+        
+        for challenge in team.challenges.all():
+            print "  %s" % challenge
+        
+            complete_count = 0
+            for exercise in challenge.exercises.all():
+                ex_pro = get_exercise_proficiency_for_team(team, exercise.exercise_name)
+                print "Exercise %s complete? %s" % (exercise, ex_pro)
+                if ex_pro:
+                    complete_count = complete_count + 1
+        
+            print "Challenge exercise complete count: %s" % complete_count
+        
+        user_ex = []
+        for user in team.user_set.all():
+            ex_status = {}
+            for exercise in challenge.exercises.all():
+                ex_status['user'] = user
+                ex_status['exercise'] = exercise
+                user_ex_pro = get_proficiency_for_exercise(user, exercise.exercise_name)
+                ex_status['is_pro'] = user_ex_pro
+            user_ex.append(ex_status)
+    
+        for item in user_ex:
+            # print item
+            print "%s - %s: %s" % (item['user'], item['exercise'],item['is_pro'])
+    
+    def xtest_get_teams_for_challenge(self):
         teams = get_team_status_for_challenge(challenge_id=1)
         for team in teams:
             print team['team']
@@ -159,7 +194,7 @@ class SimpleTest(TestCase):
         self.assertGreater(count_of_invitations_sent, 0, "No invitations were sent by ccoy!")
         
     def norun_test_accept_class_invitation(self):
-        class_invitation = invite_user_to_class_by_lookup_names("ccoy","mjoshen","ITT Tech","Math 101")
+        class_invitation = invite_user_to_class_by_lookup_names("ccoy", "mjoshen", "ITT Tech", "Math 101")
         mustefa = User.objects.get(username="mjoshen")
         count_of_invitations_received = mustefa.invitations_received.count()
         self.assertGreater(count_of_invitations_received, 0, "No invitations were received by mustefa")
@@ -176,7 +211,7 @@ class SimpleTest(TestCase):
         self.assertGreater(count_of_accepted, 0, "No invitations were accepted by mustefa")
         
     def norun_test_reject_class_invitation(self):
-        class_invitation = invite_user_to_class_by_lookup_names("ccoy","mjoshen","ITT Tech","Math 101")
+        class_invitation = invite_user_to_class_by_lookup_names("ccoy", "mjoshen", "ITT Tech", "Math 101")
         mustefa = User.objects.get(username="mjoshen")
         count_of_invitations_received = mustefa.invitations_received.count()
         self.assertGreater(count_of_invitations_received, 0, "No invitations were received by mustefa")
