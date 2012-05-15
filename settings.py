@@ -293,20 +293,31 @@ LOGOUT_REDIRECT_URLNAME = "home"
 EMAIL_CONFIRMATION_DAYS = 2
 EMAIL_DEBUG = DEBUG
 
-CACHES = {
-    'default': {
+if os.getenv(RUN_ENV, '') == 'prod':
+    print "Cache: MEMCACHED (STAGING)"
+    CACHES = {
+    'memcached': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '127.0.0.1:11211',
-    },
-    'disk': {
+    },}
+elif os.getenv(RUN_ENV, '') == 'staging':
+    print "Cache: MEMCACHED (PROD)"
+    CACHES = {
+    'memcached': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    },}
+else:
+    print "Cache: DISK/TMP (DEV)"
+    CACHES = {
+    'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
         'LOCATION': '/var/tmp/django_cache',
-        'TIMEOUT': 60*60*24*30,
         'OPTIONS': {
             'MAX_ENTRIES': 1000
         }
-    },
-}
+    },}
+    
 
 DEBUG_TOOLBAR_CONFIG = {
     "INTERCEPT_REDIRECTS": False,
