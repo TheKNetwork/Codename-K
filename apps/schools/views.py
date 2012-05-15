@@ -165,7 +165,7 @@ def group_section(request, user_name, school_id, class_id):
 
     teams, current_team = refresh_team_info_for_user(user_id=request.user.id, teams=teams)
     
-    for team in teams:
+    for team in teams.all():
         for challenge in team.challenges.all():
             print "  %s" % challenge
         
