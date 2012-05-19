@@ -190,7 +190,10 @@ MIDDLEWARE_CLASSES = [
     # "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
-ROOT_URLCONF = "urls"
+if os.getenv(RUN_ENV, '') == 'staging':
+    ROOT_URLCONF = "knetwork.urls"
+else:
+    ROOT_URLCONF = "urls"
 
 TEMPLATE_DIRS = [
     os.path.join(PROJECT_ROOT, "templates"),
