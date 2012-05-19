@@ -226,7 +226,7 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.messages",
     "django.contrib.humanize",
-    
+    "south",
     'kombu.transport.django',  
     'djcelery',
     
