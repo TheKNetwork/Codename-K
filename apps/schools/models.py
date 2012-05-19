@@ -11,6 +11,8 @@ from django.db.models import signals
 from django.core.exceptions import ObjectDoesNotExist
 
 from schools.signals import *
+# When model instance is saved, trigger creation of corresponding profile
+signals.post_save.connect(create_profile, sender=User)
 
 import os, datetime
 

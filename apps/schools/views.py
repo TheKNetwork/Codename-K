@@ -50,11 +50,16 @@ def homeroom_failsafe(request):
             request.session['oauth_token_string'] = request.user.knet_profile.access_token
             active_khan_user = True
             UpdateUserRelatedInfo.delay(user_id=request.user.id)
-            
+    else:
+        UserProfile(user = request.user).save() 
+               
     main_school = get_main_school_for_user(id=request.user.id)
     teams = get_teams_for_user(id=request.user.id)
     all_schools = School.objects.all()
-    classes_not_joined = get_classes_not_joined(user_id=request.user.id, school_id=main_school.id)
+    classes_not_joined = None
+    
+    if main_school is not None:
+        classes_not_joined = get_classes_not_joined(user_id=request.user.id, school_id=main_school.id)
     
     # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
     
@@ -66,6 +71,7 @@ def homeroom_failsafe(request):
             'classes_not_joined': classes_not_joined, }
     
     return render(request, "homeroom/user_home.html", data, context_instance = RequestContext(request))
+
 
 @login_required
 @never_cache
