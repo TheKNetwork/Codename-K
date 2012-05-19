@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/knet.css">
         <script src="{{ STATIC_URL }}js/jquery.min.js"></script>
-        <script src="{{ STATIC_URL }}js/jquery.form.js"></script>
         
         <script type="text/javascript" src="{{STATIC_URL}}js/knet.form.util.js"></script>
         <script type="text/javascript" src="{{STATIC_URL}}js/knet.js"></script>     
@@ -20,16 +19,8 @@
         <link href="{{STATIC_URL}}js/chosen/chosen.css" rel="stylesheet">
         <script type="text/javascript" src="{{STATIC_URL}}js/chosen/chosen.jquery.min.js"></script>
         
-        <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
-        <script src="{{ STATIC_URL }}js/bootstrap-modal.js"></script>
-        <script src="{{ STATIC_URL }}js/bootstrap-tooltip.js"></script>
-        <script src="{{ STATIC_URL }}js/bootstrap-alerts.js"></script>
-        <script src="{{ STATIC_URL }}js/bootstrap-twipsy.js"></script>
-        <script src="{{ STATIC_URL }}js/bootstrap-popover.js"></script>
-        <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
-        <script src="{{ STATIC_URL }}js/bootstrap-tabs.js"></script>
-        <script src="{{ STATIC_URL }}js/bootstrap-scrollspy.js"></script>
-        <script src="{{ STATIC_URL }}js/bootstrap-buttons.js"></script>
+        
+
         
         {% block extra_head_base %}
             {% block extra_head %}{% endblock %}
@@ -124,7 +115,17 @@
                 <td height"2px" width="30%"></td>
             </tr></table>
         </div>
-        
+        <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-modal.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-tooltip.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-alerts.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-twipsy.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-popover.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-tabs.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-scrollspy.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-buttons.js"></script>
+        {% block js %}{% endblock %}
     </body>
     
 </html>

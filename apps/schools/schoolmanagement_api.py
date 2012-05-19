@@ -73,8 +73,8 @@ def add_class(school_id, _class_name, _class_description=''):
     
     school_class.save()
     
-    chatroom_name = "%s: %s" % (existing_school.school_name, school_class.class_name)
-    chatroom, created  = ChatRoom.objects.get_or_create(name=chatroom_name)
+    # chatroom_name = "%s: %s" % (existing_school.school_name, school_class.class_name)
+    # chatroom, created  = ChatRoom.objects.get_or_create(name=chatroom_name)
     
     return school_class
 

@@ -152,7 +152,7 @@
                                                     {% endfor %}
                                                     </table>"
                                                                                 
-                                    data-placement="left">  
+                                    data-placement="bottom">  
                                 <i class="icon-user"></i> {{classroom.user_set.all.count}} Users</a></td>
                                 <!--
                             <td><a href="#invite-users" data-toggle="modal"><i class="icon-plus-sign"></i> Invite Users</a></td>
@@ -177,7 +177,7 @@
                 </table>
         
                 {% if main_school %}
-                <a href="#" class="btn btn-primary">Create a Class</a>
+                <a id="create-class" href="#" class="btn btn-primary">Create a Class</a>
                 {% endif %}
             </div>
             <div class="row-fluid" style="margin-top: 13px">
