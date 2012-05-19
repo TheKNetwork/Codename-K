@@ -293,15 +293,8 @@ LOGOUT_REDIRECT_URLNAME = "home"
 EMAIL_CONFIRMATION_DAYS = 2
 EMAIL_DEBUG = DEBUG
 
-if os.getenv(RUN_ENV, '') == 'prod':
+if os.getenv(RUN_ENV, '') == 'staging':
     print "Cache: MEMCACHED (STAGING)"
-    CACHES = {
-    'memcached': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '127.0.0.1:11211',
-    },}
-elif os.getenv(RUN_ENV, '') == 'staging':
-    print "Cache: MEMCACHED (PROD)"
     CACHES = {
     'memcached': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
