@@ -296,7 +296,7 @@ EMAIL_DEBUG = DEBUG
 if os.getenv(RUN_ENV, '') == 'staging':
     print "Cache: MEMCACHED (STAGING)"
     CACHES = {
-    'memcached': {
+    'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '127.0.0.1:11211',
     },}
