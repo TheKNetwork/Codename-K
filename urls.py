@@ -44,7 +44,7 @@ urlpatterns = patterns("",
     url(r'^(?P<user_name>\w+)/join_school/(?P<school_id>\d+)','schools.views.join_school', name='join_school'), 
     url(r'^(?P<user_name>\w+)/leave_school/(?P<school_id>\d+)','schools.views.leave_school', name='leave_school'), 
     
-    
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/team/(?P<team_id>\d+)','schools.views.team', name='team'),
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/team_selection','schools.views.team_selection', name='team_selection'),
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/add_team_to_challenge/(?P<team_id>\d+)/(?P<challenge_id>\d+)','schools.views.add_team_to_challenge', name='add_team_to_challenge'),
     url(r'^(?P<user_name>\w+)/(?P<school_id>\d+)/(?P<class_id>\d+)/add_challenge_form','schools.views.add_challenge_form', name='add_challenge_form'), 
@@ -56,6 +56,7 @@ urlpatterns = patterns("",
 
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/group_add','schools.views.group_add', name='group_add'),    
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/groups','schools.views.group_section', name='group_section'),
+    url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)/(?P<team_id>\d+)','schools.views.team', name='team'),
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)/(?P<class_id>\d+)','schools.views.class_congregation', name='class_congregation'),
     
     url(r'^(?P<user_name>\w+)/schools/(?P<school_id>\d+)','schools.views.classes_for_school', name='schools_class'),

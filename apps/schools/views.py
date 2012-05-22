@@ -331,6 +331,7 @@ def classes_for_school(request, school_id, user_name):
 @login_required
 @cache_page(5)
 def class_congregation(request, school_id, class_id, user_name):
+    print "class id %s" % class_id
     school_class = Classroom.objects.get(id=class_id)
     school = School.objects.get(id=school_id)
     whiteboard_sessions = WhiteboardSession.objects.all()
@@ -339,3 +340,19 @@ def class_congregation(request, school_id, class_id, user_name):
             'school':school, 'whiteboard_sessions': whiteboard_sessions,}
 
     return render(request, "schools/class_congregation.html", data)
+
+@login_required
+@cache_page(5)
+def team(request, school_id, class_id, user_name, team_id):
+    print "class id %s" % class_id
+    school_class = Classroom.objects.get(id=class_id)
+    school = School.objects.get(id=school_id)
+    whiteboard_sessions = WhiteboardSession.objects.all()
+    team = ClassroomTeam.objects.get(id=team_id)
+    challenge_statuses = get_challenge_status_for_team(team_id=team_id)
+    
+    data = {'user': request.user, 'school_class': school_class, 
+            'school':school, 'whiteboard_sessions': whiteboard_sessions,
+            'team': team, 'challenge_statuses':challenge_statuses,}
+
+    return render(request, "schools/team.html", data)

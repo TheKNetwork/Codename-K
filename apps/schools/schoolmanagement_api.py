@@ -114,9 +114,49 @@ def remove_user_from_team(user, team):
 def get_challenges_for_group(group):
     group_challenges = group.group_challenges
     challenges = []
-    for ge in group_challenges:
-        challenges.add(ge.challenge)
+    for ge in group_challenges.all():
+        challenges.append(ge.challenge)
     
+    return challenges
+
+def get_challenge_status_for_team(team_id):
+    team = ClassroomTeam.objects.get(id=team_id)
+    ichallenges = team.group_challenges
+    
+    print  "Got %s challenges" % ichallenges.all().count()
+    
+    challenges = []
+    for gchallenge in ichallenges.all():
+        challenge_entry = dict()
+        challenge = gchallenge.challenge
+        print "Iterating: %s" % challenge
+        challenge_entry['challenge'] = challenge
+        exercise_entries = []
+        i_completed_exercises = 0
+        i_total_exercises = 0
+        for exercise in challenge.exercises.all():
+            team_exercise_entry = dict()
+            is_pro = get_exercise_proficiency_for_team(team=team, exercise_name=exercise.exercise_name)
+            team_exercise_entry = {'exercise':exercise, 'is_pro': is_pro,}
+            
+            if is_pro:
+                i_completed_exercises = i_completed_exercises+1
+            i_total_exercises = i_total_exercises+1
+            
+            user_entries = []
+            for user in team.user_set.all():
+                user_is_pro = get_proficiency_for_exercise(user=user, exercise_name=exercise.exercise_name)
+                user_entry = {'user':user, 'is_pro':user_is_pro,}
+                user_entries.append(user_entry)
+                
+            team_exercise_entry['users'] = user_entries
+            exercise_entries.append(team_exercise_entry)
+            
+        challenge_entry['exercise_complete_count'] = i_completed_exercises
+        challenge_entry['exercise_count'] = i_total_exercises     
+        challenge_entry['exercises'] = exercise_entries
+        challenges.append(challenge_entry)
+        
     return challenges
 
 def get_team_status_for_challenge(challenge_id):
