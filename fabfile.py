@@ -26,6 +26,7 @@ def deploy():
     symlink_current_release()
     install_requirements()
     migrate()
+    reload()
     # restart_apache()
     # Restarting apache is usually not needed, because the wsgi file is updated and
     # apache doesn't need to reload anything, mod_wsgi takes care of that.
@@ -50,7 +51,7 @@ def migrate():
     run('export DJANGO_ENV=%(release_type)s; cd %(path)s/releases/knetwork;  %(path)s/bin/python manage.py migrate schools' % env, pty=True)
 
 def reload():
-    "Touch wsgi.py"
+    "touch wsgi.py"
     #sudo("service apache2 restart",pty=True)
     
 def restart_apache():
