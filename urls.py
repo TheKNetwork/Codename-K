@@ -15,10 +15,11 @@ urlpatterns = patterns("",
     url(r"^$", direct_to_template, {
         "template": "index.html",
     }, name="home"),
-                       
+
+    
+
     url(r"^admin/invite_user/$", "pinax.apps.signup_codes.views.admin_invite_user", name="admin_invite_user"),
     url(r"^admin/", include(admin.site.urls)),
-    url(r"^about/", include("about.urls")),
     url(r"^account/", include("pinax.apps.account.urls")),
     url(r"^openid/", include(PinaxConsumer().urls)),
     url(r"^profiles/", include("idios.urls")),
@@ -73,6 +74,8 @@ urlpatterns = patterns("",
     url(r'^khanapi/khan_user_info', 'khanapi.views.khan_user_info'),
     
     url(r"^chat/", include("chat.urls")),
+    
+    (r'', include('django.contrib.flatpages.urls')),
 )
 
 

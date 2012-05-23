@@ -1,0 +1,15 @@
+{% extends "site_base.html" %}
+
+{% block js %}
+{% endblock %}
+
+{% block body %}
+
+<div id="logo-large" style="float:left; margin-right: 20px">
+    <img src="{{STATIC_URL}}img/logo-main.png"/>
+</div>
+
+<h2>{{ flatpage.title }}</h2>
+{{ flatpage.content }}
+
+{% endblock %}
