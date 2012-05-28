@@ -3,17 +3,44 @@
         "pk": 1,
         "model": "sites.site",
         "fields": {
-            "domain": "staging.theknetwork.org",
+            "domain": "theknetwork.org",
             "name": "The K-Network"
         }
     }, {
         "pk": 1,
-        "model": "notification.noticetype",
+        "model": "flatpages.flatpage",
         "fields": {
-            "default": 2,
-            "description": "you have received an announcement",
-            "display": "Announcement",
-            "label": "announcement"
+            "registration_required": false,
+            "title": "About",
+            "url": "/about/",
+            "template_name": "",
+            "sites": [1],
+            "content": "<h2 style=\"margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; text-rendering: optimizelegibility; font-size: 24px; line-height: 36px;\">About</h2>\r\n<p class=\"MsoNormal\" style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">Empowering learners worldwide to take control of their education</p>\r\n<p class=\"MsoNormal\" style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">The K Network is an organization on with a specific purpose.&nbsp; We are a not-for-profit with the goal of materially improving the way people learn by empowering learners worldwide to take control of their education.</p>\r\n<p class=\"MsoNormal\" style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">Our foundational principle is the education should be freer and more easily accessible.&nbsp; To that end, all of the site&rsquo;s resources are available to anyone without cost.&nbsp; Regardless of whether you are a student, parent, teacher, administrator, adult who is a life-long learner, home-schooler or have woken up after a deep 25 year slumber, The K Network wants you to have the ability, the tools, the motivation and the materials to be able to learn in a deeper, more fulfilling, more inspired way.&nbsp; And all of the website&rsquo;s resources are available to you free of charge.</p>\r\n<h2 class=\"MsoNormal\" style=\"margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; text-rendering: optimizelegibility; font-size: 24px; line-height: 36px;\"><strong>How it works for students</strong></h2>\r\n<p class=\"MsoNormal\" style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">Students can start a class and start adding subjects or topics to study, taking advantage of social learning tools such as peer to peer teaching and learnings, group dynamics like when you are on a soccer team and resume-based credentialing for performing teaching and learning-based tasks.</p>\r\n<h2 class=\"MsoNormal\" style=\"margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; text-rendering: optimizelegibility; font-size: 24px; line-height: 36px;\"><strong>How it works for coaches, parents and teachers</strong></h2>\r\n<p class=\"MsoNormal\" style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">Those individuals who are helping students learn can also start a class and start adding subjects or topics to study.&nbsp; As a coach, parent or teacher, you can assign &ldquo;buckets&rdquo; of topics to the students they are working with, have teams of students work together and support each other while becoming proficient in topics and completing tasks, and track the progress of your class in real time.</p>\r\n<h2 class=\"MsoNormal\" style=\"margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; text-rendering: optimizelegibility; font-size: 24px; line-height: 36px;\"><strong>Existing Content</strong></h2>\r\n<p class=\"MsoNormal\" style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">For mathematics, our platform sits on top of Khan Academy&rsquo;s 345+ interactive exercises, turning single person Khan Academy into Group Khan Academy.</p>\r\n<h2 class=\"MsoNormal\" style=\"margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; text-rendering: optimizelegibility; font-size: 24px; line-height: 36px;\"><strong>Future Content</strong></h2>\r\n<p class=\"MsoNormal\" style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">For English, The K Network is building a &ldquo;Complete a Writing Task&rdquo; application, which will allow teachers to create a writing task, to assign it to students, to break that task down into its component steps and to track the completion of each step, giving teachers who assign writing tasks (English and Language Arts, Social Studies and Sciences) real time tracking of the progress their students make from the day the writing task is assigned to the day that it is handed in.</p>\r\n<p class=\"MsoNormal\" style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">For all other subjects, The K Network has grand ambitions, but will take one step at a time.</p>\r\n<h2 class=\"MsoNormal\" style=\"margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; text-rendering: optimizelegibility; font-size: 24px; line-height: 36px;\">A world of skills to practice, with help along the way</h2>\r\n<p class=\"MsoNormal\" style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">Using Khan Academy,&nbsp;<a style=\"color: #0088cc; text-decoration: none;\" href=\"http://www.khanacademy.org/exercisedashboard\">Practice math at your own pace</a>&nbsp;with our adaptive assessment environment. You can start at 1+1 and work your way into calculus or jump right into whatever topic needs some brushing up.</p>\r\n<p class=\"MsoNormal\" style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">Each problem is randomly generated, so you never run out of practice material.&nbsp;<strong>If you need a hint, every single problem can be broken down, step-by-step, with one click.</strong>&nbsp;If you need more help, you can always watch a related video</p>",
+            "enable_comments": false
+        }
+    }, {
+        "pk": 3,
+        "model": "flatpages.flatpage",
+        "fields": {
+            "registration_required": false,
+            "title": "Frequently Asked Questions",
+            "url": "/faq/",
+            "template_name": "",
+            "sites": [1],
+            "content": "<p>Coming soon ...</p>",
+            "enable_comments": false
+        }
+    }, {
+        "pk": 2,
+        "model": "flatpages.flatpage",
+        "fields": {
+            "registration_required": false,
+            "title": "Meet the Team",
+            "url": "/team/",
+            "template_name": "",
+            "sites": [1],
+            "content": "<h2 style=\"margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; text-rendering: optimizelegibility; font-size: 24px; line-height: 36px;\">Team</h2>\r\n<p style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\"><strong>A focused team working on something big.</strong></p>\r\n<p style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">We are just getting going but have infectious enthusiasm around having students enjoying learning more and around getting students better results in their education. &nbsp;Too many people around the world are stuck not being able to decide for themselves the quality of their education, or they are being forced to spend their learning time (i.e. school) in a way that doesn&rsquo;t give them the best and most productive setting for both having fun and enjoying the learning process. &nbsp;We think the technology exists today to fundamentally change this, so we are building the tools and resources we think every student should have at their fingertips.</p>\r\n<p style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">We believe a few great people can change the world and the world of education. &nbsp;We are focused on hiring the very best &ndash; people who are enthusiastic, intelligent and creative. &nbsp;We believe it is our obligation to relentlessly keep connected to what learners need to achieve their education goals, and we make every decision with the learner, or student, in mind.</p>\r\n<h2 style=\"margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; text-rendering: optimizelegibility; font-size: 24px; line-height: 36px;\"><strong>Meet The Team</strong></h2>\r\n<p style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">Peter Kuperman, co-founder</p>\r\n<p style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">Harsh Patel, co-founder</p>\r\n<p style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">Muhammad Meigooni, co-founder</p>\r\n<p style=\"margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; color: #333333;\">Mustefa Jo&rsquo;shen, co-founder</p>",
+            "enable_comments": false
         }
     }, {
         "pk": 1,
@@ -376,6 +403,38 @@
             "email": ""
         }
     }, {
+        "pk": 41,
+        "model": "account.account",
+        "fields": {
+            "timezone": "US/Eastern",
+            "user": 42,
+            "language": "en-us"
+        }
+    }, {
+        "pk": 42,
+        "model": "account.account",
+        "fields": {
+            "timezone": "US/Eastern",
+            "user": 43,
+            "language": "en-us"
+        }
+    }, {
+        "pk": 39,
+        "model": "account.account",
+        "fields": {
+            "timezone": "US/Eastern",
+            "user": 40,
+            "language": "en-us"
+        }
+    }, {
+        "pk": 40,
+        "model": "account.account",
+        "fields": {
+            "timezone": "US/Eastern",
+            "user": 41,
+            "language": "en-us"
+        }
+    }, {
         "pk": 1,
         "model": "account.account",
         "fields": {
@@ -680,20 +739,24 @@
             "language": "en-us"
         }
     }, {
-        "pk": 39,
-        "model": "account.account",
+        "pk": 41,
+        "model": "profiles.profile",
         "fields": {
-            "timezone": "US/Eastern",
-            "user": 40,
-            "language": "en-us"
+            "website": null,
+            "about": null,
+            "location": null,
+            "user": 42,
+            "name": null
         }
     }, {
-        "pk": 40,
-        "model": "account.account",
+        "pk": 42,
+        "model": "profiles.profile",
         "fields": {
-            "timezone": "US/Eastern",
-            "user": 41,
-            "language": "en-us"
+            "website": null,
+            "about": null,
+            "location": null,
+            "user": 43,
+            "name": null
         }
     }, {
         "pk": 1,
@@ -1096,145 +1159,13 @@
             "name": null
         }
     }, {
-        "pk": 1,
+        "pk": 41,
         "model": "schools.userprofile",
         "fields": {
             "home_address": "",
             "access_token": null,
-            "default_school": 6,
-            "user": 1,
-            "khan_user_id": null,
-            "personal_url": ""
-        }
-    }, {
-        "pk": 2,
-        "model": "schools.userprofile",
-        "fields": {
-            "home_address": "",
-            "access_token": "oauth_token_secret=EHYksgtRvRE4T5KP&oauth_token=yLxWyWjwKq5rsEQ4",
             "default_school": 1,
-            "user": 2,
-            "khan_user_id": null,
-            "personal_url": ""
-        }
-    }, {
-        "pk": 3,
-        "model": "schools.userprofile",
-        "fields": {
-            "home_address": "",
-            "access_token": null,
-            "default_school": null,
-            "user": 3,
-            "khan_user_id": null,
-            "personal_url": ""
-        }
-    }, {
-        "pk": 4,
-        "model": "schools.userprofile",
-        "fields": {
-            "home_address": "",
-            "access_token": null,
-            "default_school": null,
-            "user": 4,
-            "khan_user_id": null,
-            "personal_url": ""
-        }
-    }, {
-        "pk": 5,
-        "model": "schools.userprofile",
-        "fields": {
-            "home_address": "",
-            "access_token": null,
-            "default_school": null,
-            "user": 5,
-            "khan_user_id": null,
-            "personal_url": ""
-        }
-    }, {
-        "pk": 6,
-        "model": "schools.userprofile",
-        "fields": {
-            "home_address": "",
-            "access_token": null,
-            "default_school": null,
-            "user": 6,
-            "khan_user_id": null,
-            "personal_url": ""
-        }
-    }, {
-        "pk": 7,
-        "model": "schools.userprofile",
-        "fields": {
-            "home_address": "",
-            "access_token": null,
-            "default_school": null,
-            "user": 7,
-            "khan_user_id": null,
-            "personal_url": ""
-        }
-    }, {
-        "pk": 8,
-        "model": "schools.userprofile",
-        "fields": {
-            "home_address": "",
-            "access_token": "oauth_token_secret=sZ45dKtCKEdBKXwJ&oauth_token=RG4eAQ59agXnMWPM",
-            "default_school": 6,
-            "user": 9,
-            "khan_user_id": null,
-            "personal_url": ""
-        }
-    }, {
-        "pk": 9,
-        "model": "schools.userprofile",
-        "fields": {
-            "home_address": "",
-            "access_token": "oauth_token_secret=BHEQKuMHRFzHZ5w2&oauth_token=EZDaS7CSg4d9RayH",
-            "default_school": 6,
-            "user": 10,
-            "khan_user_id": null,
-            "personal_url": ""
-        }
-    }, {
-        "pk": 10,
-        "model": "schools.userprofile",
-        "fields": {
-            "home_address": "",
-            "access_token": "oauth_token_secret=UcKSdWgExEDBW8XY&oauth_token=Nvy4KnrzXEPWmxEv",
-            "default_school": 6,
-            "user": 11,
-            "khan_user_id": null,
-            "personal_url": ""
-        }
-    }, {
-        "pk": 11,
-        "model": "schools.userprofile",
-        "fields": {
-            "home_address": "",
-            "access_token": "oauth_token_secret=jYLBKTNhRBneSUE9&oauth_token=h4tU6HATh66Wnufn",
-            "default_school": 6,
-            "user": 12,
-            "khan_user_id": null,
-            "personal_url": ""
-        }
-    }, {
-        "pk": 12,
-        "model": "schools.userprofile",
-        "fields": {
-            "home_address": "",
-            "access_token": null,
-            "default_school": null,
-            "user": 13,
-            "khan_user_id": null,
-            "personal_url": ""
-        }
-    }, {
-        "pk": 13,
-        "model": "schools.userprofile",
-        "fields": {
-            "home_address": "",
-            "access_token": "oauth_token_secret=zmMy8HZSYEV6NeUg&oauth_token=mFJHwR6sk6qGvjgb",
-            "default_school": 6,
-            "user": 14,
+            "user": 43,
             "khan_user_id": null,
             "personal_url": ""
         }
@@ -1537,6 +1468,149 @@
         }
     }, {
         "pk": 1,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": null,
+            "default_school": 6,
+            "user": 1,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 2,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": "oauth_token_secret=EHYksgtRvRE4T5KP&oauth_token=yLxWyWjwKq5rsEQ4",
+            "default_school": 1,
+            "user": 2,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 3,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": null,
+            "default_school": null,
+            "user": 3,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 4,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": null,
+            "default_school": null,
+            "user": 4,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 5,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": null,
+            "default_school": null,
+            "user": 5,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 6,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": null,
+            "default_school": null,
+            "user": 6,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 7,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": null,
+            "default_school": null,
+            "user": 7,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 8,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": "oauth_token_secret=sZ45dKtCKEdBKXwJ&oauth_token=RG4eAQ59agXnMWPM",
+            "default_school": 6,
+            "user": 9,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 9,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": "oauth_token_secret=BHEQKuMHRFzHZ5w2&oauth_token=EZDaS7CSg4d9RayH",
+            "default_school": 6,
+            "user": 10,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 10,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": "oauth_token_secret=UcKSdWgExEDBW8XY&oauth_token=Nvy4KnrzXEPWmxEv",
+            "default_school": 6,
+            "user": 11,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 11,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": "oauth_token_secret=jYLBKTNhRBneSUE9&oauth_token=h4tU6HATh66Wnufn",
+            "default_school": 6,
+            "user": 12,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 12,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": null,
+            "default_school": null,
+            "user": 13,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 13,
+        "model": "schools.userprofile",
+        "fields": {
+            "home_address": "",
+            "access_token": "oauth_token_secret=zmMy8HZSYEV6NeUg&oauth_token=mFJHwR6sk6qGvjgb",
+            "default_school": 6,
+            "user": 14,
+            "khan_user_id": null,
+            "personal_url": ""
+        }
+    }, {
+        "pk": 1,
         "model": "schools.challenge",
         "fields": {
             "classroom": 7,
@@ -1654,922 +1728,104 @@
             "exercise_description": ""
         }
     }, {
-        "pk": 58,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_account",
-            "name": "Can add account",
-            "content_type": 20
-        }
-    }, {
-        "pk": 59,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_account",
-            "name": "Can change account",
-            "content_type": 20
-        }
-    }, {
-        "pk": 60,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_account",
-            "name": "Can delete account",
-            "content_type": 20
-        }
-    }, {
-        "pk": 61,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_passwordreset",
-            "name": "Can add password reset",
-            "content_type": 21
-        }
-    }, {
-        "pk": 62,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_passwordreset",
-            "name": "Can change password reset",
-            "content_type": 21
-        }
-    }, {
-        "pk": 63,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_passwordreset",
-            "name": "Can delete password reset",
-            "content_type": 21
-        }
-    }, {
         "pk": 1,
-        "model": "auth.permission",
+        "model": "whiteboard.whiteboardsession",
         "fields": {
-            "codename": "add_logentry",
-            "name": "Can add log entry",
-            "content_type": 1
-        }
-    }, {
-        "pk": 2,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_logentry",
-            "name": "Can change log entry",
-            "content_type": 1
-        }
-    }, {
-        "pk": 3,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_logentry",
-            "name": "Can delete log entry",
-            "content_type": 1
-        }
-    }, {
-        "pk": 55,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_announcement",
-            "name": "Can add announcement",
-            "content_type": 19
-        }
-    }, {
-        "pk": 56,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_announcement",
-            "name": "Can change announcement",
-            "content_type": 19
-        }
-    }, {
-        "pk": 57,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_announcement",
-            "name": "Can delete announcement",
-            "content_type": 19
-        }
-    }, {
-        "pk": 7,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_group",
-            "name": "Can add group",
-            "content_type": 3
-        }
-    }, {
-        "pk": 8,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_group",
-            "name": "Can change group",
-            "content_type": 3
-        }
-    }, {
-        "pk": 9,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_group",
-            "name": "Can delete group",
-            "content_type": 3
-        }
-    }, {
-        "pk": 13,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_message",
-            "name": "Can add message",
-            "content_type": 5
-        }
-    }, {
-        "pk": 14,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_message",
-            "name": "Can change message",
-            "content_type": 5
+            "whiteboard_url": "https://knetwork.tutortrove.com/api_v1/SSO/whiteboard?oauth_body_hash=2jmj7l5rSw0yVb%2FvlWAYkK%2FYBwk%3D&whiteboard_hash=urplVGRBGlBY2Do61ilMkqih5DREEnjXQaIYrcil&user_id=TNlwY9LOlNtv4g4Tka9EzhxXyGhzXBbNXoVs3eNo&oauth_nonce=80765350&oauth_timestamp=1337568160&oauth_consumer_key=152&oauth_signature_method=HMAC-SHA1&user_type=tutor&oauth_version=1.0&whiteboard_title=math+help&oauth_signature=iqR%2F87sxh%2B6p7hhTRiRly94g%2B4s%3D&user_name=bsmith",
+            "date_modified": "2012-05-20 22:42:41",
+            "whiteboard_hash": "urplVGRBGlBY2Do61ilMkqih5DREEnjXQaIYrcil",
+            "whiteboard_title": "math help",
+            "date_created": "2012-05-20 22:42:41"
         }
     }, {
         "pk": 15,
-        "model": "auth.permission",
+        "model": "auth.group",
         "fields": {
-            "codename": "delete_message",
-            "name": "Can delete message",
-            "content_type": 5
+            "name": "team.class.class.7.Patel 8th.C's in C.school.POCS",
+            "permissions": []
         }
     }, {
-        "pk": 4,
-        "model": "auth.permission",
+        "pk": 8,
+        "model": "auth.group",
         "fields": {
-            "codename": "add_permission",
-            "name": "Can add permission",
-            "content_type": 2
-        }
-    }, {
-        "pk": 5,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_permission",
-            "name": "Can change permission",
-            "content_type": 2
-        }
-    }, {
-        "pk": 6,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_permission",
-            "name": "Can delete permission",
-            "content_type": 2
-        }
-    }, {
-        "pk": 10,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_user",
-            "name": "Can add user",
-            "content_type": 4
-        }
-    }, {
-        "pk": 11,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_user",
-            "name": "Can change user",
-            "content_type": 4
-        }
-    }, {
-        "pk": 12,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_user",
-            "name": "Can delete user",
-            "content_type": 4
-        }
-    }, {
-        "pk": 97,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_chatroom",
-            "name": "Can add chat room",
-            "content_type": 33
-        }
-    }, {
-        "pk": 98,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_chatroom",
-            "name": "Can change chat room",
-            "content_type": 33
-        }
-    }, {
-        "pk": 99,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_chatroom",
-            "name": "Can delete chat room",
-            "content_type": 33
-        }
-    }, {
-        "pk": 100,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_chatuser",
-            "name": "Can add chat user",
-            "content_type": 34
-        }
-    }, {
-        "pk": 101,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_chatuser",
-            "name": "Can change chat user",
-            "content_type": 34
-        }
-    }, {
-        "pk": 102,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_chatuser",
-            "name": "Can delete chat user",
-            "content_type": 34
+            "name": "team.class.class.7.PCMOmar E. Torres Charter School",
+            "permissions": []
         }
     }, {
         "pk": 16,
-        "model": "auth.permission",
+        "model": "auth.group",
         "fields": {
-            "codename": "add_contenttype",
-            "name": "Can add content type",
-            "content_type": 6
+            "name": "team.class.class.7.Patel 8th.Fast 3.school.POCS",
+            "permissions": []
         }
     }, {
-        "pk": 17,
-        "model": "auth.permission",
+        "pk": 12,
+        "model": "auth.group",
         "fields": {
-            "codename": "change_contenttype",
-            "name": "Can change content type",
-            "content_type": 6
+            "name": "team.class.class.7.Patel 8th.Bubbles.school.POCS",
+            "permissions": []
         }
     }, {
         "pk": 18,
-        "model": "auth.permission",
+        "model": "auth.group",
         "fields": {
-            "codename": "delete_contenttype",
-            "name": "Can delete content type",
-            "content_type": 6
-        }
-    }, {
-        "pk": 109,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_association",
-            "name": "Can add association",
-            "content_type": 37
-        }
-    }, {
-        "pk": 110,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_association",
-            "name": "Can change association",
-            "content_type": 37
-        }
-    }, {
-        "pk": 111,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_association",
-            "name": "Can delete association",
-            "content_type": 37
-        }
-    }, {
-        "pk": 106,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_nonce",
-            "name": "Can add nonce",
-            "content_type": 36
-        }
-    }, {
-        "pk": 107,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_nonce",
-            "name": "Can change nonce",
-            "content_type": 36
-        }
-    }, {
-        "pk": 108,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_nonce",
-            "name": "Can delete nonce",
-            "content_type": 36
-        }
-    }, {
-        "pk": 112,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_useropenidassociation",
-            "name": "Can add user openid association",
-            "content_type": 38
-        }
-    }, {
-        "pk": 113,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_useropenidassociation",
-            "name": "Can change user openid association",
-            "content_type": 38
-        }
-    }, {
-        "pk": 114,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_useropenidassociation",
-            "name": "Can delete user openid association",
-            "content_type": 38
-        }
-    }, {
-        "pk": 49,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_emailaddress",
-            "name": "Can add email address",
-            "content_type": 17
-        }
-    }, {
-        "pk": 50,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_emailaddress",
-            "name": "Can change email address",
-            "content_type": 17
-        }
-    }, {
-        "pk": 51,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_emailaddress",
-            "name": "Can delete email address",
-            "content_type": 17
-        }
-    }, {
-        "pk": 52,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_emailconfirmation",
-            "name": "Can add email confirmation",
-            "content_type": 18
-        }
-    }, {
-        "pk": 53,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_emailconfirmation",
-            "name": "Can change email confirmation",
-            "content_type": 18
-        }
-    }, {
-        "pk": 54,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_emailconfirmation",
-            "name": "Can delete email confirmation",
-            "content_type": 18
-        }
-    }, {
-        "pk": 43,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_dontsendentry",
-            "name": "Can add don't send entry",
-            "content_type": 15
-        }
-    }, {
-        "pk": 44,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_dontsendentry",
-            "name": "Can change don't send entry",
-            "content_type": 15
-        }
-    }, {
-        "pk": 45,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_dontsendentry",
-            "name": "Can delete don't send entry",
-            "content_type": 15
-        }
-    }, {
-        "pk": 40,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_message",
-            "name": "Can add message",
-            "content_type": 14
-        }
-    }, {
-        "pk": 41,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_message",
-            "name": "Can change message",
-            "content_type": 14
-        }
-    }, {
-        "pk": 42,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_message",
-            "name": "Can delete message",
-            "content_type": 14
-        }
-    }, {
-        "pk": 46,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_messagelog",
-            "name": "Can add message log",
-            "content_type": 16
-        }
-    }, {
-        "pk": 47,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_messagelog",
-            "name": "Can change message log",
-            "content_type": 16
-        }
-    }, {
-        "pk": 48,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_messagelog",
-            "name": "Can delete message log",
-            "content_type": 16
-        }
-    }, {
-        "pk": 31,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_notice",
-            "name": "Can add notice",
-            "content_type": 11
-        }
-    }, {
-        "pk": 32,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_notice",
-            "name": "Can change notice",
-            "content_type": 11
-        }
-    }, {
-        "pk": 33,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_notice",
-            "name": "Can delete notice",
-            "content_type": 11
-        }
-    }, {
-        "pk": 34,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_noticequeuebatch",
-            "name": "Can add notice queue batch",
-            "content_type": 12
-        }
-    }, {
-        "pk": 35,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_noticequeuebatch",
-            "name": "Can change notice queue batch",
-            "content_type": 12
-        }
-    }, {
-        "pk": 36,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_noticequeuebatch",
-            "name": "Can delete notice queue batch",
-            "content_type": 12
-        }
-    }, {
-        "pk": 28,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_noticesetting",
-            "name": "Can add notice setting",
-            "content_type": 10
-        }
-    }, {
-        "pk": 29,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_noticesetting",
-            "name": "Can change notice setting",
-            "content_type": 10
-        }
-    }, {
-        "pk": 30,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_noticesetting",
-            "name": "Can delete notice setting",
-            "content_type": 10
-        }
-    }, {
-        "pk": 25,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_noticetype",
-            "name": "Can add notice type",
-            "content_type": 9
-        }
-    }, {
-        "pk": 26,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_noticetype",
-            "name": "Can change notice type",
-            "content_type": 9
-        }
-    }, {
-        "pk": 27,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_noticetype",
-            "name": "Can delete notice type",
-            "content_type": 9
-        }
-    }, {
-        "pk": 37,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_observeditem",
-            "name": "Can add observed item",
-            "content_type": 13
-        }
-    }, {
-        "pk": 38,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_observeditem",
-            "name": "Can change observed item",
-            "content_type": 13
-        }
-    }, {
-        "pk": 39,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_observeditem",
-            "name": "Can delete observed item",
-            "content_type": 13
-        }
-    }, {
-        "pk": 70,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_profile",
-            "name": "Can add profile",
-            "content_type": 24
-        }
-    }, {
-        "pk": 71,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_profile",
-            "name": "Can change profile",
-            "content_type": 24
-        }
-    }, {
-        "pk": 72,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_profile",
-            "name": "Can delete profile",
-            "content_type": 24
-        }
-    }, {
-        "pk": 82,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_challenge",
-            "name": "Can add Challenge",
-            "content_type": 28
-        }
-    }, {
-        "pk": 83,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_challenge",
-            "name": "Can change Challenge",
-            "content_type": 28
-        }
-    }, {
-        "pk": 84,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_challenge",
-            "name": "Can delete Challenge",
-            "content_type": 28
-        }
-    }, {
-        "pk": 91,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_challengeexercise",
-            "name": "Can add challenge exercise",
-            "content_type": 31
-        }
-    }, {
-        "pk": 92,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_challengeexercise",
-            "name": "Can change challenge exercise",
-            "content_type": 31
-        }
-    }, {
-        "pk": 93,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_challengeexercise",
-            "name": "Can delete challenge exercise",
-            "content_type": 31
-        }
-    }, {
-        "pk": 94,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_classinvitation",
-            "name": "Can add Classroom invitation",
-            "content_type": 32
-        }
-    }, {
-        "pk": 95,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_classinvitation",
-            "name": "Can change Classroom invitation",
-            "content_type": 32
-        }
-    }, {
-        "pk": 96,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_classinvitation",
-            "name": "Can delete Classroom invitation",
-            "content_type": 32
-        }
-    }, {
-        "pk": 79,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_classroom",
-            "name": "Can add Classroom",
-            "content_type": 27
-        }
-    }, {
-        "pk": 80,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_classroom",
-            "name": "Can change Classroom",
-            "content_type": 27
-        }
-    }, {
-        "pk": 81,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_classroom",
-            "name": "Can delete Classroom",
-            "content_type": 27
-        }
-    }, {
-        "pk": 85,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_classroomteam",
-            "name": "Can add Classroom Team",
-            "content_type": 29
-        }
-    }, {
-        "pk": 86,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_classroomteam",
-            "name": "Can change Classroom Team",
-            "content_type": 29
-        }
-    }, {
-        "pk": 87,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_classroomteam",
-            "name": "Can delete Classroom Team",
-            "content_type": 29
-        }
-    }, {
-        "pk": 88,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_groupchallenge",
-            "name": "Can add group challenge",
-            "content_type": 30
-        }
-    }, {
-        "pk": 89,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_groupchallenge",
-            "name": "Can change group challenge",
-            "content_type": 30
-        }
-    }, {
-        "pk": 90,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_groupchallenge",
-            "name": "Can delete group challenge",
-            "content_type": 30
-        }
-    }, {
-        "pk": 73,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_school",
-            "name": "Can add School",
-            "content_type": 25
-        }
-    }, {
-        "pk": 74,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_school",
-            "name": "Can change School",
-            "content_type": 25
-        }
-    }, {
-        "pk": 75,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_school",
-            "name": "Can delete School",
-            "content_type": 25
-        }
-    }, {
-        "pk": 76,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_userprofile",
-            "name": "Can add User profile",
-            "content_type": 26
-        }
-    }, {
-        "pk": 77,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_userprofile",
-            "name": "Can change User profile",
-            "content_type": 26
-        }
-    }, {
-        "pk": 78,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_userprofile",
-            "name": "Can delete User profile",
-            "content_type": 26
+            "name": "team.class.class.7.Patel 8th.Leslies.school.POCS",
+            "permissions": []
         }
     }, {
         "pk": 19,
-        "model": "auth.permission",
+        "model": "auth.group",
         "fields": {
-            "codename": "add_session",
-            "name": "Can add session",
-            "content_type": 7
+            "name": "team.class.class.7.Patel 8th.Math Killa.school.POCS",
+            "permissions": []
         }
     }, {
-        "pk": 20,
-        "model": "auth.permission",
+        "pk": 10,
+        "model": "auth.group",
         "fields": {
-            "codename": "change_session",
-            "name": "Can change session",
-            "content_type": 7
-        }
-    }, {
-        "pk": 21,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_session",
-            "name": "Can delete session",
-            "content_type": 7
-        }
-    }, {
-        "pk": 64,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_signupcode",
-            "name": "Can add signup code",
-            "content_type": 22
-        }
-    }, {
-        "pk": 65,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_signupcode",
-            "name": "Can change signup code",
-            "content_type": 22
-        }
-    }, {
-        "pk": 66,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_signupcode",
-            "name": "Can delete signup code",
-            "content_type": 22
-        }
-    }, {
-        "pk": 67,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_signupcoderesult",
-            "name": "Can add signup code result",
-            "content_type": 23
-        }
-    }, {
-        "pk": 68,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_signupcoderesult",
-            "name": "Can change signup code result",
-            "content_type": 23
-        }
-    }, {
-        "pk": 69,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_signupcoderesult",
-            "name": "Can delete signup code result",
-            "content_type": 23
-        }
-    }, {
-        "pk": 22,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_site",
-            "name": "Can add site",
-            "content_type": 8
-        }
-    }, {
-        "pk": 23,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_site",
-            "name": "Can change site",
-            "content_type": 8
-        }
-    }, {
-        "pk": 24,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_site",
-            "name": "Can delete site",
-            "content_type": 8
-        }
-    }, {
-        "pk": 103,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "add_whiteboardsession",
-            "name": "Can add whiteboard session",
-            "content_type": 35
-        }
-    }, {
-        "pk": 104,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "change_whiteboardsession",
-            "name": "Can change whiteboard session",
-            "content_type": 35
-        }
-    }, {
-        "pk": 105,
-        "model": "auth.permission",
-        "fields": {
-            "codename": "delete_whiteboardsession",
-            "name": "Can delete whiteboard session",
-            "content_type": 35
+            "name": "team.class.class.7.Patel 8th.YOLO.school.POCS",
+            "permissions": []
         }
     }, {
         "pk": 1,
         "model": "auth.group",
         "fields": {
             "name": "school.Glenwood",
+            "permissions": []
+        }
+    }, {
+        "pk": 11,
+        "model": "auth.group",
+        "fields": {
+            "name": "team.class.class.7.Patel 8th.UE.school.POCS",
+            "permissions": []
+        }
+    }, {
+        "pk": 9,
+        "model": "auth.group",
+        "fields": {
+            "name": "team.class.class.7.Patel 8th.SAMF.school.POCS",
+            "permissions": []
+        }
+    }, {
+        "pk": 14,
+        "model": "auth.group",
+        "fields": {
+            "name": "team.class.class.7.Patel 8th.Bulls.school.POCS",
+            "permissions": []
+        }
+    }, {
+        "pk": 13,
+        "model": "auth.group",
+        "fields": {
+            "name": "team.class.class.7.Patel 8th.Wolves.school.POCS",
+            "permissions": []
+        }
+    }, {
+        "pk": 17,
+        "model": "auth.group",
+        "fields": {
+            "name": "team.class.class.7.Patel 8th.Geek Squad.school.POCS",
             "permissions": []
         }
     }, {
@@ -2615,88 +1871,106 @@
             "permissions": []
         }
     }, {
-        "pk": 8,
-        "model": "auth.group",
-        "fields": {
-            "name": "team.class.class.7.PCMOmar E. Torres Charter School",
-            "permissions": []
-        }
-    }, {
         "pk": 9,
-        "model": "auth.group",
+        "model": "auth.user",
         "fields": {
-            "name": "team.class.class.7.Patel 8th.SAMF.school.POCS",
-            "permissions": []
+            "username": "aaco",
+            "first_name": "Ashley",
+            "last_name": "Aco",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-05-03 20:44:06",
+            "groups": [15, 8, 6, 7],
+            "user_permissions": [],
+            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
+            "email": "noemail@noemail.com",
+            "date_joined": "2012-05-03 20:44:06"
         }
     }, {
         "pk": 10,
-        "model": "auth.group",
+        "model": "auth.user",
         "fields": {
-            "name": "team.class.class.7.Patel 8th.YOLO.school.POCS",
-            "permissions": []
+            "username": "vbustos",
+            "first_name": "Vicente",
+            "last_name": "Bustos",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-05-03 20:44:06",
+            "groups": [14, 6, 7],
+            "user_permissions": [],
+            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
+            "email": "noemail@noemail.com",
+            "date_joined": "2012-05-03 20:44:06"
         }
     }, {
         "pk": 11,
-        "model": "auth.group",
+        "model": "auth.user",
         "fields": {
-            "name": "team.class.class.7.Patel 8th.UE.school.POCS",
-            "permissions": []
+            "username": "lcavada",
+            "first_name": "Leslie",
+            "last_name": "Cavada",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-05-03 20:44:06",
+            "groups": [18, 6, 7],
+            "user_permissions": [],
+            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
+            "email": "noemail@noemail.com",
+            "date_joined": "2012-05-03 20:44:06"
         }
     }, {
         "pk": 12,
-        "model": "auth.group",
+        "model": "auth.user",
         "fields": {
-            "name": "team.class.class.7.Patel 8th.Bubbles.school.POCS",
-            "permissions": []
+            "username": "vchavez",
+            "first_name": "Viri",
+            "last_name": "Chavez",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-05-03 20:44:06",
+            "groups": [15, 6, 7],
+            "user_permissions": [],
+            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
+            "email": "noemail@noemail.com",
+            "date_joined": "2012-05-03 20:44:06"
         }
     }, {
         "pk": 13,
-        "model": "auth.group",
+        "model": "auth.user",
         "fields": {
-            "name": "team.class.class.7.Patel 8th.Wolves.school.POCS",
-            "permissions": []
+            "username": "ldavila",
+            "first_name": "Luke",
+            "last_name": "Davila",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-03-25 14:20:57",
+            "groups": [13, 6, 7],
+            "user_permissions": [],
+            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
+            "email": "noemail@noemail.com",
+            "date_joined": "2012-03-25 14:20:57"
         }
     }, {
-        "pk": 14,
-        "model": "auth.group",
+        "pk": 23,
+        "model": "auth.user",
         "fields": {
-            "name": "team.class.class.7.Patel 8th.Bulls.school.POCS",
-            "permissions": []
-        }
-    }, {
-        "pk": 15,
-        "model": "auth.group",
-        "fields": {
-            "name": "team.class.class.7.Patel 8th.C's in C.school.POCS",
-            "permissions": []
-        }
-    }, {
-        "pk": 16,
-        "model": "auth.group",
-        "fields": {
-            "name": "team.class.class.7.Patel 8th.Fast 3.school.POCS",
-            "permissions": []
-        }
-    }, {
-        "pk": 17,
-        "model": "auth.group",
-        "fields": {
-            "name": "team.class.class.7.Patel 8th.Geek Squad.school.POCS",
-            "permissions": []
-        }
-    }, {
-        "pk": 18,
-        "model": "auth.group",
-        "fields": {
-            "name": "team.class.class.7.Patel 8th.Leslies.school.POCS",
-            "permissions": []
-        }
-    }, {
-        "pk": 19,
-        "model": "auth.group",
-        "fields": {
-            "name": "team.class.class.7.Patel 8th.Math Killa.school.POCS",
-            "permissions": []
+            "username": "aleon",
+            "first_name": "Alexa",
+            "last_name": "Leon",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-03-25 14:20:57",
+            "groups": [19, 6, 7],
+            "user_permissions": [],
+            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
+            "email": "noemail@noemail.com",
+            "date_joined": "2012-03-25 14:20:57"
         }
     }, {
         "pk": 1,
@@ -2743,11 +2017,28 @@
             "is_superuser": false,
             "is_staff": true,
             "last_login": "2012-05-03 20:44:06",
-            "groups": [1, 2, 3, 4, 5],
+            "groups": [1, 3, 2, 5, 4],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "pkuperman@theknetwork.org",
             "date_joined": "2012-05-03 20:44:06"
+        }
+    }, {
+        "pk": 43,
+        "model": "auth.user",
+        "fields": {
+            "username": "testy",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-05-18 20:33:52",
+            "groups": [1, 3, 4],
+            "user_permissions": [],
+            "password": "sha1$16215$529a4637ca2f4dbdfe452fff7b8b4ca729e2381c",
+            "email": "",
+            "date_joined": "2012-05-18 20:33:52"
         }
     }, {
         "pk": 4,
@@ -2760,7 +2051,7 @@
             "is_superuser": false,
             "is_staff": true,
             "last_login": "2012-05-03 20:44:06",
-            "groups": [1, 2, 3, 4, 5],
+            "groups": [1, 3, 2, 5, 4],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "mustefa@theknetwork.org",
@@ -2801,6 +2092,23 @@
             "date_joined": "2012-05-03 20:44:06"
         }
     }, {
+        "pk": 42,
+        "model": "auth.user",
+        "fields": {
+            "username": "peterk",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-05-18 10:39:31",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$8711b$9b370fad0df9e39edc2113b87792352862a18e46",
+            "email": "",
+            "date_joined": "2012-05-18 10:39:30"
+        }
+    }, {
         "pk": 7,
         "model": "auth.user",
         "fields": {
@@ -2818,91 +2126,6 @@
             "date_joined": "2012-05-03 20:44:06"
         }
     }, {
-        "pk": 9,
-        "model": "auth.user",
-        "fields": {
-            "username": "aaco",
-            "first_name": "Ashley",
-            "last_name": "Aco",
-            "is_active": true,
-            "is_superuser": false,
-            "is_staff": false,
-            "last_login": "2012-05-03 20:44:06",
-            "groups": [6, 7, 8, 15],
-            "user_permissions": [],
-            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
-            "email": "noemail@noemail.com",
-            "date_joined": "2012-05-03 20:44:06"
-        }
-    }, {
-        "pk": 10,
-        "model": "auth.user",
-        "fields": {
-            "username": "vbustos",
-            "first_name": "Vicente",
-            "last_name": "Bustos",
-            "is_active": true,
-            "is_superuser": false,
-            "is_staff": false,
-            "last_login": "2012-05-03 20:44:06",
-            "groups": [6, 7, 14],
-            "user_permissions": [],
-            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
-            "email": "noemail@noemail.com",
-            "date_joined": "2012-05-03 20:44:06"
-        }
-    }, {
-        "pk": 11,
-        "model": "auth.user",
-        "fields": {
-            "username": "lcavada",
-            "first_name": "Leslie",
-            "last_name": "Cavada",
-            "is_active": true,
-            "is_superuser": false,
-            "is_staff": false,
-            "last_login": "2012-05-03 20:44:06",
-            "groups": [6, 7, 18],
-            "user_permissions": [],
-            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
-            "email": "noemail@noemail.com",
-            "date_joined": "2012-05-03 20:44:06"
-        }
-    }, {
-        "pk": 12,
-        "model": "auth.user",
-        "fields": {
-            "username": "vchavez",
-            "first_name": "Viri",
-            "last_name": "Chavez",
-            "is_active": true,
-            "is_superuser": false,
-            "is_staff": false,
-            "last_login": "2012-05-03 20:44:06",
-            "groups": [6, 7, 15],
-            "user_permissions": [],
-            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
-            "email": "noemail@noemail.com",
-            "date_joined": "2012-05-03 20:44:06"
-        }
-    }, {
-        "pk": 13,
-        "model": "auth.user",
-        "fields": {
-            "username": "ldavila",
-            "first_name": "Luke",
-            "last_name": "Davila",
-            "is_active": true,
-            "is_superuser": false,
-            "is_staff": false,
-            "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 13],
-            "user_permissions": [],
-            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
-            "email": "noemail@noemail.com",
-            "date_joined": "2012-03-25 14:20:57"
-        }
-    }, {
         "pk": 14,
         "model": "auth.user",
         "fields": {
@@ -2913,7 +2136,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 18],
+            "groups": [18, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -2930,7 +2153,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 17],
+            "groups": [17, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -2947,7 +2170,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 10],
+            "groups": [10, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -2964,7 +2187,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 12],
+            "groups": [12, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -2981,7 +2204,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 8],
+            "groups": [8, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -2998,7 +2221,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 14],
+            "groups": [14, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3015,7 +2238,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 10],
+            "groups": [10, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3032,7 +2255,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 15],
+            "groups": [15, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3049,24 +2272,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 16],
-            "user_permissions": [],
-            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
-            "email": "noemail@noemail.com",
-            "date_joined": "2012-03-25 14:20:57"
-        }
-    }, {
-        "pk": 23,
-        "model": "auth.user",
-        "fields": {
-            "username": "aleon",
-            "first_name": "Alexa",
-            "last_name": "Leon",
-            "is_active": true,
-            "is_superuser": false,
-            "is_staff": false,
-            "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 19],
+            "groups": [16, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3083,7 +2289,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 19],
+            "groups": [19, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3100,7 +2306,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 16],
+            "groups": [16, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3117,7 +2323,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 19],
+            "groups": [19, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3134,7 +2340,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 11],
+            "groups": [11, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3151,7 +2357,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 17],
+            "groups": [17, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3168,7 +2374,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 17],
+            "groups": [17, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3185,7 +2391,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 13],
+            "groups": [13, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3202,7 +2408,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 9],
+            "groups": [9, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3219,24 +2425,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 9],
-            "user_permissions": [],
-            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
-            "email": "noemail@noemail.com",
-            "date_joined": "2012-03-25 14:20:57"
-        }
-    }, {
-        "pk": 33,
-        "model": "auth.user",
-        "fields": {
-            "username": "csantiago",
-            "first_name": "Christian",
-            "last_name": "Santiago",
-            "is_active": true,
-            "is_superuser": false,
-            "is_staff": false,
-            "last_login": "2012-05-06 03:11:50",
-            "groups": [6, 7, 11],
+            "groups": [9, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3253,7 +2442,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 16],
+            "groups": [16, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3270,7 +2459,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 12],
+            "groups": [12, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3287,7 +2476,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 16],
+            "groups": [16, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3321,7 +2510,7 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 15],
+            "groups": [15, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3338,7 +2527,24 @@
             "is_superuser": false,
             "is_staff": false,
             "last_login": "2012-03-25 14:20:57",
-            "groups": [6, 7, 11],
+            "groups": [11, 6, 7],
+            "user_permissions": [],
+            "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
+            "email": "noemail@noemail.com",
+            "date_joined": "2012-03-25 14:20:57"
+        }
+    }, {
+        "pk": 33,
+        "model": "auth.user",
+        "fields": {
+            "username": "csantiago",
+            "first_name": "Christian",
+            "last_name": "Santiago",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-05-27 14:21:25",
+            "groups": [11, 6, 7],
             "user_permissions": [],
             "password": "sha1$0272b$df1c16ee5163051e4e2c83b336ecbec17b7aa1ed",
             "email": "noemail@noemail.com",
@@ -3457,6 +2663,16 @@
             "permissions": []
         }
     }, {
+        "pk": 15,
+        "model": "schools.classroomteam",
+        "fields": {
+            "classroom": 7,
+            "team_name": "C's in C",
+            "challenge_complete_count": 1,
+            "permissions": [],
+            "exercise_complete_count": 3
+        }
+    }, {
         "pk": 8,
         "model": "schools.classroomteam",
         "fields": {
@@ -3467,11 +2683,41 @@
             "exercise_complete_count": 0
         }
     }, {
-        "pk": 9,
+        "pk": 16,
         "model": "schools.classroomteam",
         "fields": {
             "classroom": 7,
-            "team_name": "SAMF",
+            "team_name": "Fast 3",
+            "challenge_complete_count": 1,
+            "permissions": [],
+            "exercise_complete_count": 3
+        }
+    }, {
+        "pk": 12,
+        "model": "schools.classroomteam",
+        "fields": {
+            "classroom": 7,
+            "team_name": "Bubbles",
+            "challenge_complete_count": 1,
+            "permissions": [],
+            "exercise_complete_count": 3
+        }
+    }, {
+        "pk": 18,
+        "model": "schools.classroomteam",
+        "fields": {
+            "classroom": 7,
+            "team_name": "Leslies",
+            "challenge_complete_count": 1,
+            "permissions": [],
+            "exercise_complete_count": 3
+        }
+    }, {
+        "pk": 19,
+        "model": "schools.classroomteam",
+        "fields": {
+            "classroom": 7,
+            "team_name": "Math Killa",
             "challenge_complete_count": 0,
             "permissions": [],
             "exercise_complete_count": 0
@@ -3497,21 +2743,11 @@
             "exercise_complete_count": 3
         }
     }, {
-        "pk": 12,
+        "pk": 9,
         "model": "schools.classroomteam",
         "fields": {
             "classroom": 7,
-            "team_name": "Bubbles",
-            "challenge_complete_count": 1,
-            "permissions": [],
-            "exercise_complete_count": 3
-        }
-    }, {
-        "pk": 13,
-        "model": "schools.classroomteam",
-        "fields": {
-            "classroom": 7,
-            "team_name": "Wolves",
+            "team_name": "SAMF",
             "challenge_complete_count": 0,
             "permissions": [],
             "exercise_complete_count": 0
@@ -3527,24 +2763,14 @@
             "exercise_complete_count": 3
         }
     }, {
-        "pk": 15,
+        "pk": 13,
         "model": "schools.classroomteam",
         "fields": {
             "classroom": 7,
-            "team_name": "C's in C",
-            "challenge_complete_count": 1,
+            "team_name": "Wolves",
+            "challenge_complete_count": 0,
             "permissions": [],
-            "exercise_complete_count": 3
-        }
-    }, {
-        "pk": 16,
-        "model": "schools.classroomteam",
-        "fields": {
-            "classroom": 7,
-            "team_name": "Fast 3",
-            "challenge_complete_count": 1,
-            "permissions": [],
-            "exercise_complete_count": 3
+            "exercise_complete_count": 0
         }
     }, {
         "pk": 17,
@@ -3552,26 +2778,6 @@
         "fields": {
             "classroom": 7,
             "team_name": "Geek Squad",
-            "challenge_complete_count": 0,
-            "permissions": [],
-            "exercise_complete_count": 0
-        }
-    }, {
-        "pk": 18,
-        "model": "schools.classroomteam",
-        "fields": {
-            "classroom": 7,
-            "team_name": "Leslies",
-            "challenge_complete_count": 1,
-            "permissions": [],
-            "exercise_complete_count": 3
-        }
-    }, {
-        "pk": 19,
-        "model": "schools.classroomteam",
-        "fields": {
-            "classroom": 7,
-            "team_name": "Math Killa",
             "challenge_complete_count": 0,
             "permissions": [],
             "exercise_complete_count": 0

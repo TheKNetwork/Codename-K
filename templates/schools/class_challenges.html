@@ -32,7 +32,9 @@
                             </td>
                             <td>{{ challenge.challenge_groups.all.count }} Groups</td>
                             <td>
+                                {% if user.id == challenge.created_by.id %}
                                 <a href="#" onclick="removeChallenge({{challenge.id}})">Remove</a>
+                                {% endif %}
                             </td>
                         </tr>
                         {% endfor %}

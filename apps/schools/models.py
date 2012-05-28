@@ -11,6 +11,8 @@ from django.db.models import signals
 from django.core.exceptions import ObjectDoesNotExist
 
 from schools.signals import *
+# When model instance is saved, trigger creation of corresponding profile
+# signals.post_save.connect(create_profile, sender=User)
 
 import os, datetime
 
@@ -34,7 +36,7 @@ class School(Group):
     address_country = models.CharField(max_length=50, blank=True)
     school_url = models.URLField(blank=True)
     gender_flag = models.CharField(max_length=1, choices=SCHOOL_GENDER_FLAG_CHOICES, blank=True)
-    
+    created_by = models.ForeignKey(User, blank=True, null=True)
     objects = models.Manager()
     
     class Meta:
@@ -73,7 +75,7 @@ class Classroom(Group):
     class_name = models.CharField(max_length=50)
     class_description = models.TextField(blank=True)
     school = models.ForeignKey(School, related_name="classrooms")
-
+    created_by = models.ForeignKey(User, blank=True, null=True)
     objects = models.Manager()
 
     class Meta:
@@ -88,6 +90,7 @@ class Challenge(models.Model):
     classroom = models.ForeignKey(Classroom, null=True, blank=True, related_name="challenges")
     
     objects = models.Manager()
+    created_by = models.ForeignKey(User, blank=True, null=True)
 
     class Meta:
             verbose_name = _('Challenge')
@@ -107,6 +110,7 @@ class ClassroomTeam(Group):
     challenges = models.ManyToManyField(Challenge, through='GroupChallenge', related_name="teams")
     challenge_complete_count = models.IntegerField(blank=True, null=True)
     exercise_complete_count = models.IntegerField(blank=True, null=True)
+    created_by = models.ForeignKey(User, blank=True, null=True)
     
     objects = models.Manager()
 
@@ -132,6 +136,7 @@ class ChallengeExercise(models.Model):
     exercise_name = models.CharField(max_length=150)
     exercise_url = models.URLField(blank=True)
     exercise_description = models.CharField(max_length=2000, null=True, blank=True)
+    created_by = models.ForeignKey(User, blank=True, null=True)
     
     def __unicode__(self):
         return u"{0}".format(self.exercise_name) 
@@ -148,6 +153,7 @@ class ClassInvitation(models.Model):
     invited_on_date = models.DateTimeField(auto_now_add=True)
     rejected_on_date = models.DateTimeField(null=True, blank=True)
     accepted_on_date = models.DateTimeField(null=True, blank=True)
+    created_by = models.ForeignKey(User, blank=True, null=True)
     
     class Meta:
         verbose_name = _('Classroom invitation')

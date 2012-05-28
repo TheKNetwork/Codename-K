@@ -10,6 +10,7 @@
 # -- some of these are shared, but mainly they were
 # -- added for khan api calls.
 
+psycopg2==2.4.1
 simplejson
 python-memcached
 oauth2

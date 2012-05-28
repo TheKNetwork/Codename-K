@@ -4,8 +4,7 @@
                     <thead>
                         <tr>
                             <th>Teams</th>
-                            <th></th>
-                            <th>Exercises Complete</th>
+                            <th>Actions</th>
                             <th>Challenges Complete</th>
                         </tr>
                     </thead>
@@ -13,13 +12,19 @@
                     <tr>
                         <td>
                             <i class="icon-book"></i>
-                            <a href="#" onclick="toggleCollapse('team-{{team.id}}')">{{ team }}</a>
-                            <div id="team-{{team.id}}" class="collapse in" style="color:#555; padding-left:18px">
-                                {% for u in team.user_set.all %}
-                                <i class="icon-person"></i>{{u.last_name}}, {{u.first_name}}<br/>
-                                {% endfor %}
-                            </div>
-                            <script>$('#team-{{team.id}}').collapse()</script>
+                            
+                            <a href="/{{user}}/schools/{{school.id}}/{{school_class.id}}/team/{{team.id}}" id="team-{{team.id}}" rel="team-users"
+                                    data-original-title="Team Members" 
+                                    data-content="<table width='200px'>
+                                                    {% for u in team.user_set.all %}
+                                                    <tr>
+                                                        <td nowrap>{{ u.first_name }} {{ u.last_name }}</td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                    </table>"                       
+                                    data-placement="right">
+                                {{team}}
+                            </a>
                         </td>
                         <td>
                             {% if not current_team %}
@@ -30,7 +35,6 @@
                                 {% endif %}
                             {% endif %}
                         </td>
-                        <td>{{ team.exercise_complete_count }}</td>
                         <td>{{ team.challenge_complete_count }}/{{ team.challenges.count }}</td>
                     </tr>
                     {% endfor %}
@@ -74,5 +78,5 @@
                                     
                             return false; // This keeps the form from causing the whole page to refresh
                      });
-                     
+                     $("a[rel=team-users]").popover();
                 </script>

@@ -142,7 +142,7 @@ MEDIA_URL = "/site_media/media/"
 
 # Absolute path to the directory that holds static files like app media.
 # Example: "/home/media/media.lawrence.com/apps/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, "site_media", "static")
+STATIC_ROOT = ''
 
 # URL that handles the static files like app media.
 # Example: "http://media.lawrence.com"
@@ -178,6 +178,7 @@ TEMPLATE_LOADERS = [
 ]
 
 MIDDLEWARE_CLASSES = [
+    #'django.middleware.cache.UpdateCacheMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -187,10 +188,14 @@ MIDDLEWARE_CLASSES = [
     "pinax.apps.account.middleware.LocaleMiddleware",
     "pagination.middleware.PaginationMiddleware",
     "pinax.middleware.security.HideSensistiveFieldsMiddleware",
+    #'django.middleware.cache.FetchFromCacheMiddleware',
     # "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
-ROOT_URLCONF = "urls"
+if os.getenv(RUN_ENV, '') == 'staging':
+    ROOT_URLCONF = "knetwork.urls"
+else:
+    ROOT_URLCONF = "urls"
 
 TEMPLATE_DIRS = [
     os.path.join(PROJECT_ROOT, "templates"),
@@ -223,7 +228,8 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.messages",
     "django.contrib.humanize",
-    
+    'django.contrib.flatpages',
+    #"south",
     'kombu.transport.django',  
     'djcelery',
     
@@ -293,17 +299,10 @@ LOGOUT_REDIRECT_URLNAME = "home"
 EMAIL_CONFIRMATION_DAYS = 2
 EMAIL_DEBUG = DEBUG
 
-if os.getenv(RUN_ENV, '') == 'prod':
+if os.getenv(RUN_ENV, '') == 'staging':
     print "Cache: MEMCACHED (STAGING)"
     CACHES = {
-    'memcached': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '127.0.0.1:11211',
-    },}
-elif os.getenv(RUN_ENV, '') == 'staging':
-    print "Cache: MEMCACHED (PROD)"
-    CACHES = {
-    'memcached': {
+    'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '127.0.0.1:11211',
     },}

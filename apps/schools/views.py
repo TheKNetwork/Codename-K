@@ -50,11 +50,16 @@ def homeroom_failsafe(request):
             request.session['oauth_token_string'] = request.user.knet_profile.access_token
             active_khan_user = True
             UpdateUserRelatedInfo.delay(user_id=request.user.id)
-            
+    else:
+        UserProfile(user = request.user).save() 
+               
     main_school = get_main_school_for_user(id=request.user.id)
     teams = get_teams_for_user(id=request.user.id)
     all_schools = School.objects.all()
-    classes_not_joined = get_classes_not_joined(user_id=request.user.id, school_id=main_school.id)
+    classes_not_joined = None
+    
+    if main_school is not None:
+        classes_not_joined = get_classes_not_joined(user_id=request.user.id, school_id=main_school.id)
     
     # GET ALL SCHOOLS >> schools = get_schools_for_user(username=request.user.username)
     
@@ -66,6 +71,7 @@ def homeroom_failsafe(request):
             'classes_not_joined': classes_not_joined, }
     
     return render(request, "homeroom/user_home.html", data, context_instance = RequestContext(request))
+
 
 @login_required
 @never_cache
@@ -165,7 +171,7 @@ def group_section(request, user_name, school_id, class_id):
 
     teams, current_team = refresh_team_info_for_user(user_id=request.user.id, teams=teams)
     
-    for team in teams:
+    for team in teams.all():
         for challenge in team.challenges.all():
             print "  %s" % challenge
         
@@ -251,7 +257,7 @@ def challenge_add(request, user_name, school_id, class_id):
     
     if form.is_valid(): 
         print "Form is valid"
-        challenge = create_challenge_for_class(_classroom, form.cleaned_data['challenge_name'] )
+        challenge = create_challenge_for_class(_classroom, form.cleaned_data['challenge_name'], request.user )
         for team_id in team_list:
             try:
                 team_to_add = ClassroomTeam.objects.get(id=team_id)
@@ -284,7 +290,7 @@ def group_add(request, user_name, school_id, class_id):
     form = ClassroomTeamForm(request.POST)
 
     if form.is_valid(): 
-        team = add_team_to_class(classroom.id, form.cleaned_data['team_name'] )
+        team = add_team_to_class(classroom.id, form.cleaned_data['team_name'], request.user )
         print "Added %s" % (form.cleaned_data['team_name'])
     else:
         print "Form not valid"
@@ -302,7 +308,7 @@ def create_a_class(request, _school_id, user_name):
         if form.is_valid(): 
             classroom = add_class(school_id=_school_id, 
                       _class_name=form.cleaned_data['class_name'], 
-                      _class_description='' )
+                      _class_description='', user=request.user )
             
             add_user_to_class(request.user, classroom)
             print "Added %s" % (form.cleaned_data['class_name'])
@@ -325,6 +331,7 @@ def classes_for_school(request, school_id, user_name):
 @login_required
 @cache_page(5)
 def class_congregation(request, school_id, class_id, user_name):
+    print "class id %s" % class_id
     school_class = Classroom.objects.get(id=class_id)
     school = School.objects.get(id=school_id)
     whiteboard_sessions = WhiteboardSession.objects.all()
@@ -333,3 +340,19 @@ def class_congregation(request, school_id, class_id, user_name):
             'school':school, 'whiteboard_sessions': whiteboard_sessions,}
 
     return render(request, "schools/class_congregation.html", data)
+
+@login_required
+@cache_page(5)
+def team(request, school_id, class_id, user_name, team_id):
+    print "class id %s" % class_id
+    school_class = Classroom.objects.get(id=class_id)
+    school = School.objects.get(id=school_id)
+    whiteboard_sessions = WhiteboardSession.objects.all()
+    team = ClassroomTeam.objects.get(id=team_id)
+    challenge_statuses = get_challenge_status_for_team(team_id=team_id)
+    
+    data = {'user': request.user, 'school_class': school_class, 
+            'school':school, 'whiteboard_sessions': whiteboard_sessions,
+            'team': team, 'challenge_statuses':challenge_statuses,}
+
+    return render(request, "schools/team.html", data)

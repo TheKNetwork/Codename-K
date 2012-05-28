@@ -141,7 +141,10 @@ def proxy(request):
 @never_cache
 def oauth_get_request_token(request):
     print "getting request token"
-    callback_url = '%s/oauth_callback' % current_site_url()
+    from django.contrib.sites.models import Site
+    url = 'http://%s' % settings.SITE_ROOT
+    
+    callback_url = '%s/oauth_callback' % url
     print "callback url is %s" % callback_url
     request_token_url = settings.CLIENT.url_for_request_token(
             callback = callback_url
