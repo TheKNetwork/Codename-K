@@ -23,10 +23,10 @@ def prod():
 def deploy():
     """Deploy the latest version of the site to the server and restart apache"""
     checkout_latest()
-    symlink_current_release()
-    install_requirements()
-    migrate()
-    reload()
+    # symlink_current_release()
+    # install_requirements()
+    # migrate()
+    # reload()
     # restart_apache()
     # Restarting apache is usually not needed, because the wsgi file is updated and
     # apache doesn't need to reload anything, mod_wsgi takes care of that.
