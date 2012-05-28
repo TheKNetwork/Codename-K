@@ -59,7 +59,7 @@ def add_school(**kwargs):
     school.save()
     return school
 
-def add_class(school_id, _class_name, _class_description=''):
+def add_class(school_id, user, _class_name, _class_description=''):
     """
     Finds a school with the given school id, then creates a class and adds
     the class to that school using the expected arguments for the class
@@ -67,6 +67,7 @@ def add_class(school_id, _class_name, _class_description=''):
     """
     existing_school = School.objects.get(id=school_id)
     school_class = Classroom.objects.create(school=existing_school, 
+                                            created_by=user,
                                             class_name=_class_name, 
                                             class_description=_class_description, 
                                             name='class.%s.%s' % (existing_school.school_name, _class_name))
@@ -78,12 +79,14 @@ def add_class(school_id, _class_name, _class_description=''):
     
     return school_class
 
-def add_team_to_class(_class_id, _team_name):
+def add_team_to_class(_class_id, _team_name, user):
     """
     Creates a new and empty team
     """
     existing_class = Classroom.objects.get(id=_class_id)
-    team = ClassroomTeam(classroom=existing_class, team_name=_team_name, name='team.class.%s.%s.%s' % (existing_class.name, _team_name, existing_class.school.name))
+    team = ClassroomTeam(classroom=existing_class, created_by=user, team_name=_team_name, 
+                         name='team.class.%s.%s.%s' % 
+                         (existing_class.name, _team_name, existing_class.school.name))
     team.save()
     return team
 
@@ -184,8 +187,8 @@ def get_team_status_for_challenge(challenge_id):
     
     return teams
 
-def create_challenge_for_class(_classroom, _challenge_name):
-    challenge = Challenge(challenge_name=_challenge_name, classroom=_classroom)
+def create_challenge_for_class(_classroom, _challenge_name, user):
+    challenge = Challenge(challenge_name=_challenge_name, classroom=_classroom, created_by=user)
     try:
         challenge.save()
     except e:

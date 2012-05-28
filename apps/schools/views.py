@@ -257,7 +257,7 @@ def challenge_add(request, user_name, school_id, class_id):
     
     if form.is_valid(): 
         print "Form is valid"
-        challenge = create_challenge_for_class(_classroom, form.cleaned_data['challenge_name'] )
+        challenge = create_challenge_for_class(_classroom, form.cleaned_data['challenge_name'], request.user )
         for team_id in team_list:
             try:
                 team_to_add = ClassroomTeam.objects.get(id=team_id)
@@ -290,7 +290,7 @@ def group_add(request, user_name, school_id, class_id):
     form = ClassroomTeamForm(request.POST)
 
     if form.is_valid(): 
-        team = add_team_to_class(classroom.id, form.cleaned_data['team_name'] )
+        team = add_team_to_class(classroom.id, form.cleaned_data['team_name'], request.user )
         print "Added %s" % (form.cleaned_data['team_name'])
     else:
         print "Form not valid"
@@ -308,7 +308,7 @@ def create_a_class(request, _school_id, user_name):
         if form.is_valid(): 
             classroom = add_class(school_id=_school_id, 
                       _class_name=form.cleaned_data['class_name'], 
-                      _class_description='' )
+                      _class_description='', user=request.user )
             
             add_user_to_class(request.user, classroom)
             print "Added %s" % (form.cleaned_data['class_name'])

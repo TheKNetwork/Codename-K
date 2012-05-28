@@ -178,6 +178,7 @@ TEMPLATE_LOADERS = [
 ]
 
 MIDDLEWARE_CLASSES = [
+    #'django.middleware.cache.UpdateCacheMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -187,6 +188,7 @@ MIDDLEWARE_CLASSES = [
     "pinax.apps.account.middleware.LocaleMiddleware",
     "pagination.middleware.PaginationMiddleware",
     "pinax.middleware.security.HideSensistiveFieldsMiddleware",
+    #'django.middleware.cache.FetchFromCacheMiddleware',
     # "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
@@ -227,7 +229,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.humanize",
     'django.contrib.flatpages',
-    "south",
+    #"south",
     'kombu.transport.django',  
     'djcelery',
     
