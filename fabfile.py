@@ -10,7 +10,7 @@ env['branch'] = 'develop'
 
 def staging():
     """Staging server settings"""
-    env['path'] = '/environments/staging'
+    env['path'] = '/git/knetwork'
     env.host_string = staging_server
 
 
@@ -26,7 +26,7 @@ def deploy():
     # symlink_current_release()
     # install_requirements()
     # migrate()
-    # reload()
+    reload()
     # restart_apache()
     # Restarting apache is usually not needed, because the wsgi file is updated and
     # apache doesn't need to reload anything, mod_wsgi takes care of that.
@@ -35,8 +35,8 @@ def checkout_latest():
     """Pull the latest code into the git repo and copy to a timestamped release directory"""
     import time
     env['release'] = time.strftime('%Y%m%d%H%M%S')
-    run('cd %(path)s/git/%(repository)s; git pull origin %(branch)s' % env, pty=True)
-    run('cp -R %(path)s/git/%(repository)s %(path)s/releases/%(release)s; rm -rf %(path)s/releases/%(release)s/.git*' % env, pty=True)  
+    run('cd %(path)s; git pull origin %(branch)s' % env, pty=True)
+    # run('cp -R %(path)s/git/%(repository)s %(path)s/releases/%(release)s; rm -rf %(path)s/releases/%(release)s/.git*' % env, pty=True)  
 
 def symlink_current_release():
     """Symlink our current release"""
@@ -51,7 +51,7 @@ def migrate():
     run('export DJANGO_ENV=%(release_type)s; cd %(path)s/releases/knetwork;  %(path)s/bin/python manage.py migrate schools' % env, pty=True)
 
 def reload():
-    "touch wsgi.py"
+    run('cd %(path)s; touch wsgi.py' % env, pty=True)
     #sudo("service apache2 restart",pty=True)
     
 def restart_apache():
