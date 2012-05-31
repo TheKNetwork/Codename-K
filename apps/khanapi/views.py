@@ -61,10 +61,16 @@ def write_javascript_for_topic(topic, file_str, parent_topic_node_name):
         
         if item['kind'] == "Exercise":
             file_str.write("addLeafNode('%s', '%s', '%s', '%s', %s);"
-                           % (item['name'], item['display_name'], item['description'], item['ka_url'], current_node_name)
+                           % ( safestr(item['name']), safestr(item['display_name']), safestr(item['description']), safestr(item['ka_url']), current_node_name)
                            )
         elif item['kind'] == "Topic":
             write_javascript_for_topic(item, file_str, current_node_name)
+
+def safestr(str):
+    if str != None:
+        return str.encode('ascii', 'ignore')
+    else:
+        return ''
 
 #@cache_page(60*60*24*60)
 def get_topic_tree_js(user):
@@ -82,6 +88,7 @@ def get_topic_tree_js(user):
         topic_tree_result = file_str.getvalue()
         _cache.set(cache_key, topic_tree_result, MONTH)
         
+    print 'Finished generating javascript for topic tree'
     return topic_tree_result
 
 def add_topic_exercises(topic, user):
