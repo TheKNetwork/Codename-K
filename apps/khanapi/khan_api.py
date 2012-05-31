@@ -14,7 +14,6 @@ from urllib import urlencode
 from oauth import OAuthToken
 from cStringIO import StringIO
 
-from khanapi.views import *
 from khanapi.api_explorer_oauth_client import APIExplorerOAuthClient
 
 import urllib

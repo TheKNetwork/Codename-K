@@ -53,14 +53,14 @@ def topic_tree_javascript(request):
 topic_count = 0
 def write_javascript_for_topic(topic, file_str, parent_topic_node_name):
     global topic_count
-    file_str.write("var node%s = addTopicNode('%s', %s);" % (topic_count, topic['title'], parent_topic_node_name))
+    file_str.write('var node%s = addTopicNode("%s", %s);' % (topic_count, topic['title'], parent_topic_node_name))
     current_node_name = "node%s" % topic_count
     topic_count = topic_count + 1
     
     for item in topic['children']:
         
         if item['kind'] == "Exercise":
-            file_str.write("addLeafNode('%s', '%s', '%s', '%s', %s);"
+            file_str.write('addLeafNode("%s", "%s", "%s", "%s", %s);'
                            % ( safestr(item['name']), safestr(item['display_name']), safestr(item['description']), safestr(item['ka_url']), current_node_name)
                            )
         elif item['kind'] == "Topic":
