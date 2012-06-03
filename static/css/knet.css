@@ -23,3 +23,8 @@ max-height: none;
     margin:10px;
     padding-top: 60px;
 }
+
+.hover-only {
+    text-decoration: none; 
+    color: #000;
+}
