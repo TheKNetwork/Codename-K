@@ -1,7 +1,6 @@
 {% extends "site_base.html" %}
 
 {% block body %}
-
 <div id="new-challenge">
         <h2>Create a Challenge</h2>
         
@@ -50,7 +49,7 @@
                                     var token = $('input[name=csrfmiddlewaretoken]').val();
                                     var teams = "";
                                     
-                                    $("#selected-teams option:selected").each(function(){
+                                    $("#selectedTeams option:selected").each(function(){
                                         teams += $(this).val() + "^|^";    
                                     });
                                     var data = { challenge_name: challenge, csrfmiddlewaretoken: token, team_ids: teams, selected_exercises: selectedExercises };
@@ -73,15 +72,14 @@
                         <h5>Teams to Invite</h5>
                         <div id="step-three">
                             <div id="team-selection">
-                                <select id="selected-teams" data-placeholder="Select Something" 
-                                    multiple class="chosen" style="width:350px;" tabindex="4">
+                                <select id="selectedTeams" data-placeholder="Select Something" 
+                                    multiple class="chzn-select" style="width:350px;" tabindex="4">
                                 {% for team in school_class.teams.all %}
-                                    <option value="{{ team.id }}">{{ team }}</option>
+                                    <option value="{{ team.id }}" selected>{{ team }}</option>
                                 {% endfor %}
                                 </select>
                             </div>
                         </div>
-                        
                         
                         <div>
                             <a class="btn" href="/{{user}}/schools/{{school.id}}/{{school_class.id}}">Cancel</a>
@@ -94,9 +92,6 @@
 </div>
 
 <script type="text/javascript">
-//$(document).ready(function() {
     $("#topic-tree-container").load('/khanapi/topic_tree');
-//});
 </script>
-
 {% endblock %}
